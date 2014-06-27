@@ -253,8 +253,14 @@ background-color: white !important
  }
  
 #jqxslider {
-    width: 60% !important;
-    margin: 0 auto;
+    width: 45em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em !important;
+}
+#jqxslider2 {
+     width: 45em !important;
+    margin-left:auto; margin-right: auto;
     margin-top: 0.8em;
     margin-bottom: 0.8em !important;
 }
