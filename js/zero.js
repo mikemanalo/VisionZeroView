@@ -1,38 +1,54 @@
-//----------------------------------------------Swaps svg for png in older browsers-----------------------------------------------//
-if(!Modernizr.svg) {
-    $('img[src*="svg"]').attr('src', function() {
-        return $(this).attr('src').replace('.svg', '.png');
+//----------------------------------------------------------//	
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
     });
-}
+//----------------------------------------------------------//	
+	$('.btn-toggle').click(function() {
+    $(this).find('.btn').toggleClass('active');  
+    
+    if ($(this).find('.btn-primary').size()>0) {
+    	$(this).find('.btn').toggleClass('btn-primary');
+    }
+    if ($(this).find('.btn-danger').size()>0) {
+    	$(this).find('.btn').toggleClass('btn-danger');
+    }
+    if ($(this).find('.btn-success').size()>0) {
+    	$(this).find('.btn').toggleClass('btn-success');
+    }
+    if ($(this).find('.btn-info').size()>0) {
+    	$(this).find('.btn').toggleClass('btn-info');
+    }
+    
+    $(this).find('.btn').toggleClass('btn-default');
+       
+});
 
-//--------------------------------------------------Dropdown Title Change--------------------------------------------------------//
+$('form').submit(function(){
+	alert($(this["options"]).val());
+    return false;
+});
+//----------------------------------------------------------//
+$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+//----------------------------------------------------------//
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});	
+//----------------------------------------------------------//
 $(".dropdown-menu li a").click(function(){
   var selText = $(this).text();
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 });
-
-//-------------------------------------------------Controls the slide-panel that makes the menu----------------------------------//
-	$('#opener').on('click', function() {		
-		var panel = $('#slide-panel');
-		var map =$('#map');
-		if (panel.hasClass("visible")) {
-			//map.animate({'margin-left':'0px'}); // add this if map should slide with panel
-			panel.removeClass('visible').animate({'margin-left':'-300px'});
-		} else {
-			panel.addClass('visible').animate({'margin-left':'0px'});
-			//map.animate({'margin-left':'300px'});
-		}	
-		return true;	
-	});
-
-$(".alignment .btn").click(function() {
-    // whenever a button is clicked, set the hidden helper
-    $("#alignment").val($(this).text());
-}); 
-	
-/*function classToggle() {
-    this.classList.toggle('radioBtn');
-    this.classList.toggle('radioBtnOn');
-
-}
-document.querySelector('#div').addEventListener('click', classToggle);*/
+//----------------------------------------------------------//
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+//---------------------------------------------------------//
+$("[name='InjuriesWhat']").bootstrapSwitch();
+$("[name='InjuriesWhen']").bootstrapSwitch();

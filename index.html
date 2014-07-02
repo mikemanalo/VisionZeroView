@@ -1,232 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-touch-fullscreen" content="yes">
-    
-	<title>Vision Zero</title>
 
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-slider/css/bootstrap-slider.css">
-    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
-	<link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-	<link href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.base.css" rel="stylesheet">
-    <link href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vision Zero</title>
+
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap_switch_3/css/bootstrap3/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.base.css">
+    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css">
+	<link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+	<link rel="stylesheet" type="text/css"href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" type="text/css" href="css/zero.css">	
-    
-  <body>  
-    <!--Start Black Bar-->
+	<link rel="stylesheet" type="text/css" href="css/vz.css">
+
+
+</head>
+
+<body>
 	<div id="blackBar" class="container-fluid">  
-		<div class="blackBar">
-			<div class="container">
+		<div class="blackBar ">
+			<div class="navbar">
 				<span> 
-				  <a href="http://www.nyc.gov/"><img src="img/logo/nyc.png" ></a> 
+				  <a href="http://www.nyc.gov/"><img src="img/logo/nyc.svg" style="margin-left:1em;"></a> 
 				  <img src="img/other/upper-header-divider.gif">
 				  <span class="blackBarFont blackBarOff"></span> 
 				</span>
 				
 				<span ></span>
 				
-				<span class="pull-right" >
+				<span  style="right:1em; float:right;">
 					<span> <a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/311/index.page">311</a> </span> 
 					<img alt="" class="blackBarOff"src="img/other/upper-header-divider.gif">
-					<span> <a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/home/search/index.page">Search all NYC.gov websites</a> </span>  
+					<span> <a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/home/search/index.page" style="margin-right:3.5em;">Search all NYC.gov websites</a> </span>  
 				</span>
 			</div>
 		</div>
-	</div> 
-	<!--Black Bar End-->
-	
-	<!--Title Bar-->
-	<div id="titleBar" class="container-fluid"> 
-		<div>
-		  <div class="titleBar">
-				<div class="container">
-				    <!--Buttons for small Screen Start-->
-					<span>
-						<button id="timeBtnSm" href="#timeSm" type="button" class="btn btn-default stayOff pull-left noBorder" data-toggle="collapse">
-						  <span class="glyphicon glyphicon-calendar"></span> 
-						</button>
-					</span>
-					
-					<span>
-						<button id="searchBtnSm" href="#searchSm" type="button" class="btn btn-default stayOff pull-right noBorder"  data-toggle="collapse">
-						  <span class="glyphicon glyphicon-search"></span> 
-						</button>
-					</span>						
-					<!--Buttons for small Screen End-->
-					
-					<span>
-						<a  href="http://www.nyc.gov/html/visionzero/pages/home/home.shtml">
-							<img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.png" class="vzLogo img-responsive ">
-						</a> 
-					</span>
-					
-					<form  id="searchInput" class="pull-right col-md-4 blackBarOff" role="search" >
-						
-						<div class="form-group" style="display:inline;">
-						  <div class="input-group input-group-sm" style="top:0.3em;" >
-							
-							<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:#666666; border: 1px solid #D5D5D5; border-right:0px" >Boro<span class="caret"></span></span>
-							  
-							  <ul class="dropdown-menu">
-								<li><a href="#">Manhattan</a></li>
-								<li><a href="#">Bronx</a></li>
-								<li><a href="#">Brooklyn</a></li>
-								<li><a href="#">Queens</a></li>
-								<li><a href="#">Staten Island</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Zip Code</a></li>
-								<li><a href="#">Police Precinct</a></li>
-								<li><a href="#">Community Board</a></li>						
-							  </ul>
-							
-							<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
-							<span id="btnsearch" class="input-group-addon"style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color:##D5D5D5; border-left:0px"><span class="glyphicon glyphicon-search"></span></span>
-						  </div>
-						</div>
-					</form>
-				</div>
-		  </div>
-		</div>
-	</div> 
-	<!--End Title Bar-->
-		    	<!---- new buttons 6-19 toggle injury/fatality /// visible only in crash map --------------------->
-          	<!--<div id='crashToggleBtn'></div>-->
-          	<!--- new button end ------->
-     
-	
-	<!--Side Menu Start-->
-	<div id="slide-panel" >
-		<a href="#" class="btn" id="opener"><i class="glyphicon glyphicon-align-justify"></i></a>
-		<!--<div style="background-color:#FFFFFF; height:100%; width:1em; right:0px; float:right;">
-		</div>
-<!------------------- new June20 ----------------->
- 	   <div id="menuGallery" class="container-fluid" style="background-color:#F3F7F8 !important; border-right:0.2em solid #CAC8C8 !important; margin-top: 0.5em;">
-			<div >
-				<!--<div style="width:100%; height:4em; background-color:#D5D9DB; top:-10px;"> 
-					<h4 style="text-align:center; color:#1C8FCF;">Categories</h4>
-				</div>-->
-				<h3 style="text-align:center; color:#3494D1;">Injuries & Fatalities</h3>
-				<!--<h4 style="text-align:left; color:#3494D1;">Who</h4>-->
-				
-				<div  class="btn-group btn-lg btn-group-justified" data-toggle="buttons" style="margin-top:1em;">
-					<label class="btn btn-default">
-						<input type="radio" name="options" id="option1"><span style="font-family: 'icomoon'; font-size: 18px;">5</span>
-					  </label>
-					  <label class="btn btn-default">
-						<input type="radio" name="options" id="option2"><span style="font-family: 'icomoon'; font-size: 18px;">2</span>
-					  </label>
-					  <label class="btn btn-default">
-						<input type="radio" name="options" id="option3"><span style="font-family: 'icomoon'; font-size: 18px;">1</span>
-					  </label>
-					  <label class="btn btn-default active">
-						<input type="radio" name="options" id="option3"><span style="font-family: 'icomoon'; font-size: 18px;">7</span>
-						</label>
-				
-				</div>
-				
-				<!--<h4 style="text-align:left; color:#3494D1;">What</h4>-->
-				<div id='crashToggleBtn'></div>
-				<!--<h4 style="text-align:left; color:#3494D1; margin-top:2em;">When</h4>-->
-				<div id='crashTimeToggleBtn'></div>
-				
-				<button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" style=" text-align:center; margin-top:3em;">
-				  More Info
-				</button>
-			</div>
-			<!------------------------------------------------------------------------------------------------------>
-			<div>
-				<!--<div style="position:relative; width:300 px; height:4em; background-color:#D5D9DB; top:-10px;"> 
-					<h4 style="text-align:center; color:#1C8FCF;">Categories</h4>
-				</div>-->
-				<h3 style="text-align:center; color:#3494D1;">Safety Interventions</h3>
-				
-				<button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" style=" text-align:center; margin-top:3em;">
-				  More Info
-				</button>
-			</div>
-			
-			<!------------------------------------------------------------------------------------------------------>
-			<div>
-				<!--<div style="position:relative; width:300 px; height:4em; background-color:#D5D9DB; top:-10px;"> 
-					<h4 style="text-align:center; color:#1C8FCF;">Categories</h4>
-				</div>-->
-				<h3 style="text-align:center; color:#3494D1;">Outreach</h3>
-				
-				<button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" style=" text-align:center; margin-top:3em;">
-				  More Info
-				</button>
-			</div>
-			
-			<!------------------------------------------------------------------------------------------------------>
-			<div>
-				<!--<div style="position:relative; width:300 px; height:4em; background-color:#D5D9DB; top:-10px;"> 
-					<h4 style="text-align:center; color:#1C8FCF;">Categories</h4>
-				</div>-->
-				<h3 style="text-align:center; color:#3494D1;">Reference</h3>
-				
-				<button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" style=" text-align:center; margin-top:3em;">
-				  More Info
-				</button>
-			</div>
-			
-			<div><div class="photo" style="background-image: url(img/testImgs/dog4.jpg)"></div></div>
-		</div>
 		
-	
-	</div>
-	<!--Side  Menu End-->
-	
-	
-	<!--Map Start-->
-	<div id="map" class="container-fluid" > 
-	</div>
-	<!--Map End-->
+		<div id="titleBar" class="container-fluid"> 
+			
+			<div>
+			  <div class="titleBar navbar">
+									
+				<span>
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#searchInput" style="background-color:#000;">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
+					 
+				   </div>
+				   <ul class="nav nav-tabs" id="myTab" style="margin-top:1.9em; margin-left:1.5em;">
+						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav active" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries</a></li>
+						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions</a></li>
+						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab">Outreach</a></li>
+						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab">Reference</a></li>
+						<form  id="searchInput" style="padding-right:2.2em; float:right; top:1em;" class="blackBarOff " role="search" >
+							<div class="form-group" >
+							  <div class="input-group input-group-md" style="bottom:0.4em;" >
+								<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:#666666; border: 1px solid #D5D5D5; border-right:0px" >Boro<span class="caret"></span></span>		  
+								  <ul class="dropdown-menu">
+									<li><a href="#">Manhattan</a></li>
+									<li><a href="#">Bronx</a></li>
+									<li><a href="#">Brooklyn</a></li>
+									<li><a href="#">Queens</a></li>
+									<li><a href="#">Staten Island</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Zip Code</a></li>
+									<li><a href="#">Police Precinct</a></li>
+									<li><a href="#">Community Board</a></li>
+									<li><a href="#">City Council District</a></li>
+								  </ul>
+								
+								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
+								<span id="btnsearch" class="input-group-addon"style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color:##D5D5D5; border-left:0px"><span class="glyphicon glyphicon-search"></span></span>
+							  </div>
+							</div>
+						</form>
+					</ul>
+				</span>		
+				
+					
+				<span>
+					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
+						<span class="glyphicon glyphicon-align-justify"></span>
+				   </button>
+				</span>
+			    <span>
+				   <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em;">
+					 <span class="glyphicon glyphicon-search"></span> 
+				   </button>
+				</span>
+						
+					
+		  </div>
+		 
+		</div> <!--Title Bar-->
+			
+		<div id="mainContent" class="jumbotron">
+			<div id="roww"class="row row-offcanvas row-offcanvas-left">
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<div id="sidebar-wrapper">
+						<div class="container-fluid">
+						
+						
+						  <div class="panel panel-default categoriesOff" style="margin-top:1em;">
+							<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+							  <h3 class="panel-title" style="text-align:left; color:#203970; font-size:24px;">
+								<a class="accordion-toggle" >
+								  Categories
+								</a>
+							  </h3>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+							  <div class="panel-body">
+									<div class="form-group">
+										<div id="tab" class="btn-group-vertical btn-group-1" data-toggle="buttons-radio" style="width:100% !important;">
+										  <a href="#injuries" 		class="btn" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab" style="font-size:16px; text-align:left; border-bottom: 1px solid #D5D5D5;">Traffic Injuries</a>
+										  <a href="#intervention" 	class="btn" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab" style="font-size:16px  text-align:left;">Safety Interventions</a>
+										  <a href="#outreach" 		class="btn" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab" style="font-size:16px; text-align:left;">Outreach</a>
+										  <a href="#reference" 		class="btn" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab" style="font-size:16px; text-align:left;">Reference</a>
+										</div>
+									</div>
+							  </div>
+							</div>
+						</div>
+							
+							<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+								
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner">
+									<div class="item active">
+										<div class="container-fluid">
+											<div class="row" style="margin-right: -40px; margin-left: -40px;">
+												<div class="col-md-12">
+													<h3 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Traffic Injuries</h3>
+													
+													<div class="form-group" style="margin-bottom:1em;">
+														<label class="col-sm-12 control-label">Who</label>
+														<div class="col-sm-12">
+															<div class="btn-group btn-group-3 input-group" data-toggle="buttons">
+																<label class="btn btn-default">
+																	<input type="radio" name="options" id="option1"><span style="font-family: 'icomoon'; font-size:1.8em;">5</span>
+																</label>
+																
+																<label class="btn btn-default">
+																	<input type="radio" name="options" id="option2"><span style="font-family: 'icomoon'; font-size: 1.8em;">2</span>
+																</label>
+																
+																<label class="btn btn-default">
+																	<input type="radio" name="options" id="option3"><span style="font-family: 'icomoon'; font-size: 1.8em;">1</span>
+																</label>
+																
+																<label class="btn btn-default active">
+																	<input type="radio" name="options" id="option3"><span style="font-family: 'icomoon'; font-size: 1.8em;">7</span>
+																</label>
+															</div>
+														</div>
+													</div>
+													
+													<div class="form-group" >
+														<label class="col-sm-12 control-label" style="margin-top:1em !important;">What</label>
+														<div class="col-sm-12">
+						
+																	<input type="checkbox" name="InjuriesWhat" checked data-size="large" data-on-text="Injuries" data-on-Color="warning" data-off-text="Fatalities" data-off-Color="danger">
+																	
+															
+														</div>
+													</div>	
+													
+													<div class="form-group">
+														<label class="col-sm-12 control-label" style="margin-top:1em !important;">When</label>
+														<div class="col-sm-12">
+													
+																	<input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year">
+															
+														</div>
+													</div>	
+													
+													<div class="col-sm-12 ">
+														<img src="img/legend/graduated.svg" class="img-responsive text-center" alt="Responsive image" style="width:100%; margin-top:1em;">
+													</div>
+													
+													<div class="form-group" style="margin-bottom:1em;">
+													
+														<div class="col-sm-12">
+															<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#InjuryModal" style=" text-align:center; margin-top:3em; ">
+															  More Info
+															</button>
+															
+															<div class="modal fade" id="InjuryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+																  <div class="modal-dialog">
+																	<div class="modal-content">
+																	  <div class="modal-header">
+																		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																		<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+																	  </div>
+																	  <div class="modal-body">
+																		...
+																	  </div>
+																	  <div class="modal-footer">
+																		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																		<button type="button" class="btn btn-primary">Save changes</button>
+																	  </div>
+																	</div>
+																  </div>
+																</div>
+														</div>
+													</div>	
+													
+												</div>
+											</div>
+										</div>            
+									</div> 
+									<div class="item">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12">
+													<h3 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Safety Interventions</h3>
+													
+													<div class="btn-group-vertical center-block " >
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															Arterial Slow Zones
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															Safe Streets for Seniors
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															Neighborhood Slow Zones
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															Engineering Improvements
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															Speed Humps
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															LPT
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+													</div>  
+													
+													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SafetyModal" style=" text-align:center; margin-top:3em;">
+													  More Info
+													</button>
+													
+													<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														  <div class="modal-dialog">
+															<div class="modal-content">
+															  <div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+															  </div>
+															  <div class="modal-body">
+																...
+															  </div>
+															  <div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																<button type="button" class="btn btn-primary">Save changes</button>
+															  </div>
+															</div>
+														  </div>
+														</div>
+																											
+												</div>
+											</div>
+										</div>            
+									</div> 
+									<div class="item">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12">
+													<h2 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Outreach</h2>
+													
+													<div class="btn-group-vertical center-block" >
 
-	
-	<!--Time Slider Start-->
-	<div  id="sliderDiv" class="container-fluid">
-	 	<div id='jqxslider'></div>
-	 	<div id='jqxslider2'  style="display:none"></div>
-	</div>
-	<!--Time Slider End-->
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+																Schools
+																<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20">
+															</span>
+														</button>
+														
+														<button type="button" class="btn btn-default" style="text-align: left;">
+															<span>
+															Senior Center
+															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
+															</span>
+														</button>
+														
+														
+														
+													</div> 
+																											
+													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#OutreachModal" style=" text-align:center; margin-top:3em;">
+													  More Info
+													</button>
+													
+													<div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														  <div class="modal-dialog">
+															<div class="modal-content">
+															  <div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+															  </div>
+															  <div class="modal-body">
+																...
+															  </div>
+															  <div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																<button type="button" class="btn btn-primary">Save changes</button>
+															  </div>
+															</div>
+														  </div>
+														</div>
+													
+													
+													
+												</div>
+											</div>
+										</div>           
+									</div> 
+									<div class="item">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12">
+													<h3 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Reference</h3>
+													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#ReferenceModal" style=" text-align:center; margin-top:3em;">
+													  More Info
+													</button>
+													
+													<div class="modal fade" id="ReferenceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														  <div class="modal-dialog">
+															<div class="modal-content">
+															  <div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+															  </div>
+															  <div class="modal-body">
+																...
+															  </div>
+															  <div class="modal-footer">
+																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																<button type="button" class="btn btn-primary">Save changes</button>
+															  </div>
+															</div>
+														  </div>
+														</div>
+													
+													
+													
+												</div>
+											</div>
+										</div>           
+									</div> <!-- End Item -->
+								</div><!-- End Carousel Inner -->
+							</div><!-- End Carousel -->
+						</div>
+					</div>
+				</div>
+			
 
-	
-	
-	<!--<div id="footer"  style="position: fixed; background-color:rgb(18,50,112); bottom: 0;  margin-left:1.2%; margin-right:1.2%; height: 4%; width: 97.6%; padding-left:10px; padding-right: 10px;">-->
-    <div id="footer"  class="container-fluid"  style="position: fixed; background-color:#203970; bottom: 0; height: 2em; width: 100%; z-index:2001;"> 
-	  <div class="container-fluid">
-        <p class="footerFont pull-left">City of New York 2014 All Rights Reserved.</p>
-			<span class="pull-right">
-				<a href="#" class="socialMedia blackBarOff">3</a> <!-- facebook = !-->
-				<a href="#" class="socialMedia blackBarOff">6</a> <!-- Twitter = $-->
-				<a href="#" class="socialMedia blackBarOff">4</a> <!-- Google+ = "-->
-			</span>
-      </div>
-    </div>
+				<div class="container-fluid col-xs-12 col-sm-9">
+					<div class="row" style>
+						<div id="map">
+							<div id="sliderDiv" class="container-fluid">
+								
+								
+								<div id='jqxslider' style="margin: 0 auto; top:0.2em;"></div>
+								
+							</div>
+						</div>
+					</div><!-- /.container -->
+				</div>
+				
+				
+				
+				
+			</div>
+			
 
-    <script src="http://js.arcgis.com/3.9/"></script>
+			
+		</div>
+			
+			  
+	</div><!--black bar end-->
+			
+	
+</div> <!--Title Bar--> 
+   
+				<div class="container" id="footer" style="background-color:#353636; top: 2em; height:100%;">
+				<p class="footerFont" style="padding-left:0.5em; float:left;">City of New York 2014 All Rights Reserved.</p>
+					<span style="padding-right:0.5em; float:right; margin-top;0.5em;" >
+						<a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a> <!-- facebook = !-->
+						<a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a> <!-- Twitter = $-->
+						<a href="#" id="google" class="socialMedia blackBarOff">4</a> <!-- Google+ = "-->
+					</span>
+			  </div>
+
+    <!-- JavaScript -->	
+	<script src="http://js.arcgis.com/3.9/"></script>
     <script>
-      
-	  var map;
+      var map;
 	  var arcgisserver = "www.sustainablestreets.info:6080";
 	  
 	  	  //////////////////
 	  	  var layer, visibleLayerIds = [];
 	  	  var crashLocationLayer, injuryLocationLayer;
-	  	//  var fatalityLocations, injuryLocations;
-	  	var fatality, injury; // new switches
-	  	//  var injHeatLayer, fatalHeatLayer;
-	  	var allInjHeat09, allInjHeat10, allInjHeat11, allInjHeat12, allInjHeat13, allInjHeat14;
-	  	var allFatalHeat09, allFatalHeat10, allFatalHeat11, allFatalHeat12, allFatalHeat13, allFatalHeat14;
-	  	  var heatMap, pointMap;   //point=month, heat = year
-	  	  var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams, infoWindowPopup;
+	  	  var fatalityLocations, injuryLocations;
 	  	  ////////////////
 	  
 	  
@@ -235,15 +442,13 @@
 		"esri/layers/ArcGISTiledMapServiceLayer",
 		"esri/dijit/LocateButton",
 		"esri/layers/ArcGISDynamicMapServiceLayer",
-		"esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters",
-		"esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate",
         "esri/layers/ImageParameters",
         "dojo/dom",
         "dojo/on",
         "dojo/query",
 		"dojo/domReady!"
 		],
-        function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, dom, on, query) {
+        function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, ImageParameters, dom, on, query) {
 		
 		 var customExtentAndSR = new esri.geometry.Extent(-20037506,-9823074,20037506,10214431,new esri.SpatialReference({"wkid":4326}));
 		// var layer, visibleLayerIds = []; // made global 6-03-2014 see above
@@ -251,7 +456,6 @@
 		 // new 6-03-2014 //
 		 var crashLocations = false;
 		 var isLayerAdded = true;
-		 infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
 		 // end new ////
 		 
           map = new Map("map",{
@@ -259,30 +463,26 @@
 			center: [-72.994, 40.721], // longitude, latitude
 			zoom: 1,
 			sliderPosition: "top-right",
-			sliderStyle: "small",
+			//sliderStyle: "small",
 			extent: customExtentAndSR,
 		  });
 
-          var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
-     //   var tiled = new Tiled("http://dotqavgisweb:6080/arcgis/rest/services/GAZETTEER/NYCDOTBasemap13DGrey/MapServer");
-          map.addLayer(tiled);
-		  
-		  /*var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+          /*var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
           map.addLayer(tiled);*/
+		  
+		  var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+          map.addLayer(tiled);
           
           /////////////// new ////////////////////////////////
-                  
+                    
           allFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyTotalFatalities_Seth_2009_2014/MapServer", {
-		// allFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotqavgisweb:6080/arcgis/rest/services/VISION_ZERO/allFatalities_monthly/MapServer", {
-		 		id : "allFatalityLayer"
+			id : "allFatalityLayer"
 
 			});
 			map.addLayer(allFatalityLayer);
 			var testArray = []; testArray[0] = 0;
 			allFatalityLayer.setVisibleLayers(testArray);
-		 
-		//  allInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotqavgisweb:6080/arcgis/rest/services/VISION_ZERO/allInjuries_monthly/MapServer", {
-	  allInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer", {
+		  allInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer", {
 			id : "allInjuryLayer"
 
 			});
@@ -290,108 +490,6 @@
 			var allInjuryArray = []; allInjuryArray[0] = 0;
 			allInjuryLayer.setVisibleLayers(allInjuryArray);
 		
-		
-		////////////// new June 25 /////////////////////////////////////
-		
-			 allInjHeat09 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allInjury2009_heatMap/MapServer", {
-				id : "allInjHeat09",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allInjHeat09);
-			//map.addLayers([allInjHeat09]);
-						 allInjHeat10 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allInjury2010_heatMap/MapServer", {
-				id : "allInjHeat10",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allInjHeat10);
-						 allInjHeat11 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allInjury2011_heatMap/MapServer", {
-				id : "allInjHeat11",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allInjHeat11);
-						 allInjHeat12 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allInjury2012_heatMap/MapServer", {
-				id : "allInjHeat12",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allInjHeat12);
-						 allInjHeat13 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allInjury2013_heatMap/MapServer", {
-				id : "allInjHeat13",
-			//	mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allInjHeat13);
-						 allInjHeat14 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allInjury2014_heatMap/MapServer", {
-				id : "llInjHeat14",
-			//	mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allInjHeat14);
-			
-			
-			
-			
-			
-			allFatalHeat09 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allFatality2009_heatMap/MapServer", {
-				id : "allFatalHeat09",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allFatalHeat09);
-			//map.addLayers([allInjHeat09]);
-						 allFatalHeat10 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allFatality2010_heatMap/MapServer", {
-				id : "allFatalHeat10",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allFatalHeat10);
-						 allFatalHeat11 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allFatality2011_heatMap/MapServer", {
-				id : "allFatalHeat11",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allFatalHeat11);
-						 allFatalHeat12 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allFatality2012_heatMap/MapServer", {
-				id : "allFatalHeat12",
-				//mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allFatalHeat12);
-						 allFatalHeat13 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allFatality2013_heatMap/MapServer", {
-				id : "allFatalHeat13",
-			//	mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allFatalHeat13);
-						 allFatalHeat14 = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/allFatality2014_heatMap/MapServer", {
-				id : "allFatalHeat14",
-			//	mode : esri.layers.FeatureLayer.MODE_ONDEMAND
-				//infoTemplate : infoTemplate1,
-				//outFields : ["*"]// change here too for QA and cloud /////////////
-			});
-			map.addLayer( allFatalHeat14);
-			
-							allInjHeat09.setVisibility(false); allInjHeat10.setVisibility(false); allInjHeat11.setVisibility(false);
-		 allInjHeat12.setVisibility(false); allInjHeat13.setVisibility(false); allInjHeat14.setVisibility(false);
-		 
-		 				allFatalHeat09.setVisibility(false); allFatalHeat10.setVisibility(false); allFatalHeat11.setVisibility(false);
-		 allFatalHeat12.setVisibility(false); allFatalHeat13.setVisibility(false); allFatalHeat14.setVisibility(false);
-			
-			////////////////////////////////////////// end new June 25 /////////////////////////////
 		    $(document).ready(function () {
                 $("#jqxslider").jqxSlider({
                     theme: 'orange',
@@ -413,122 +511,55 @@
                     };
                 }; 
 			});
-			
-				$(document).ready(function () {
-                $("#jqxslider2").jqxSlider({
-                    theme: 'orange',
-                    value: 0,
-                    min: 0,
-                    max: 5,  // ticks until May 2014, will need updating
-                    mode: "fixed",
-                    step: 1,
-                    ticksFrequency: 1,
-                    tooltip: true
-                });
-              //  createTooltip();
-                var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();
-              //  var lowerTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(1)").children();
-              //  for (var i = 0; i < upperTicks.length; i++) {
-                  //  if (i % 12 !=0) {
-                      //  $(upperTicks[i]).css("display", "none");
-                        //$(lowerTicks[i]).css("display", "none");
-                  //  };
-               // }; 
-			});
-			
-			
                 
-            $(document).ready(function () {
+           /* $(document).ready(function () {
                 // Create Push Button.
-                $("#crashToggleBtn").jqxSwitchButton({  width: '88%', height: '40', checked: true, onLabel: "Fatalities", offLabel: "Injuries" });
-                fatality = true;
+                $("#crashToggleBtn").jqxSwitchButton({  width: '85%', height: '40', checked: true, onLabel: "Fatalities", offLabel: "Injuries" });
+                fatalityLocations = true;
                	$("#crashToggleBtn").bind('change', function (event) {
-               		console.log("get to switch");
                     var isChecked = event.args.check; 
-                    if (isChecked == true) { fatality = true; injury = false;}
-                    else  {injury = true; fatality = false;}
+                    if (isChecked == true) { fatalityLocations = true; injuryLocations = false;}
+                    else  {injuryLocations = true; fatalityLocations = false;}
                      addCrashLocations();
                 });
-            });
+            });*/
                 
             $(document).ready(function(){
-            	fatality = true; injury = false; 
-            	pointMap = true; heatMap = false;
 				addCrashLocations();
-				allInjIdentifyParams = new esri.tasks.IdentifyParameters();
-				allInjIdentifyParams.tolerance = 4;
-				allInjIdentifyParams.returnGeometry = true;
-				allInjIdentifyParams.layerOption = esri.tasks.IdentifyParameters.LAYER_OPTION_TOP;
-				allInjIdentifyParams.width = map.width;
-				allInjIdentifyParams.height = map.height;
-
-				allFatIdentifyParams = new esri.tasks.IdentifyParameters();
-				allFatIdentifyParams.tolerance = 4;
-				allFatIdentifyParams.returnGeometry = true;
-				allFatIdentifyParams.layerOption = esri.tasks.IdentifyParameters.LAYER_OPTION_TOP;
-				allFatIdentifyParams.width = map.width;
-				allFatIdentifyParams.height = map.height;
-
-				allInjIdentifyTask = new esri.tasks.IdentifyTask("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer");
-				allFatIdentifyTask = new esri.tasks.IdentifyTask("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyTotalFatalities_Seth_2009_2014/MapServer");
-				dojo.connect(map, "onClick", executeIdentifyTask);
 			});
 			
-			$(document).ready(function () {
+			/*$(document).ready(function () {
                 // Create Push Button.
-                $("#crashTimeToggleBtn").jqxSwitchButton({  width: '88%', height: '40', checked: true, onLabel: "By Month", offLabel: "By Year" });
-                pointMap = true;
-               	$("#crashTimeToggleBtn").bind('change', function (event) {
-               		console.log("get tpo time swth");
-               		
+                $("#crashTimeToggleBtn").jqxSwitchButton({  width: '85%', height: '40', checked: true, onLabel: "By Month", offLabel: "By Year" });
+                fatalityLocations = true;
+               	$("#crashToggleBtn").bind('change', function (event) {
                     var isChecked = event.args.check; 
-                    if (isChecked == true) { pointMap = true; heatMap = false;map.infoWindow.hide();}
-                    else  {heatMap = true; pointMap = false;map.infoWindow.hide();}
+                    if (isChecked == true) { fatalityLocations = true; injuryLocations = false;}
+                    else  {injuryLocations = true; fatalityLocations = false;}
                      addCrashLocations();
                 });
-            });
+            });*/
  
-			$(document).ready(function(){
-				$('#menuGallery').jqxScrollView({ width: 600, height: 450, theme: 'summer', buttonsOffset: [0, 0] });
-			});
 			
-
-			/*$(document).ready(function(){
-                $('[data-slidepanel]').slidepanel({
-					orientation: 'left',
-					mode: 'push'
-				});
-			});*/
+         
 	});
-    </script>
-	<!---------------- new June17 - slider -------------------------->
-	<link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.base.css" type="text/css"/>
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-       <!-- <script type="text/javascript" src="js/jquery.slidepanel.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.slidepanel.css">-->
+	</script>
     
-    <!--------------- new June17 - jqwidgets slider -------------->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
 	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxbuttons.js"></script>
 	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxswitchbutton.js"></script>
 	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxslider.js"></script>
-	    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/scripts/gettheme.js"></script>
-	    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/scripts/gettheme.js"></script>
+	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxscrollview.js"></script>
 	<link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css" type="text/css" />
-	<!---------------------------->
-    <script src="lib/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
-    
-    <!--<script src="lib/bootstrap-slider/js/bootstrap-slider.js"></script>-->
-	<script src="lib/Modernizer/modernizr.custom.02110.js"></script>
-	<script type="text/javascript" src="js/classie.js"></script>
-    <script type="text/javascript" src="js/zero.js"></script>
-    <script type="text/javascript" src="js/crashLocationFuncs.js"></script>
-    <script type="text/javascript" src="js/identifyTask.js"></script>
 	
-  </body>
+    <script src="lib/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+	<script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>
+	<script src="lib/Modernizer/modernizr.custom.02110.js"></script>
+    <script type="text/javascript" src="js/vz.js"></script>
+    <script type="text/javascript" src="js/crashLocationFuncs.js"></script>
+
+	</body>
 </html>
