@@ -9,11 +9,18 @@ namespace VZ_API
     {
         public static void Register(HttpConfiguration config)
         {
+
+            config.Routes.MapHttpRoute(
+                        name: "WithActionApi",
+                        routeTemplate: "api/{controller}/{action}/{zipcode}"
+                    );
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }
