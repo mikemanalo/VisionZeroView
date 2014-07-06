@@ -46,20 +46,23 @@
 		<div id="titleBar" class="container-fluid"> 
 			
 			<div>
-			  <div class="titleBar navbar">
+			  <div class="titleBar ">
 									
-				<span>
-					<div class="navbar-header">
-					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#searchInput" style="background-color:#000;">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					  </button>
-					  <a class="navbar-brand" href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
-					 
-				   </div>
-				   <ul class="nav nav-tabs" id="myTab" style="margin-top:1.9em; margin-left:1.5em;">
+					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
+						<span class="glyphicon glyphicon-align-justify"></span>
+				    </button>
+				
+			   
+				    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em;">
+						<span class="glyphicon glyphicon-search"></span> 
+					</button>
+				   
+				   
+				   
+					<ul class="nav nav-tabs" id="myTab" style="margin-top:1.9em;">
+				   
+					<a href="#" style="margin-left:1.3em;"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
+						
 						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav active" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries</a></li>
 						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions</a></li>
 						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab">Outreach</a></li>
@@ -68,18 +71,18 @@
 							<div class="form-group" >
 							  <div class="input-group input-group-md" style="bottom:0.4em;" >
 								<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:#666666; border: 1px solid #D5D5D5; border-right:0px" >Boro<span class="caret"></span></span>		  
-								  <ul class="dropdown-menu">
-									<li><a href="#">Manhattan</a></li>
-									<li><a href="#">Bronx</a></li>
-									<li><a href="#">Brooklyn</a></li>
-									<li><a href="#">Queens</a></li>
-									<li><a href="#">Staten Island</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Zip Code</a></li>
-									<li><a href="#">Police Precinct</a></li>
-									<li><a href="#">Community Board</a></li>
-									<li><a href="#">City Council District</a></li>
-								  </ul>
+									<ul class="dropdown-menu">
+										<li><a href="#">Manhattan</a></li>
+										<li><a href="#">Bronx</a></li>
+										<li><a href="#">Brooklyn</a></li>
+										<li><a href="#">Queens</a></li>
+										<li><a href="#">Staten Island</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Zip Code</a></li>
+										<li><a href="#">Police Precinct</a></li>
+										<li><a href="#">Community Board</a></li>
+										<li><a href="#">City Council District</a></li>
+									</ul>
 								
 								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
 								<span id="btnsearch" class="input-group-addon"style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color:##D5D5D5; border-left:0px"><span class="glyphicon glyphicon-search"></span></span>
@@ -87,24 +90,8 @@
 							</div>
 						</form>
 					</ul>
-				</span>		
-				
-					
-				<span>
-					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
-						<span class="glyphicon glyphicon-align-justify"></span>
-				   </button>
-				</span>
-			    <span>
-				   <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em;">
-					 <span class="glyphicon glyphicon-search"></span> 
-				   </button>
-				</span>
-						
-					
-		  </div>
-		 
-		</div> <!--Title Bar-->
+				</div>		 
+			</div> <!--Title Bar-->
 			
 		<div id="mainContent" class="jumbotron">
 			<div id="roww"class="row row-offcanvas row-offcanvas-left">
@@ -124,7 +111,7 @@
 							<div id="collapseOne" class="panel-collapse collapse in">
 							  <div class="panel-body">
 									<div class="form-group">
-										<div id="tab" class="btn-group-vertical btn-group-1" data-toggle="buttons-radio" style="width:100% !important;">
+										<div id="tab" class="btn-group-vertical" data-toggle="buttons-radio" style="width:100% !important;">
 										  <a href="#injuries" 		class="btn" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab" style="font-size:16px; text-align:left; border-bottom: 1px solid #D5D5D5;">Traffic Injuries</a>
 										  <a href="#intervention" 	class="btn" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab" style="font-size:16px  text-align:left;">Safety Interventions</a>
 										  <a href="#outreach" 		class="btn" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab" style="font-size:16px; text-align:left;">Outreach</a>
@@ -182,7 +169,7 @@
 														<label class="col-sm-12 control-label" style="margin-top:1em !important;">When</label>
 														<div class="col-sm-12">
 													
-																	<input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-off-Color="success">
+																	<input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-off-Color="info">
 															
 														</div>
 													</div>	
@@ -228,44 +215,36 @@
 												<div class="col-md-12">
 													<h3 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Safety Interventions</h3>
 													
-													<div class="btn-group-vertical center-block " >
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Arterial Slow Zones
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Safe Streets for Seniors
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Neighborhood Slow Zones
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Engineering Improvements
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Speed Humps
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Leading Pedestrian Signals
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
+													<div class="btn-group-vertical center-block" data-toggle="buttons">
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="ArterialSlowZone" value=3>
+														</label>
 														
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="SafeStreetsForSeniors" value=4>
+														</label>
+														
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="NeighborhoodSlowZone" value=5>
+														</label>
+														
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="EngineeringImprovements" value=3>
+														</label>
+														
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="SpeedHump" value=4>
+														</label>
+														
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="LeadingPedestrianSignals" value=5>
+														</label>
 													</div>  
 													
 													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SafetyModal" style=" text-align:center; margin-top:3em;">
@@ -300,31 +279,23 @@
 												<div class="col-md-12">
 													<h2 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Outreach</h2>
 													
-													<div class="btn-group-vertical center-block" >
+													<div class="btn-group-vertical center-block" data-toggle="buttons">
 
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-																Schools
-																<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20">
-															</span>
-														</button>
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="Schools" value=3>
+														</label>
 														
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															Senior Center
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="Senior Centers" value=4>
+														</label>
 														
-														<button type="button" class="btn btn-default" style="text-align: left;">
-															<span>
-															TLC
-															<img class="pull-right" style="width:100%;" src="http://placekitten.com/120/20"
-															</span>
-														</button>
-														
-														
-														
+														<label class="btn btn-primary">
+															<img  style="width:100%;" src="http://placekitten.com/120/20">
+															<input type="checkbox" name="options"  class="list_item" id="TLC" value=3>
+														</label>
+												
 													</div> 
 																											
 													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#OutreachModal" style=" text-align:center; margin-top:3em;">
@@ -398,7 +369,7 @@
 				<div class="container-fluid col-xs-12 col-sm-9">
 					<div class="row" style>
 						<div id="map">
-							<div id="sliderDiv" class="container-fluid">
+							<div id="sliderDiv" class="container">
 								
 								
 								<div id='jqxslider' style="margin: 0 auto; top:0.2em;"></div>
@@ -407,30 +378,23 @@
 						</div>
 					</div><!-- /.container -->
 				</div>
-				
-				
-				
-				
 			</div>
-			
-
-			
 		</div>
-			
+			<div class="container-fluid" id="footer" style="background-color:#353636; ">
+	<p class="footerFont" style="padding-left:0.5em; float:left;">City of New York 2014 All Rights Reserved.</p>
+	<span style="padding-right:0.5em; float:right; margin-top;0.5em;" >
+		<a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a> <!-- facebook = !-->
+		<a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a> <!-- Twitter = $-->
+		<a href="#" id="google" class="socialMedia blackBarOff">4</a> <!-- Google+ = "-->
+	</span>
+</div>	
 			  
 	</div><!--black bar end-->
 			
 	
 </div> <!--Title Bar--> 
    
-				<div class="container" id="footer" style="background-color:#353636; top: 2em; height:100%;">
-				<p class="footerFont" style="padding-left:0.5em; float:left;">City of New York 2014 All Rights Reserved.</p>
-					<span style="padding-right:0.5em; float:right; margin-top;0.5em;" >
-						<a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a> <!-- facebook = !-->
-						<a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a> <!-- Twitter = $-->
-						<a href="#" id="google" class="socialMedia blackBarOff">4</a> <!-- Google+ = "-->
-					</span>
-			  </div>
+
 
     <!-- JavaScript -->	
 	<script src="http://js.arcgis.com/3.9/"></script>
@@ -480,6 +444,44 @@
 		  
 		  var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
           map.addLayer(tiled);
+		  
+		  var imageParameters = new ImageParameters();
+          imageParameters.layerIds = [2];
+          imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
+          //can also be: LAYER_OPTION_EXCLUDE, LAYER_OPTION_HIDE, LAYER_OPTION_INCLUDE
+
+          layer = new ArcGISDynamicMapServiceLayer("http://www.sustainablestreets.info:6080/arcgis/rest/services/GISAPP_STRATEGIC_DATA/VisionZero/MapServer",
+            {"imageParameters": imageParameters});
+          map.addLayer(layer);
+		  
+		  on(dom.byId("ArterialSlowZone"), "change", updateLayerVisibility);
+		  on(dom.byId("SafeStreetsForSeniors"), "change", updateLayerVisibility);
+		  on(dom.byId("NeighborhoodSlowZone"), "change", updateLayerVisibility);
+		  on(dom.byId("EngineeringImprovements"), "change", updateLayerVisibility);
+		  on(dom.byId("SpeedHumps"), "change", updateLayerVisibility);
+		  on(dom.byId("LeadingPedestrianSignals"), "change", updateLayerVisibility);
+			
+		  function updateLayerVisibility () {
+            console.log(visibleLayerIds.length)
+			visibleLayerIds = [];
+			var inputs = query(".list_item");
+			
+            var inputCount = inputs.length;
+
+            for (var i = 0; i < inputCount; i++) {
+              if (inputs[i].checked) {
+                visibleLayerIds.push(inputs[i].value);
+				console.log(inputs);
+				console.log(inputCount);
+              } 
+            }
+
+            if (visibleLayerIds.length === 0) {
+              visibleLayerIds.push(-1);
+            }
+
+            layer.setVisibleLayers(visibleLayerIds);
+          }
           
           /////////////// new ////////////////////////////////
                     
@@ -567,7 +569,7 @@
 	<script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>
 	<script src="lib/Modernizer/modernizr.custom.02110.js"></script>
     <script type="text/javascript" src="js/zero.js"></script>
-    <!--<script type="text/javascript" src="js/crashLocationFuncs.js"></script>-->
+    <script type="text/javascript" src="js/crashLocationFuncs.js"></script>
 
 	</body>
 </html>
