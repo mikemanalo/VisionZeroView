@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -26,7 +30,7 @@
 <body>
 	<div id="blackBar" class="container-fluid">  
 		<div class="blackBar ">
-			<div class="navbar">
+			<!--<div class="navbar">-->
 				<span> 
 				  <a href="http://www.nyc.gov/"><img src="img/logo/nyc.svg" style="margin-left:1em;"></a> 
 				  <img src="img/other/upper-header-divider.gif">
@@ -40,32 +44,31 @@
 					<img alt="" class="blackBarOff"src="img/other/upper-header-divider.gif">
 					<span> <a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/home/search/index.page" style="margin-right:3.5em;">Search all NYC.gov websites</a> </span>  
 				</span>
-			</div>
+			<!--</div>-->
 		</div>
 		
 		<!--<div id="titleBar" class="container-fluid"> -->
 		<div  id="tilteBarDiv"class="container-fluid">	
 			<div  id="titleRow" class="row">
-				<div class="col-sm-3">
+				<div class="col-xs-12 col-sm-3">
 					
-					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
+					<!--<button id="layerBtnSM" type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em; top: -0.5em;">
 						<span class="glyphicon glyphicon-align-justify"></span>
-				    </button>
-				
+				    </button>-->
 			   
-				    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em;">
+				    <button id="searchBtnSM" type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em; top: -0.5em; font-size: 2em;">
 						<span class="glyphicon glyphicon-search"></span> 
 					</button>
 					
 					<a href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
 				</div>
 				
-				<div id="col9" class="col-sm-9">
+				<div  class="col-xs-12 col-sm-9">
 					<ul class="nav nav-tabs" id="myTab" style="padding-top1.3em;">
-						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries</a></li>
-						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions</a></li>
-						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab">Outreach</a></li>
-						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab">Reference</a></li>
+						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries <span style="font-family: 'icomoon'; margin-left:3px;">8</span></a></li>
+						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions <span style="font-family: 'icomoon'; margin-left:3px;">9</span></a></li>
+						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab"> Outreach <span style="font-family: 'icomoon'; margin-left:3px;">!</span></a></li>
+						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab"> Summary <span style="font-family: 'icomoon'; margin-left:3px;">0</span></a></li>
 						<form  id="searchInput" style="padding-right:0.9em; float:right; padding-top: 0.6em;" class="blackBarOff " role="search" >
 							<div class="form-group" >
 							  <div class="input-group input-group-md" style="bottom:0.4em;" >
@@ -80,7 +83,6 @@
 										<li><a href="#">Zip Code</a></li>
 										<li><a href="#">Police Precinct</a></li>
 									</ul>
-								
 								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
 								<span id="btnsearch" class="input-group-addon"style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color:##D5D5D5; border-left:0px"><span class="glyphicon glyphicon-search"></span></span>
 							  </div>
@@ -88,54 +90,8 @@
 						</form>
 					</ul>
 				</div>
-				
 			</div>
-			  <!--<div class="titleBar ">
-									
-					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
-						<span class="glyphicon glyphicon-align-justify"></span>
-				    </button>
-				
-			   
-				    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em;">
-						<span class="glyphicon glyphicon-search"></span> 
-					</button>
-				   
-				   
-				   
-					<ul class="nav nav-tabs" id="myTab" style="margin-top:1.9em;">
-				   
-					<a href="#" style="margin-left:1.3em;"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
-						
-						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav active" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries</a></li>
-						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions</a></li>
-						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab">Outreach</a></li>
-						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab">Reference</a></li>
-						<form  id="searchInput" style="padding-right:2.2em; float:right; top:1em;" class="blackBarOff " role="search" >
-							<div class="form-group" >
-							  <div class="input-group input-group-md" style="bottom:0.4em;" >
-								<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:#666666; border: 1px solid #D5D5D5; border-right:0px" >Boro<span class="caret"></span></span>		  
-									<ul class="dropdown-menu">
-										<li><a href="#">Manhattan</a></li>
-										<li><a href="#">Bronx</a></li>
-										<li><a href="#">Brooklyn</a></li>
-										<li><a href="#">Queens</a></li>
-										<li><a href="#">Staten Island</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Zip Code</a></li>
-										<li><a href="#">Police Precinct</a></li>
-										<li><a href="#">Community Board</a></li>
-										<li><a href="#">City Council District</a></li>
-									</ul>
-								
-								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
-								<span id="btnsearch" class="input-group-addon"style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color:##D5D5D5; border-left:0px"><span class="glyphicon glyphicon-search"></span></span>
-							  </div>
-							</div>
-						</form>
-					</ul>
-				</div>	-->	 
-			</div> <!--Title Bar-->
+		</div> <!--Title Bar-->
 			
 		<div id="mainContent" class="jumbotron">
 			<div id="roww"class="row row-offcanvas row-offcanvas-left">
@@ -159,7 +115,7 @@
 										  <a href="#injuries" 		class="btn" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab" style="font-size:16px; text-align:left; border-bottom: 1px solid #D5D5D5;">Traffic Injuries</a>
 										  <a href="#intervention" 	class="btn" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab" style="font-size:16px  text-align:left;">Safety Interventions</a>
 										  <a href="#outreach" 		class="btn" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab" style="font-size:16px; text-align:left;">Outreach</a>
-										  <a href="#reference" 		class="btn" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab" style="font-size:16px; text-align:left;">Reference</a>
+										  <a href="#summary" 		class="btn" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab" style="font-size:16px; text-align:left;">Summary</a>
 										</div>
 									</div>
 							  </div>
@@ -320,7 +276,7 @@
 									<div class="item">
 										<div class="container-fluid">
 											<div class="row">
-												<div class="col-md-12">
+												<div class="col-xs-6 col-sm-12">
 													<h2 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Outreach</h2>
 													
 													<div class="btn-group-vertical center-block" data-toggle="buttons">
@@ -374,12 +330,12 @@
 										<div class="container-fluid">
 											<div class="row">
 												<div class="col-md-12">
-													<h3 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Reference</h3>
+													<h3 style="text-align:center; color:#3494D1; margin-bottom:;1em;">Summary</h3>
 													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#ReferenceModal" style=" text-align:center; margin-top:3em;">
 													  More Info
 													</button>
 													
-													<div class="modal fade" id="ReferenceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+													<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 														  <div class="modal-dialog">
 															<div class="modal-content">
 															  <div class="modal-header">
@@ -429,8 +385,8 @@
 			</div>
 		</div>
 			<div class="container-fluid" id="footer" style="background-color:#353636; ">
-	<p class="footerFont" style="padding-left:0.5em; float:left;">City of New York 2014 All Rights Reserved.</p>
-	<span style="padding-right:0.5em; float:right; margin-top;0.5em;" >
+	<p class="footerFont" style="padding-left:0.5em; float:left; padding-top: 0.7em;">City of New York 2014 All Rights Reserved.</p>
+	<span style="padding-right:0.5em; float:right; margin-top;0.5em; padding-top: 0.7em;" >
 		<a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a> <!-- facebook = !-->
 		<a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a> <!-- Twitter = $-->
 		<a href="#" id="google" class="socialMedia blackBarOff">4</a> <!-- Google+ = "-->
@@ -480,18 +436,22 @@
 		 
           map = new Map("map",{
 			logo: false,
-			center: [-72.994, 40.721], // longitude, latitude
-			zoom: 1,
+			center: [-72.994, 40.721 ], // longitude, latitude
+			zoom: 3,
 			sliderPosition: "top-right",
 			//sliderStyle: "small",
 			extent: customExtentAndSR,
 		  });
-
+		  esri.config.defaults.map.height = 1000;
+		  
           /*var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
           map.addLayer(tiled);*/
 		  
 		  var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
           map.addLayer(tiled);
+		  
+		 /* resizeMap();
+          mapWinEvent();*/
 		  
 		  var imageParameters = new ImageParameters();
           imageParameters.layerIds = [2];
@@ -618,6 +578,7 @@
 	<script src="lib/Modernizer/modernizr.custom.02110.js"></script>
     <script type="text/javascript" src="js/zero.js"></script>
     <script type="text/javascript" src="js/crashLocationFuncs.js"></script>
+	<script type="text/javascript" src="js/resize.js"></script>
 
 	</body>
 </html>
