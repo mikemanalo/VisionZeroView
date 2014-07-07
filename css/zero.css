@@ -9,7 +9,15 @@ html,body{
 .container {
     width: 100%;
 	}
-	
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover { 
+outline: 0;
+color: #555555;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-bottom-color: transparent;
+cursor: default;
+}	
 	
 /*==========================================Black Bar=======================================*/
 #blackBar.container-fluid{
@@ -48,10 +56,11 @@ html,body{
 .vzLogo{
 	background-color:#FFFFFF; 
 	margin-bottom: 0px !important; 
-	min-height: 35px !important;
+	/*min-height: 35px !important;*/
+	width:100%;
 	float:left;
-	padding-left: 1.3em;
-	padding-right: 1.3em;
+	/*padding-left: 1.3em;
+	padding-right: 1.3em;*/
 	/*margin-top: 0.3em; 	
 	margin-left: 1.5em; 
 	margin-right: auto;
@@ -61,7 +70,9 @@ html,body{
 .nav > li > a {
     position: relative;
     display: block;
-    padding: 22px 15px;
+    padding: 20px 15px;
+    top: 0.4em;
+}
 	}
 
 #logo-main.img-responsive{
@@ -91,6 +102,21 @@ html,body{
 	right:1em; 
 	width:30%;
 	}	
+
+.nav-tabs {
+    border-bottom: 0px solid #DDD;
+	}	
+	
+#titleRow{
+	border-bottom:1px solid #D5D5D5; 
+	margin-top:1.7em; 
+	height:3.7em;"
+	}
+#tilteBarDiv{
+	height:6em;
+	}
+
+
 /*==========================================Main Content=======================================*/
 #mainContent{
 	background-color:#FFF; 
@@ -135,7 +161,7 @@ html,body{
 	width: 100%;
 	}	
 
-.panel-heading a:after {
+/*.panel-heading a:after {
     font-family: 'Glyphicons Halflings';
     content: "\e114";    
     float: right; 
@@ -144,7 +170,7 @@ html,body{
 	
 .panel-heading a.collapsed:after {
 	content: "\e080";
-	}
+	}*/
 	
 .panel {
     margin-bottom: 20px;
@@ -203,6 +229,16 @@ html,body{
 	font-size:700;
 	}	
 	
+#labelDiv{
+	position:absolute; 
+	top:0em; 
+	left: 0em; 
+	width:200px; 
+	height:75px; 
+	background-color:#FFFFFF; 
+	opacity:0.8; 
+	z-index:39;"
+	}	
 /*==========================================Footer=======================================*/
 #footer{
 	background-color:#353636; 
@@ -261,6 +297,11 @@ margin-top:2em;
 			visibility: hidden !important;
 		}
 		
+		#col9,.myTab{
+			display: none !important;
+			visibility: hidden !important;
+		}
+		
 		
 		.categoriesOff{
 			display: block !important;
@@ -284,10 +325,10 @@ margin-top:2em;
 		.vzLogo{
 			background-color:#FFFFFF; 
 			margin-bottom: 0px !important; 
-			min-height: 25px !important;
-			margin-top: 0.9em; 
-			margin-left: auto; 
-			margin-right: auto;
+			width:35%;
+			float:left;
+			padding-left:5%;
+			padding-right:5%;
 			}
 			
 		.titleBar{
@@ -297,11 +338,35 @@ margin-top:2em;
 			margin-bottom: 0.0em;
 		}
 		
+		#tilteBarDiv{
+			height:5.49em;
+		}
+				
+		
+		#titleRow{
+			border-bottom:1px solid #D5D5D5; 
+			margin-top:1.7em; 
+			height:3.7em;"
+		}
+		
+		#labelDiv{
+		position:absolute; 
+		top:0em; 
+		left: 0em; 
+		width:200px; 
+		height:75px; 
+		background-color:#FFFFFF; 
+		opacity:0; 
+		z-index:39;"
+		}
+		
+		
 		#map{
 			height:100%;
 			width:100%;
-			border-top: 0px solid #3B3B3B;
-	border-left: 0px solid #FFF;
+			border-top: 1px solid #3B3B3B;
+			border-left: 0px solid #FFF;
+			z-index;39;
 			
 		}
 				
@@ -318,7 +383,7 @@ margin-top:2em;
 		
 		#mainContent{
 			background-color:#FFF; 
-			height:90%; 
+			height:100%; 
 			padding-top: 0px ; 
 			padding-bottom: 0px ;
 			border-top: 0px solid #F26522;
@@ -327,11 +392,14 @@ margin-top:2em;
 		#sliderDiv {
 			position:absolute;
 			width:100%; 
-			height:5em; 
+			height:10%; 
 			bottom:0em; 
-			background-color:#AEB7BC; 
+			background-color:#AEB7BC;
 			z-index:19; 
-			opacity:0.9;"
+			opacity:0.9;
+			border-left: 0px solid #FFF;
+			top:90%;
+			/*box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.125) inset;*/
 		}
 		
 		.footerFont{

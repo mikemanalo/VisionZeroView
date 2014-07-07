@@ -43,10 +43,54 @@
 			</div>
 		</div>
 		
-		<div id="titleBar" class="container-fluid"> 
-			
-			<div>
-			  <div class="titleBar ">
+		<!--<div id="titleBar" class="container-fluid"> -->
+		<div  id="tilteBarDiv"class="container-fluid">	
+			<div  id="titleRow" class="row">
+				<div class="col-sm-3">
+					
+					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
+						<span class="glyphicon glyphicon-align-justify"></span>
+				    </button>
+				
+			   
+				    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#searchInput" style="float:right; right:0.5em;">
+						<span class="glyphicon glyphicon-search"></span> 
+					</button>
+					
+					<a href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
+				</div>
+				
+				<div id="col9" class="col-sm-9">
+					<ul class="nav nav-tabs" id="myTab" style="padding-top1.3em;">
+						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries</a></li>
+						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions</a></li>
+						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab">Outreach</a></li>
+						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab">Reference</a></li>
+						<form  id="searchInput" style="padding-right:0.9em; float:right; padding-top: 0.6em;" class="blackBarOff " role="search" >
+							<div class="form-group" >
+							  <div class="input-group input-group-md" style="bottom:0.4em;" >
+								<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:#666666; border: 1px solid #D5D5D5; border-right:0px" >Boro<span class="caret"></span></span>		  
+									<ul class="dropdown-menu">
+										<li><a href="#">Manhattan</a></li>
+										<li><a href="#">Bronx</a></li>
+										<li><a href="#">Brooklyn</a></li>
+										<li><a href="#">Queens</a></li>
+										<li><a href="#">Staten Island</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Zip Code</a></li>
+										<li><a href="#">Police Precinct</a></li>
+									</ul>
+								
+								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color:##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
+								<span id="btnsearch" class="input-group-addon"style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color:##D5D5D5; border-left:0px"><span class="glyphicon glyphicon-search"></span></span>
+							  </div>
+							</div>
+						</form>
+					</ul>
+				</div>
+				
+			</div>
+			  <!--<div class="titleBar ">
 									
 					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em;">
 						<span class="glyphicon glyphicon-align-justify"></span>
@@ -90,21 +134,21 @@
 							</div>
 						</form>
 					</ul>
-				</div>		 
+				</div>	-->	 
 			</div> <!--Title Bar-->
 			
 		<div id="mainContent" class="jumbotron">
 			<div id="roww"class="row row-offcanvas row-offcanvas-left">
-				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+				<div class="col-xs-12 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 					<div id="sidebar-wrapper">
 						<div class="container-fluid">
 						
 						
-						  <div class="panel panel-default categoriesOff" style="margin-top:1em;">
+						  <div  id="sidePanel" class="panel panel-default categoriesOff" style="margin-top:1em;">
 							<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
 							  <h3 class="panel-title" style="text-align:left; color:#203970; font-size:24px;">
 								<a class="accordion-toggle" >
-								  Categories
+								  Categories<span class="caret"></span>
 								</a>
 							  </h3>
 							</div>
@@ -369,7 +413,11 @@
 				<div class="container-fluid col-xs-12 col-sm-9">
 					<div class="row" style>
 						<div id="map">
+						
+							<div id="labelDiv"></div>
+						
 							<div id="sliderDiv" class="container">
+								
 								
 								
 								<div id='jqxslider' style="margin: 0 auto; top:0.2em;"></div>

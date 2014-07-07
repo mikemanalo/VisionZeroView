@@ -40,10 +40,10 @@ $(document).ready(function() {
   });
 });	
 //----------------------------------------------------------//
-$(".dropdown-menu li a").click(function(){
+/*$(".dropdown-menu li a").click(function(){
   var selText = $(this).text();
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
-});
+});*/
 //----------------------------------------------------------//
 $('#myTab a').click(function (e) {
   e.preventDefault()
@@ -52,3 +52,9 @@ $('#myTab a').click(function (e) {
 //---------------------------------------------------------//
 $("[name='InjuriesWhat']").bootstrapSwitch();
 $("[name='InjuriesWhen']").bootstrapSwitch();
+//----------------------------------------------------------//
+
+$("#injuries").on("click", function() {
+    $("#collapseOne").collapse('hide');
+});
+
