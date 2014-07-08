@@ -51,6 +51,7 @@ $('#myTab a').click(function (e) {
 })
 //---------------------------------------------------------//
 $("[name='InjuriesWhat']").bootstrapSwitch();
+$("[name='InjuriesWhat2']").bootstrapSwitch();
 $("[name='InjuriesWhen']").bootstrapSwitch();
 //----------------------------------------------------------//
 
