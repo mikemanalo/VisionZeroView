@@ -378,7 +378,8 @@
 								
 								
 								
-								<div id='jqxslider' style="margin: 0 auto; top:0.2em;"></div>
+								<div id='jqxslider' ></div>
+								<div id='jqxslider2'  style="display:none"></div>
 								
 							</div>
 						</div>
@@ -406,35 +407,41 @@
 	<script src="http://js.arcgis.com/3.9/"></script>
     <script>
       var map;
-	  var arcgisserver = "www.sustainablestreets.info:6080";
+	 	//  var arcgisserver = "www.sustainablestreets.info:6080";
+	  var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
 	  
 	  	  //////////////////
-	  	  var layer, visibleLayerIds = [];
-	  	  var crashLocationLayer, injuryLocationLayer;
-	  	  var fatalityLocations, injuryLocations;
+	  //	  var layer, visibleLayerIds = [];
+	  //	  var crashLocationLayer, injuryLocationLayer;
+	  //	  var fatalityLocations, injuryLocations;
 	  	  ////////////////
-	  
+	  	  	 var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams;
+	  	 
+	  	 var infoWindowPopup;
 	  
       require([
 		"esri/map", 
 		"esri/layers/ArcGISTiledMapServiceLayer",
 		"esri/dijit/LocateButton",
 		"esri/layers/ArcGISDynamicMapServiceLayer",
+		"esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters",
+		"esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate",
         "esri/layers/ImageParameters",
         "dojo/dom",
         "dojo/on",
         "dojo/query",
 		"dojo/domReady!"
 		],
-        function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, ImageParameters, dom, on, query) {
+        function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, dom, on, query) {
 		
 		 var customExtentAndSR = new esri.geometry.Extent(-20037506,-9823074,20037506,10214431,new esri.SpatialReference({"wkid":4326}));
 		// var layer, visibleLayerIds = []; // made global 6-03-2014 see above
 		 
 		 // new 6-03-2014 //
-		 var crashLocations = false;
-		 var isLayerAdded = true;
+		// var crashLocations = false;
+	//	 var isLayerAdded = true;
 		 // end new ////
+		   infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
 		 
           map = new Map("map",{
 			logo: false,
@@ -444,7 +451,7 @@
 			//sliderStyle: "small",
 			extent: customExtentAndSR,
 		  });
-		  esri.config.defaults.map.height = 1000;
+		//  esri.config.defaults.map.height = 1000;
 		  
           /*var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
           map.addLayer(tiled);*/
@@ -460,7 +467,7 @@
           imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
           //can also be: LAYER_OPTION_EXCLUDE, LAYER_OPTION_HIDE, LAYER_OPTION_INCLUDE
 
-          layer = new ArcGISDynamicMapServiceLayer("http://www.sustainablestreets.info:6080/arcgis/rest/services/GISAPP_STRATEGIC_DATA/VisionZero/MapServer",
+      /*    layer = new ArcGISDynamicMapServiceLayer("http://www.sustainablestreets.info:6080/arcgis/rest/services/GISAPP_STRATEGIC_DATA/VisionZero/MapServer",
             {"imageParameters": imageParameters});
           map.addLayer(layer);
 		  
@@ -469,7 +476,7 @@
 		  on(dom.byId("NeighborhoodSlowZone"), "change", updateLayerVisibility);
 		  on(dom.byId("EngineeringImprovements"), "change", updateLayerVisibility);
 		  on(dom.byId("SpeedHumps"), "change", updateLayerVisibility);
-		  on(dom.byId("LeadingPedestrianSignals"), "change", updateLayerVisibility);
+		  on(dom.byId("LeadingPedestrianSignals"), "change", updateLayerVisibility);*/
 			
 		  function updateLayerVisibility () {
             console.log(visibleLayerIds.length)
@@ -495,22 +502,9 @@
           
           /////////////// new ////////////////////////////////
                     
-          allFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyTotalFatalities_Seth_2009_2014/MapServer", {
-			id : "allFatalityLayer"
-
-			});
-			map.addLayer(allFatalityLayer);
-			var testArray = []; testArray[0] = 0;
-			allFatalityLayer.setVisibleLayers(testArray);
-		  allInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer", {
-			id : "allInjuryLayer"
-
-			});
-			map.addLayer(allInjuryLayer);
-			var allInjuryArray = []; allInjuryArray[0] = 0;
-			allInjuryLayer.setVisibleLayers(allInjuryArray);
+    
 		
-		    $(document).ready(function () {
+		 /*   $(document).ready(function () {
                 $("#jqxslider").jqxSlider({
                     theme: 'orange',
                     value: 0,
@@ -530,7 +524,7 @@
                         $(lowerTicks[i]).css("display", "none");
                     };
                 }; 
-			});
+			});*/
                 
            /* $(document).ready(function () {
                 // Create Push Button.
@@ -545,7 +539,11 @@
             });*/
                 
             $(document).ready(function(){
-				addCrashLocations();
+				//addCrashLocations();
+				addCrashLayers();
+				IdentifyTaskInit();
+				sliderSetup();
+				toggleCrashLayers();
 			});
 			
 			/*$(document).ready(function () {
@@ -564,7 +562,7 @@
          
 	});
 	</script>
-    
+    <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.base.css" type="text/css"/>   
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
 	<script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxbuttons.js"></script>
@@ -579,7 +577,11 @@
 	<script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>
 	<script src="lib/Modernizer/modernizr.custom.02110.js"></script>
     <script type="text/javascript" src="js/zero.js"></script>
-    <script type="text/javascript" src="js/crashLocationFuncs.js"></script>
+   <!-- <script type="text/javascript" src="js/crashLocationFuncs.js"></script>-->
+    <script type="text/javascript" src="js/crashFunctions.js"></script>
+    <script type="text/javascript" src="js/addCrashLayers.js"></script>
+    <script type="text/javascript" src="js/identifyTask.js"></script>
+    <script type="text/javascript" src="js/sliderSetup.js"></script>
 	<script type="text/javascript" src="js/resize.js"></script>
 
 	</body>
