@@ -52,13 +52,16 @@ function executeIdentifyTask(evt) {
 						alert("Please zoom in to view feature information");
 					} 
 		else {
-			
+			map.infoWindow.hide();
+			var locVal;
 
 			if (yearly) {
 				var deferred;
 
 				var locSliderVal = $('#jqxslider2').jqxSlider('getValue');
-				var locVal = (locSliderVal * 7);
+			//	var toolTipVal = slider2Lookup(value);
+			//	$("#dateLabel").text(toolTipVal);
+				locVal = (locSliderVal * 7);
 
 				allInjIdentifyParams.geometry = evt.mapPoint;
 				allInjIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3, locVal + 4, locVal + 5, locVal + 6];
@@ -76,7 +79,7 @@ function executeIdentifyTask(evt) {
 				var deferred;
 
 				var locSliderVal = $('#jqxslider').jqxSlider('getValue');
-				var locVal = (locSliderVal * 8);
+				locVal = (locSliderVal * 8);
 
 				allInjIdentifyParams.geometry = evt.mapPoint;
 				allInjIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3, locVal + 4, locVal + 5, locVal + 6, locVal + 7, locVal + 8];
@@ -106,13 +109,22 @@ function executeIdentifyTask(evt) {
 				return dojo.map(response, function(result) {
 					var feature = result.feature;
 					//var locSliderVal = $('#jqxslider').jqxSlider('getValue');
-					var locDate = sliderLookup(locSliderVal);
-					var locTxt = "<table><tr><td>Total Injury/Fatality Crashes: </td><td> ${Inj_Crashes}</td></tr></table>";
-					locTxt += "<table><tr><td>Total Injuries at Location: </td><td> ${Injuries}</td></tr></table>";
-					locTxt += "<table><tr><td>Total Crashes at Location: </td><td> ${CRASHES}</td></tr></table>";
+					if (monthly) var locDate = sliderLookup(locSliderVal);
+					else if (yearly) var locDate = slider2Lookup(locSliderVal);
+					var locText;
+					
+					if (yearly){
+					locTxt = "<table><tr><td>Total Injuries at Location: </td><td> ${Injuries}</td></tr></table>";
+					locTxt += "<table><tr><td>Non-Injury Crashes at Location: </td><td> ${nonInj_Crashes}</td></tr></table>";
+					}
+					else if (monthly){
+					locTxt = "<table><tr><td>Total Injuries at Location: </td><td> ${Injuries}</td></tr></table>";
+					locTxt += "<table><tr><td>Non-Injury Crashes at Location: </td><td> ${Non_Inj_Crashes}</td></tr></table>";
+						
+					}
 
 					var template = new esri.InfoTemplate();
-					template.setTitle("Total Crash Injuries: <br>" + locDate);
+					template.setTitle(locDate);
 					template.setContent(locTxt);
 
 					feature.setInfoTemplate(template);
@@ -126,13 +138,18 @@ function executeIdentifyTask(evt) {
 		} else 
 		
 		if (fatality) {
+			var locVal;
+			map.infoWindow.hide();
 			
 
 			if (yearly) {
+			console.log("get to fat year");
 					var deferred;
 
 				var locSliderVal = $('#jqxslider2').jqxSlider('getValue');
-				var locVal = (locSliderVal * 3);
+				//var toolTipVal = slider2Lookup(value);
+			//	$("#dateLabel").text(toolTipVal);
+				locVal = (locSliderVal * 4);
 
 				allFatIdentifyParams.geometry = evt.mapPoint;
 				allFatIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
@@ -148,14 +165,16 @@ function executeIdentifyTask(evt) {
 				else if (bike)
 					deferred = fatality_yearly_bike_IdentifyTask.execute(allFatIdentifyParams);
 			} else if (monthly) {
+				console.log("get to fat month");
 					var deferred;
 
 				var locSliderVal = $('#jqxslider').jqxSlider('getValue');
-				var locVal = (locSliderVal * 3);
+				locVal = (locSliderVal * 4);
 
 				allFatIdentifyParams.geometry = evt.mapPoint;
 				allFatIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
 				allFatIdentifyParams.mapExtent = map.extent;
+				console.log("month " + allFatIdentifyParams.layerIds);
 
 				if (all)
 					deferred = fatality_monthly_all_IdentifyTask.execute(allFatIdentifyParams);
@@ -169,8 +188,8 @@ function executeIdentifyTask(evt) {
 
 
 			deferred.addCallback(function(response) {
-				console.log("get tot hereeeee?");
-				console.log(response.length);
+				//console.log("get tot hereeeee?");
+				//console.log(response.length);
 
 				if (response.length > 0) {
 					map.infoWindow.show(evt.mapPoint);
@@ -180,14 +199,21 @@ function executeIdentifyTask(evt) {
 
 				return dojo.map(response, function(result) {
 					var feature = result.feature;
-					var locSliderVal = $('#jqxslider').jqxSlider('getValue');
-					var locDate = sliderLookup(locSliderVal);
-					var locTxt = "<table><tr><td>Total Injury/Fatality Crashes: </td><td> ${Inj_Crashes}</td></tr></table>";
-					locTxt += "<table><tr><td>Total Fatalites at Location: </td><td> ${Fatalities}</td></tr></table>";
-					locTxt += "<table><tr><td>Total Crashes at Location: </td><td> ${CRASHES}</td></tr></table>";
+					if (monthly) var locDate = sliderLookup(locSliderVal);
+					else if (yearly) var locDate = slider2Lookup(locSliderVal);
+					//var locDate = sliderLookup(locSliderVal);
+					var locText;
+					if (yearly){
+					locTxt = "<table><tr><td>Total Fatalites at Location: </td><td> ${Fatalities}</td></tr></table>";
+					locTxt += "<table><tr><td>Non-Injury at Location: </td><td> ${nonInj_Crashes}</td></tr></table>";
+					}
+					else if (monthly){
+					locTxt = "<table><tr><td>Total Fatalites at Location: </td><td> ${Fatalities}</td></tr></table>";
+					locTxt += "<table><tr><td>Non-Injury at Location: </td><td> ${Non_Inj_Crashes}</td></tr></table>";
+					}
 
 					var template = new esri.InfoTemplate();
-					template.setTitle("Total Crash Fatalities: <br>" + locDate);
+					template.setTitle(locDate);
 					template.setContent(locTxt);
 
 					feature.setInfoTemplate(template);

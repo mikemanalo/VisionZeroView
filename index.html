@@ -65,10 +65,10 @@
 				
 				<div  class="col-xs-12 col-sm-9">
 					<ul class="nav nav-tabs" id="myTab" style="padding-top1.3em;">
-						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries <span style="font-family: 'icomoon'; margin-left:3px;">8</span></a></li>
-						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions <span style="font-family: 'icomoon'; margin-left:3px;">9</span></a></li>
-						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab"> Outreach <span style="font-family: 'icomoon'; margin-left:3px;">!</span></a></li>
-						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab"> Summary <span style="font-family: 'icomoon'; margin-left:3px;">0</span></a></li>
+						<li><a href="#injurysNav" 	class="btn categoriesOn categoriesNav" id="injuryCat" data-target="#custom_carousel" data-slide-to="0"  data-toggle="tab"> Traffic Injuries <span style="font-family: 'icomoon'; margin-left:3px;">8</span></a></li>
+						<li><a href="#intervenNav" 	class="btn categoriesOn categoriesNav" id = "interventionCat" data-target="#custom_carousel" data-slide-to="1"  data-toggle="tab">Safety Interventions <span style="font-family: 'icomoon'; margin-left:3px;">9</span></a></li>
+						<li><a href="#outreachNav" 	class="btn categoriesOn categoriesNav" id ="outreachCat" data-target="#custom_carousel" data-slide-to="2"  data-toggle="tab"> Outreach <span style="font-family: 'icomoon'; margin-left:3px;">!</span></a></li>
+						<li><a href="#referenceNav" class="btn categoriesOn categoriesNav" id="referenceCat" data-target="#custom_carousel" data-slide-to="3"  data-toggle="tab"> Summary <span style="font-family: 'icomoon'; margin-left:3px;">0</span></a></li>
 						<form  id="searchInput" style="padding-right:0.9em; float:right; padding-top: 0.6em;" class="blackBarOff " role="search" >
 							<div class="form-group" >
 							  <div class="input-group input-group-md" style="bottom:0.4em;" >
@@ -137,19 +137,19 @@
 														<div class="col-sm-12">
 															<div class="btn-group btn-group-3 input-group" data-toggle="buttons">
 																<label class="btn btn-default">
-																	<input type="radio" name="options" id="option1"><span style="font-family: 'icomoon'; font-size:1.8em;">5</span>
+																	<input type="radio" name="options" id="ped"><span style="font-family: 'icomoon'; font-size:1.8em;">5</span>
 																</label>
 																
 																<label class="btn btn-default">
-																	<input type="radio" name="options" id="option2"><span style="font-family: 'icomoon'; font-size: 1.8em;">2</span>
+																	<input type="radio" name="options" id="bike"><span style="font-family: 'icomoon'; font-size: 1.8em;">2</span>
 																</label>
 																
 																<label class="btn btn-default">
-																	<input type="radio" name="options" id="option3"><span style="font-family: 'icomoon'; font-size: 1.8em;">1</span>
+																	<input type="radio" name="options" id="motor"><span style="font-family: 'icomoon'; font-size: 1.8em;">1</span>
 																</label>
 																
 																<label class="btn btn-default active">
-																	<input type="radio" name="options" id="option3"><span style="font-family: 'icomoon'; font-size: 1.8em;">7</span>
+																	<input type="radio" name="options" id="all"><span style="font-family: 'icomoon'; font-size: 1.8em;">7</span>
 																</label>
 															</div>
 														</div>
@@ -371,7 +371,7 @@
 						<div id="map">
 						
 							<div id="labelDiv">
-								<h2 style="text-align:center; align-vertical:middle;">July 2014</h2>
+								<h2 style="text-align:center; align-vertical:middle;"><span id ="dateLabel"></span></h2>
 							</div>
 						
 							<div id="sliderDiv" class="container">
@@ -582,6 +582,7 @@
     <script type="text/javascript" src="js/addCrashLayers.js"></script>
     <script type="text/javascript" src="js/identifyTask.js"></script>
     <script type="text/javascript" src="js/sliderSetup.js"></script>
+    <script type="text/javascript" src="js/categoryBtnFuncs.js"></script>
 	<script type="text/javascript" src="js/resize.js"></script>
 
 	</body>

@@ -41,6 +41,8 @@
                         //$(lowerTicks[i]).css("display", "none");
                   //  };
                // }; 
+               
+               //tooltip.css('visibility', 'visible');
 			});
 
 
@@ -77,7 +79,7 @@ function sliderSetup () {
 	function createTooltip() {
 		var tooltip = $('<div />');
 		$(document.body).append(tooltip);
-		tooltip.css('visibility', 'visible');
+		tooltip.css('visibility', 'hidden');
 		tooltip.fadeTo(0, 2.0);
 		tooltip.addClass('jqx-rc-all');
 		tooltip.addClass('tooltip');
@@ -89,6 +91,7 @@ function sliderSetup () {
 		tooltip.css('left', thumbX - (tooltip.outerWidth(true) - thumb.outerWidth(true)) / 2);
 		tooltip.css('top', thumbY - tooltip.outerHeight(true) - 25);
 		var toolTipVal = sliderLookup(value);
+		$("#dateLabel").text(toolTipVal);
 		tooltip.text(toolTipVal);
 	}
 	
@@ -215,5 +218,39 @@ function sliderLookup(value) {
 
 	return curDate;
 
+}
+
+function slider2Lookup(value) {
+	var locYear;
+	
+	switch(value) {
+		case 0:
+			locYear = "2009";
+			break;
+		case 1:
+			locYear = "2010";
+			break;
+		case 2:
+			locYear = "2011";
+			break;
+		case 3:
+			locYear = "2012";
+			break;
+		case 4:
+			locYear = "2013";
+			break;
+		case 5:
+			locYear = "2014";
+			break;
+
+		default:
+			locYear = "2009";
+			break;
+
+	}
+
+	return locYear;
+	
+	
 }
 

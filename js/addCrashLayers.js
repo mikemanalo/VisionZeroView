@@ -53,6 +53,7 @@ function addCrashLayers() {
 	
 	fatality_yearly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/allFatalities_yearly/MapServer", {
 		id : "fatality_yearly_all_Layer"
+		
 
 	});
 	map.addLayer(fatality_yearly_all_Layer);
@@ -103,6 +104,7 @@ function addCrashLayers() {
 	
 	injury_monthly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/all_monthly_Injuries_and_fatalities/MapServer", {
 		id : "injury_monthly_all_Layer"
+		
 
 	});
 	map.addLayer(injury_monthly_all_Layer);
@@ -151,6 +153,7 @@ function addCrashLayers() {
 	
 	injury_yearly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/allInjury_yearly/MapServer", {
 		id : "injury_yearly_all_Layer"
+		,opacity:.8
 
 	});
 	map.addLayer(injury_yearly_all_Layer);
@@ -162,6 +165,7 @@ function addCrashLayers() {
 
 	injury_yearly_ped_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/pedInjury_yearly/MapServer", {
 		id : "injury_yearly_ped_Layer"
+		,opacity:.8
 
 	});
 	map.addLayer(injury_yearly_ped_Layer);
@@ -173,6 +177,7 @@ function addCrashLayers() {
 	
 	injury_yearly_bike_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/bikeInjury_yearly/MapServer", {
 		id : "injury_yearly_bike_Layer"
+		,opacity:.8
 
 	});
 	map.addLayer(injury_yearly_bike_Layer);
@@ -184,6 +189,7 @@ function addCrashLayers() {
 	
 	injury_yearly_motor_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/motorInjury_yearly/MapServer", {
 		id : "injury_yearly_motor_Layer"
+		,opacity:.8
 
 	});
 	map.addLayer(injury_yearly_motor_Layer);
