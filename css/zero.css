@@ -66,7 +66,7 @@ cursor: default;
     position: relative;
     display: block;
     padding: 20px 15px;
-    top: 0.4em;
+    top: 0.5em;
 }
 	}
 
@@ -303,7 +303,158 @@ margin-top:2em;
 
 /*================================================================Media Queries===============================================================================*/	
 @media(max-width:767px){
-		.blackBarOff{
+	.blackBarOff{
+		display: none !important;
+		visibility: hidden !important;
+	}
+	
+	
+	#myTab{
+		display: none !important;
+		visibility: hidden !importan
+	}
+	
+	.vzLogo{
+		background-color:#FFFFFF; 
+		margin-bottom: 0px !important; 
+		width:25em;
+		height:auto;
+		float:left;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		}
+	
+	#mainContent{
+			background-color:#FFF; 
+			height:100%; 
+			padding-top: 0px ; 
+			padding-bottom: 0px ;
+			border-top: 0px solid #F26522;
+		}
+	
+	#labelDiv{
+		position:absolute; 
+		top:0em; 
+		left: 0em; 
+		width:200px; 
+		height:75px; 
+		background-color:#FFFFFF; 
+		opacity:0; 
+		z-index:39;"
+		}
+	
+	
+	#footer{
+		display: none !important;
+		visibility: hidden !important;
+		}
+	
+.row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -120%; /* 6 columns */
+	-webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+
+
+  .row-offcanvas-right.active {
+   right: 120%; /* 6 columns */
+   -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 100%; /* 12 columns */
+  }	
+	/*.row-offcanvas {
+			position: relative;
+			-webkit-transition: all 0.25s ease-out;
+			-moz-transition: all 0.25s ease-out;
+			transition: all 0.25s ease-out;
+		}
+		
+		.row-offcanvas-right
+		.sidebar-offcanvas {
+			right: -100%;
+		}
+
+		.row-offcanvas-left
+		.sidebar-offcanvas {
+			left: -100%;
+		}
+		
+	
+		.row-offcanvas-right.active {
+			right: 100%;
+	    }
+		
+		.row-offcanvas-left.active {
+			left: 100%;
+	    }
+		
+		.sidebar-offcanvas {
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}*/
+
+		
+		#sidebar {
+			background-color:#F0F4F5;
+			padding-top:0;
+			z-index:31;
+		}
+		
+		#sidebar .nav>li {
+			color: #ddd;
+			background: linear-gradient(#3E3E3E, #383838);
+			border-top: 1px solid #484848;
+			border-bottom: 1px solid #2E2E2E;
+		}
+		  
+		#sidebar .nav>li:first-child {
+			border-top:0;
+		}
+		
+		#sidebar .nav>li>a {
+			color: #ddd;
+		}
+		  
+		#sidebar .nav>li>a>img {
+			max-width: 14px;
+		}
+		  
+		#sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
+			text-decoration: none;
+			background: linear-gradient(#373737, #323232);
+			color: #fff;  
+		}
+		
+		#sidebar .nav .caret {
+			border-top-color: #fff;
+			border-bottom-color: #fff;
+		}
+		  
+		#sidebar .nav a:hover .caret{
+			border-top-color: #fff;
+			border-bottom-color: #fff;
+		}	
+	/*	.blackBarOff{
 			display: none !important;
 			visibility: hidden !important;
 		}
@@ -331,7 +482,7 @@ margin-top:2em;
 			position:inline-block;
 			}*/
 		
-		.vzLogo{
+		/*.vzLogo{
 			background-color:#FFFFFF; 
 			margin-bottom: 0px !important; 
 			width:30em;
@@ -345,7 +496,7 @@ margin-top:2em;
 	 
 			}
 			
-		.titleBar{
+		/*.titleBar{
 			min-height: 10px; 
 			padding: 5px 0px;
 			margin-bottom: 0.0em;
@@ -430,7 +581,7 @@ margin-top:2em;
 			/*box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.125) inset;*/
 		}
 		
-		.footerFont{
+		/*.footerFont{
 			color:#FFF !important; 
 			font-size: 8px; 
 			font-weight: 700;
@@ -523,13 +674,13 @@ margin-top:2em;
 			border-top-color: #fff;
 			border-bottom-color: #fff;
 		}
-			
+		*/	
 	}
 @media(min-width:768px){	
 
 	}
 @media(min-width:992px){
-		
+	
 		
 	}
 @media(min-width:1200px){
