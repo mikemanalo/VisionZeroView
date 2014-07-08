@@ -761,4 +761,43 @@ margin-top:2em;
 }
 
 
+/*===============================================Fill Icons===================================================================================================*/
+.vz-toc-arterial, .vz-toc-neighborhood,
+.vz-toc-engineering,.vz-toc-speedhump,
+.vz-toc-senior,.vz-toc-lpi,
+.vz-toc-school, .vz-toc-sencenter, .vz-toc-tlc   {
+    height:15px;
+    width:15px;
+    background-position: center top;
+}
+.vz-toc-arterial {
+    background-image: url(../img/toc_img/legend-sw-tree-fema.png);
+}
+.vz-toc-neighborhood {
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+}
+
+.vz-toc-engineering {
+    background-image: url(../img/toc_img/legend-sw-tree-fema.png);
+}
+.vz-toc-speedhump {
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+}
+
+.vz-toc-senior {
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+}
+
+.vz-toc-lpi {
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+}
+.vz-toc-school{
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+} 
+.vz-toc-sencenter{
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+}
+.vz-toc-tlc{
+    background-image: url(../img/toc_img/legend-sw-tree-fhwa.png);
+}
 		
