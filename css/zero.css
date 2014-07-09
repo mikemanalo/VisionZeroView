@@ -154,7 +154,12 @@ cursor: default;
 
 .bootstrap-switch.bootstrap-switch-large {
 	min-width: 100%;
-	}	
+	}
+
+.bootstrap-switch.bootstrap-switch-small {
+	min-width: 50%;
+	margin:auto;
+	}		
 	
 .btn-group-1 label.btn  {
 	width: 100%;
@@ -202,7 +207,7 @@ cursor: default;
     background-color: #FFF;
 }	
 
-.glyphicon {
+.glyphiconFix {
     position: relative;
     top: -15px;
     display: inline-block;
