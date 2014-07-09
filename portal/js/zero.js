@@ -51,4 +51,11 @@ $('#myTab a').click(function (e) {
 })
 //---------------------------------------------------------//
 $("[name='InjuriesWhat']").bootstrapSwitch();
+$("[name='InjuriesWhat2']").bootstrapSwitch();
 $("[name='InjuriesWhen']").bootstrapSwitch();
+//----------------------------------------------------------//
+
+$("#injuries").on("click", function() {
+    $("#collapseOne").collapse('hide');
+});
+
