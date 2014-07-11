@@ -282,7 +282,13 @@ cursor: default;
  }
  
  
- .jqx-fill-state-pressed-orange{
+ .jqx-fill-state-pressed-orange {
+ 	background: rgb(242,101,34) !important;
+	}
+	
+/********************** new 7 -11 **************************************************/
+
+ .jqx-fill-state-normal{
  	background: rgb(242,101,34) !important;
 	}
 	
@@ -359,6 +365,32 @@ z-index: 1000;
 margin: 0 auto;
 margin-top:2em;
 }*/
+
+/******************************************************* new 7-10 JF ************************************/
+
+.summaryBox{
+	margin-left:auto; margin-right: auto;
+	padding-top: 2em;
+}
+.summarySwitchBtns{
+	width:50%;
+}
+.districtBtns{
+	width:100% !important;
+	margin-top: .5em !important;
+	
+}
+.districtLabel{
+	margin-left:auto; margin-right: auto;
+	
+}
+.input-group.districtBtnGroup{
+	width: 99% !important;
+	padding-top:2em!important;
+	padding-bottom: 2em!important;
+}
+	
+	
 
 /*================================================================Media Queries===============================================================================*/	
 @media(max-width:767px){

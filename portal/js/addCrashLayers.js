@@ -107,6 +107,13 @@ function addCrashLayers() {
 		
 
 	});
+	
+/*	injury_monthly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer", {
+		id : "injury_monthly_all_Layer"
+		
+
+	});*/
+	
 	map.addLayer(injury_monthly_all_Layer);
 	//var allInjuryArray = [];
 	//allInjuryArray[0] = 0;

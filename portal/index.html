@@ -136,19 +136,19 @@
                                                         <label class="col-sm-12 control-label">Who</label>
                                                         <div class="col-sm-12">
                                                             <div class="btn-group btn-group-3 input-group" data-toggle="buttons">
-                                                                <label class="btn btn-default">
+                                                                <label class="btn btn-default crashTypes">
                                                                     <input type="radio" name="options" id="ped"><span style="font-family: 'icomoon'; font-size: 1.8em;">5</span>
                                                                 </label>
 
-                                                                <label class="btn btn-default">
+                                                                <label class="btn btn-default crashTypes">
                                                                     <input type="radio" name="options" id="bike"><span style="font-family: 'icomoon'; font-size: 1.8em;">2</span>
                                                                 </label>
 
-                                                                <label class="btn btn-default">
+                                                                <label class="btn btn-default crashTypes">
                                                                     <input type="radio" name="options" id="motor"><span style="font-family: 'icomoon'; font-size: 1.8em;">1</span>
                                                                 </label>
 
-                                                                <label class="btn btn-default active">
+                                                                <label class="btn btn-default crashTypes active">
                                                                     <input type="radio" name="options" id="all"><span style="font-family: 'icomoon'; font-size: 1.8em;">7</span>
                                                                 </label>
                                                             </div>
@@ -156,16 +156,16 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="col-sm-12 control-label" style="margin-top: 1em !important;">What</label>
+                                                        <label class="col-sm-12 control-label active" style="margin-top: 1em !important;">What</label>
                                                         <div class="col-sm-12">
-                                                            <input type="checkbox" name="InjuriesWhat" checked data-size="large" data-on-text="Injuries" data-on-color="warning" data-off-text="Fatalities" data-off-color="danger">
+                                                            <input type="checkbox" name="InjuriesWhat" id="injurySwitch" checked data-size="large" data-on-text="Injuries" data-on-color="warning" data-off-text="Fatalities" data-off-color="danger">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label class="col-sm-12 control-label" style="margin-top: 1em !important;">When</label>
                                                         <div class="col-sm-12">
-                                                            <input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-off-color="info">
+                                                            <input type="checkbox" name="InjuriesWhen" id="timeSwitch" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-off-color="info">
                                                         </div>
                                                     </div>
 
@@ -207,34 +207,34 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <h3 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Safety Interventions</h3>
-
+<!---------------- 7-11 note additions of clases to labels ------>
                                                     <div class="btn-group-vertical center-block" data-toggle="buttons">
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default interventionBtns active" style="text-align: left;">
                                                             Arterial Slow Zones<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="ArterialSlowZone" value="3">
+                                                            <input type="checkbox" name="options" class="list_item" id="ArterialSlowZone" value="0">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
                                                             Safe Streets for Seniors<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="SafeStreetsForSeniors" value="4">
+                                                            <input type="checkbox" name="options" class="list_item" id="SafeStreetsForSeniors" value="1">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
                                                             Neighborhood Slow Zone<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="NeighborhoodSlowZone" value="5">
+                                                            <input type="checkbox" name="options" class="list_item" id="NeighborhoodSlowZone" value="2">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
                                                             Engineering Improvements<span class="glyphicon glyphiconFix  glyphiconFix  glyphicon-map-marker pull-right"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="EngineeringImprovements" value="3">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
                                                             Speed Hump<span class="glyphicon glyphicon-glyphiconFix  map-marker pull-right"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="SpeedHump" value="4">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
                                                             Leading Pedestrian Signals<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="LeadingPedestrianSignals" value="5">
                                                         </label>
@@ -274,29 +274,33 @@
                                             <div class="row">
                                                 <div class="col-xs-6 col-sm-12">
                                                     <h2 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Outreach</h2>
-
+<!---------------- 7-11 note additions of clases to labels ------>
                                                     <div class="btn-group-vertical center-block" data-toggle="buttons">
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default outreachBtns active" style="text-align: left;">
                                                             Schools<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right" style="height: 15px; width: 15px; background-position: center top;"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="Schools" value="3">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
                                                             Senior Centers<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="SeniorCenters" value="4">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
                                                             TLC<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="TLC" value="3">
                                                         </label>
 
-                                                        <label class="btn btn-default" style="text-align: left;">
+                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
                                                             Town Hall Meetings<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
                                                             <input type="checkbox" name="options" class="list_item" id="TownHallMeeting" value="3">
                                                         </label>
-
+                                                        
+                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
+                                                            Workshops<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
+                                                            <input type="checkbox" name="options" class="list_item" id="Workshops" value="3">
+                                                        </label>
                                                     </div>
 
                                                     <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em;">
@@ -333,23 +337,53 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <h3 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Summary</h3>
+                                                    <p></p>
 
                                                     <div class="form-group">
-                                                        <label class="col-sm-12 control-label" style="margin-top: 1em !important;">Based On:</label>
+                                                        <!--<label class="col-sm-12 control-label" style="margin-top: 1em !important;">Based On:</label>-->
                                                         <div class="col-sm-12">
 
-                                                            <span style="float: left;">Injuries</span>
+                                                            <!--<span style="float: left;">Injuries</span>
                                                             <input type="checkbox" name="InjuriesWhat2" checked data-size="small" data-on-color="warning" data-off-color="danger" style="margin: 0 auto;">
-                                                            <span style="float: right;">Fatalities</span>
+                                                            <span style="float: right;">Fatalities</span>-->
 
 
-                                                            <div class="btn-group btn-toggle">
-                                                                <button class="btn btn-sm active btn-primary">Injuries</button>
-                                                                <button class="btn btn-sm btn-default">Fatalities</button>
+                                                            <div class="btn-group btn-toggle summaryBox">
+                                                                <button class="btn btn-sm active btn-primary summarySwitchBtns">Injuries</button>
+                                                                <button class="btn btn-sm btn-default summarySwitchBtns">Fatalities</button>
+                                                                
+
+                                                            
+                                                            
+                                                            
                                                             </div>
-                                                            <p></p>
+                  <!--------------------- new 7-10 JF --------------------------------------------------------------------->
+                                                                <div class="btn-group-vertical btn-group-3 input-group districtBtnGroup" data-toggle="buttons">
+                                                                <label class="btn btn-default districtBtns ">
+                                                                    <input type="radio" name="options" id="policePrecinct"><span class="districtLabel">Police Precincts</span>
+                                                                </label>
+
+                                                                <label class="btn btn-default districtBtns ">
+                                                                    <input type="radio" name="options" id="communityDistrict"><span class="districtLabel">Community Districts</span>
+                                                                </label>
+
+                                                                <label class="btn btn-default  districtBtns">
+                                                                    <input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel">City Council Districts</span>
+                                                                </label>
+
+                                                            </div>
+                                                            
+           
+                                                            <!--- end new -->
+                                                            
+                                                           
                                                         </div>
                                                     </div>
+                                                    
+                                                    
+
+                                                            
+                                                    
                                                     <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 10em;">
                                                         More Info
                                                     </button>
@@ -433,16 +467,33 @@
     <script>
         var map;
         //  var arcgisserver = "www.sustainablestreets.info:6080";
+     
+     /// note change 7-11 ////////////////////////
+     
         var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
 
-        //////////////////
-        //	  var layer, visibleLayerIds = [];
-        //	  var crashLocationLayer, injuryLocationLayer;
-        //	  var fatalityLocations, injuryLocations;
-        ////////////////
-        var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams;
+/******************** lotsa new vars 7 - 11 **********************************************************************/
 
+
+
+        ///////////////////// identify task vars //////////////////////////////////////////
+        var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams;
+        var interventionIdentifyTask, interventionIdentifyParams; 
+        var outreachIdentifyTask, outreachIdentifyParams;
         var infoWindowPopup;
+        
+        ///////////////// layers ////////////////////////////
+        var	referenceLayer, interventionLayer, outreachLayer;       
+		var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
+		var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
+		var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
+		var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer; 
+		        
+		/////////////////// layer switches /////////////////////////////////////////////////////
+		var fatality, injury, monthly, yearly, all, ped, bike, motor; 
+		var interventions, outreach, summaryFatalities, summaryInjuries;
+		
+
 
         require([
           "esri/map",
@@ -478,22 +529,24 @@
               });
               //  esri.config.defaults.map.height = 1000;
 
-              /*var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
-              map.addLayer(tiled);*/
-
-              var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+              var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
               map.addLayer(tiled);
+              
+              //////////// code commetned out 7 -11 //////////////////////////////////////////////////
+
+             /* var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+              map.addLayer(tiled);*/
 
               /* resizeMap();
                mapWinEvent();*/
 
-              var imageParameters = new ImageParameters();
-              imageParameters.layerIds = [2];
-              imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
+          //    var imageParameters = new ImageParameters();
+            //  imageParameters.layerIds = [2];
+           //   imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
               //can also be: LAYER_OPTION_EXCLUDE, LAYER_OPTION_HIDE, LAYER_OPTION_INCLUDE
 
-              function updateLayerVisibility() {
-                  console.log(visibleLayerIds.length)
+          /*    function updateLayerVisibility() {
+                //  console.log(visibleLayerIds.length)
                   visibleLayerIds = [];
                   var inputs = query(".list_item");
 
@@ -513,39 +566,53 @@
 
                   layer.setVisibleLayers(visibleLayerIds);
               }
-
+*/
+/*********************** change to function 7-11 *********************************************************/
 
               $(document).ready(function () {
                   //addCrashLocations();
                   addCrashLayers();
                   IdentifyTaskInit();
                   sliderSetup();
+				  checkCrashCatState();
                   toggleCrashLayers();
+               
               });
           });
     </script>
     <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.base.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
+    
+    
+    <!------------------ note change to references to jqwidget ---------------------------------------->
+    
+    
+    
+  <!--  <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxswitchbutton.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxslider.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/scripts/gettheme.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxscrollview.js"></script>
-    <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css" type="text/css" />
+    <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css" type="text/css" />-->
+   <script type="text/javascript" src="http://dx290zu2pmzgl.cloudfront.net/jqwidget/v3.2.1/jqx-all.js"></script>
 
     <script src="lib/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>
     <script src="lib/Modernizer/modernizr.custom.02110.js"></script>
     <script type="text/javascript" src="js/zero.js"></script>
     <!-- <script type="text/javascript" src="js/crashLocationFuncs.js"></script>-->
+    
+    <!--------------- additional files called 7-11------------------------------------------------------------>
+    
     <script type="text/javascript" src="js/crashFunctions.js"></script>
     <script type="text/javascript" src="js/addCrashLayers.js"></script>
     <script type="text/javascript" src="js/identifyTask.js"></script>
     <script type="text/javascript" src="js/sliderSetup.js"></script>
     <script type="text/javascript" src="js/categoryBtnFuncs.js"></script>
     <script type="text/javascript" src="js/resize.js"></script>
-
+ 	<script type="text/javascript" src="js/addLayers.js"></script>
+ 
 </body>
 </html>
