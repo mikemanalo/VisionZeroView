@@ -15,10 +15,10 @@
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap_switch_3/css/bootstrap3/bootstrap-switch.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
+  <!--  <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.base.css">
     <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css">
+    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css">-->
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css">
@@ -68,7 +68,7 @@
                         <li><a href="#injurysNav" class="btn categoriesOn categoriesNav" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Crashes <span style="font-family: 'icomoon'; margin-left: 3px;">8</span></a></li>
                         <li><a href="#intervenNav" class="btn categoriesOn categoriesNav" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Safety Interventions <span style="font-family: 'icomoon'; margin-left: 3px;">9</span></a></li>
                         <li><a href="#outreachNav" class="btn categoriesOn categoriesNav" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span style="font-family: 'icomoon'; margin-left: 3px;">!</span></a></li>
-                        <li><a href="#referenceNav" class="btn categoriesOn categoriesNav" id="referenceCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span style="font-family: 'icomoon'; margin-left: 3px;">0</span></a></li>
+                        <li><a href="#summaryNav" class="btn categoriesOn categoriesNav" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span style="font-family: 'icomoon'; margin-left: 3px;">0</span></a></li>
                         <form id="searchInput" style="padding-right: 0.9em; float: right; padding-top: 0.6em;" class="blackBarOff " role="search">
                             <div class="form-group">
                                 <div class="input-group input-group-md" style="bottom: 0.4em;">
@@ -349,8 +349,8 @@
 
 
                                                             <div class="btn-group btn-toggle summaryBox">
-                                                                <button class="btn btn-sm active btn-primary summarySwitchBtns">Injuries</button>
-                                                                <button class="btn btn-sm btn-default summarySwitchBtns">Fatalities</button>
+                                                                <button class="btn btn-sm active btn-primary summarySwitchBtns" id="summaryInjuries">Injuries</button>
+                                                                <button class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities">Fatalities</button>
                                                                 
 
                                                             
@@ -359,8 +359,8 @@
                                                             </div>
                   <!--------------------- new 7-10 JF --------------------------------------------------------------------->
                                                                 <div class="btn-group-vertical btn-group-3 input-group districtBtnGroup" data-toggle="buttons">
-                                                                <label class="btn btn-default districtBtns ">
-                                                                    <input type="radio" name="options" id="policePrecinct"><span class="districtLabel">Police Precincts</span>
+                                                                <label class="btn btn-default districtBtns active">
+                                                                    <input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel">Police Precincts</span>
                                                                 </label>
 
                                                                 <label class="btn btn-default districtBtns ">
@@ -425,7 +425,24 @@
 
                             <div id="labelDiv">
 
-                                <h3 style="text-align: center; align-vertical: middle;"><span id="dateLabel"></span></h3>
+                                
+                                <table id="labelTable">
+                                	<tr>
+                                		<td class="labelRow" ><span id="layerLabel" class="crashLabel1"></span> </td>
+                                	</tr>
+                                	<tr>
+                                		<td class="labelRow"><span id="dateLabel" class="crashLabel2"></span> </td>
+                                	</tr>
+                                	<tr>
+                                		<td class="labelRow"><span id="stat1" class="stats">stat1</span> </td>
+                                	</tr>
+                                	<tr>
+                                		<td class="labelRow"><span id="stat2" class="stats">stat2</span> </td>
+                                	</tr>
+                                	<tr>
+                                		<td class="labelRow"><span id="stat3" class="cstats">stat3</span> </td>
+                                	</tr>
+                                </table>
 
                             </div>
 
@@ -477,13 +494,17 @@
 
 
         ///////////////////// identify task vars //////////////////////////////////////////
-        var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams;
-        var interventionIdentifyTask, interventionIdentifyParams; 
-        var outreachIdentifyTask, outreachIdentifyParams;
+       // var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams;
+        
+        var allIdentifyParams; // for all Identify task parameters 
+        
+        var interventionIdentifyTask;
+        var outreachIdentifyTask; 
+        var summaryFatalIdentifyTask;
         var infoWindowPopup;
         
         ///////////////// layers ////////////////////////////
-        var	referenceLayer, interventionLayer, outreachLayer;       
+        var	referenceLayer, interventionLayer, outreachLayer, summaryInjuryLayer, summaryFatalityLayer;       
 		var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
 		var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
 		var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
@@ -491,7 +512,14 @@
 		        
 		/////////////////// layer switches /////////////////////////////////////////////////////
 		var fatality, injury, monthly, yearly, all, ped, bike, motor; 
-		var interventions, outreach, summaryFatalities, summaryInjuries;
+		var interventions, outreach;
+		// summaryFatalities, summaryInjuries;
+		var police, community, council;
+		var injurySum, fatalitySum;
+		
+		/// layer list arrays ///////////////// 
+		var interventionLayerIDs, outreachLayerIDs;
+		var summaryLayerIDs = [];
 		
 
 
@@ -511,12 +539,7 @@
           function (Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, dom, on, query) {
 
               var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, new esri.SpatialReference({ "wkid": 4326 }));
-              // var layer, visibleLayerIds = []; // made global 6-03-2014 see above
 
-              // new 6-03-2014 //
-              // var crashLocations = false;
-              //	 var isLayerAdded = true;
-              // end new ////
               infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
 
               map = new Map("map", {
@@ -529,44 +552,15 @@
               });
               //  esri.config.defaults.map.height = 1000;
 
-              var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
-              map.addLayer(tiled);
+           //   var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+            //  map.addLayer(tiled);
               
               //////////// code commetned out 7 -11 //////////////////////////////////////////////////
 
-             /* var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
-              map.addLayer(tiled);*/
+              var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+              map.addLayer(tiled);
 
-              /* resizeMap();
-               mapWinEvent();*/
-
-          //    var imageParameters = new ImageParameters();
-            //  imageParameters.layerIds = [2];
-           //   imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
-              //can also be: LAYER_OPTION_EXCLUDE, LAYER_OPTION_HIDE, LAYER_OPTION_INCLUDE
-
-          /*    function updateLayerVisibility() {
-                //  console.log(visibleLayerIds.length)
-                  visibleLayerIds = [];
-                  var inputs = query(".list_item");
-
-                  var inputCount = inputs.length;
-
-                  for (var i = 0; i < inputCount; i++) {
-                      if (inputs[i].checked) {
-                          visibleLayerIds.push(inputs[i].value);
-                          console.log(inputs);
-                          console.log(inputCount);
-                      }
-                  }
-
-                  if (visibleLayerIds.length === 0) {
-                      visibleLayerIds.push(-1);
-                  }
-
-                  layer.setVisibleLayers(visibleLayerIds);
-              }
-*/
+  
 /*********************** change to function 7-11 *********************************************************/
 
               $(document).ready(function () {
@@ -580,7 +574,7 @@
               });
           });
     </script>
-    <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.base.css" type="text/css" />
+   <link rel="stylesheet" href="lib/jqx.base.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     
     
@@ -597,6 +591,7 @@
     <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxscrollview.js"></script>
     <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css" type="text/css" />-->
    <script type="text/javascript" src="http://dx290zu2pmzgl.cloudfront.net/jqwidget/v3.2.1/jqx-all.js"></script>
+   <!-- <link rel="stylesheet" href="lib/jqx.orange.css" type="text/css" />-->
 
     <script src="lib/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>

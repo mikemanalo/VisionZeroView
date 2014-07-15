@@ -38,11 +38,12 @@ function addCrashLayers() {
 	
 	
 	
-	fatality_monthly_motor_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "arcgis/rest/services/VISION_ZERO/motorFatalities_monthly/MapServer", {
+	fatality_monthly_motor_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/motorFatalities_monthly/MapServer", {
 		id : "fatality_monthly_motor_Layer"
 
 	});
 	map.addLayer(fatality_monthly_motor_Layer);
+	console.log("added");
 	//var testArray = [];
 	//testArray[0] = 0;
 	fatality_monthly_motor_Layer.setVisibility(false);

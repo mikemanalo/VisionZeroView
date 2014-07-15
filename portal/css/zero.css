@@ -307,12 +307,40 @@ cursor: default;
 	position:absolute; 
 	top:0em; 
 	left: 0em; 
-	width:200px; 
-	height:75px; 
+	width:190px; 
+	height:120px; 
 	background-color:#FFFFFF; 
 	opacity:0.8; 
-	z-index:39;"
+	z-index:39;
 	}	
+
+
+	.crashLabel1{
+		float:left 
+		margin-left:2em;
+		font-size: .9em;
+		
+	}
+	.crashLabel2{
+		float:left 
+		margin-left:2em;
+		font-size: 1.5em;
+		
+	}
+	#labelTable{
+		padding: 1em;
+		
+	}
+	.labelRow{
+		padding-left: 1.2em;
+		padding:top: .8em;
+	}
+	
+		
+	/*h4{
+		font-size: 1em;
+	}*/
+	
 /*==========================================Footer=======================================*/
 #footer{
 	background-color:#353636; 
