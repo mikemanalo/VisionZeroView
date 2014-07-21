@@ -4,7 +4,7 @@
 
 	
 $(".interventionBtns").on("click", function() {
-	var interventionLayerIDs = [];
+	interventionLayerIDs = [];
 
 	interventionLayerIDs.length = 0;
 	//interventionLayer.setVisibleLayers();
@@ -18,7 +18,7 @@ function checkInterventionBtns(interventionLayerIDs){
 	
 	if ($("#ArterialSlowZone").is(':checked')) {
 
-		var locID = 0;
+		var locID = 1;
 		interventionLayerIDs.push(locID);
 		
 	} 
@@ -26,21 +26,21 @@ function checkInterventionBtns(interventionLayerIDs){
 
 	if ($("#SafeStreetsForSeniors").is(':checked')) {
 
-		var locID = 1;
+		var locID = 6;
 		interventionLayerIDs.push(locID);
 	} 
 
 		
 	if ($("#NeighborhoodSlowZone").is(':checked')) {
 
-		var locID = 2;
+		var locID = 5;
 		interventionLayerIDs.push(locID);
 	}
 		
 
 	if ($("#EngineeringImprovements").is(':checked')) {
 
-		var locID = 3;
+		var locID = 2; var locID2 = 3;
 		interventionLayerIDs.push(locID);
 	} 
 
@@ -53,7 +53,7 @@ function checkInterventionBtns(interventionLayerIDs){
 
 	if ($("#LeadingPedestrianSignals").is(':checked')) {
 
-		var locID = 5;
+		var locID = 0;
 		interventionLayerIDs.push(locID);
 	} 
 
@@ -69,7 +69,7 @@ console.log(interventionLayerIDs);
 
 	
 $(".outreachBtns").on("click", function() {
-	var outreachLayerIDs = [];
+	outreachLayerIDs = [];
 
 	outreachLayerIDs.length = 0;
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
@@ -89,7 +89,7 @@ function checkOutreachBtns(outreachLayerIDs){
 	} 
 	if ($("#SeniorCenters").is(':checked')) {
 
-		var locID = 1;
+		//var locID = 1;
 		//outreachLayerIDs.push(locID);
 		console.log("seniors added");
 		
@@ -97,23 +97,25 @@ function checkOutreachBtns(outreachLayerIDs){
 	} 
 	if ($("#TLC").is(':checked')) {
 
-		var locID = 2;
+	//	var locID = 2;
 		//outreachLayerIDs.push(locID);
 		console.log("tlc added");
 		
 	} 
 	if ($("#TownHallMeeting").is(':checked')) {
 
-		var locID = 3;
+		var locID = 1;
 		//outreachLayerIDs.push(locID);
 		console.log("townhall added");
+			outreachLayerIDs.push(locID);
 		
 	} 
 	if ($("#Workshops").is(':checked')) {
 
-		var locID = 4;
+		var locID = 2;
 		//outreachLayerIDs.push(locID);
 		console.log("workshops added");
+			outreachLayerIDs.push(locID);
 		
 	} 
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
@@ -122,5 +124,90 @@ function checkOutreachBtns(outreachLayerIDs){
 }
 
  ///////////////////////////////// SUMMARY ////////////////////////////////////////////////////////////////////
- 
- 
+ $(".summarySwitchBtns").on("click", function() {
+ 	map.infoWindow.hide();
+	//summaryLayerIDs = [];
+
+	summaryLayerIDs.length = 0;
+	if (injurySum) { summaryInjuryLayer.setVisibleLayers(summaryLayerIDs); }
+	else if (fatalitySum) { summaryFatalityLayer.setVisibleLayers(summaryLayerIDs); }
+	console.log(summaryLayerIDs);
+	setTimeout(function(){ 	
+ 		if ($("#summaryInjuries").hasClass('active')){
+ 		console.log("injury active"); 
+ 		injurySum = true; fatalitySum = false;
+ 		summaryInjuryLayer.setVisibility(true);  summaryFatalityLayer.setVisibility(false);
+	
+ //	checkSummaryInjuryBtns(summaryLayerIDs);
+ 		}
+ 		else if ($("#summaryFatalities").hasClass('active')){
+ 		console.log("fatality active"); 
+ 		fatalitySum = true; injurySum = false; 
+ 		summaryInjuryLayer.setVisibility(false);  summaryFatalityLayer.setVisibility(true);
+ //	checkSummaryFatalityBtns(summaryLayerIDs);
+ 		}
+ 	}, 20);
+ 	
+
+	setTimeout(function(){ checkSummaryBtns(summaryLayerIDs);}, 20);
+
+});
+
+
+
+$(".districtBtns").on("click", function() {
+	map.infoWindow.hide();
+	//police, community, council;
+
+	var sumView = ($(this).find('input').attr('id'));
+//	summaryLayerIDs = [];
+	summaryLayerIDs.length = 0;
+	var locID;
+	
+
+	if (sumView == "policePrecinct") {
+		police = true, community = false, council = false;
+		console.log("precinct");
+		//id push here
+		setTimeout(function(){ checkSummaryBtns(summaryLayerIDs);}, 20);
+	} else if (sumView == "communityDistrict") {
+		police = false, community = true, council = false;
+		console.log("communityDistrict");
+		setTimeout(function(){ checkSummaryBtns(summaryLayerIDs);}, 20);
+	} else if (sumView == "cityCouncilDistrict") {
+		police = false, community = false, council = true;
+		console.log("cityCouncilDistrict");
+		setTimeout(function(){ checkSummaryBtns(summaryLayerIDs);}, 20);
+	}
+});
+
+
+	
+function checkSummaryBtns(summaryLayerIDs){
+	
+	console.log("check");
+//	summaryLayerIDs = [];
+	summaryLayerIDs.length = 0;
+	
+	if(police) summaryLayerIDs.push(0);
+	else if (community) summaryLayerIDs.push(1);
+	else if (council) summaryLayerIDs.push(2);
+
+	
+	if (injurySum) {
+		console.log("get here?");
+		summaryInjuryLayer.setVisibility(true);  summaryFatalityLayer.setVisibility(false);
+		summaryInjuryLayer.setVisibleLayers(summaryLayerIDs);
+	}
+	else if (fatalitySum) {
+		summaryInjuryLayer.setVisibility(false);  summaryFatalityLayer.setVisibility(true);
+		summaryFatalityLayer.setVisibleLayers(summaryLayerIDs);
+	}
+	
+	
+	console.log(summaryLayerIDs);
+	
+
+	
+	
+}

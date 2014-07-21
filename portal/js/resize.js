@@ -4,7 +4,7 @@ function resizeMap() {
   sidebarWidth = $('#SideBar').outerWidth(true);
   console.log(sidebarWidth);
   if (map && window.location.hash == "") {
-	  $('#map').height(window.innerHeight - 107);
+	  $('#map').height(window.innerHeight - 200);
 	  // $('#map').width(window.innerWidth - sidebarWidth);
 	  map.reposition();
 	  map.resize();

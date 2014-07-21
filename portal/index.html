@@ -10,491 +10,497 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 
     <title>Vision Zero</title>
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap_switch_3/css/bootstrap3/bootstrap-switch.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.base.css">
-    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/stylesjqx.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css">
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" type="text/css" href="css/zero.css">
+    <link rel="stylesheet" type="text/css" href="css/sandboxcss.css">
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="../img/logo/vz_57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/logo/vz_72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/logo/vz_114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/logo/vz_144png">
 </head>
 
 <body>
+	<!--Black Bar-->
     <div id="blackBar" class="container-fluid">
-        <div class="blackBar ">
-            <!--<div class="navbar">-->
+        <div class="blackBar">
             <span>
                 <a href="http://www.nyc.gov/">
                     <img src="img/logo/nyc.svg" style="margin-left: 1em;"></a>
                 <img src="img/other/upper-header-divider.gif">
                 <span class="blackBarFont blackBarOff"></span>
             </span>
-
-            <span></span>
-
+			
             <span style="right: 1em; float: right;">
                 <span><a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/311/index.page">311</a> </span>
                 <img alt="" class="blackBarOff" src="img/other/upper-header-divider.gif">
                 <span><a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/home/search/index.page" style="margin-right: 3.5em;">Search all NYC.gov websites</a> </span>
             </span>
-            <!--</div>-->
         </div>
-
-
-        <div id="tilteBarDiv" class="container-fluid">
-            <div id="titleRow" class="row ">
-                <div id="mainMenu" class="col-xs-12 col-sm-3">
-
-                    <!--<button id="layerBtnSM" type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav" style="float:left; left:0.5em; top: -0.5em;">
-						<span class="glyphicon glyphicon-align-justify"></span>
-				    </button>-->
-
-                    <button id="searchBtnSM" type="button" class="navbar-toggle" data-toggle="offcanvas" style="float: right; right: 0.5em; top: -0.5em; font-size: 2em;">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-
-                    <a href="#">
-                        <img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
-                </div>
-
-                <div class="col-xs-12 col-sm-9">
-                    <ul class="nav nav-tabs" id="myTab" style="padding-top1.3em;">
-                        <li><a href="#injurysNav" class="btn categoriesOn categoriesNav" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Crashes <span style="font-family: 'icomoon'; margin-left: 3px;">8</span></a></li>
-                        <li><a href="#intervenNav" class="btn categoriesOn categoriesNav" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Safety Interventions <span style="font-family: 'icomoon'; margin-left: 3px;">9</span></a></li>
-                        <li><a href="#outreachNav" class="btn categoriesOn categoriesNav" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span style="font-family: 'icomoon'; margin-left: 3px;">!</span></a></li>
-                        <li><a href="#referenceNav" class="btn categoriesOn categoriesNav" id="referenceCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span style="font-family: 'icomoon'; margin-left: 3px;">0</span></a></li>
-                        <form id="searchInput" style="padding-right: 0.9em; float: right; padding-top: 0.6em;" class="blackBarOff " role="search">
-                            <div class="form-group">
-                                <div class="input-group input-group-md" style="bottom: 0.4em;">
-                                    <span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color: #666666; border: 1px solid #D5D5D5; border-right: 0px">Boro<span class="caret"></span></span>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Manhattan</a></li>
-                                        <li><a href="#">Bronx</a></li>
-                                        <li><a href="#">Brooklyn</a></li>
-                                        <li><a href="#">Queens</a></li>
-                                        <li><a href="#">Staten Island</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Zip Code</a></li>
-                                        <li><a href="#">Police Precinct</a></li>
-                                    </ul>
-                                    <input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); color: ##D5D5D5; background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5;">
-                                    <span id="btnsearch" class="input-group-addon" style="background-color: rgba(255,255,255,1); background: rgba(255,255,255,1); border: 1px solid #D5D5D5; color: ##D5D5D5; border-left: 0px"><span class="glyphicon glyphicon-search"></span></span>
-                                </div>
-                            </div>
-                        </form>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--Title Bar-->
-
-        <div id="mainContent" class="jumbotron">
-            <div id="roww" class="row row-offcanvas row-offcanvas-right">
-                <div class="col-xs-12 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                    <div id="sidebar-wrapper">
-                        <div class="container-fluid">
-
-
-                            <div id="sidePanel" class="panel panel-default categoriesOff" style="margin-top: 1em;">
-                                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
-                                    <h3 class="panel-title" style="text-align: left; color: #203970; font-size: 24px;">
-                                        <a class="accordion-toggle">Categories<span class="caret"></span>
-                                        </a>
-                                    </h3>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <div id="tab" class="btn-group-vertical" data-toggle="buttons-radio" style="width: 100% !important;">
-                                                <a href="#injuries" class="btn" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab" style="font-size: 16px; text-align: left; border-bottom: 1px solid #D5D5D5;">Crashes</a>
-                                                <a href="#intervention" class="btn" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab" style="font-size: 16px  text-align:left;">Safety Interventions</a>
-                                                <a href="#outreach" class="btn" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab" style="font-size: 16px; text-align: left;">Outreach</a>
-                                                <a href="#summary" class="btn" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab" style="font-size: 16px; text-align: left;">Summary</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <div class="container-fluid">
-                                            <div class="row" style="margin-right: -40px; margin-left: -40px;">
-                                                <div class="col-md-12">
-                                                    <h3 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Crashes</h3>
-
-                                                    <div class="form-group" style="margin-bottom: 1em;">
-                                                        <label class="col-sm-12 control-label">Who</label>
-                                                        <div class="col-sm-12">
-                                                            <div class="btn-group btn-group-3 input-group" data-toggle="buttons">
-                                                                <label class="btn btn-default crashTypes">
-                                                                    <input type="radio" name="options" id="ped"><span style="font-family: 'icomoon'; font-size: 1.8em;">5</span>
-                                                                </label>
-
-                                                                <label class="btn btn-default crashTypes">
-                                                                    <input type="radio" name="options" id="bike"><span style="font-family: 'icomoon'; font-size: 1.8em;">2</span>
-                                                                </label>
-
-                                                                <label class="btn btn-default crashTypes">
-                                                                    <input type="radio" name="options" id="motor"><span style="font-family: 'icomoon'; font-size: 1.8em;">1</span>
-                                                                </label>
-
-                                                                <label class="btn btn-default crashTypes active">
-                                                                    <input type="radio" name="options" id="all"><span style="font-family: 'icomoon'; font-size: 1.8em;">7</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label class="col-sm-12 control-label active" style="margin-top: 1em !important;">What</label>
-                                                        <div class="col-sm-12">
-                                                            <input type="checkbox" name="InjuriesWhat" id="injurySwitch" checked data-size="large" data-on-text="Injuries" data-on-color="warning" data-off-text="Fatalities" data-off-color="danger">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label class="col-sm-12 control-label" style="margin-top: 1em !important;">When</label>
-                                                        <div class="col-sm-12">
-                                                            <input type="checkbox" name="InjuriesWhen" id="timeSwitch" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-off-color="info">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-12 ">
-                                                        <img src="img/legend/Injury_Legend.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
-                                                    </div>
-
-                                                    <div class="form-group" style="margin-bottom: 1em;">
-
-                                                        <div class="col-sm-12">
-                                                            <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 3em;">
-                                                                More Info
-                                                            </button>
-
-                                                            <div class="modal fade" id="InjuryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                                <div class="modal-dialog">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            ...
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h3 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Safety Interventions</h3>
-<!---------------- 7-11 note additions of clases to labels ------>
-                                                    <div class="btn-group-vertical center-block" data-toggle="buttons">
-                                                        <label class="btn btn-default interventionBtns active" style="text-align: left;">
-                                                            Arterial Slow Zones<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="ArterialSlowZone" value="0">
-                                                        </label>
-
-                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
-                                                            Safe Streets for Seniors<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="SafeStreetsForSeniors" value="1">
-                                                        </label>
-
-                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
-                                                            Neighborhood Slow Zone<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="NeighborhoodSlowZone" value="2">
-                                                        </label>
-
-                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
-                                                            Engineering Improvements<span class="glyphicon glyphiconFix  glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="EngineeringImprovements" value="3">
-                                                        </label>
-
-                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
-                                                            Speed Hump<span class="glyphicon glyphicon-glyphiconFix  map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="SpeedHump" value="4">
-                                                        </label>
-
-                                                        <label class="btn btn-default interventionBtns" style="text-align: left;">
-                                                            Leading Pedestrian Signals<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="LeadingPedestrianSignals" value="5">
-                                                        </label>
-                                                    </div>
-
-                                                    <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em;">
-                                                        More Info
-                                                    </button>
-
-                                                    <div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title" id="myModalLabel">Description</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Add a description here.State-of-the-art traffic monitoring has improved traffic conditions in Midtown (1st to 9th avenues and from 42nd to 57th streets) by enabling signals engineers to identify and respond to traffic conditions in real time. Installed in July 2011, the first phase of the program included 100 microwave sensors, 32 traffic video cameras and travel time sensors at 23 intersections.
-                                                                </div>
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title" id="myModalLabel">Metadata</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Add a metadata here.
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-xs-6 col-sm-12">
-                                                    <h2 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Outreach</h2>
-<!---------------- 7-11 note additions of clases to labels ------>
-                                                    <div class="btn-group-vertical center-block" data-toggle="buttons">
-
-                                                        <label class="btn btn-default outreachBtns active" style="text-align: left;">
-                                                            Schools<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right" style="height: 15px; width: 15px; background-position: center top;"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="Schools" value="3">
-                                                        </label>
-
-                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
-                                                            Senior Centers<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="SeniorCenters" value="4">
-                                                        </label>
-
-                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
-                                                            TLC<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="TLC" value="3">
-                                                        </label>
-
-                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
-                                                            Town Hall Meetings<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="TownHallMeeting" value="3">
-                                                        </label>
-                                                        
-                                                        <label class="btn btn-default outreachBtns" style="text-align: left;">
-                                                            Workshops<span class="glyphicon glyphiconFix  glyphicon-map-marker pull-right"></span>
-                                                            <input type="checkbox" name="options" class="list_item" id="Workshops" value="3">
-                                                        </label>
-                                                    </div>
-
-                                                    <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em;">
-                                                        More Info
-                                                    </button>
-
-                                                    <div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title" id="myModalLabel">Description</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Add a description here.State-of-the-art traffic monitoring has improved traffic conditions in Midtown (1st to 9th avenues and from 42nd to 57th streets) by enabling signals engineers to identify and respond to traffic conditions in real time. Installed in July 2011, the first phase of the program included 100 microwave sensors, 32 traffic video cameras and travel time sensors at 23 intersections.
-                                                                </div>
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title" id="myModalLabel">Metadata</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Add a metadata here.
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h3 style="text-align: center; color: #3494D1; margin-bottom: ; 1em;">Summary</h3>
-                                                    <p></p>
-
-                                                    <div class="form-group">
-                                                        <!--<label class="col-sm-12 control-label" style="margin-top: 1em !important;">Based On:</label>-->
-                                                        <div class="col-sm-12">
-
-                                                            <!--<span style="float: left;">Injuries</span>
-                                                            <input type="checkbox" name="InjuriesWhat2" checked data-size="small" data-on-color="warning" data-off-color="danger" style="margin: 0 auto;">
-                                                            <span style="float: right;">Fatalities</span>-->
-
-
-                                                            <div class="btn-group btn-toggle summaryBox">
-                                                                <button class="btn btn-sm active btn-primary summarySwitchBtns">Injuries</button>
-                                                                <button class="btn btn-sm btn-default summarySwitchBtns">Fatalities</button>
-                                                                
-
-                                                            
-                                                            
-                                                            
-                                                            </div>
-                  <!--------------------- new 7-10 JF --------------------------------------------------------------------->
-                                                                <div class="btn-group-vertical btn-group-3 input-group districtBtnGroup" data-toggle="buttons">
-                                                                <label class="btn btn-default districtBtns ">
-                                                                    <input type="radio" name="options" id="policePrecinct"><span class="districtLabel">Police Precincts</span>
-                                                                </label>
-
-                                                                <label class="btn btn-default districtBtns ">
-                                                                    <input type="radio" name="options" id="communityDistrict"><span class="districtLabel">Community Districts</span>
-                                                                </label>
-
-                                                                <label class="btn btn-default  districtBtns">
-                                                                    <input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel">City Council Districts</span>
-                                                                </label>
-
-                                                            </div>
-                                                            
-           
-                                                            <!--- end new -->
-                                                            
-                                                           
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    
-
-                                                            
-                                                    
-                                                    <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 10em;">
-                                                        More Info
-                                                    </button>
-
-
-                                                    <div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    ...
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Item -->
-                                </div>
-                                <!-- End Carousel Inner -->
-                            </div>
-                            <!-- End Carousel -->
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="container-fluid col-xs-12 col-sm-9">
-                    <div class="row" style>
-                        <div id="map">
-
-                            <div id="labelDiv">
-
-                                <h3 style="text-align: center; align-vertical: middle;"><span id="dateLabel"></span></h3>
-
-                            </div>
-
-                            <div id="sliderDiv" class="container">
-
-                                <div id='jqxslider'></div>
-                                <div id='jqxslider2' style="display: none"></div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.container -->
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid" id="footer" style="background-color: #353636;">
-            <p class="footerFont" style="padding-left: 0.5em; float: left; padding-top: 0.7em;">City of New York 2014 All Rights Reserved.</p>
-            <span style="padding-right: 0.5em; float: right; margin-top; 0.5em; padding-top: 0.7em;">
-                <a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a>
-                <!-- facebook = !-->
-                <a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a>
-                <!-- Twitter = $-->
-                <a href="#" id="google" class="socialMedia blackBarOff">4</a>
-                <!-- Google+ = "-->
-            </span>
-        </div>
-
-    </div>
-    <!--black bar end-->
-
-
-    </div>
-    <!--Title Bar-->
-
-
-
-    <!-- JavaScript -->
-    <script src="http://js.arcgis.com/3.9/"></script>
-    <script>
-        var map;
-        //  var arcgisserver = "www.sustainablestreets.info:6080";
-     
-     /// note change 7-11 ////////////////////////
-     
-        var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
-
-/******************** lotsa new vars 7 - 11 **********************************************************************/
-
-
-
-        ///////////////////// identify task vars //////////////////////////////////////////
-        var allInjIdentifyTask, allInjIdentifyParams, allFatIdentifyTask, allFatIdentifyParams;
-        var interventionIdentifyTask, interventionIdentifyParams; 
-        var outreachIdentifyTask, outreachIdentifyParams;
-        var infoWindowPopup;
-        
-        ///////////////// layers ////////////////////////////
-        var	referenceLayer, interventionLayer, outreachLayer;       
-		var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
-		var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
-		var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
-		var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer; 
-		        
-		/////////////////// layer switches /////////////////////////////////////////////////////
-		var fatality, injury, monthly, yearly, all, ped, bike, motor; 
-		var interventions, outreach, summaryFatalities, summaryInjuries;
+	</div>
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default " role="navigation">
+		<div id="titileDIV" class="container">
+			<div class="navbar-header col-xs-12 col-sm-4 col-md-3 col-lg-3">
 		
+				<button id="layerNav"type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#collapse-layer">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+		  
+				<button id="searchNav" type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#collapse-search">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="glyphicon glyphicon-search"></span> 
+				</button>
+		  
+				<a href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
+		
+			</div>
+			
+			<div class="col-xs-12 col-sm-8 ">
+			
+				<div id="collapse-layer" class="collapse navbar-collapse pull-left col-sm-5 col-sm-pull col-xs-12">
+					<ul class="nav navbar-nav nav-tabs" style="margin-top:1.2em;">
+						<li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Injuries<span style="font-family: 'icomoon'; margin-left: 3px;">8</span></a></li>
+						<li><a href="#intervenNav" class="btn categoriesOn categoriesNav" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Interventions<span style="font-family: 'icomoon'; margin-left: 3px;">9</span></a></li>
+						<li><a href="#outreachNav" class="btn categoriesOn categoriesNav" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span style="font-family: 'icomoon'; margin-left: 3px;">!</span></a></li>
+						<li><a href="#summaryNav" class="btn categoriesOn categoriesNav" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span style="font-family: 'icomoon'; margin-left: 3px;">0</span></a></li>
+					</ul>
+				</div>
+			
+		
+				<div id="collapse-search" class="collapse navbar-collapse col-xs-12 col-xs-12 col-sm-4 pull-right collapse">
+		  
+					<ul class="nav navbar-nav navbar-right">
+						<form id="searchInput" role="search" class="navbar-input-group navbar-form">
+							<div class="form-group">
+								<div class="input-group input-group-md">
+									<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
+									<ul class="dropdown-menu">
+										<li><a href="#">Manhattan</a></li>
+										<li><a href="#">Bronx</a></li>
+										<li><a href="#">Brooklyn</a></li>
+										<li><a href="#">Queens</a></li>
+										<li><a href="#">Staten Island</a></li>
+										
+									</ul>
+									<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
+									<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+								</div>
+							</div>
+						</form>
+					</ul>
+				</div><!--/.nav-collapse -->
+		
+			</div>
+		</div>
+    </div>
+
+    <!-- Begin page content -->
+	<div id="mainContent">
+		<div id="mainRow" class="row">		
+			<div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3">
+				<div id="map" class="container-fluid">
+					<div id="labelDiv">
+						<table id="labelTable">
+							<tr>
+								<td class="labelRow" ><span id="layerLabel" class="crashLabel1"></span> </td>
+							</tr>
+							<tr>
+								<td class="labelRow"><span id="dateLabel" class="crashLabel2"></span> </td>
+							</tr>
+							<tr>
+								<td class="labelRow"><span id="stat1" class="stats">Fatality:</span> </td>
+							</tr>
+							<tr>
+								<td class="labelRow"><span id="stat2" class="stats">Injury:</span> </td
+							</tr>
+						</table>
+					</div>
+
+					<div id="sliderDiv" class="col-sm-2">
+						<div id='jqxslider'></div>
+						<div id='jqxslider2' style="display: none"></div>
+					</div>
+				</div>
+			</div>
+			
+			
+		
+			 <div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9" id="sidebar">
+				<div class="container-fluid">
+
+					<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="container-fluid">
+									<div class="row" style="margin-right: -40px; margin-left: -40px;">
+										<div class="col-md-12">
+											<h3 style="text-align: center; color: #F26522; margin-bottom:1.3em; margin-top: 0px;">Injuries and Fatalities</h3>
+
+											<div class="form-group">
+												
+												<div class="col-sm-12" style="padding-bottom: 1.3em;">
+													<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
+														<label class="btn btn-default crashTypes">
+															<input type="radio" name="options" id="ped"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">5</i>
+														</label>
+
+														<label class="btn btn-default crashTypes">
+															<input type="radio" name="options" id="bike"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">2</i>
+														</label>
+
+														<label class="btn btn-default crashTypes">
+															<input type="radio" name="options" id="motor"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">1</i>
+														</label>
+
+														<label class="btn btn-default crashTypes active">
+															<input type="radio" name="options" id="all"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">7</i>
+														</label>
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group">
+												
+												<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
+													<input type="checkbox" name="InjuriesWhat" checked data-size="large" data-on-text="Injuries" data-on-color="warning" data-off-text="Fatalities" data-off-color="danger">
+												</div>
+											</div>
+
+											<div class="form-group">
+												
+												<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
+													<input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-on-color="info" data-off-color="primary">
+												</div>
+											</div>
+
+											<div class="col-sm-12">
+												<img src="img/legend/Injury_Legend.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
+											</div>
+
+											<div class="form-group" style="margin-bottom: 1em;">
+
+												<div class="col-sm-12">
+													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 3em;">
+														More Info
+													</button>
+
+													<div class="modal fade" id="InjuryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																	<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+																</div>
+																<div class="modal-body">
+																	...
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-12" >
+											<h3 style="text-align: center; color:#F26522; margin-bottom:1em; margin-top: 0px;">Safety Interventions</h3>
+
+											<div class="btn-group-vertical center-block" data-toggle="buttons">
+												
+												<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
+													<input type="checkbox" name="options" class="list_item" id="LeadingPedestrianSignals" value="1">
+													<span>Leading Pedestrian Signals</span>
+													<i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: inherit;">%</i>	
+												</button>
+												
+												 <button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
+													<span>Engineering Improvements</span>
+													<input type="checkbox" name="options" class="list_item" id="EngineeringImprovements" value="2">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em">@</i>
+												</button>
+												
+												<button class="btn btn-default interventionBtns active" style="text-align: left; white-space: normal;">
+													<span>Arterial Slow Zones</span>
+													<input type="checkbox" name="options" class="list_item" id="ArterialSlowZone" value="0">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#1679B7;">@</i>
+												</button>
+												
+												<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
+													<span>Speed Hump</span>
+													<input type="checkbox" name="options" class="list_item" id="SpeedHump" value="3">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B65B2A;">@</i>
+												</button>
+
+												<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
+													<span>Safe Streets for Seniors</span>
+													<input type="checkbox" name="options" class="list_item" id="SafeStreetsForSeniors" value="5">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F57D20;">$</i>
+												</button>
+
+												<button class="btn btn-default interventionBtns" style="text-align: left;white-space: normal;">
+													<span>Neighborhood Slow Zone</span>
+													<input type="checkbox" name="options" class="list_item" id="NeighborhoodSlowZone" value="4">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F5989C;">$</i>
+												</button>
+
+											 </div>
+
+											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em;">
+												More Info
+											</button>
+
+											<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h4 class="modal-title" id="myModalLabel">Description</h4>
+														</div>
+														<div class="modal-body">
+															Add a description here.State-of-the-art traffic monitoring has improved traffic conditions in Midtown (1st to 9th avenues and from 42nd to 57th streets) by enabling signals engineers to identify and respond to traffic conditions in real time. Installed in July 2011, the first phase of the program included 100 microwave sensors, 32 traffic video cameras and travel time sensors at 23 intersections.
+														</div>
+														<div class="modal-header">
+															<h4 class="modal-title" id="myModalLabel">Metadata</h4>
+														</div>
+														<div class="modal-body">
+															Add a metadata here.
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-sm-12">
+											<h3 style="text-align: center; color: #F26522; margin-bottom:1em; margin-top: 0px;">Outreach Programs</h3>
+
+											<div class="btn-group-vertical center-block" data-toggle="buttons">
+
+                                                        <button class="btn btn-default outreachBtns active" style="text-align: left; white-space: normal;">
+                                                            <span>Schools</span>
+                                                            <input type="checkbox" name="options" class="list_item" id="Schools" value="3">
+															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#e41a1c;">%</i>
+														</button>
+
+                                                        <button class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
+                                                            <span>Senior Centers</span>
+                                                            <input type="checkbox" name="options" class="list_item" id="SeniorCenters" value="4">
+															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#377eb8;">%</i>
+                                                        </button>
+
+                                                        <button class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
+                                                            <span>TLC</span>
+                                                            <input type="checkbox" name="options" class="list_item" id="TLC" value="3">
+															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#4daf4a;">%</i>
+														</button>
+
+                                                        <button class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
+                                                            <span>Town Hall Meetings</span>
+                                                            <input type="checkbox" name="options" class="list_item" id="TownHallMeeting" value="3">
+															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#984ea3;">%</i>
+													   </button>
+                                                        
+                                                        <button class="btn btn-default outreachBtns" style="text-align: left;white-space: normal;">
+                                                            <span>Workshops</span>
+                                                            <input type="checkbox" name="options" class="list_item" id="Workshops" value="3">
+															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#ff7f00;">%</i>
+													   </button>
+                                                    </div>
+
+											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em;">
+												More Info
+											</button>
+
+											<div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h4 class="modal-title" id="myModalLabel">Description</h4>
+														</div>
+														<div class="modal-body">
+															Add a description here.State-of-the-art traffic monitoring has improved traffic conditions in Midtown (1st to 9th avenues and from 42nd to 57th streets) by enabling signals engineers to identify and respond to traffic conditions in real time. Installed in July 2011, the first phase of the program included 100 microwave sensors, 32 traffic video cameras and travel time sensors at 23 intersections.
+														</div>
+														<div class="modal-header">
+															<h4 class="modal-title" id="myModalLabel">Metadata</h4>
+														</div>
+														<div class="modal-body">
+															Add a metadata here.
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-12">
+											<h3 style="text-align: center; color: #F26522; margin-bottom:1em; margin-top: 0px;">Summary Data</h3>
+
+												<div class="form-group">
+													<div class="col-sm-12" style="padding-bottom: 1.3em;">
+														<div class="btn-group btn-toggle summaryBox center-block" Style="width:100%;">															
+															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="summaryInjuries" style="width:50%; font-size: 16px;">
+															Injuries
+															</label>
+															
+															<label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width:50%; font-size: 16px;">
+															Fatalities
+															</label>
+														</div>
+													</div>
+												</div>
+                  <!--------------------- new 7-10 JF --------------------------------------------------------------------->
+														
+														
+												<div class="form-group">
+													<div class="col-sm-12" style="padding-bottom: 1.3em;">
+														<div class="btn-group-vertical center-block districtBtnGroup" data-toggle="buttons">
+															<label class="btn btn-default districtBtns active">
+																<input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel">Police Precincts</span>
+															</label>
+
+															<label class="btn btn-default districtBtns ">
+																<input type="radio" name="options" id="communityDistrict"><span class="districtLabel">Community Districts</span>
+															</label>
+
+															<label class="btn btn-default  districtBtns">
+																<input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel">City Council Districts</span>
+															</label>
+														</div>
+													</div>
+												</div>
+														
+													
+													
+											
+											
+											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 10em;">
+												More Info
+											</button>
 
 
+											<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+															<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+														</div>
+														<div class="modal-body">
+															...
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Item -->
+						</div>
+						<!-- End Carousel Inner -->
+					</div>
+					<!-- End Carousel -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div id="footer">
+		<div class="container-fluid">
+			<div class="date"> 
+				<span class="day"><img src="img/logo/dot.svg" id="footerLogo"></span>
+				<div class="dateHolder">
+					<span>Bill de Blasio, Mayor</span>
+					<span>Polly Trottenberg, Commissioner</span>
+				</div>
+			</div>
+			
+			<span style="padding-right: 0.5em; float: right; margin-top; 0.5em; padding-top: 0.2em;">
+                <a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a>
+                <a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a>
+                <a href="#" id="google" class="socialMedia blackBarOff">4</a>
+            </span>
+     	</div>
+    </div>
+       
+<!--=====================================================================================================================================================-->
+    <script src="http://js.arcgis.com/3.9compact/"></script>
+    <script>
+	var map;
+	var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
+	var symbol, fillSymbol;
+
+	
+	var allIdentifyParams; // for all Identify task parameters         
+	var interventionIdentifyTask;
+	var outreachIdentifyTask; 
+	var summaryFatalIdentifyTask;
+	var infoWindowPopup;
+	
+	var	referenceLayer, interventionLayer, outreachLayer, summaryInjuryLayer, summaryFatalityLayer;       
+	var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
+	var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
+	var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
+	var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer;        
+	
+	var fatality, injury, monthly, yearly, all, ped, bike, motor; 
+	var interventions, outreach;
+	
+	var police, community, council;
+	var injurySum, fatalitySum;
+	
+	var interventionLayerIDs, outreachLayerIDs;
+	var summaryLayerIDs = [];
+	var infoTemplate;
+	var queryTask, query;
+	var gslocation = {
+		location : "",
+		lat : "",
+		lon : ""
+	};
+	
+	var spatialRef;
+
+	// Get a reference to the ArcGIS Map class
+		
+	
         require([
           "esri/map",
           "esri/layers/ArcGISTiledMapServiceLayer",
@@ -503,116 +509,81 @@
           "esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters",
           "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate",
           "esri/layers/ImageParameters",
+		  "esri/symbols/SimpleMarkerSymbol",
+		  "esri/symbols/SimpleLineSymbol", 
+		  "esri/Color",
           "dojo/dom",
           "dojo/on",
           "dojo/query",
           "dojo/domReady!"
         ],
-          function (Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, dom, on, query) {
+        
+		function (Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters,SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
+			
+            spatialRef = new esri.SpatialReference({ "wkid": 4326 });
+            var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
+			infoTemplate = new InfoTemplate("Location", "${location}");
+			symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
+			fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
+			infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
 
-              var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, new esri.SpatialReference({ "wkid": 4326 }));
-              // var layer, visibleLayerIds = []; // made global 6-03-2014 see above
-
-              // new 6-03-2014 //
-              // var crashLocations = false;
-              //	 var isLayerAdded = true;
-              // end new ////
-              infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
-
-              map = new Map("map", {
-                  logo: false,
-                  center: [-72.994, 40.721], // longitude, latitude
-                  zoom: 3,
-                  sliderPosition: "top-right",
-                  //sliderStyle: "small",
-                  extent: customExtentAndSR,
-              });
-              //  esri.config.defaults.map.height = 1000;
-
-              var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
-              map.addLayer(tiled);
-              
-              //////////// code commetned out 7 -11 //////////////////////////////////////////////////
-
-             /* var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
-              map.addLayer(tiled);*/
-
-              /* resizeMap();
-               mapWinEvent();*/
-
-          //    var imageParameters = new ImageParameters();
-            //  imageParameters.layerIds = [2];
-           //   imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
-              //can also be: LAYER_OPTION_EXCLUDE, LAYER_OPTION_HIDE, LAYER_OPTION_INCLUDE
-
-          /*    function updateLayerVisibility() {
-                //  console.log(visibleLayerIds.length)
-                  visibleLayerIds = [];
-                  var inputs = query(".list_item");
-
-                  var inputCount = inputs.length;
-
-                  for (var i = 0; i < inputCount; i++) {
-                      if (inputs[i].checked) {
-                          visibleLayerIds.push(inputs[i].value);
-                          console.log(inputs);
-                          console.log(inputCount);
-                      }
-                  }
-
-                  if (visibleLayerIds.length === 0) {
-                      visibleLayerIds.push(-1);
-                  }
-
-                  layer.setVisibleLayers(visibleLayerIds);
-              }
-*/
-/*********************** change to function 7-11 *********************************************************/
-
-              $(document).ready(function () {
-                  //addCrashLocations();
-                  addCrashLayers();
-                  IdentifyTaskInit();
-                  sliderSetup();
-				  checkCrashCatState();
-                  toggleCrashLayers();
-               
-              });
-          });
+			map = new Map("map", {
+				logo: false,
+				center: [993908, 224290],
+				zoom: 2,
+				sliderPosition: "top-right",
+				sliderStyle: "small",
+				extent: customExtentAndSR,
+			});
+          
+			spatialRef = map.spatialReference;	
+            var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+			//var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+            map.addLayer(tiled);
+			
+			resizeMap();
+            mapWinEvent();
+			
+			
+            $(document).ready(function () {
+               //addCrashLocations();
+                addCrashLayers();
+                IdentifyTaskInit();
+                sliderSetup();
+				checkCrashCatState();
+                toggleCrashLayers();
+            });
+        });
+	
     </script>
-    <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.base.css" type="text/css" />
+	
+	<script>
+		if (!String.prototype.trim) {
+			String.prototype.trim = function() {
+				return this.replace(/^\s+|\s+$/g, '');
+			}
+		}
+	</script>
+	
+	
+   <link rel="stylesheet" href="lib/jqx.base.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    
-    
-    <!------------------ note change to references to jqwidget ---------------------------------------->
-    
-    
-    
-  <!--  <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxbuttons.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxswitchbutton.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxslider.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/scripts/gettheme.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="lib/jqwidgets-ver3.3.0/jqwidgets/jqxscrollview.js"></script>
-    <link rel="stylesheet" href="lib/jqwidgets-ver3.3.0/jqwidgets/styles/jqx.orange.css" type="text/css" />-->
-   <script type="text/javascript" src="http://dx290zu2pmzgl.cloudfront.net/jqwidget/v3.2.1/jqx-all.js"></script>
-
+    <script type="text/javascript" src="http://dx290zu2pmzgl.cloudfront.net/jqwidget/v3.2.1/jqx-all.js"></script>
     <script src="lib/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>
     <script src="lib/Modernizer/modernizr.custom.02110.js"></script>
-    <script type="text/javascript" src="js/zero.js"></script>
-    <!-- <script type="text/javascript" src="js/crashLocationFuncs.js"></script>-->
-    
-    <!--------------- additional files called 7-11------------------------------------------------------------>
-    
+    <script type="text/javascript" src="js/zero.js"></script>    
     <script type="text/javascript" src="js/crashFunctions.js"></script>
     <script type="text/javascript" src="js/addCrashLayers.js"></script>
     <script type="text/javascript" src="js/identifyTask.js"></script>
     <script type="text/javascript" src="js/sliderSetup.js"></script>
     <script type="text/javascript" src="js/categoryBtnFuncs.js"></script>
     <script type="text/javascript" src="js/resize.js"></script>
- 	<script type="text/javascript" src="js/addLayers.js"></script>
- 
+ 	<script type="text/javascript" src="js/addLayers.js"></script> 
+	<script type="text/javascript" src="js/geocoder.js"></script> 
+
+
+	
+	
 </body>
 </html>

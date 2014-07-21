@@ -101,25 +101,26 @@ function toggleCrashLayers() {
 	var what, when, who;
 
 	if (injury)
-		what = "injury";
+		what = "Injuries";
 	else
-		what = "fatality";
+		what = "Fatalities";
 	if (yearly)
-		when = "yearly";
+		when = "Yearly";
 	else
-		when = "monthly";
+		when = "Monthly";
 
 	if (all)
-		who = "all";
+		who = "All";
 	else if (ped)
-		who = "ped";
+		who = "Pedestrian";
 	else if (bike)
-		who = "bike";
+		who = "Bicycle";
 	else if (motor)
-		who = "motor";
+		who = "Motorist";
 
-	var currentCrashMap = what + "_" + when + "_" + who + "_Layer";
+	var currentCrashMap = who+ " " + what + ": "+ when  ;
 	console.log(currentCrashMap);
+	$("#layerLabel").text(currentCrashMap);
 
 	//injury_monthly_ped_Layer.setVisibility(true);
 
@@ -492,6 +493,7 @@ else if (yearly) {
 				visibleInjuryLayerIds.length = 0;
 
 				visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
+				console.log("ids: " +visibleInjuryLayerIds );
 
 				fatality_monthly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
 
@@ -505,6 +507,7 @@ else if (yearly) {
 					visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
 
 					fatality_monthly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
+					console.log("ids after click: " +visibleInjuryLayerIds );
 				});
 			}
 		}// end monthly

@@ -15,6 +15,14 @@ $(document).ready(function() {
 	$("#TownHallMeeting").prop('checked', false);
 	$("#Workshops").prop('checked', false);
 	$("#SeniorCenters").prop('checked', false);
+	
+	$("#summaryInjuries").prop('checked', true);
+	$("#summaryInjuries").addClass('active');
+	police = true, community= false, council=false;
+	injurySum = true, fatalitySum = false;
+	
+	
+	//$(".btn.btn-default.districtBtns
 
 });
 
@@ -25,15 +33,26 @@ $(".categoriesNav").on('click', function() {
 	allCrashLayersOff();
 	removeLayer();
 	allLayersOff();
+	map.infoWindow.hide();
 
-	if (id == "referenceCat") {
+	if (id == "summaryCat") {
 
-		referenceLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotqagisiis03:6080/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_POLICEPRE_INJURIES/MapServer", {
-			id : "referenceLayer",
+		summaryInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotqagisiis03:6080/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer", {
+			id : "summaryInjuryLayer",
 			opacity : .8
 
 		});
-		map.addLayer(referenceLayer);
+		map.addLayer(summaryInjuryLayer);
+		summaryFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotqagisiis03:6080/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer", {
+			id : "summaryFatalityLayer",
+			opacity : .8
+
+		});
+		map.addLayer(summaryFatalityLayer);
+		console.log("injurSum = " + injurySum + "    fatalitySum = " + fatalitySum);
+		
+		if (injurySum) {summaryInjuryLayer.setVisibility(true);  summaryFatalityLayer.setVisibility(false);}
+		else if (fatalitySum) {summaryInjuryLayer.setVisibility(false);  summaryFatalityLayer.setVisibility(true);}
 		$("#sliderDiv").css("display", "none");
 		$("#jqxslider").css("display", "none");
 		$("#jqxslider2").css("display", "none");
@@ -42,6 +61,8 @@ $(".categoriesNav").on('click', function() {
 		injury = false;
 		monthly = false;
 		yearly = false;
+		//var summaryLayerIDs = [];
+		setTimeout(function(){ checkSummaryBtns(summaryLayerIDs);}, 20);
 
 	} else if (id == "interventionCat") {
 
@@ -51,7 +72,8 @@ $(".categoriesNav").on('click', function() {
 
 		});
 		map.addLayer(interventionLayer);
-		var interventionLayerIDs = [];
+		interventions = true;
+		interventionLayerIDs = [];
 		setTimeout(function() {
 			checkInterventionBtns(interventionLayerIDs);
 		}, 30);
@@ -69,7 +91,8 @@ $(".categoriesNav").on('click', function() {
 
 		});
 		map.addLayer(outreachLayer);
-		var outreachLayerIDs = [];
+		outreach = true;
+		outreachLayerIDs = [];
 
 		setTimeout(function() {
 			checkOutreachBtns(outreachLayerIDs);
@@ -101,13 +124,19 @@ function removeLayer() {
 	var layer1 = map.getLayer("outreachLayer");
 	var layer2 = map.getLayer("interventionLayer");
 	var layer3 = map.getLayer("referenceLayer");
+	var layer4 = map.getLayer("summaryInjuryLayer");
+	var layer5 = map.getLayer("summaryFatalityLayer");
 	if (layer1)
 		map.removeLayer(layer1);
 	if (layer2)
 		map.removeLayer(layer2);
 	if (layer3)
 		map.removeLayer(layer3);
-
+	if (layer4)
+		map.removeLayer(layer4);
+	if (layer5)
+		map.removeLayer(layer5);
+		
 }
 
 function allLayersOff() {
@@ -117,7 +146,10 @@ function allLayersOff() {
 	yearly = false;
 	interventions = false;
 	outreach = false;
-	summaryFatalities = false;
-	summaryInjuries = false;
+	//summaryFatalities = false;
+//	summaryInjuries = false;
+	//injurySum = false;
+	//fatalitySum = false;
+
 }
 
