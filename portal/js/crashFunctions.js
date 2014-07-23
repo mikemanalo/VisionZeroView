@@ -703,6 +703,7 @@ function checkCrashCatState() {
 	map.infoWindow.hide();
 
 	if ($("[name='InjuriesWhen']").is(':checked')) {
+
 		console.log("Monthly");
 		monthly = true;
 		yearly = false;

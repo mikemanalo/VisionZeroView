@@ -35,13 +35,13 @@
                 <a href="http://www.nyc.gov/">
                     <img src="img/logo/nyc.svg" style="margin-left: 1em;"></a>
                 <img src="img/other/upper-header-divider.gif">
-                <span class="blackBarFont blackBarOff"></span>
+                <span class="blackBarFont hidden-xs"></span>
             </span>
 			
             <span style="right: 1em; float: right;">
-                <span><a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/311/index.page">311</a> </span>
-                <img alt="" class="blackBarOff" src="img/other/upper-header-divider.gif">
-                <span><a class="blackBarFont blackBarOff" href="http://www1.nyc.gov/home/search/index.page" style="margin-right: 3.5em;">Search all NYC.gov websites</a> </span>
+                <span><a class="blackBarFont  hidden-xs" href="http://www1.nyc.gov/311/index.page">311</a> </span>
+                <img alt="" class="hidden-xs " src="img/other/upper-header-divider.gif">
+                <span><a class="blackBarFont  hidden-xs" href="http://www1.nyc.gov/home/search/index.page" style="margin-right: 3.5em;">Search all NYC.gov websites</a> </span>
             </span>
         </div>
 	</div>
@@ -49,7 +49,7 @@
 	<!-- Fixed navbar -->
     <div class="navbar navbar-default " role="navigation">
 		<div id="titileDIV" class="container">
-			<div class="navbar-header col-xs-12 col-sm-4 col-md-3 col-lg-3">
+			<div class="navbar-header col-xs-12 col-sm-3 col-md-3 col-lg-3">
 		
 				<button id="layerNav"type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#collapse-layer">
 					<span class="sr-only">Toggle navigation</span>
@@ -57,34 +57,53 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-		  
-				<button id="searchNav" type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#collapse-search">
+				
+				<button id="searchNav1" type="button" class="navbar-toggle pull-right " data-toggle="collapse" data-target="#collapseOne">
 					<span class="sr-only">Toggle navigation</span>
-					<span class="glyphicon glyphicon-search"></span> 
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<!--<span class="glyphicon glyphicon-search"></span> 
+					<span class="icon-bar" style="color:transparent;"></span>-->
 				</button>
+				
+				
+
+				
+				
 		  
 				<a href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
 		
 			</div>
 			
-			<div class="col-xs-12 col-sm-8 ">
+			<div class="col-xs-12 col-sm-9 ">
 			
-				<div id="collapse-layer" class="collapse navbar-collapse pull-left col-sm-5 col-sm-pull col-xs-12">
+				<div id="collapse-layer" class="collapse navbar-collapse pull-left col-xs-12 col-sm-12 col-md-5 col-lg-5">
 					<ul class="nav navbar-nav nav-tabs" style="margin-top:1.2em;">
-						<li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Injuries<span style="font-family: 'icomoon'; margin-left: 3px;">8</span></a></li>
-						<li><a href="#intervenNav" class="btn categoriesOn categoriesNav" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Interventions<span style="font-family: 'icomoon'; margin-left: 3px;">9</span></a></li>
-						<li><a href="#outreachNav" class="btn categoriesOn categoriesNav" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span style="font-family: 'icomoon'; margin-left: 3px;">!</span></a></li>
-						<li><a href="#summaryNav" class="btn categoriesOn categoriesNav" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span style="font-family: 'icomoon'; margin-left: 3px;">0</span></a></li>
+						<li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Injuries<span class="categoriesFontIcon">8</span></a></li>
+						<li><a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Interventions<span class="categoriesFontIcon">9</span></a></li>
+						<li><a href="#outreachNav" class="btn categoriesOn categoriesNav categoriesFont" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span class="categoriesFontIcon">!</span></a></li>
+						<li><a href="#summaryNav" class="btn categoriesOn categoriesNav categoriesFont" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span class="categoriesFontIcon">0</span></a></li>
 					</ul>
 				</div>
+				
+				<!--<button id="searchNav" type="button" class="navbar-toggle pull-right btn-circle" data-toggle="collapse" data-target="#collapse-search">-->
+				<button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="collapse" data-target="#collapseOne">
+				
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
 			
 		
-				<div id="collapse-search" class="collapse navbar-collapse col-xs-12 col-xs-12 col-sm-4 pull-right collapse">
-		  
-					<ul class="nav navbar-nav navbar-right">
-						<form id="searchInput" role="search" class="navbar-input-group navbar-form">
+				<div id="collapse-search" class="collapse navbar-collapse pull-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					
+						
+					<ul id="collapse-search_ul" class="nav navbar-nav navbar-right">
+						<form id="searchInput" role="search" class="navbar-input-group navbar-form ">
 							<div class="form-group">
-								<div class="input-group input-group-md">
+								<div class="input-group input-group-sm" style="right:1em;">
 									<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
 									<ul class="dropdown-menu">
 										<li><a href="#">Manhattan</a></li>
@@ -92,7 +111,6 @@
 										<li><a href="#">Brooklyn</a></li>
 										<li><a href="#">Queens</a></li>
 										<li><a href="#">Staten Island</a></li>
-										
 									</ul>
 									<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
 									<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
@@ -105,11 +123,35 @@
 			</div>
 		</div>
     </div>
-
+	
+	<div id="collapseOne" class="panel-collapse collapse">
+				  <div class="panel-body">
+				   <form id="searchInput" role="search" class="navbar-input-group navbar-form ">
+						<div class="form-group">
+							<div class="input-group input-group-sm" style="right:1em;">
+								<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
+								<ul class="dropdown-menu">
+									<li><a href="#">Manhattan</a></li>
+									<li><a href="#">Bronx</a></li>
+									<li><a href="#">Brooklyn</a></li>
+									<li><a href="#">Queens</a></li>
+									<li><a href="#">Staten Island</a></li>
+								</ul>
+								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
+								<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+	
+	
     <!-- Begin page content -->
 	<div id="mainContent">
 		<div id="mainRow" class="row">		
-			<div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3">
+			<div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
+				
+		
 				<div id="map" class="container-fluid">
 					<div id="labelDiv">
 						<table id="labelTable">
@@ -174,17 +216,33 @@
 											</div>
 											
 											<div class="form-group">
-												
-												<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
+												<div class="btn-group btn-toggle summaryBox center-block" Style="width:100%;">															
+															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="InjuriesWhat" style="width:50%; font-size: 16px;">
+															Injuries
+															</label>
+															
+															<label class="btn btn-sm btn-default summarySwitchBtns"  style="width:50%; font-size: 16px;">
+															Fatalities
+															</label>
+														</div>
+												<!--<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
 													<input type="checkbox" name="InjuriesWhat" checked data-size="large" data-on-text="Injuries" data-on-color="warning" data-off-text="Fatalities" data-off-color="danger">
-												</div>
+												</div>-->
 											</div>
 
 											<div class="form-group">
-												
-												<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
+												<div class="btn-group btn-toggle summaryBox center-block" Style="width:100%;">															
+															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="InjuriesWhen" style="width:50%; font-size: 16px;">
+															By Month
+															</label>
+															
+															<label class="btn btn-sm btn-default summarySwitchBtns"  style="width:50%; font-size: 16px;">
+															By Year
+															</label>
+														</div>
+												<!--<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
 													<input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-on-color="info" data-off-color="primary">
-												</div>
+												</div>-->
 											</div>
 
 											<div class="col-sm-12">
@@ -299,7 +357,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-sm-12">
-											<h3 style="text-align: center; color: #F26522; margin-bottom:1em; margin-top: 0px;">Outreach Programs</h3>
+											<h3 style="text-align: center; color: #F26522; margin-bottom:1em; margin-top: 0px;">Public Outreach</h3>
 
 											<div class="btn-group-vertical center-block" data-toggle="buttons">
 
@@ -367,7 +425,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-md-12">
-											<h3 style="text-align: center; color: #F26522; margin-bottom:1em; margin-top: 0px;">Summary Data</h3>
+											<h3 style="text-align: center; color: #F26522; margin-bottom:1em; margin-top: 0px;">Summary Information</h3>
 
 												<div class="form-group">
 													<div class="col-sm-12" style="padding-bottom: 1.3em;">
@@ -382,8 +440,6 @@
 														</div>
 													</div>
 												</div>
-                  <!--------------------- new 7-10 JF --------------------------------------------------------------------->
-														
 														
 												<div class="form-group">
 													<div class="col-sm-12" style="padding-bottom: 1.3em;">
@@ -442,7 +498,7 @@
 		</div>
 	</div>
 
-    <div id="footer">
+    <div id="footer" class="hidden-xs">
 		<div class="container-fluid">
 			<div class="date"> 
 				<span class="day"><img src="img/logo/dot.svg" id="footerLogo"></span>
