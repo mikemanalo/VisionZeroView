@@ -134,6 +134,8 @@ function checkOutreachBtns(outreachLayerIDs){
 	console.log(summaryLayerIDs);
 	setTimeout(function(){ 	
  		if ($("#summaryInjuries").hasClass('active')){
+ 			$("#summaryFatalities").css("color", "black");
+ 			$("#summaryInjuries").css("color", "white");
  		console.log("injury active"); 
  		injurySum = true; fatalitySum = false;
  		summaryInjuryLayer.setVisibility(true);  summaryFatalityLayer.setVisibility(false);
@@ -141,6 +143,8 @@ function checkOutreachBtns(outreachLayerIDs){
  //	checkSummaryInjuryBtns(summaryLayerIDs);
  		}
  		else if ($("#summaryFatalities").hasClass('active')){
+ 			$("#summaryInjuries").css("color", "black");
+ 			$("#summaryFatalities").css("color", "white");
  		console.log("fatality active"); 
  		fatalitySum = true; injurySum = false; 
  		summaryInjuryLayer.setVisibility(false);  summaryFatalityLayer.setVisibility(true);
@@ -163,6 +167,14 @@ $(".districtBtns").on("click", function() {
 //	summaryLayerIDs = [];
 	summaryLayerIDs.length = 0;
 	var locID;
+	
+			($('.districtBtns').css("background-color", "rgb(255,255,255)"));
+			$('.districtBtns').css("color", "black");
+			($(this).css("background-color", "#3276b1"));
+			($(this).css("color", "white"));
+			
+	
+	
 	
 
 	if (sumView == "policePrecinct") {

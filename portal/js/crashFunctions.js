@@ -1,6 +1,6 @@
 /*********************** listeners ***************************/
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	$("[name='InjuriesWhat']").on('switchChange.bootstrapSwitch', function(e) {
 		map.infoWindow.hide();
 
@@ -16,35 +16,61 @@ $(document).ready(function() {
 		}
 		toggleCrashLayers();
 	});
-});
+});*/
+
 
 $(document).ready(function() {
-	$("[name='InjuriesWhen']").on('switchChange.bootstrapSwitch', function(e) {
+	$(".crashTypeSwitchBtns").on('click', function(e) {
+		console.log("get click");
 		map.infoWindow.hide();
 
-		if ($("[name='InjuriesWhen']").is(':checked')) {
-			console.log("Monthly");
-			monthly = true;
-			yearly = false;
+		setTimeout(function() {
+			if ($("#injuriesBtn").hasClass('active')) {
+				console.log("Injuries");
+				injury = true;
+				fatality = false;
+				$("#fatalitiesBtn").css("color", "rgb(204,204,204)");
+				$("#injuriesBtn").css("color", "rgb(255,255,255)");
 
-			var val = $('#jqxslider').jqxSlider('getValue');
-			var toolTipVal = sliderLookup(val);
-			$("#dateLabel").text(toolTipVal);
-
-		} else {
-			console.log("Yearly");
-			monthly = false;
-			yearly = true;
-
-			var val = $('#jqxslider2').jqxSlider('getValue');
-			var toolTipVal = slider2Lookup(val);
-			$("#dateLabel").text(toolTipVal);
-
-		}
-		toggleCrashLayers();
+			} else if ($("#fatalitiesBtn").hasClass('active')) {
+				console.log("Fatalities");
+				injury = false;
+				fatality = true;
+				$("#injuriesBtn").css("color", "rgb(204,204,204)");
+				$("#fatalitiesBtn").css("color", "rgb(255,255,255)");
+			}
+			toggleCrashLayers();
+		}, 20);
 	});
+}); 
 
-});
+
+
+$(document).ready(function() {
+	$(".crashTimeSwitchBtns").on('click', function(e) {
+		console.log("get click");
+		map.infoWindow.hide();
+
+		setTimeout(function() {
+			if ($("#monthlyBtn").hasClass('active')) {
+				console.log("monthly");
+				monthly = true;
+				yearly = false;
+				$("#yearlyBtn").css("color", "rgb(204,204,204)");
+				$("#monthlyBtn").css("color", "rgb(255,255,255)");
+
+			} else if ($("#yearlyBtn").hasClass('active')) {
+				console.log("yearly");
+				monthly = false;
+				yearly = true;
+				$("#monthlyBtn").css("color", "rgb(204,204,204)");
+				$("#yearlyBtn").css("color", "rgb(255,255,255)");
+			}
+			toggleCrashLayers();
+		}, 20);
+	});
+}); 
+
 
 $(document).ready(function() {
 	// test //
@@ -52,6 +78,18 @@ $(document).ready(function() {
 
 	$('.crashTypes').on('click', function() {
 		map.infoWindow.hide();
+	//	setTimeout(function() {
+		//if ($(this).hasClass('active')) {
+			($('.crashTypes').css("background-color", "rgb(255,255,255)"));
+			($('.crashTypes').css("color", "black"));
+			($(this).css("background-color", "#3276b1"));
+			($(this).css("color", "white"));
+		//}
+	//	}, 20);
+	//	else if (!$(this).hasClass('active')) {
+			//($(this).css("background-color", "rgb(255,255,255)"));
+		//}
+
 
 		var mode = ($(this).find('input').attr('id'));
 		console.log(mode);
@@ -688,42 +726,46 @@ function checkCrashCatState() {
 
 	map.infoWindow.hide();
 
-	if ($("[name='InjuriesWhat']").is(':checked')) {
-		console.log("Injuries");
-		injury = true;
-		fatality = false;
+		setTimeout(function() {
+			if ($("#injuriesBtn").hasClass('active')) {
+				console.log("Injuries");
+				injury = true;
+				fatality = false;
+				$("#fatalitiesBtn").css("color", "rgb(204,204,204)");
+				$("#injuriesBtn").css("color", "rgb(255,255,255)");
 
-	} else {
-		console.log("Fatalities");
-		injury = false;
-		fatality = true;
-	}
+			} else if ($("#fatalitiesBtn").hasClass('active')) {
+				console.log("Fatalities");
+				injury = false;
+				fatality = true;
+				$("#injuriesBtn").css("color", "rgb(204,204,204)");
+				$("#fatalitiesBtn").css("color", "rgb(255,255,255)");
+			}
+			toggleCrashLayers();
+		}, 20);
 	//	toggleCrashLayers();
 
-	map.infoWindow.hide();
+	//map.infoWindow.hide();
 
-	if ($("[name='InjuriesWhen']").is(':checked')) {
+		setTimeout(function() {
+			if ($("#monthlyBtn").hasClass('active')) {
+				console.log("monthly");
+				monthly = true;
+				yearly = false;
+				$("#yearlyBtn").css("color", "rgb(204,204,204)");
+				$("#monthlyBtn").css("color", "rgb(255,255,255)");
 
-		console.log("Monthly");
-		monthly = true;
-		yearly = false;
+			} else if ($("#yearlyBtn").hasClass('active')) {
+				console.log("yearly");
+				monthly = false;
+				yearly = true;
+				$("#monthlyBtn").css("color", "rgb(204,204,204)");
+				$("#yearlyBtn").css("color", "rgb(255,255,255)");
+			}
+			toggleCrashLayers();
+		}, 20);
 
-		var val = $('#jqxslider').jqxSlider('getValue');
-		var toolTipVal = sliderLookup(val);
-		$("#dateLabel").text(toolTipVal);
-
-	} else {
-		console.log("Yearly");
-		monthly = false;
-		yearly = true;
-
-		var val = $('#jqxslider2').jqxSlider('getValue');
-		var toolTipVal = slider2Lookup(val);
-		$("#dateLabel").text(toolTipVal);
-
-	}
-
-	map.infoWindow.hide();
+	//map.infoWindow.hide();
 
 	console.log(ped + " " + bike + " " + motor + " " + all);
 	toggleCrashLayers();

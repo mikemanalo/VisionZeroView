@@ -60,18 +60,9 @@
 				
 				<button id="searchNav1" type="button" class="navbar-toggle pull-right " data-toggle="collapse" data-target="#collapseOne">
 					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<!--<span class="glyphicon glyphicon-search"></span> 
-					<span class="icon-bar" style="color:transparent;"></span>-->
+					<span class="glyphicon glyphicon-search"></span> 
 				</button>
-				
-				
 
-				
-				
-		  
 				<a href="#"><img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
 		
 			</div>
@@ -87,19 +78,14 @@
 					</ul>
 				</div>
 				
-				<!--<button id="searchNav" type="button" class="navbar-toggle pull-right btn-circle" data-toggle="collapse" data-target="#collapse-search">-->
 				<button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="collapse" data-target="#collapseOne">
 				
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="glyphicon glyphicon-search"></span> 
 					</button>
 			
 		
 				<div id="collapse-search" class="collapse navbar-collapse pull-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
-					
-						
 					<ul id="collapse-search_ul" class="nav navbar-nav navbar-right">
 						<form id="searchInput" role="search" class="navbar-input-group navbar-form ">
 							<div class="form-group">
@@ -119,39 +105,36 @@
 						</form>
 					</ul>
 				</div><!--/.nav-collapse -->
-		
 			</div>
 		</div>
     </div>
 	
-	<div id="collapseOne" class="panel-collapse collapse">
-				  <div class="panel-body">
-				   <form id="searchInput" role="search" class="navbar-input-group navbar-form ">
-						<div class="form-group">
-							<div class="input-group input-group-sm" style="right:1em;">
-								<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
-								<ul class="dropdown-menu">
-									<li><a href="#">Manhattan</a></li>
-									<li><a href="#">Bronx</a></li>
-									<li><a href="#">Brooklyn</a></li>
-									<li><a href="#">Queens</a></li>
-									<li><a href="#">Staten Island</a></li>
-								</ul>
-								<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
-								<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-							</div>
-						</div>
-					</form>
+	<div id="collapseOne" class="panel-collapse collapse col-sx-12  col-sm-9 col-md-9 col-lg-9   pull-right" style="margin-left:-15px; margin-right:-15px; height:30px !important;">
+		<div class="panel-body" style="padding:0em;">
+			<form id="searchInput1" role="search" class="navbar-input-group navbar-form center-block" style=" top:-1em; margin:0 auto;">
+				<div class="form-group">
+					<div class="input-group input-group-md" style="bottom:0.8em; padding-right:30px;">
+						<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
+						<ul class="dropdown-menu">
+							<li><a href="#">Manhattan</a></li>
+							<li><a href="#">Bronx</a></li>
+							<li><a href="#">Brooklyn</a></li>
+							<li><a href="#">Queens</a></li>
+							<li><a href="#">Staten Island</a></li>
+						</ul>
+						<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
+						<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+					</div>
 				</div>
-			</div>
+			</form>
+		</div>
+	</div>
 	
 	
     <!-- Begin page content -->
 	<div id="mainContent">
 		<div id="mainRow" class="row">		
 			<div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
-				
-		
 				<div id="map" class="container-fluid">
 					<div id="labelDiv">
 						<table id="labelTable">
@@ -179,7 +162,7 @@
 			
 			
 		
-			 <div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9" id="sidebar">
+			 <div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9 clearfix" id="sidebar">
 				<div class="container-fluid">
 
 					<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -195,54 +178,69 @@
 											<div class="form-group">
 												
 												<div class="col-sm-12" style="padding-bottom: 1.3em;">
-													<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
+													<!--<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
 														<label class="btn btn-default crashTypes">
-															<input type="radio" name="options" id="ped"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">5</i>
+															<input type="radio" name="options" id="ped"><i class="icon-ok crashIcon">5</i>
 														</label>
 
 														<label class="btn btn-default crashTypes">
-															<input type="radio" name="options" id="bike"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">2</i>
+															<input type="radio" name="options" id="bike"><i class="icon-ok crashIcon">2</i>
 														</label>
 
 														<label class="btn btn-default crashTypes">
-															<input type="radio" name="options" id="motor"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">1</i>
+															<input type="radio" name="options" id="motor"><i class="icon-ok crashIcon">1</i>
 														</label>
 
 														<label class="btn btn-default crashTypes active">
-															<input type="radio" name="options" id="all"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">7</i>
+															<input type="radio" name="options" id="all"><i class="icon-ok crashIcon">7</i>
 														</label>
-													</div>
-												</div>
-											</div>
-											
-											<div class="form-group">
-												<div class="btn-group btn-toggle summaryBox center-block" Style="width:100%;">															
-															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="InjuriesWhat" style="width:50%; font-size: 16px;">
-															Injuries
-															</label>
-															
-															<label class="btn btn-sm btn-default summarySwitchBtns"  style="width:50%; font-size: 16px;">
-															Fatalities
-															</label>
-														</div>
-												<!--<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
-													<input type="checkbox" name="InjuriesWhat" checked data-size="large" data-on-text="Injuries" data-on-color="warning" data-off-text="Fatalities" data-off-color="danger">
-												</div>-->
-											</div>
+													</div>-->
+													<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
+														<label class="btn btn-default crashTypes">
+															   <input type="radio" name="options" id="ped"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">5</i>
+														</label>
 
-											<div class="form-group">
-												<div class="btn-group btn-toggle summaryBox center-block" Style="width:100%;">															
-															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="InjuriesWhen" style="width:50%; font-size: 16px;">
-															By Month
-															</label>
-															
-															<label class="btn btn-sm btn-default summarySwitchBtns"  style="width:50%; font-size: 16px;">
-															By Year
-															</label>
+														<label class="btn btn-default crashTypes">
+															   <input type="radio" name="options" id="bike"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">2</i>
+														</label>
+
+														<label class="btn btn-default crashTypes">
+															   <input type="radio" name="options" id="motor"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">1</i>
+														</label>
+
+														<label class="btn btn-default crashTypes active" style="background-color:#3276b1; color:white">
+															   <input type="radio" name="options" id="all"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em; ">7</i>
+														</label>
+												 </div>
+														  <!--</div>
+												   </div>-->
+                                                                           
+												   <div class="form-group">
+													  <div class="btn-group btn-toggle  center-block crashTypeBtnBlock">                                                                                                    
+														   <label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="injuriesBtn" style="width:50%; font-size: 16px; ">
+														   Injuries
+														   </label>
+														   
+														   <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn"  style="width:50%; font-size: 16px;">
+														   Fatalities
+														   </label>
 														</div>
-												<!--<div class="col-sm-12 center-block" style="padding-bottom: 1.3em;">
-													<input type="checkbox" name="InjuriesWhen" checked data-size="large" data-on-text="By Month" data-off-text="By Year" data-on-color="info" data-off-color="primary">
-												</div>-->
+													 
+												   </div>
+
+												   <div class="form-group">
+													  <div class="btn-group btn-toggle center-block crashTypeBtnBlock">                                                                                                     
+															   <label class="btn btn-sm active btn-primary crashTimeSwitchBtns" id="monthlyBtn" style="width:50%; font-size: 16px;">
+															   By Month
+															   </label>
+															   
+															   <label class="btn btn-sm btn-default crashTimeSwitchBtns"  id="yearlyBtn" style="width:50%; font-size: 16px;">
+															   By Year
+															   </label>
+														</div>
+												   </div>
+
+												</div>
 											</div>
 
 											<div class="col-sm-12">
@@ -444,7 +442,8 @@
 												<div class="form-group">
 													<div class="col-sm-12" style="padding-bottom: 1.3em;">
 														<div class="btn-group-vertical center-block districtBtnGroup" data-toggle="buttons">
-															<label class="btn btn-default districtBtns active">
+															<!--<label class="btn btn-default districtBtns active">-->
+															<label class="btn btn-default districtBtns active" style="background-color:#3276b1; color:white">
 																<input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel">Police Precincts</span>
 															</label>
 
@@ -458,15 +457,10 @@
 														</div>
 													</div>
 												</div>
-														
-													
-													
-											
-											
+		
 											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 10em;">
 												More Info
 											</button>
-
 
 											<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 												<div class="modal-dialog">
@@ -509,9 +503,9 @@
 			</div>
 			
 			<span style="padding-right: 0.5em; float: right; margin-top; 0.5em; padding-top: 0.2em;">
-                <a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia blackBarOff">3</a>
-                <a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia blackBarOff">6</a>
-                <a href="#" id="google" class="socialMedia blackBarOff">4</a>
+                <a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia">3</a>
+                <a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia">6</a>
+                <a href="#" id="google" class="socialMedia">4</a>
             </span>
      	</div>
     </div>

@@ -388,7 +388,7 @@ margin-right: 15px;
     right: auot;
 }
 
-::-moz-selection
+/*::-moz-selection
 {
     text-shadow: none;
     background: #333;
@@ -406,10 +406,10 @@ margin-right: 15px;
     text-shadow: none;
     background: #333;
     color: #fff;
-}
+}*/
 
 
-.btn-circle {
+/*.btn-circle {
   width: 30px;
   height: 30px;
   text-align: center;
@@ -417,9 +417,45 @@ margin-right: 15px;
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
-}	
+}	*/
 
+.crashIcon{
+	font-family: 'icomoon'; 
+	font-size: 1.8em;
+	}
+
+	.panel-body {
+      height: 50%;
+      padding-bottom: -55px;
+    }
+
+.crashTypeBtnBlock{
+       margin-left: auto; margin-right: auto;
+       width: 86.5%;
+       
+}
+.crashTypeSwitchBtns{
+       margin-bottom: 1em;
+}
+
+.jqx-fill-state-normal{
+      background: rgb(242,101,34) !important;
+}
+       
+.summaryBox{
+       margin-left:auto; margin-right: auto;
+       padding-top: 2em;
+}
+
+/**********************************************/
+.districtLabel{
+       margin-left:auto; margin-right: auto;
+       
+}
+
+	
 /*===============================================================================================================================================================*/
+/*phone*/
 @media only screen and (min-width : 320px) {
 	.vzLogo {
     width: 5em;
@@ -428,13 +464,14 @@ margin-right: 15px;
 	margin-right: auto;
 	}
 	
+	
 	#map_zoom_slider{
 		display: none !important;
 		visibility: hidden !important;
 	}
 }
 
-
+/*phone*/
 @media(max-width:767px){
 	.vzLogo {
     width: 15em;
@@ -461,10 +498,12 @@ margin-right: 15px;
 		visibility: hidden !important;
 	}
 }
+
+/*Tablet*/
 @media(min-width:768px){
 	.vzLogo {
     width: 20em;
-	margin-top: 1em !important;
+	margin-top: 1.8em !important;
 	margin-left: auto;
 	margin-right: auto;
 	}
@@ -474,17 +513,29 @@ margin-right: 15px;
 	white-space: normal;
 	font-size:0.8em;
 	}
+	
+	#map_zoom_slider{
+		display: block !important;
+		visibility: visible !important;
+	}
 
 }
+/*Desktop*/
 @media(min-width:992px){
 	.vzLogo {
     width: 20em;
-	margin-top: 1.1em !important;
+	margin-top: 1.8em !important;
 	margin-left: auto;
 	margin-right: auto;
 	}
-}
+
+
+	}
+	
+	
+/*Large Screen*/
 @media(min-width:1200px){}
+
 
 @media (max-width: 1107px) {
 
@@ -520,6 +571,90 @@ margin-right: 15px;
 	#searchNav{
 	margin-right:2em !important;
 	margin-top:2em !important;
+	margin-left:15px;
+	}
+	
+	#searchNav1.navbar-toggle {
+	position: relative;
+	float: right;
+	margin-right: 15px;
+	padding: 8px 13px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	}
+	
+	#searchNav.navbar-toggle {
+	position: relative;
+	float: right;
+	margin-right: 15px;
+	padding: 8px 13px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	}
+	
+	#layerNav.navbar-toggle {
+	position: relative;
+	float: right;
+	margin-right: 15px;
+	padding: 8px 13px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	}
+}
+
+@media (mid-width: 1107px) {
+	#collapseOne{
+	display:block !important;
+	visibility: hidden ! important;
+	}
+}
+
+@media (max-width: 802px) {
+
+    #layerNav.navbar-toggle {
+        display: block;
+    }
+    #collapse-layer.navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    #collapse-layer.navbar-collapse.collapse {
+        display: none!important;
+    }
+    #collapse-layer_ul.navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	#collapse-layer_ul.navbar-nav>li {
+        float: none;
+    }
+    #collapse-layer_ul.navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #collapse-year.collapse.in{
+  		display:block !important;
+	}
+	
+	/*#searchNav{
+	margin-right:2em !important;
+	margin-top:2em !important;*/
 	}
 }
 
