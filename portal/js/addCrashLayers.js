@@ -6,6 +6,15 @@ function addCrashLayers() {
 		id : "fatality_monthly_all_Layer"
 
 	});
+	
+	
+	/*************** test July 24 **********************************************************/
+	/*fatality_monthly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyTotalFatalities_Seth_2009_2014/MapServer", {
+		id : "fatality_monthly_all_Layer"
+
+	});*/
+	
+	
 	map.addLayer(fatality_monthly_all_Layer);
 	//var testArray = [];
 	//testArray[0] = 0;
@@ -109,7 +118,8 @@ function addCrashLayers() {
 
 	});
 	
-/*	injury_monthly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer", {
+	/************ test July 24 ******************************************************/
+	/*injury_monthly_all_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_VISION_ZERO/monthlyInjuries_2009_2014_June13/MapServer", {
 		id : "injury_monthly_all_Layer"
 		
 

@@ -134,7 +134,7 @@ function checkOutreachBtns(outreachLayerIDs){
 	console.log(summaryLayerIDs);
 	setTimeout(function(){ 	
  		if ($("#summaryInjuries").hasClass('active')){
- 			$("#summaryFatalities").css("color", "black");
+ 			$("#summaryFatalities").css("color", "rgb(204,204,204)");
  			$("#summaryInjuries").css("color", "white");
  		console.log("injury active"); 
  		injurySum = true; fatalitySum = false;
@@ -143,8 +143,8 @@ function checkOutreachBtns(outreachLayerIDs){
  //	checkSummaryInjuryBtns(summaryLayerIDs);
  		}
  		else if ($("#summaryFatalities").hasClass('active')){
- 			$("#summaryInjuries").css("color", "black");
- 			$("#summaryFatalities").css("color", "white");
+ 			$("#summaryInjuries").css("color", "rgb(204,204,204)");
+ 			$("#summaryFatalities").css("color", "white" );
  		console.log("fatality active"); 
  		fatalitySum = true; injurySum = false; 
  		summaryInjuryLayer.setVisibility(false);  summaryFatalityLayer.setVisibility(true);
@@ -169,7 +169,7 @@ $(".districtBtns").on("click", function() {
 	var locID;
 	
 			($('.districtBtns').css("background-color", "rgb(255,255,255)"));
-			$('.districtBtns').css("color", "black");
+			$('.districtBtns').css("color", "rgb(204,204,204)");
 			($(this).css("background-color", "#3276b1"));
 			($(this).css("color", "white"));
 			

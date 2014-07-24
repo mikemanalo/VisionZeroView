@@ -1,23 +1,5 @@
 /*********************** listeners ***************************/
 
-/*$(document).ready(function() {
-	$("[name='InjuriesWhat']").on('switchChange.bootstrapSwitch', function(e) {
-		map.infoWindow.hide();
-
-		if ($("[name='InjuriesWhat']").is(':checked')) {
-			console.log("Injuries");
-			injury = true;
-			fatality = false;
-
-		} else {
-			console.log("Fatalities");
-			injury = false;
-			fatality = true;
-		}
-		toggleCrashLayers();
-	});
-});*/
-
 
 $(document).ready(function() {
 	$(".crashTypeSwitchBtns").on('click', function(e) {
@@ -78,17 +60,11 @@ $(document).ready(function() {
 
 	$('.crashTypes').on('click', function() {
 		map.infoWindow.hide();
-	//	setTimeout(function() {
-		//if ($(this).hasClass('active')) {
+
 			($('.crashTypes').css("background-color", "rgb(255,255,255)"));
-			($('.crashTypes').css("color", "black"));
+			($('.crashTypes').css("color", "rgb(204,204,204)"));
 			($(this).css("background-color", "#3276b1"));
 			($(this).css("color", "white"));
-		//}
-	//	}, 20);
-	//	else if (!$(this).hasClass('active')) {
-			//($(this).css("background-color", "rgb(255,255,255)"));
-		//}
 
 
 		var mode = ($(this).find('input').attr('id'));
@@ -187,6 +163,9 @@ function toggleCrashLayers() {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					console.log(curInjuryValue);
+							var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -216,6 +195,8 @@ function toggleCrashLayers() {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -231,6 +212,8 @@ function toggleCrashLayers() {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -257,6 +240,8 @@ function toggleCrashLayers() {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -458,6 +443,8 @@ else if (yearly) {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
 
 					visibleInjuryLayerIds.length = 0;
@@ -474,6 +461,8 @@ else if (yearly) {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 4);
 
 				visibleInjuryLayerIds.length = 0;
@@ -500,6 +489,8 @@ else if (yearly) {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 4);
 
 				visibleInjuryLayerIds.length = 0;
@@ -538,6 +529,8 @@ else if (yearly) {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
 
 					visibleInjuryLayerIds.length = 0;

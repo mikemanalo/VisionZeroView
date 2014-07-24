@@ -202,6 +202,33 @@ margin-right: 15px;
 	 text-align: center;
 }
  
+ /****************************** new July 23 ******************************/
+.crashTypeBtnBlock{
+	margin-left: auto; margin-right: auto;
+	width: 86.5%;
+	 
+}
+.crashTypeSwitchBtns  {
+	margin-bottom: 1em;
+}
+.districtBtns {
+	margin-bottom: 1em;
+}
+
+.esriPopup .titleButton.maximize {  
+     display: none;  
+}
+/*.btn.btn-default.crashTypes.active{
+	background-color: #0546A5;
+}*/
+	
+	#layerLabel{
+		font-weight: bold
+	}
+	#dateLabel{
+		font-weight: bold
+	}
+
 .jqx-fill-state-normal{
  	background: rgb(242,101,34) !important;
 }
@@ -429,29 +456,6 @@ margin-right: 15px;
       padding-bottom: -55px;
     }
 
-.crashTypeBtnBlock{
-       margin-left: auto; margin-right: auto;
-       width: 86.5%;
-       
-}
-.crashTypeSwitchBtns{
-       margin-bottom: 1em;
-}
-
-.jqx-fill-state-normal{
-      background: rgb(242,101,34) !important;
-}
-       
-.summaryBox{
-       margin-left:auto; margin-right: auto;
-       padding-top: 2em;
-}
-
-/**********************************************/
-.districtLabel{
-       margin-left:auto; margin-right: auto;
-       
-}
 
 	
 /*===============================================================================================================================================================*/

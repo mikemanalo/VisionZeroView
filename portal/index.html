@@ -139,16 +139,19 @@
 					<div id="labelDiv">
 						<table id="labelTable">
 							<tr>
+								<td class="labelRow" ><span id="boxLabel">Citywide Totals</span> </td>
+							</tr>
+							<tr>
 								<td class="labelRow" ><span id="layerLabel" class="crashLabel1"></span> </td>
 							</tr>
 							<tr>
 								<td class="labelRow"><span id="dateLabel" class="crashLabel2"></span> </td>
 							</tr>
 							<tr>
-								<td class="labelRow"><span id="stat1" class="stats">Fatality:</span> </td>
+								<td class="labelRow"><span id="stat1" class="stats">Fatality: (stat here)</span> </td>
 							</tr>
 							<tr>
-								<td class="labelRow"><span id="stat2" class="stats">Injury:</span> </td
+								<td class="labelRow"><span id="stat2" class="stats">Injury: (state here)</span> </td
 							</tr>
 						</table>
 					</div>
@@ -196,15 +199,15 @@
 														</label>
 													</div>-->
 													<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
-														<label class="btn btn-default crashTypes">
-															   <input type="radio" name="options" id="ped"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">5</i>
+														<label class="btn btn-default crashTypes" style="color:rgb(204,204,204)">
+															   <input type="radio" name="options" id="ped"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em; ">5</i>
 														</label>
 
-														<label class="btn btn-default crashTypes">
+														<label class="btn btn-default crashTypes " style=" color:rgb(204,204,204)">
 															   <input type="radio" name="options" id="bike"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">2</i>
 														</label>
 
-														<label class="btn btn-default crashTypes">
+														<label class="btn btn-default crashTypes" style=" color:rgb(204,204,204)">
 															   <input type="radio" name="options" id="motor"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em;">1</i>
 														</label>
 
@@ -212,8 +215,8 @@
 															   <input type="radio" name="options" id="all"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em; ">7</i>
 														</label>
 												 </div>
-														  <!--</div>
-												   </div>-->
+														  </div>
+												   </div>
                                                                            
 												   <div class="form-group">
 													  <div class="btn-group btn-toggle  center-block crashTypeBtnBlock">                                                                                                    
@@ -221,7 +224,7 @@
 														   Injuries
 														   </label>
 														   
-														   <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn"  style="width:50%; font-size: 16px;">
+														   <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn"  style="width:50%; font-size: 16px; color:rgb(204,204,204)">
 														   Fatalities
 														   </label>
 														</div>
@@ -234,14 +237,14 @@
 															   By Month
 															   </label>
 															   
-															   <label class="btn btn-sm btn-default crashTimeSwitchBtns"  id="yearlyBtn" style="width:50%; font-size: 16px;">
+															   <label class="btn btn-sm btn-default crashTimeSwitchBtns"  id="yearlyBtn" style="width:50%; font-size: 16px; color:rgb(204,204,204)">
 															   By Year
 															   </label>
 														</div>
 												   </div>
 
-												</div>
-											</div>
+												<!--</div>
+											</div>-->
 
 											<div class="col-sm-12">
 												<img src="img/legend/Injury_Legend.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
@@ -432,7 +435,7 @@
 															Injuries
 															</label>
 															
-															<label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width:50%; font-size: 16px;">
+															<label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width:50%; font-size: 16px; color:rgb(204,204,204)">
 															Fatalities
 															</label>
 														</div>
@@ -444,15 +447,15 @@
 														<div class="btn-group-vertical center-block districtBtnGroup" data-toggle="buttons">
 															<!--<label class="btn btn-default districtBtns active">-->
 															<label class="btn btn-default districtBtns active" style="background-color:#3276b1; color:white">
-																<input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel">Police Precincts</span>
+																<input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel" >Police Precincts</span>
 															</label>
 
-															<label class="btn btn-default districtBtns ">
-																<input type="radio" name="options" id="communityDistrict"><span class="districtLabel">Community Districts</span>
+															<label class="btn btn-default districtBtns" style="color:rgb(204,204,204)">
+																<input type="radio" name="options" id="communityDistrict"><span class="districtLabel" >Community Districts</span>
 															</label>
 
-															<label class="btn btn-default  districtBtns">
-																<input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel">City Council Districts</span>
+															<label class="btn btn-default  districtBtns" style="color:rgb(204,204,204)">
+																<input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel" >City Council Districts</span>
 															</label>
 														</div>
 													</div>
@@ -588,6 +591,7 @@
           
 			spatialRef = map.spatialReference;	
             var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+			//  test July 24
 			//var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
             map.addLayer(tiled);
 			

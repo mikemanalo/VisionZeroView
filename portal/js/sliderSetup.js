@@ -60,7 +60,7 @@ function sliderSetup () {
 	var thumb = $($('#jqxslider').find('.jqx-slider-slider')[1]), tooltip = createTooltip(), tooltipActive = true;
 
 	thumb.bind('mousedown', function(event) {
-		tooltip.css('visibility', 'visible');
+		tooltip.css('visibility', 'hidden');
 		refreshTooltip($('#jqxslider').jqxSlider('value'));
 		tooltipActive = true;
 	});
