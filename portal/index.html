@@ -58,7 +58,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				
-				<button id="searchNav1" type="button" class="navbar-toggle pull-right " data-toggle="collapse" data-target="#collapseOne">
+				<button id="searchNav1" type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#collapseOne">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="glyphicon glyphicon-search"></span> 
 				</button>
@@ -79,10 +79,9 @@
 				</div>
 				
 				<button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="collapse" data-target="#collapseOne">
-				
 					<span class="sr-only">Toggle navigation</span>
 					<span class="glyphicon glyphicon-search"></span> 
-					</button>
+				</button>
 			
 		
 				<div id="collapse-search" class="collapse navbar-collapse pull-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -109,7 +108,7 @@
 		</div>
     </div>
 	
-	<div id="collapseOne" class="panel-collapse collapse col-sx-12  col-sm-9 col-md-9 col-lg-9   pull-right" style="margin-left:-15px; margin-right:-15px; height:30px !important;">
+	<div id="collapseOne" class="panel-collapse collapse col-sx-12  col-sm-9 col-md-9 col-lg-9  pull-right" style="margin-left:-15px; margin-right:-15px; ">
 		<div class="panel-body" style="padding:0em;">
 			<form id="searchInput1" role="search" class="navbar-input-group navbar-form center-block" style=" top:-1em; margin:0 auto;">
 				<div class="form-group">
@@ -139,7 +138,7 @@
 					<div id="labelDiv">
 						<table id="labelTable">
 							<tr>
-								<td class="labelRow" ><span id="boxLabel">Citywide Totals</span> </td>
+								<td class="labelRow" ><span id="boxLabel">Citywide Totals for</span> </td>
 							</tr>
 							<tr>
 								<td class="labelRow" ><span id="layerLabel" class="crashLabel1"></span> </td>
@@ -176,28 +175,12 @@
 								<div class="container-fluid">
 									<div class="row" style="margin-right: -40px; margin-left: -40px;">
 										<div class="col-md-12">
-											<h3 style="text-align: center; color: #F26522; margin-bottom:1.3em; margin-top: 0px;">Injuries and Fatalities</h3>
+											<h3 style="text-align: center; color: #F26522; margin-bottom:1.3em; margin-top: 0px; white-space:normal;">Injuries and Fatalities Information</h3>
 
 											<div class="form-group">
 												
 												<div class="col-sm-12" style="padding-bottom: 1.3em;">
-													<!--<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
-														<label class="btn btn-default crashTypes">
-															<input type="radio" name="options" id="ped"><i class="icon-ok crashIcon">5</i>
-														</label>
-
-														<label class="btn btn-default crashTypes">
-															<input type="radio" name="options" id="bike"><i class="icon-ok crashIcon">2</i>
-														</label>
-
-														<label class="btn btn-default crashTypes">
-															<input type="radio" name="options" id="motor"><i class="icon-ok crashIcon">1</i>
-														</label>
-
-														<label class="btn btn-default crashTypes active">
-															<input type="radio" name="options" id="all"><i class="icon-ok crashIcon">7</i>
-														</label>
-													</div>-->
+													
 													<div class="btn-group center-block btn-group-3 input-group" data-toggle="buttons">
 														<label class="btn btn-default crashTypes" style="color:rgb(204,204,204)">
 															   <input type="radio" name="options" id="ped"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em; ">5</i>
@@ -214,47 +197,62 @@
 														<label class="btn btn-default crashTypes active" style="background-color:#3276b1; color:white">
 															   <input type="radio" name="options" id="all"><i class="icon-ok" style="font-family: 'icomoon'; font-size: 1.8em; ">7</i>
 														</label>
-												 </div>
-														  </div>
-												   </div>
+													</div>
+												</div>
+										   </div>
                                                                            
-												   <div class="form-group">
-													  <div class="btn-group btn-toggle  center-block crashTypeBtnBlock">                                                                                                    
-														   <label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="injuriesBtn" style="width:50%; font-size: 16px; ">
-														   Injuries
-														   </label>
-														   
-														   <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn"  style="width:50%; font-size: 16px; color:rgb(204,204,204)">
-														   Fatalities
-														   </label>
-														</div>
-													 
-												   </div>
+										   <div class="form-group">
+										   <div class="col-sm-12" style="padding-bottom: 1.3em;">
+											  <div class="btn-group btn-group-2 btn-toggle  center-block input-group crashTypeBtnBlock">                                                                                                    
+												   <label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="injuriesBtn" style="width:50%; font-size: 16px; ">
+												   Injuries
+												   </label>
+												   
+												   <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn"  style="width:50%; font-size: 16px; color:rgb(204,204,204)">
+												   Fatalities
+												   </label>
+												</div>
+												</div>
+										   </div>
+										   
+										
 
-												   <div class="form-group">
-													  <div class="btn-group btn-toggle center-block crashTypeBtnBlock">                                                                                                     
-															   <label class="btn btn-sm active btn-primary crashTimeSwitchBtns" id="monthlyBtn" style="width:50%; font-size: 16px;">
-															   By Month
-															   </label>
-															   
-															   <label class="btn btn-sm btn-default crashTimeSwitchBtns"  id="yearlyBtn" style="width:50%; font-size: 16px; color:rgb(204,204,204)">
-															   By Year
-															   </label>
-														</div>
-												   </div>
+										   <div class="form-group">
+										   <div class="col-sm-12" style="padding-bottom: 1.3em;">
+										   <div class="btn-group btn-group-2 btn-toggle  center-block input-group crashTypeBtnBlock">                                                                                               
+													  <label class="btn btn-sm active btn-primary crashTimeSwitchBtns" id="monthlyBtn" style="width:50%; font-size: 16px;">
+													   By Month
+													   </label>
+													   
+													   <label class="btn btn-sm btn-default crashTimeSwitchBtns"  id="yearlyBtn" style="width:50%; font-size: 16px; color:rgb(204,204,204)">
+													   By Year
+													   </label>
+												</div>
+												</div>
+										   </div>
 
-												<!--</div>
-											</div>-->
-
-											<div class="col-sm-12">
-												<img src="img/legend/Injury_Legend.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
+											<div class="col-xs-12 col-sm-6" style="margin-top:2em; color:#565656; font-weight:800;">
+												<h4>Number of<br><b>Injuries</b><br>per Location</h4>						
+												<img src="img/legend/Injury_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
 											</div>
+											
+											
+											<div class="col-xs-12 col-sm-6" style="margin-top:2em; color:#565656; font-weight:800;">
+												<h4>Number of<br><b>Fatalities</b><br>per Location</h4>
+												<img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
+											</div>
+											
+											<div class="col-sm-12" style="margin-bottom:1em; color:#565656; font-weight:800;">
+												<h4>Density of All Injuries By Year </h4>						
+												<img src="img/legend/Injury_heat.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+												<h6><span style="margin-left:0.2em;"class="pull-left">Low</span><span class="pull-right">High</span></h6>
+											</div>	
 
 											<div class="form-group" style="margin-bottom: 1em;">
 
 												<div class="col-sm-12">
 													<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 3em;">
-														More Info
+														Methodology Description
 													</button>
 
 													<div class="modal fade" id="InjuryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -326,7 +324,7 @@
 											 </div>
 
 											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em;">
-												More Info
+												 Intervention Descriptions
 											</button>
 
 											<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -394,7 +392,7 @@
                                                     </div>
 
 											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em;">
-												More Info
+												Outreach Description
 											</button>
 
 											<div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -431,11 +429,11 @@
 												<div class="form-group">
 													<div class="col-sm-12" style="padding-bottom: 1.3em;">
 														<div class="btn-group btn-toggle summaryBox center-block" Style="width:100%;">															
-															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="summaryInjuries" style="width:50%; font-size: 16px;">
+															<label class="btn btn-sm active btn-primary summarySwitchBtns" id="summaryInjuries" style="width:50%; font-size: 16px; white-space:normal;">
 															Injuries
 															</label>
 															
-															<label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width:50%; font-size: 16px; color:rgb(204,204,204)">
+															<label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width:50%; font-size: 16px; color:rgb(204,204,204); white-space:normal;">
 															Fatalities
 															</label>
 														</div>
@@ -446,23 +444,41 @@
 													<div class="col-sm-12" style="padding-bottom: 1.3em;">
 														<div class="btn-group-vertical center-block districtBtnGroup" data-toggle="buttons">
 															<!--<label class="btn btn-default districtBtns active">-->
-															<label class="btn btn-default districtBtns active" style="background-color:#3276b1; color:white">
-																<input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel" >Police Precincts</span>
+															<label class="btn btn-default districtBtns active" style="background-color:#3276b1; color:white; white-space:normal;">
+																<input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel" >Police Precinct</span>
 															</label>
 
-															<label class="btn btn-default districtBtns" style="color:rgb(204,204,204)">
-																<input type="radio" name="options" id="communityDistrict"><span class="districtLabel" >Community Districts</span>
+															<label class="btn btn-default districtBtns" style="color:rgb(204,204,204); white-space:normal;">
+																<input type="radio" name="options" id="communityDistrict"><span class="districtLabel" >Community District</span>
 															</label>
 
-															<label class="btn btn-default  districtBtns" style="color:rgb(204,204,204)">
-																<input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel" >City Council Districts</span>
+															<label class="btn btn-default  districtBtns" style="color:rgb(204,204,204); white-space:normal;">
+																<input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel" >City Council District</span>
 															</label>
 														</div>
 													</div>
 												</div>
+												<div class="col-sm-12" style="margin-bottom:1em; color:#565656; font-weight:800;">
+													<h4>Density of Fatalities by<br>Police Precinct</h4>						
+													<img src="img/legend/Injury_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+													<h6><span style="margin-left:0.2em;"class="pull-left">Low</span><span class="pull-right">High</span></h6>
+												</div>	
+											
+											<div class="col-sm-12" style="margin-bottom:1em; color:#565656; font-weight:800;">
+												<h4>Density of Injuries by<br>Police Precinct</h4>						
+												<img src="img/legend/Fatal_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+												<h6><span style="margin-left:0.2em;"class="pull-left">Low</span><span class="pull-right">High</span></h6>
+											</div>	
+											
+											<!--<div class="col-sm-12" style="margin-bottom:1em; color:#565656; font-weight:800;">
+												<h4>Density of Injuries by</h4>						
+												<img src="img/legend/Injury_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+											</div>-->
+											
+											<p style="margin-left: 1em; font-size: 0.9em; font-weight:200;">*Normalized by Area (sq. miles)</p>
 		
-											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 10em;">
-												More Info
+											<button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 5em;">
+												Methodology
 											</button>
 
 											<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -494,21 +510,29 @@
 			</div>
 		</div>
 	</div>
-
-    <div id="footer" class="hidden-xs">
-		<div class="container-fluid">
-			<div class="date"> 
-				<span class="day"><img src="img/logo/dot.svg" id="footerLogo"></span>
-				<div class="dateHolder">
-					<span>Bill de Blasio, Mayor</span>
-					<span>Polly Trottenberg, Commissioner</span>
+	
+	<div class="modal fade" id="ShareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
-			
-			<span style="padding-right: 0.5em; float: right; margin-top; 0.5em; padding-top: 0.2em;">
-                <a href="https://www.facebook.com/NYCDOT" id="facebook" class="socialMedia">3</a>
-                <a href="https://twitter.com/NYC_DOT" id="twitter" class="socialMedia">6</a>
-                <a href="#" id="google" class="socialMedia">4</a>
+		</div>
+	</div>
+	
+	
+    <div id="footer" class="hidden-xs">
+		<div class="container-fluid">
+			<span style="padding-right: 0.6em; float: right; margin-top; 0.5em; padding-top: 0.2em;">
+                <a data-toggle="modal" data-target="#ShareModal" class="blackBarFont hidden-xs">Share This Map!</a>
             </span>
      	</div>
     </div>

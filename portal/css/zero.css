@@ -4,7 +4,7 @@ html {
 }
 
 body{
-	margin-bottom: 60px;
+	margin-bottom: 1.75em;
 }
 
 #blackBar.container-fluid{
@@ -141,9 +141,9 @@ body{
 }
 
 #mainRow{
-	bottom-padding:15px;
+	
 	margin-left: 15px;
-margin-right: 15px;
+	margin-right: 15px;
 }	
 
 #mainContent{
@@ -157,7 +157,9 @@ margin-right: 15px;
 	height:4em; 
 	bottom:0em; 
 	left:0em;
-	background: linear-gradient(#B3B3BE, #AEB7BC) repeat scroll 0% 0% #AEB7BC;
+	/*background: linear-gradient(#B3B3BE, #AEB7BC) repeat scroll 0% 0% #AEB7BC;
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#B3B3BE', endColorstr='#AEB7BC');*/
+	background-color:#AEB7BC;
 	z-index:19; 
 	opacity:0.9;
 	border-left: 30px solid #FFF;
@@ -205,7 +207,7 @@ margin-right: 15px;
  /****************************** new July 23 ******************************/
 .crashTypeBtnBlock{
 	margin-left: auto; margin-right: auto;
-	width: 86.5%;
+	width: 100%;
 	 
 }
 .crashTypeSwitchBtns  {
@@ -264,16 +266,16 @@ margin-right: 15px;
 }	
 	
 #labelDiv {
-    position: absolute;
-    top: 1.5em;
-    left: 3.5em;;
-    width: 180px;
-    height: 120px;
-    background-color: #FFF;
-    opacity: 0.8;
-    z-index: 39;
-    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.075);
-	display:block;
+position: absolute;
+top: 1.5em;
+left: 3.5em;
+width: 220px;
+height: 160px;
+background-color: #FFF;
+opacity: 0.8;
+z-index: 39;
+box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.075);
+display: block;
 }
 
 .crashLabel1{
@@ -318,8 +320,8 @@ margin-right: 15px;
 	width: 100%;
 }
 
-.btn-group-2 label.btn  {
-	width: 50%;
+.btn-group-2 label .btn {
+	width: 45%;
 }
 	
 .btn-group-3 label.btn  {
@@ -341,12 +343,15 @@ margin-right: 15px;
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
-	height: 60px;
+	height: 1.75em;
 	border: 1px solid #333;
 	background: linear-gradient(#3C3C3C, #111) repeat scroll 0% 0% #111;
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#3C3C3C', endColorstr='#111');
+	/*background-color:#000;*/
 	color: #FFF;
 	font-weight: bold;
 	text-shadow: 0px -1px 1px #000;
+	
 }
 
 .footer-block { 
@@ -538,7 +543,21 @@ margin-right: 15px;
 	
 	
 /*Large Screen*/
-@media(min-width:1200px){}
+@media(min-width:1200px){
+	#collapseOne{
+	display:block !important;
+	visibility: hidden !important;
+	height:0px !important;
+	}
+}
+
+@media(min-width:1108px){
+	#collapseOne{
+	display:block !important;
+	visibility: hidden !important;
+	height:0px !important;
+	}
+}
 
 
 @media (max-width: 1107px) {
@@ -618,12 +637,13 @@ margin-right: 15px;
 	}
 }
 
-@media (mid-width: 1107px) {
+/*@media (min-width: 1107px) {
 	#collapseOne{
 	display:block !important;
-	visibility: hidden ! important;
+	visibility: hidden !important;
+	height:0px !important;
 	}
-}
+}*/
 
 @media (max-width: 802px) {
 
@@ -656,10 +676,6 @@ margin-right: 15px;
   		display:block !important;
 	}
 	
-	/*#searchNav{
-	margin-right:2em !important;
-	margin-top:2em !important;*/
-	}
 }
 
 

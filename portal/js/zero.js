@@ -59,3 +59,7 @@ $("#injuries").on("click", function() {
     $("#collapseOne").collapse('hide');
 });
 
+//--------------------Btn-group fix---------------------------//
+/*$(".btn-group > .btn").click(function(){
+    $(this).addClass("active").siblings().removeClass("active");
+});*/
