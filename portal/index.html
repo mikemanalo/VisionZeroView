@@ -15,7 +15,6 @@
     <title>Vision Zero</title>
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap_switch_3/css/bootstrap3/bootstrap-switch.min.css">
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css">
@@ -90,13 +89,13 @@
 							<div class="form-group">
 								<div class="input-group input-group-sm" style="right:1em;">
 									<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
-									<ul class="dropdown-menu">
-										<li><a href="#">Manhattan</a></li>
-										<li><a href="#">Bronx</a></li>
-										<li><a href="#">Brooklyn</a></li>
-										<li><a href="#">Queens</a></li>
-										<li><a href="#">Staten Island</a></li>
-									</ul>
+										<ul class="dropdown-menu">
+											<li><a href="#">Manhattan</a></li>
+											<li><a href="#">Bronx</a></li>
+											<li><a href="#">Brooklyn</a></li>
+											<li><a href="#">Queens</a></li>
+											<li><a href="#">Staten Island</a></li>
+										</ul>
 									<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
 									<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
 								</div>
@@ -108,12 +107,12 @@
 		</div>
     </div>
 	
-	<div id="collapseOne" class="panel-collapse collapse col-sx-12  col-sm-9 col-md-9 col-lg-9  pull-right" style="margin-left:-15px; margin-right:-15px; ">
+	<div id="collapseOne" class="panel-collapse collapse col-sx-12  col-sm-9 col-md-9 col-lg-9  pull-right" style=" top:1.5em; margin-left:0px; margin-right:0px; overflow-y:none; ">
 		<div class="panel-body" style="padding:0em;">
-			<form id="searchInput1" role="search" class="navbar-input-group navbar-form center-block" style=" top:-1em; margin:0 auto;">
+			<form id="searchInput1" role="search" class="input-group form center-block" style=" top:-1em; margin:0 auto;">
 				<div class="form-group">
-					<div class="input-group input-group-md" style="bottom:0.8em; padding-right:30px;">
-						<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
+					<div class="input-group input-group-md" style="bottom:0.8em; padding-right:26px; padding-left:30px;">
+						<span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
 						<ul class="dropdown-menu">
 							<li><a href="#">Manhattan</a></li>
 							<li><a href="#">Bronx</a></li>
@@ -121,14 +120,13 @@
 							<li><a href="#">Queens</a></li>
 							<li><a href="#">Staten Island</a></li>
 						</ul>
-						<input id="address" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
-						<span id="btnsearch" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+						<input id="address1" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
+						<span id="btnsearch1" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-	
 	
     <!-- Begin page content -->
 	<div id="mainContent">
@@ -600,8 +598,11 @@
             spatialRef = new esri.SpatialReference({ "wkid": 4326 });
             var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
 			infoTemplate = new InfoTemplate("Location", "${location}");
+			infoTemplate1 = new InfoTemplate("Location", "${location}");
 			symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
 			fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
+			symbol1 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
+			fillSymbol1 = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
 			infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
 
 			map = new Map("map", {
@@ -648,7 +649,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://dx290zu2pmzgl.cloudfront.net/jqwidget/v3.2.1/jqx-all.js"></script>
     <script src="lib/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
-    <script src="lib/bootstrap_switch_3/js/bootstrap-switch.min.js"></script>
     <script src="lib/Modernizer/modernizr.custom.02110.js"></script>
     <script type="text/javascript" src="js/zero.js"></script>    
     <script type="text/javascript" src="js/crashFunctions.js"></script>
@@ -659,6 +659,7 @@
     <script type="text/javascript" src="js/resize.js"></script>
  	<script type="text/javascript" src="js/addLayers.js"></script> 
 	<script type="text/javascript" src="js/geocoder.js"></script> 
+	<script type="text/javascript" src="js/geocoder1.js"></script> 
 
 
 	

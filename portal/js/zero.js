@@ -1,9 +1,4 @@
-//----------------------------------------------------------//	
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-//----------------------------------------------------------//	
+//-----------------------Used to Toggle Switch Button-----------------------------------//	
 	$('.btn-toggle').click(function() {
     $(this).find('.btn').toggleClass('active');  
     
@@ -24,42 +19,16 @@
        
 });
 
-$('form').submit(function(){
-	alert($(this["options"]).val());
-    return false;
-});
-//----------------------------------------------------------//
-$("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-//----------------------------------------------------------//
-$(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
-});	
-//----------------------------------------------------------//
+//--------------------Used for the dropdown menu for the search------------------------------//
 $(".dropdown-menu li a").click(function(){
   var selText = $(this).text();
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 });
-//----------------------------------------------------------//
-$('#myTab a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-//---------------------------------------------------------//
-$("[name='InjuriesWhat']").bootstrapSwitch();
-$("[name='InjuriesWhat2']").bootstrapSwitch();
-$("[name='InjuriesWhen']").bootstrapSwitch();
-//----------------------------------------------------------//
 
-$("#injuries").on("click", function() {
-    $("#collapseOne").collapse('hide');
+//---------------------------------------------------------------------------------------------//
+$('body').on('click', '.btn-group button', function (e) {
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+    
+    //do any other button related things
 });
-
-//--------------------Btn-group fix---------------------------//
-/*$(".btn-group > .btn").click(function(){
-    $(this).addClass("active").siblings().removeClass("active");
-});*/
