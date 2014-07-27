@@ -314,7 +314,7 @@ function executeIdentifyTask(evt) {
 					break;
 					
 					case  "Safe_Streets_For_Seniors_preVZ":					
-					locTxt = "<table><tr><td><b>Name: </b>" + "&nbsp;  " + "${Name}</td></tr>";
+					locTxt = "<table><tr><td><b>Name:</b>" + "&nbsp; " + "${Name}</td></tr>";
 					locTxt += "<tr><td><b>Year:</b>" + "&nbsp;  " + " ${Year}</td></tr></table>";
 					template.setTitle("Safe Streets For Seniors");
 					break;
@@ -325,14 +325,14 @@ function executeIdentifyTask(evt) {
 					template.setTitle("Neighborhood Slow Zones");
 					break;
 					
-					case  "SAFETY_ENGG_SIP_2013_Implemented_corridors":	 case "SAFETY_ENGG_SIP_2013_Implemented_intersections_07_15":			
-					locTxt = "<table><tr><td><b>Project Name:" + " &nbsp;" + " </b>${Pjct_Name}</td></tr>";
-					locTxt += "<tr><td><b>Project Type:</b>" + " &nbsp;" + " ${SIPProjTyp}</td></tr></table>";
+					case  "SAFETY_ENGG_SIP_Corridors":	 case "SAFETY_ENGG_SIP_Intersections":			
+					locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + "</b>${Pjct_Name}</td></tr>";
+					locTxt += "<tr><td><b>Project Type:</b>" + "&nbsp;" + "${SIPProjTyp}</td></tr></table>";
 					template.setTitle("Safety Engineering Projects");
 					break;
 
 					case  "sh_2014afterDissolve":					
-					locTxt = "<table><tr><td><b>On Street:" + " &nbsp;" + " </b>${FIRST_Main}</td></tr>";
+					locTxt = "<table><tr><td><b>On Street:" + "&nbsp;" + " </b>${FIRST_Main}</td></tr>";
 					locTxt += "<tr><td>From" + "&nbsp;" + " ${FIRST_From}";
 					locTxt += " To" + "&nbsp;" + "${FIRST_ToSt}</td></tr>";
 					locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${FIRST_Inst}</td></tr></table>";
@@ -393,7 +393,7 @@ function executeIdentifyTask(evt) {
 				var locText;
 				var template = new esri.InfoTemplate();
 				switch (locName){
-					case  "Outreach_schools_07_15":					
+					case  "Outreach_schools":					
 					locTxt = "<table><tr><td><b>School: </b>" + "&nbsp;" + "${SiteServed}</td></tr>";
 					locTxt += "<tr><td><b>Activity:</b> " + "&nbsp;" + " ${Activity}</td></tr>";
 					locTxt += "<tr><td><b>Event Date:</b> " + "&nbsp;" + "${EventDate}</td></tr>";
@@ -401,37 +401,32 @@ function executeIdentifyTask(evt) {
 					break;
 					
 					 /// fill in when map layers are ready ///////////////////////
-					case  "TownHallLocations_07_15":					
+					case  "TownHallLocations":					
 					locTxt = "<table><tr><td><b>Location: </b>" + "&nbsp;" + "${Sheet1__NA}</td></tr>";
 					locTxt += "<tr><td><b>Address:</b>" + "&nbsp;" + " ${Sheet1__AD}</td></tr></table>";
 					template.setTitle("Town Halls");
 					break;
 
-					case  "workshop_locations_07_15":					
+					case  "workshop_locations":					
 					locTxt = "<table><tr><td><b>Location:" + "&nbsp;" + " </b>${Sheet1__Na}</td></tr>";
 					locTxt += "<tr><td><b>Year:</b>" + "&nbsp;" + " ${Sheet1__AD}</td></tr></table>";
 					template.setTitle("Workshops");
 					break;
 					
-					case  "SAFETY_ENGG_SIP_2013_Implemented_corridors":					
-					locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + "</b>${Pjct_Name}</td></tr>";
-					locTxt += "<tr><td>Project Type:" + "&nbsp; " + "${SIPProjTyp}</td></tr></table>";
-					template.setTitle("Safety Engineering Projects");
+					case  "Senior_Centers":					
+					locTxt = "<table><tr><td><b>Location:" + "&nbsp;" + "</b>${Site_Serve}</td></tr>";
+					locTxt += "<tr><td><b>Event:" + "&nbsp; " + "</b>${Activity}</td></tr>";
+					locTxt += "<tr><td><b>Event Date:" + "&nbsp; " + "</b>${EventDate}</td></tr></table>";
+					template.setTitle("Senior Centers");
 					break;
 
-					case  "speed humps 2014":					
-					locTxt = "<table><tr><td><b>On Street:" + "&nbsp;" + "</b>${FIRST_Main}</td></tr>";
-					locTxt += "<tr><td From" + "&nbsp;" + " ${FIRST_From}";
-					locTxt += " To" + "&nbsp;" + " ${FIRST_ToSt}</td></tr>";
-					locTxt += "<tr><td>Date Installed: " + "&nbsp;" + "${FIRST_Inst}</td></tr></table>";
-					template.setTitle("Speed Humps");
+					case  "tlc":					
+					locTxt = "<table><tr><td><b>Location:" + "&nbsp;" + "</b>${Title}</td></tr>";
+					locTxt += "<tr><td><b>Address:" + "&nbsp;" + "</b>${Location}</td></tr></table>";
+					template.setTitle("TLC");
 					break;		
 
-					case  "LPI":					
-					locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + " </b>${Pjct_Name}</td></tr>";
-					locTxt += "<tr><td>Project Type:" + "&nbsp;" + " ${SIPProjTyp}</td></tr></table>";
-					template.setTitle("Leading Pedestrian Signals");
-					break;
+
 										
 					default:
 					locTxt = "No data available";

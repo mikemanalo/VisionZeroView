@@ -1,7 +1,29 @@
 
 
 ///////////////////// SAFETY INTERVENTIONS //////////////////////////////////////////////////////////////
+            //////////// new July 25 ///////////
 
+				function showLoading() {
+					$("#loadingImg").show();
+				}
+
+				//show map loading image
+				function hideLoading() {
+					$("#loadingImg").hide();
+				}
+				
+				$(document).ready( function(){
+					console.log("body?");
+				//	$("#page").css("visibility", "visible");
+					
+					
+					
+				});
+				dojo.connect(map, "onload", function(){
+						console.log("loaded");
+						$("#sliderDiv").css("display", "block");
+						$("#labelDiv").css("visibility", "visible");
+					});
 	
 $(".interventionBtns").on("click", function() {
 	interventionLayerIDs = [];
@@ -18,7 +40,7 @@ function checkInterventionBtns(interventionLayerIDs){
 	
 	if ($("#ArterialSlowZone").is(':checked')) {
 
-		var locID = 1;
+		var locID = 3;
 		interventionLayerIDs.push(locID);
 		
 	} 
@@ -26,22 +48,22 @@ function checkInterventionBtns(interventionLayerIDs){
 
 	if ($("#SafeStreetsForSeniors").is(':checked')) {
 
-		var locID = 6;
+		var locID = 5;
 		interventionLayerIDs.push(locID);
 	} 
 
 		
 	if ($("#NeighborhoodSlowZone").is(':checked')) {
 
-		var locID = 5;
+		var locID = 6;
 		interventionLayerIDs.push(locID);
 	}
 		
 
 	if ($("#EngineeringImprovements").is(':checked')) {
 
-		var locID = 2; var locID2 = 3;
-		interventionLayerIDs.push(locID);
+		var locID = 1; var locID2 = 2;
+		interventionLayerIDs.push(locID, locID2);
 	} 
 
 	if ($("#SpeedHump").is(':checked')) {
@@ -89,31 +111,31 @@ function checkOutreachBtns(outreachLayerIDs){
 	} 
 	if ($("#SeniorCenters").is(':checked')) {
 
-		//var locID = 1;
-		//outreachLayerIDs.push(locID);
+		var locID = 1;
+		outreachLayerIDs.push(locID);
 		console.log("seniors added");
 		
 		
 	} 
 	if ($("#TLC").is(':checked')) {
 
-	//	var locID = 2;
-		//outreachLayerIDs.push(locID);
+		var locID = 2;
+		outreachLayerIDs.push(locID);
 		console.log("tlc added");
 		
 	} 
 	if ($("#TownHallMeeting").is(':checked')) {
 
-		var locID = 1;
-		//outreachLayerIDs.push(locID);
+		var locID = 3;
+		outreachLayerIDs.push(locID);
 		console.log("townhall added");
 			outreachLayerIDs.push(locID);
 		
 	} 
 	if ($("#Workshops").is(':checked')) {
 
-		var locID = 2;
-		//outreachLayerIDs.push(locID);
+		var locID = 4;
+		outreachLayerIDs.push(locID);
 		console.log("workshops added");
 			outreachLayerIDs.push(locID);
 		

@@ -25,10 +25,10 @@ $(".dropdown-menu li a").click(function(){
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 });
 
-//---------------------------------------------------------------------------------------------//
-$('body').on('click', '.btn-group button', function (e) {
-    $(this).addClass('active');
-    $(this).siblings().removeClass('active');
-    
-    //do any other button related things
-});
+//---------------------Don't Use IE Dummy------------------------------------------------------------------------//
+var dummy = document.getElementById('dummy');
+       dummy.innerHTML = '<!' + '--[if lte IE 9]>x<![endif]-->';
+       var isIE9 = dummy.innerHTML === 'x';
+       if (isIE9==true){
+       alert("This website is designed for IE10 or higher.  Please update IE, or open the website using Chrome, Firefox, or another modern browser.");
+       }
