@@ -1,21 +1,6 @@
 function IdentifyTaskInit() {
 	$(document).ready(function() {
-		console.log("get here?");
-		 
 
-		/*allInjIdentifyParams = new esri.tasks.IdentifyParameters();
-		allInjIdentifyParams.tolerance = 4;
-		allInjIdentifyParams.returnGeometry = true;
-		allInjIdentifyParams.layerOption = esri.tasks.IdentifyParameters.LAYER_OPTION_TOP;
-		allInjIdentifyParams.width = map.width;
-		allInjIdentifyParams.height = map.height;
-
-		allFatIdentifyParams = new esri.tasks.IdentifyParameters();
-		allFatIdentifyParams.tolerance = 4;
-		allFatIdentifyParams.returnGeometry = true;
-		allFatIdentifyParams.layerOption = esri.tasks.IdentifyParameters.LAYER_OPTION_TOP;
-		allFatIdentifyParams.width = map.width;
-		allFatIdentifyParams.height = map.height;*/
 		allIdentifyParams = new esri.tasks.IdentifyParameters();
 		allIdentifyParams.tolerance = 4;
 		allIdentifyParams.returnGeometry = true;
@@ -24,7 +9,6 @@ function IdentifyTaskInit() {
 		allIdentifyParams.height = map.height;
 		
 		
-
 		fatality_monthly_all_IdentifyTask = new esri.tasks.IdentifyTask("http://dotqagisiis03:6080/arcgis/rest/services/VISION_ZERO/allFatalities_monthly/MapServer");
 		fatality_monthly_ped_IdentifyTask = new esri.tasks.IdentifyTask("http://dotqagisiis03:6080/arcgis/rest/services/VISION_ZERO/pedFatalities_monthly/MapServer");
 		fatality_monthly_bike_IdentifyTask = new esri.tasks.IdentifyTask("http://dotqagisiis03:6080/arcgis/rest/services/VISION_ZERO/bikeFatalities_monthly/MapServer");
@@ -74,10 +58,6 @@ function executeIdentifyTask(evt) {
 				//	var toolTipVal = slider2Lookup(value);
 				//	$("#dateLabel").text(toolTipVal);
 				locVal = (locSliderVal * 7);
-
-				/*allInjIdentifyParams.geometry = evt.mapPoint;
-				allInjIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3, locVal + 4, locVal + 5, locVal + 6];
-				allInjIdentifyParams.mapExtent = map.extent;*/
 				
 				allIdentifyParams.geometry = evt.mapPoint;
 				allIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3, locVal + 4, locVal + 5, locVal + 6];
@@ -96,10 +76,6 @@ function executeIdentifyTask(evt) {
 
 				var locSliderVal = $('#jqxslider').jqxSlider('getValue');
 				locVal = (locSliderVal * 8);
-
-				/*allInjIdentifyParams.geometry = evt.mapPoint;
-				allInjIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3, locVal + 4, locVal + 5, locVal + 6, locVal + 7, locVal + 8];
-				allInjIdentifyParams.mapExtent = map.extent;*/
 
 				allIdentifyParams.geometry = evt.mapPoint;
 				allIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3, locVal + 4, locVal + 5, locVal + 6, locVal + 7, locVal + 8];
@@ -193,10 +169,6 @@ function executeIdentifyTask(evt) {
 			//	$("#dateLabel").text(toolTipVal);
 			locVal = (locSliderVal * 4);
 
-			/*allFatIdentifyParams.geometry = evt.mapPoint;
-			allFatIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
-			allFatIdentifyParams.mapExtent = map.extent;
-			console.log(allFatIdentifyParams.layerIds);*/
 			
 			allIdentifyParams.geometry = evt.mapPoint;
 			allIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
@@ -331,11 +303,12 @@ function executeIdentifyTask(evt) {
 					template.setTitle("Safety Engineering Projects");
 					break;
 
-					case  "sh_2014afterDissolve":					
+					case  "sb_2014Dissolve_0725":					
 					locTxt = "<table><tr><td><b>On Street:" + "&nbsp;" + " </b>${FIRST_Main}</td></tr>";
 					locTxt += "<tr><td>From" + "&nbsp;" + " ${FIRST_From}";
 					locTxt += " To" + "&nbsp;" + "${FIRST_ToSt}</td></tr>";
-					locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${FIRST_Inst}</td></tr></table>";
+					locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${FIRST_Inst}</td></tr>";
+					locTxt += "<tr><td><b>Num. of Humps::</b> " + "&nbsp;" + "${FIRST_NumO}</td></tr></table>";
 					template.setTitle("Speed Humps");
 					break;		
 

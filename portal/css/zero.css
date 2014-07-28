@@ -311,6 +311,26 @@ display: block;
 .btn-group-2 label .btn {
 	width: 45%;
 }*/
+
+/************************************************************************/
+/* new july 28*/
+
+.interventionBtns.active{
+	background-color:white;
+}
+.interventionBtns:focus{
+	background-color:white;
+}
+.btn-default:hover{
+	background-color:#fafafa;
+}
+
+.outreachBtns.active{
+	background-color:white;
+}
+.outreachBtns:focus{
+	background-color:white;
+}
 	
 .btn-group-3 label.btn  {
 	width: 25%;
