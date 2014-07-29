@@ -19,6 +19,12 @@
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css">
     <link rel="stylesheet" type="text/css" href="css/zero.css">
+	<link rel="stylesheet" type="text/css" href="css/mediaXS.css">
+	<link rel="stylesheet" type="text/css" href="css/mediaSM.css">
+	<link rel="stylesheet" type="text/css" href="css/mediaMD.css">
+	<link rel="stylesheet" type="text/css" href="css/mediaLG.css">
+	<link rel="stylesheet" type="text/css" href="css/mediaOTHER.css">
+	<link rel="stylesheet" type="text/css" href="css/sidemenu.css">
 	
 	<link rel="apple-touch-icon" sizes="57x57" href="../img/logo/vz_57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../img/logo/vz_72.png">
@@ -238,13 +244,13 @@
 											
 											
 											<div id="injuryLegend" class="col-xs-6 col-sm-6 graphTitle">
-												<h4>Number of<br><b>Injuries</b><br>per Location</h4>						
+												<h4>Number of Injuries per Location</h4>						
 												<img src="img/legend/Injury_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
 											</div>
 											
 											
 											<div id="fatalityLegend" class="col-xs-6 col-sm-6 graphTitle">
-												<h4>Number of<br><b>Fatalities</b><br>per Location</h4>
+												<h4>Number of Fatalities per Location</h4>
 												<img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
 											</div>
 											
@@ -257,7 +263,7 @@
 											<div class="form-group" style="margin-bottom: 1em;">
 
 												<div class="col-sm-12">
-													<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 3em;">
+													<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 3em; width:100%;">
 														Methodology Description
 													</button>
 
@@ -288,21 +294,18 @@
 									<div class="row">
 										<div class="col-md-12" >
 											<h3 class="mainTitle">Safety Interventions</h3>
-											
-												
-														
 												<div class="btn-group-vertical center-block" data-toggle="buttons">
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-														<label class="checkbox interventionBtns">
-														 <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>	
-														  <input type="checkbox" class="list_item" id="LeadingPedestrianSignals"value=2>
-														  <span>Leading Pedestrian Signals</span>
-														</label>
+															<label class="checkbox interventionBtns">
+															 <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>	
+															  <input type="checkbox" class="list_item" id="LeadingPedestrianSignals"value=2>
+															  <span>Leading Pedestrian Signals</span>
+															</label>
 														</button>
 														
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 														<label class="checkbox interventionBtns">
-														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em">%@</i>
+														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em">^</i>
 														 <input type="checkbox" class="list_item" id="EngineeringImprovements" value=3>
 														 	<span>Engineering Improvements</span>
 														</label>
@@ -417,7 +420,7 @@
 
 											</div>-->
 
-											<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em;">
+											<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em; width:100%">
 												 Intervention Descriptions
 											</button>
 
@@ -519,7 +522,7 @@
 
 												</div>
 
-											<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em;">
+											<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em; width:100%;">
 												Outreach Description
 											</button>
 
@@ -591,19 +594,19 @@
 												</div>
 												<div id="fatalitySumLegend" class="col-sm-12" style="margin-bottom:1em; color:#565656; font-weight:800;">
 													<h4>Density of Fatalities by<br><span id="fatalSumLegendType">Police Precinct</span></h4>						
-													<img src="img/legend/Injury_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+													<img src="img/legend/Fatal_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
 													<h6><span style="margin-left:0.2em;"class="pull-left">Low</span><span class="pull-right">High</span></h6>
 												</div>	
 											
 												<div id ="injurySumLegend" class="col-sm-12" style="margin-bottom:1em; color:#565656; font-weight:800;">
 													<h4>Density of Injuries by<br><span id="injurySumLegendType">Police Precinct</span></h4>						
-													<img src="img/legend/Fatal_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+													<img src="img/legend/Injury_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
 													<h6><span style="margin-left:0.2em;"class="pull-left">Low</span><span class="pull-right">High</span></h6>
 												</div>	
 												
 												<p class="footNote">*Normalized by Area (sq. miles)</p>
 			
-												<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 5em;">
+												<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 5em; width:100%;">
 													Methodology Description
 												</button>
 

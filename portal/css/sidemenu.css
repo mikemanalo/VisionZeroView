@@ -1,0 +1,113 @@
+#sidebar{
+	height:20%;
+	overflow:auto;
+}	
+
+.categoriesFontIcon{
+	font-family: 'icomoon'; 
+	margin-left: 3px;
+}
+
+
+/*Orange Title on Menu*/
+.mainTitle{
+	text-align: center; 
+	color: #F26522; 
+	margin-top: 0px; 
+	white-space:normal;"
+}		
+
+/* Titles like "Categories" or "Administrative Units"*/
+.subTitle{
+	margin-top:2.2em; 
+	/*margin-left:1em; */
+	color:#565656; 
+	font-weight:700;
+	text-align:center;
+}
+
+.subTitleTop{
+	margin-top:1em; 
+	margin-left:0em; 
+	color:#565656; 
+	font-weight:700;
+	text-align:center;
+}
+
+.subTitleBottom{
+	margin-top:2.2em; 
+	margin-left:0em; 
+	color:#565656; 
+	font-weight:700;
+	text-align:center;
+}
+
+.btnWho{
+	font-family: 'icomoon'; 
+	font-size: 1.8em; 
+}
+
+.bottomMargin{
+	margin-bottom: 1.5em;
+}
+
+
+.graphTitle{
+	"margin-top:2em; 
+	color:#565656; 
+	font-weight:800;
+}
+
+.footNote{
+	margin-left: 1em; 
+	font-size: 0.9em; 
+	font-weight:200;"
+}
+
+
+.crashTypeSwitchBtns  {
+font-size:1em;
+white-space:normal;
+	/*margin-bottom: 1em;*/
+}
+
+.crashTypeBtnBlock{
+	margin-left: auto; margin-right: auto;
+	width: 100%;
+	 
+}
+
+.districtBtns {
+	/*margin-bottom: 1em;*/
+}
+
+.districtLabel{
+	margin-left:auto; margin-right: auto;
+}
+
+.input-group.districtBtnGroup{
+	width: 99% !important;
+	padding-top:2em!important;
+	padding-bottom: 2em!important;
+}
+
+.crashLabel1{
+	float:left 
+	margin-left:2em;
+	font-size: .9em;
+}
+
+.crashLabel2{
+	float:left 
+	margin-left:2em;
+	font-size: 1.5em;
+}
+	
+.btn-group-3 label.btn  {
+	width: 25%;
+}
+
+.crashIcon{
+	font-family: 'icomoon'; 
+	font-size: 1.8em;
+	}

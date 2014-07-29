@@ -7,6 +7,11 @@ body{
 	margin-bottom: 1.75em;
 }
 
+.container-fluid{
+padding-left:0px;
+padding-right:0px;
+}
+/*===============================================================Black Bar========================================================================================*/
 #blackBar.container-fluid{
 	padding-left:0em;
 	padding-right:0em;
@@ -24,6 +29,7 @@ body{
 	font-weight: 700;
 }	
 
+/*===============================================================Title Bar========================================================================================*/
 .navbar {
     position: relative;
     min-height: 50px;
@@ -78,7 +84,9 @@ body{
 	margin-right: auto;
 }
 
-
+.topLIne{
+	margin-top: 1.2em;
+}
 #searchBorough, #searchBorough1{
 	background-color: rgba(255,255,255,1); 
 	background: rgba(255,255,255,1); 
@@ -102,6 +110,7 @@ body{
 }
 
 #btnsearch, #btnsearch1{
+
 	background-color: rgba(255,255,255,1); 
 	background: rgba(255,255,255,1); 
 	border: 1px solid #D5D5D5; 
@@ -109,27 +118,48 @@ body{
 	border-left: 0px
 }
 
-/*#layerNav{
-	margin-left:2em !important;
-}*/
+.panel-body {
+  height: 50%;
+  padding-bottom: -55px;
+}
 
+.navbar-form .input-group-btn,
+.navbar-form .input-group-addon {
+	width: auto;
+}
 
-/*
-.navbar-nav.navbar-collapse {
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 0;
-}*/
+.navbar-right .dropdown-menu {
+    left: 0;
+    right: auot;
+}
 
-#sidebar{
-	height:20%;
-	overflow:auto;
-}	
+.interventionBtns.active{
+	background-color:white;
+}
+.interventionBtns:focus{
+	background-color:white;
+}
+.btn-default:hover{
+	background-color:#fafafa;
+}
 
-.categoriesFontIcon{
-	font-family: 'icomoon'; 
-	margin-left: 3px;
+.outreachBtns.active{
+	background-color:white;
+}
+.outreachBtns:focus{
+	background-color:white;
+}
+	
+.btn-group-3 label.btn  {
+	width: 25%;
+}
+
+/*===================================================================All Things Inside the Map DIV==================================================================*/
+#loadingImg{
+	
+	top:50%;
+	right: 35%;
+	position:fixed;
 }
 	
 #map{
@@ -157,8 +187,8 @@ body{
 	background-color:#AEB7BC;
 	z-index:19; 
 	opacity:0.9;
-	border-left: 30px solid #FFF;
-	border-right: 30px solid #FFF;
+	border-left: 15px solid #FFF;
+	border-right: 15px solid #FFF;
 }
 	 
 #jqxslider {
@@ -166,8 +196,8 @@ body{
     margin-left:auto; margin-right: auto;
     margin-top: 1.8em;
     margin-bottom: 0.8em !important;
-    
 }
+
 #jqxslider2 {
     width: 45em !important;
     margin-left:auto; margin-right: auto;
@@ -199,29 +229,14 @@ body{
 	 text-align: center;
 }
  
- /****************************** new July 23 ******************************/
-.crashTypeBtnBlock{
-	margin-left: auto; margin-right: auto;
-	width: 100%;
-	 
-}
-.crashTypeSwitchBtns  {
-	/*margin-bottom: 1em;*/
-}
-.districtBtns {
-	/*margin-bottom: 1em;*/
-}
-
-.esriPopup .titleButton.maximize {  
+ .esriPopup .titleButton.maximize {  
      display: none;  
 }
-/*.btn.btn-default.crashTypes.active{
-	background-color: #0546A5;
-}*/
 	
 #layerLabel{
 	font-weight: bold
 }
+
 #dateLabel{
 	font-weight: bold
 }
@@ -235,16 +250,6 @@ body{
 	/*padding-top: 2em;*/
 }
 
-.districtLabel{
-	margin-left:auto; margin-right: auto;
-}
-
-.input-group.districtBtnGroup{
-	width: 99% !important;
-	padding-top:2em!important;
-	padding-bottom: 2em!important;
-}
- 
 .jqx-fill-state-pressed-orange{
  	background: rgb(242,101,34) !important;
 }
@@ -273,18 +278,6 @@ box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.0
 display: block;
 }
 
-.crashLabel1{
-	float:left 
-	margin-left:2em;
-	font-size: .9em;
-}
-
-.crashLabel2{
-	float:left 
-	margin-left:2em;
-	font-size: 1.5em;
-}
-
 #labelTable{
 	padding: 1em;
 }
@@ -293,59 +286,7 @@ display: block;
 	padding-left: 1.2em;
 	padding:top: .8em;
 }
-	
-/*.btnSide{
-	padding-bottom: 9px;
-	padding-top: 9px;
-	font-size: 16px;
-	line-height: normal;
-	width: 50%;
-}*/
-
-
-
-/*.btn-group-1 label.btn  {
-	width: 100%;
-}
-
-.btn-group-2 label .btn {
-	width: 45%;
-}*/
-
-/************************************************************************/
-/* new july 28*/
-
-.interventionBtns.active{
-	background-color:white;
-}
-.interventionBtns:focus{
-	background-color:white;
-}
-.btn-default:hover{
-	background-color:#fafafa;
-}
-
-.outreachBtns.active{
-	background-color:white;
-}
-.outreachBtns:focus{
-	background-color:white;
-}
-	
-.btn-group-3 label.btn  {
-	width: 25%;
-}
-
-/*.glyphiconFix {
-    position: relative;
-    top: -15px;
-    display: inline-block;
-    font-family: "Glyphicons Halflings";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-}*/
-	
+/*==================================================================Footer=========================================================================================*/
 #footer {
 	position: absolute;
 	bottom: 0;
@@ -361,208 +302,10 @@ display: block;
 	text-shadow: 0px -1px 1px #000;
 }
 
-.navbar-form .input-group-btn,
-.navbar-form .input-group-addon {
-	width: auto;
-}
-
-.navbar-right .dropdown-menu {
-    left: 0;
-    right: auot;
-}
-
-.crashIcon{
-	font-family: 'icomoon'; 
-	font-size: 1.8em;
-	}
-
-.panel-body {
-  height: 50%;
-  padding-bottom: -55px;
-}
 
 
-	
-/*===============================================================================================================================================================*/
-/*phone*/
-@media only screen and (min-width : 320px) {
-	.vzLogo {
-    width: 5em;
-	margin-top: 1em !important;
-	margin-left: auto;
-	margin-right: auto;
-	}
-	
-	
-	#map_zoom_slider{
-		display: none !important;
-		visibility: hidden !important;
-	}
-}
+ 
 
-/*phone*/
-@media(max-width:767px){
-	.vzLogo {
-    width: 15em;
-	margin-top: 1em !important;
-	margin-left: auto;
-	margin-right: auto;
-	}
-	
-	#layerNav{
-	margin-left:0.7em !important;
-	}
-	
-	#searchNav1{
-	margin-right: -1.4em !important;
-	}
-	
-	#map{
-    height:50%;
-    width:100%;
-	}
-	
-	#map_zoom_slider{
-		display: none !important;
-		visibility: hidden !important;
-	}
-}
-
-/*Tablet*/
-@media(min-width:768px){
-	.vzLogo {
-    width: 20em;
-	margin-top: 1.8em !important;
-	margin-left: auto;
-	margin-right: auto;
-	}
-
-	#outreachBtns{
-	text-align: left; 
-	white-space: normal;
-	font-size:0.8em;
-	}
-	
-	#map_zoom_slider{
-		display: block !important;
-		visibility: visible !important;
-	}
-
-}
-/*Desktop*/
-@media(min-width:992px){
-	.vzLogo {
-    width: 20em;
-	margin-top: 1.8em !important;
-	margin-left: auto;
-	margin-right: auto;
-	}
-}
-	
-	
-/*Large Screen*/
-@media(min-width:1200px){
-	#collapseOne{
-	display:block !important;
-	visibility: hidden !important;
-	height:0px !important;
-	}
-}
-
-@media(min-width:1108px){
-	#collapseOne{
-	display:block !important;
-	visibility: hidden !important;
-	height:0px !important;
-	}
-}
-
-
-@media (max-width: 1107px) {
-
-    #searchNav.navbar-toggle {
-        display: block;
-    }
-    #collapse-search.navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
-		top: 0;
-		border-width: 0 0 1px;
-	}
-    #collapse-search.navbar-collapse.collapse {
-        display: none!important;
-    }
-    #collapse-search_ul.navbar-nav {
-        float: none!important;
-		margin-top: 7.5px;
-	}
-	#collapse-search_ul.navbar-nav>li {
-        float: none;
-    }
-    #collapse-search_ul.navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    #collapse-search.collapse.in{
-  		display:block !important;
-	}
-	
-	#searchNav{
-	margin-right:2em !important;
-	margin-top:2em !important;
-	margin-left:15px;
-	}
-	
-	#searchNav1.navbar-toggle {
-	position: relative;
-	float: right;
-	margin-right: 15px;
-	padding: 8px 13px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	background-color: transparent;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	}
-	
-	#searchNav.navbar-toggle {
-	position: relative;
-	float: right;
-	margin-right: 15px;
-	padding: 8px 13px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	background-color: transparent;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	}
-	
-	#layerNav.navbar-toggle {
-	position: relative;
-	float: right;
-	margin-right: 15px;
-	padding: 8px 13px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	background-color: transparent;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	}
-}
-
-
-
-@media (max-width: 802px) {
-
-    #layerNav.navbar-toggle {
-        display: block;
-    }
-}
 
 
 
@@ -592,68 +335,9 @@ display: block;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-.wrapperRow{
-	/*margin-right: -40px; 
-	margin-left: -40px;"*/
-}
-
-.mainTitle{
-	text-align: center; 
-	color: #F26522; 
-	margin-top: 0px; 
-	white-space:normal;"
-}		
-
-.subTitle{
-	margin-top:2.2em; 
-	/*margin-left:1em; */
-	color:#565656; 
-	font-weight:700;
-	text-align:center;
-}
-
-.subTitleTop{
-	margin-top:1em; 
-	margin-left:0em; 
-	color:#565656; 
-	font-weight:700;
-	text-align:center;
-}
-
-.subTitleBottom{
-	margin-top:2.2em; 
-	margin-left:0em; 
-	color:#565656; 
-	font-weight:700;
-	text-align:center;
-}
-
-.btnWho{
-	font-family: 'icomoon'; 
-	font-size: 1.8em; 
-}
-
-.bottomMargin{
-	margin-bottom: 1.5em;
-}
+/*==============================================================================================================================================================*/
 
 
-.graphTitle{
-	"margin-top:2em; 
-	color:#565656; 
-	font-weight:800;
-}
 
-.footNote{
-	margin-left: 1em; 
-	font-size: 0.9em; 
-	font-weight:200;"
-}
 
-#loadingImg{
-	
-	top:50%;
-	right: 35%;
-	position:fixed;
-}
+
