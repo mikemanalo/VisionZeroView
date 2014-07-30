@@ -32,3 +32,23 @@ var dummy = document.getElementById('dummy');
        if (isIE9==true){
        alert("This website is designed for IE9 or higher.  Please update IE, or open the website using Chrome, Firefox, or another modern browser.");
        }
+//-----------------------------------Proxy for IE-----------------------------------------------------------------//
+function isIE()
+{
+  var rv = -1;
+  if (navigator.appName == 'Microsoft Internet Explorer')
+  {
+    var ua = navigator.userAgent;
+    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+    if (re.exec(ua) != null)
+      rv = parseFloat( RegExp.$1 );
+  }
+  else if (navigator.appName == 'Netscape')
+ {
+    var ua = navigator.userAgent;
+    var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+    if (re.exec(ua) != null)
+      rv = parseFloat( RegExp.$1 );
+  }
+  return rv == -1 ? false: true;
+}

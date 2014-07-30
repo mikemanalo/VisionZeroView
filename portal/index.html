@@ -30,10 +30,10 @@
 	<link rel="stylesheet" type="text/css" href="css/mediaOTHER.css">
 	<link rel="stylesheet" type="text/css" href="css/sidemenu.css">
 	
-	<link rel="apple-touch-icon" sizes="57x57" href="../img/logo/vz_57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../img/logo/vz_72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../img/logo/vz_114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../img/logo/vz_144png">
+	<link rel="apple-touch-icon" sizes="57x57" href="../img/logo/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/logo/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/logo/touch-icon-iphone4.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/logo/touch-icon-ipad2.png">
 </head>
 
 <body>
@@ -145,7 +145,7 @@
 	<div id="mainContent">
 		<div id="mainRow" class="row">		
 			<!--[if lt IE 10]>
-				<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+				<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		    <![endif]-->
 			<div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
 				<div id="map" class="container-fluid">
@@ -712,10 +712,15 @@
         ],
         
 		function (Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters,SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
-			
-			esri.config.defaults.io.proxyUrl = "http://"+arcgisserver + "/gisproxy/proxy.ashx";
-			esri.config.defaults.io.alwaysUseProxy = false; 
-			esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
+			if ( isIE()){
+                     //alert("IE!");
+                            
+				  esri.config.defaults.io.proxyUrl = "http://"+arcgisserver + "/gisproxy/proxy.ashx";
+				  esri.config.defaults.io.alwaysUseProxy = false; 
+				  esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
+		    }
+
+		
 
            
            showLoading();
