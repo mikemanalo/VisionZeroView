@@ -27,8 +27,8 @@ $(".dropdown-menu li a").click(function(){
 
 //---------------------Don't Use IE Dummy------------------------------------------------------------------------//
 var dummy = document.getElementById('dummy');
-       dummy.innerHTML = '<!' + '--[if lte IE 9]>x<![endif]-->';
+       dummy.innerHTML = '<!' + '--[if lte IE 8]>x<![endif]-->';
        var isIE9 = dummy.innerHTML === 'x';
        if (isIE9==true){
-       alert("This website is designed for IE10 or higher.  Please update IE, or open the website using Chrome, Firefox, or another modern browser.");
+       alert("This website is designed for IE9 or higher.  Please update IE, or open the website using Chrome, Firefox, or another modern browser.");
        }

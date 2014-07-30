@@ -59,7 +59,7 @@
 }
 
 .footNote{
-	margin-left: 1em; 
+	margin-left: 1.5em; 
 	font-size: 0.9em; 
 	font-weight:200;"
 }
@@ -111,3 +111,17 @@ white-space:normal;
 	font-family: 'icomoon'; 
 	font-size: 1.8em;
 	}
+
+	
+	.btn-default:hover{
+	background-color:#fafafa;
+}
+
+.list_item1{
+display: none;
+
+}
+.list_item{
+display: none;
+
+}

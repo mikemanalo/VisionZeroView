@@ -70,10 +70,11 @@
 	border: 1px solid transparent;
 	border-radius: 4px;
 	}*/
+
 }
 
 /*USed to display the Layer toggle button in the title bar*/
-@media (max-width: 1015px) {
+@media (max-width: 1000px) and (min-width:768px){
 
    /* #layerNav.navbar-toggle {
         display: block;
@@ -84,7 +85,81 @@
 	visibility:hidden ! important;
 	}*/
 	
+	.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid #CCCCCC;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 10px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	}
 	
+	h3, .h3 {
+	font-size: 18px !important;
+	}
+	
+	h4, .h4{
+	font-size:12px !important;
+	font-weight:700;
+	}
+	
+	.crashTypes.btn{
+	font-family: 'icomoon';
+	font-size: 0.8em !important;
+	
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid #CCCCCC;
+	white-space: nowrap;
+	padding: 6px 1px !important;
+
+	line-height: 1.42857143;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	}
+	.interventionBtns{
+	font-size:0.9em;
+	}
+	
+	.outreachBtns{
+	font-size:0.9em;
+	}
+	
+	.summarySwitchBtns{
+	font-size:10px !important;
+	}
+	
+	.crashTypeSwitchBtns{
+	font-size:10px !important;
+	}
+	
+	.footNote{
+	font-size:9px !important;
+	}
+	
+	.crashTimeSwitchBtns{
+	font-size:10px !important;
+	white-space:normal;
+	}
 }
 
 /* Used to hide the second search input at a "desktop view"*/
@@ -135,10 +210,4 @@
 	.interventionBtns{
 	font-size:0.98em;
 	}
-}
-
-@media (min-width: 768px) and (max-width: 1015px) {
-   .collapse {
-       display: none !important;
-   }
 }

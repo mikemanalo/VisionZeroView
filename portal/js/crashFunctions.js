@@ -220,6 +220,10 @@ function toggleCrashLayers() {
 					console.log(curInjuryValue);
 							var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				console.log("stats? :"+ stats[curInjuryValue].SUM_BikeFat);
+				
+				
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -750,6 +754,7 @@ else if (yearly) {
 
 
 checkCrashLegend();
+checkStats();
 
 
 }

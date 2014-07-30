@@ -30,8 +30,12 @@ $(".interventionBtns").on("click", function() {
 	setTimeout(function() {
 		if ($(test).hasClass('active')) {
 			$(test).css("background-color", "#e4e4e4");
+						$( test ).find( "i" ).css( "opacity", 1);
+			$( test ).find( "span" ).css( "opacity", 1);
 		} else {
 			$(test).css("background-color", "white");
+									$( test ).find( "i" ).css( "opacity", .3);
+			$( test ).find( "span" ).css( "opacity", .3);
 
 		}
 	}, 30);
@@ -48,39 +52,45 @@ $(".interventionBtns").on("click", function() {
 
 function checkInterventionBtns(interventionLayerIDs) {
 
-	if ($("#ArterialSlowZone").is(':checked')) {
+	//if ($("#ArterialSlowZone").is(':checked')) {
+	if (hasClass('ASZBtn', 'active')){
 
 		var locID = 3;
 		interventionLayerIDs.push(locID);
 
 	}
 
-	if ($("#SafeStreetsForSeniors").is(':checked')) {
+	//if ($("#SafeStreetsForSeniors").is(':checked')) {
+	if (hasClass('SSFSBtn', 'active')){
 
 		var locID = 5;
 		interventionLayerIDs.push(locID);
 	}
 
-	if ($("#NeighborhoodSlowZone").is(':checked')) {
+	//if ($("#NeighborhoodSlowZone").is(':checked')) {
+	if (hasClass('slowZonesBtn', 'active')){
 
 		var locID = 6;
 		interventionLayerIDs.push(locID);
 	}
 
-	if ($("#EngineeringImprovements").is(':checked')) {
+	//if ($("#EngineeringImprovements").is(':checked')) {
+	if (hasClass('engineeringBtn', 'active')){
 
 		var locID = 1;
 		var locID2 = 2;
 		interventionLayerIDs.push(locID, locID2);
 	}
 
-	if ($("#SpeedHump").is(':checked')) {
+	//if ($("#SpeedHump").is(':checked')) {
+	if (hasClass('speedHumpsBtn', 'active')){
 
 		var locID = 4;
 		interventionLayerIDs.push(locID);
 	}
 
-	if ($("#LeadingPedestrianSignals").is(':checked')) {
+	//if ($("#LeadingPedestrianSignals").is(':checked')) {
+	if (hasClass('LPIBtn', 'active')){
 
 		var locID = 0;
 		interventionLayerIDs.push(locID);
@@ -92,19 +102,62 @@ function checkInterventionBtns(interventionLayerIDs) {
 }
 
 /////////////////////////  OUTREACH /////////////////////////////////////////////////////////////////////////////////
+/*
+$(".list_item1").on("click", function() {
+console.log("get to listitem?");
+var thisCheckbox = this;
+setTimeout(function() {
+//if ($(this).addClass('active');
+ //if ($(thisCheckbox).is(':checked')) {
+ if ($(thisCheckbox).is(':checked')) {
+  console.log("checked");
+ $(thisCheckbox).prop('checked', 'checked');
+
+ }
+else if (!$(thisCheckbox).is(':checked')){
+console.log("get to  this one");
+$(thisCheckbox).prop('checked', 'false');
+}
+ }, 60);
+});
+
+$(".list_item").click(function(){
+
+    if(this.checked)
+    {
+        $(".list_item").each(function(){this.checked= true;});
+
+    }
+    else
+    {
+
+        $(".list_item").each(function(){this.checked= false;});
+
+    }
+
+});*/
+
 
 $(".outreachBtns").on("click", function() {
 	outreachLayerIDs = [];
 
 	outreachLayerIDs.length = 0;
+	
 
 	var test = this;
 
 	setTimeout(function() {
 		if ($(test).hasClass('active')) {
+			$(this).removeClass('active');
 			$(test).css("background-color", "#e4e4e4");
+			$( test ).find( "i" ).css( "opacity", 1);
+			$( test ).find( "span" ).css( "opacity", 1);
+		//	$(test).prop('checked', 'checked');
 		} else {
+			$(this).addClass('active');
 			$(test).css("background-color", "white");
+			$( test ).find( "i" ).css( "opacity", .3);
+			$( test ).find( "span" ).css( "opacity", .3);
 
 		}
 	}, 30);
@@ -119,11 +172,12 @@ $(".outreachBtns").on("click", function() {
 });
 
 function checkOutreachBtns(outreachLayerIDs) {
-
+/*
 	if ($("#Schools").is(':checked')) {
 
 		var locID = 0;
 		outreachLayerIDs.push(locID);
+		$("#Schools").prop('checked', 'checked');
 
 	}
 	if ($("#SeniorCenters").is(':checked')) {
@@ -158,9 +212,66 @@ function checkOutreachBtns(outreachLayerIDs) {
 	}
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
 	console.log(outreachLayerIDs);
+*/
+
+	//if ($("#Schools").hasClass('active')) {
+	if (hasClass('SchoolBtn', 'active')) {
+		console.log("School checked");
+		var locID = 0;
+		outreachLayerIDs.push(locID);
+		$("#Schools").prop('checked', 'checked');
+
+	}
+	
+	if (hasClass('SeniorBtn', 'active')) {
+
+		var locID = 1;
+		outreachLayerIDs.push(locID);
+		console.log("seniors added");
+
+	}
+	if (hasClass('TLCBtn', 'active')) {
+
+		var locID = 2;
+		outreachLayerIDs.push(locID);
+		console.log("tlc added");
+
+	}
+	if (hasClass('TownHallBtn', 'active')) {
+
+		var locID = 3;
+		outreachLayerIDs.push(locID);
+		console.log("townhall added");
+		outreachLayerIDs.push(locID);
+
+	}
+	if (hasClass('WorkshopBtn', 'active')) {
+
+		var locID = 4;
+		outreachLayerIDs.push(locID);
+		console.log("workshops added");
+		outreachLayerIDs.push(locID);
+
+	}
+	outreachLayer.setVisibleLayers(outreachLayerIDs);
+
+
+
 
 }
 
+function hasClass(elementID, className)
+{
+var classList = document.getElementById(elementID).className.split(/\s+/);
+for (var i = 0; i < classList.length; i++) {
+   if(classList[i]==className)
+   {
+	return true
+   }
+     //do something
+   }
+   return false;
+}
 ///////////////////////////////// SUMMARY ////////////////////////////////////////////////////////////////////
 
 function checkSummaryLegend() {

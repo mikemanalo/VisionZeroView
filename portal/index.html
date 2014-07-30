@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"><![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <html lang="en">
 
 <head>
@@ -78,7 +82,7 @@
 			<div class="col-xs-12 col-sm-9 ">
 			
 				<div id="collapse-layer" class="collapse navbar-collapse pull-left col-xs-12 col-sm-12 col-md-5 col-lg-5">
-					<ul class="nav navbar-nav nav-tabs" style="margin-top:1.2em;">
+					<ul class="nav navbar-nav nav-tabs topLine" >
 						<li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Injuries<span class="categoriesFontIcon">8</span></a></li>
 						<li><a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Interventions<span class="categoriesFontIcon">9</span></a></li>
 						<li><a href="#outreachNav" class="btn categoriesOn categoriesNav categoriesFont" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span class="categoriesFontIcon">!</span></a></li>
@@ -96,7 +100,7 @@
 					<ul id="collapse-search_ul" class="nav navbar-nav navbar-right">
 						<form id="searchInput" role="search" class="navbar-input-group navbar-form ">
 							<div class="form-group">
-								<div class="input-group input-group-sm" style="right:1em;">
+								<div class="input-group input-group-sm">
 									<span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
 										<ul class="dropdown-menu">
 											<li><a href="#">Manhattan</a></li>
@@ -116,11 +120,11 @@
 		</div>
     </div>
 	
-	<div id="collapseOne" class="panel-collapse collapse col-sx-12  col-sm-9 col-md-9 col-lg-9  pull-right" style=" top:1.5em; margin-left:0px; margin-right:0px; overflow-y:none; ">
-		<div class="panel-body" style="padding:0em;">
-			<form id="searchInput1" role="search" class="input-group form center-block" style=" top:-1em; margin:0 auto;">
+	<div id="collapseOne" class="panel-collapse collapse no-transition col-sx-12  col-sm-12 col-md-12 col-lg-12  pull-right" style=" top:1.5em; margin-left:0px; margin-right:0px; overflow-y:none; ">
+		<div class="panel-body" >
+			<form id="searchInput1" role="search" class="input-group form center-block" style="top:-1em; margin:0 auto;">
 				<div class="form-group">
-					<div class="input-group input-group-md" style="bottom:0.8em; padding-right:26px; padding-left:30px;">
+					<div class="input-group input-group-md" style="bottom:0.8em; padding-right:15px; padding-left:15px;">
 						<span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
 						<ul class="dropdown-menu">
 							<li><a href="#">Manhattan</a></li>
@@ -140,6 +144,9 @@
     <!-- Begin page content -->
 	<div id="mainContent">
 		<div id="mainRow" class="row">		
+			<!--[if lt IE 10]>
+				<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		    <![endif]-->
 			<div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
 				<div id="map" class="container-fluid">
 					<img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif"/>
@@ -239,9 +246,7 @@
 													</div>
 													</div>
 												</div>
-												
 											</div>
-											
 											
 											<div id="injuryLegend" class="col-xs-6 col-sm-6 graphTitle">
 												<h4>Number of Injuries per Location</h4>						
@@ -263,7 +268,7 @@
 											<div class="form-group" style="margin-bottom: 1em;">
 
 												<div class="col-sm-12">
-													<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 3em; width:100%;">
+													<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 2em; width:100%;">
 														Methodology Description
 													</button>
 
@@ -295,6 +300,58 @@
 										<div class="col-md-12" >
 											<h3 class="mainTitle">Safety Interventions</h3>
 												<div class="btn-group-vertical center-block" data-toggle="buttons">
+													<button id="LPIBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
+													<label class="checkbox">
+													<i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal; opacity:.3;">%</i> 
+													  <input type="checkbox" class="list_item" id="LeadingPedestrianSignals"value='2' >
+													  <span style="opacity:.3">Leading Pedestrian Signals</span>
+													</label>
+													</button>
+													
+													<button id ="engineeringBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
+													<label class="checkbox">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em; opacity:.3;">%@</i>
+													<input type="checkbox" class="list_item" id="EngineeringImprovements" value=3 >
+														   <span style="opacity:.3">Engineering Improvements</span>
+													</label>
+													</button>
+													
+													<button id ="ASZBtn" class="btn btn-default interventionBtns active" style="text-align: left; white-space: normal; background-color:#e4e4e4; ";>
+													<label class="checkbox">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#1679B7; ">@</i>
+													<input type="checkbox" class="list_item"  id="ArterialSlowZone" value=4 >
+													<span >Arterial Slow Zones</span>
+													</label>
+													</button>
+													
+													<button id ="speedHumpsBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal; ">
+													<label class="checkbox">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B65B2A; opacity:.3;">@</i>
+													<input type="checkbox" class="list_item" id="SpeedHump"  value=5 >
+													<span style="opacity:.3">Speed Humps</span>
+													</label>
+													</button>
+													
+													<button id="SSFSBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal; ">
+													<label class="checkbox">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F57D20; opacity:.3;">$</i>
+													<input type="checkbox" class="list_item" id="SafeStreetsForSeniors" value=6 >
+													<span style="opacity:.3">Safe Streets For Seniors</span>
+													</label>
+													</button>
+													
+													<button id="slowZonesBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal; ">
+													<label class="checkbox">
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F5989C;">$</i>
+													<input type="checkbox" class="list_item" id="NeighborhoodSlowZone" value=7 >
+													  <span style="opacity:.3">Neighborhood Slow Zone</span>
+													</label>
+													</button>
+													
+												</div>
+
+											
+												<!--<div class="btn-group-vertical center-block" data-toggle="buttons">
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 															<label class="checkbox interventionBtns">
 															 <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>	
@@ -343,82 +400,8 @@
 														</label>
 														</button>
 														
-												</div>
-											
-											
-											
-
-										<!--	<div class="btn-group-vertical center-block" data-toggle="buttons">
-												<!--
-													<div class="input-group">
-											 
-     												<!-- <span class="input-group-addon">
-     												 	
-												
-												<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-													<!--<span class="input-group-addon">
-													<input type="checkbox" name="options" class="list_item" id="LeadingPedestrianSignals" value="1">
-													
-													<span>Leading Pedestrian Signals</span>
-													<i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>	
-													<!--</span>
-												</button>
-												
-												
-												 <button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-													
-													<!--<span class="input-group-addon">
-													<input type="checkbox" name="options" class="list_item" id="EngineeringImprovements" value="2">
-													<span>Engineering Improvements</span>
-													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em">%@</i>
-												<!--</span>
-											
-												</button>
-												
-												<button class="btn btn-default interventionBtns active" style="text-align: left; white-space: normal;">
-													
-													
-													<!--<span class="input-group-addon">
-													<input type="checkbox" name="options" class="list_item" id="ArterialSlowZone" value="0">
-													<span>Arterial Slow Zones</span>
-													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#1679B7;">@</i>
-												
-												<!--</span>
-											
-												</button>
-												
-												<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-											
-													<!--<span class="input-group-addon">
-													<input type="checkbox" name="options" class="list_item" id="SpeedHump" value="3">
-														<span>Speed Hump</span>
-													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B65B2A;">@</i>
-												<!--</span>
-												
-												</button>
-
-												<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-												
-													<!--<span class="input-group-addon">
-													<input type="checkbox" name="options" class="list_item" id="SafeStreetsForSeniors" value="5">
-													<span>Safe Streets for Seniors</span>
-													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F57D20;">$</i>
-												<!--</span>
-											
-												</button>
-
-												<button class="btn btn-default interventionBtns" style="text-align: left;white-space: normal;">
-													
-													<!--<span class="input-group-addon">
-													<input type="checkbox" name="options" class="list_item" id="NeighborhoodSlowZone" value="4">
-													<span>Neighborhood Slow Zone</span>
-													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F5989C;">$</i>
-												<!--</span>
-												
-												</button>
-												
-
-											</div>-->
+												</div>-->
+	
 
 											<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em; width:100%">
 												 Intervention Descriptions
@@ -454,41 +437,44 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<h3 class="mainTitle">Public Outreach</h3>
-											
-											<!--<div class="btn-group-vertical center-block" data-toggle="buttons">
-
-                                                        <button class="btn btn-default outreachBtns active" style="text-align: left; white-space: normal;">
-                                                            <span>Schools</span>
-                                                            <input type="checkbox" name="options" class="list_item" id="Schools" value="3">
-															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#4daf4a;">%</i>
-														</button>
-
-                                                        <button class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
-                                                            <span>Senior Centers</span>
-                                                            <input type="checkbox" name="options" class="list_item" id="SeniorCenters" value="4">
-															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#377eb8;">%</i>
-                                                        </button>
-
-                                                        <button class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
-                                                            <span>TLC</span>
-                                                            <input type="checkbox" name="options" class="list_item" id="TLC" value="3">
-															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B77753;">%</i>
-														</button>
-
-                                                        <button class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
-                                                            <span>Town Hall Meetings</span>
-                                                            <input type="checkbox" name="options" class="list_item" id="TownHallMeeting" value="3">
-															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#984ea3;">%</i>
-													   </button>
-                                                        
-                                                        <button class="btn btn-default outreachBtns" style="text-align: left;white-space: normal;">
-                                                            <span>Workshops</span>
-                                                            <input type="checkbox" name="options" class="list_item" id="Workshops" value="3">
-															<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#ff7f00;">%</i>
-													   </button>
-                                                </div>--->
-                                                
 												<div class="btn-group-vertical center-block" data-toggle="buttons">
+
+													 <button id="SchoolBtn" class="btn btn-default outreachBtns active" style="text-align: left; white-space: normal; background-color:#e4e4e4; ">
+															<label class="checkbox"> <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#4daf4a;">%</i>
+																   <input type="checkbox"  class="list_item1" id="Schools" value="3">
+																   <span >Schools</span> </label>
+													 </button>
+
+													 <button id="SeniorBtn"  class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
+															<label class="checkbox"> <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#377eb8;  opacity:.3;">%</i>
+																   <input type="checkbox"  class="list_item1" id="SeniorCenters" value="4" style="opacity:.3">
+																   <span style="opacity:.3">Senior Centers</span> </label>
+													 </button>
+
+													 <button id="TLCBtn" class="btn btn-default outreachBtns" style="text-align: left; white-space: normal; ">
+															<label class="checkbox"><i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B77753; opacity:.3;">%</i>
+																   <input type="checkbox"  class="list_item1" id="TLC" value="3" style="opacity:.3">
+																   <span style="opacity:.3">TLC</span>
+													 </button>
+
+													 <button id="TownHallBtn" class="btn btn-default outreachBtns" style="text-align: left; white-space: normal; ">
+															<label class="checkbox"> <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#984ea3; opacity:.3;">%</i>
+																   <input type="checkbox"  class="list_item1" id="TownHallMeeting" value="3" style="opacity:.3">
+																   <span style="opacity:.3">Town Hall Meetings</span>
+													 </button>
+
+													 <button id="WorkshopBtn" class="btn btn-default outreachBtns" style="text-align: left;white-space: normal;">
+															<label class="checkbox"> <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#ff7f00;  opacity:.3;">%</i>
+																   <input type="checkbox"  class="list_item1" id="Workshops" value="3" style="opacity:.3">
+																   <span style="opacity:.3">Workshops</span>
+													 </button>
+
+											  </div>
+
+
+											
+                                                
+												<!--<div class="btn-group-vertical center-block" data-toggle="buttons">
 
 													<button class="btn btn-default outreachBtns active" style="text-align: left; white-space: normal; background-color:#e4e4e4;">
 														<label class="checkbox outreachBtns"> <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#4daf4a;">%</i>
@@ -520,7 +506,7 @@
 															<span>Workshops</span>
 													</button>
 
-												</div>
+												</div>-->
 
 											<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em; width:100%;">
 												Outreach Description
@@ -604,9 +590,9 @@
 													<h6><span style="margin-left:0.2em;"class="pull-left">Low</span><span class="pull-right">High</span></h6>
 												</div>	
 												
-												<p class="footNote">*Normalized by Area (sq. miles)</p>
+												<p class="footNote">Normalized by Area (sq. miles).</p>
 			
-												<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 5em; width:100%;">
+												<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 4em; width:100%;">
 													Methodology Description
 												</button>
 
@@ -727,6 +713,10 @@
         
 		function (Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters,SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
 			
+			esri.config.defaults.io.proxyUrl = "http://"+arcgisserver + "/gisproxy/proxy.ashx";
+			esri.config.defaults.io.alwaysUseProxy = false; 
+			esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
+
            
            showLoading();
             spatialRef = new esri.SpatialReference({ "wkid": 4326 });
@@ -741,7 +731,7 @@
 
 			map = new Map("map", {
 				logo: false,
-				center: [993908, 224290],
+				center: [993908, 194290],
 				zoom: 2,
 				sliderPosition: "top-right",
 				sliderStyle: "small",
@@ -798,6 +788,7 @@
  	<script type="text/javascript" src="js/addLayers.js"></script> 
 	<script type="text/javascript" src="js/geocoder.js"></script> 
 	<script type="text/javascript" src="js/geocoder1.js"></script> 
+	<script type="text/javascript" src="js/statJSON.js"></script> 
 
 
 	
