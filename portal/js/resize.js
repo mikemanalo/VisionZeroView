@@ -1,10 +1,19 @@
 
 function resizeMap() {
 
-  sidebarWidth = $('#SideBar').outerWidth(true);
-  console.log(sidebarWidth);
+  //sidebarWidth = $('#SideBar').outerWidth(true);
+    //console.log(sidebarWidth);
+    var titileDIV = $('#navbarDIV').outerHeight(true);
+    var blackBar = $('#blackBar').outerHeight(true);
+    var footer = $('#footer').outerHeight(true);
+    var sidebar = $('#sidebar').outerHeight(true);
+    var offsetHeight = titileDIV + blackBar + footer;
   if (map && window.location.hash == "") {
-	  $('#map').height(window.innerHeight - 200);
+      var mapHeight = window.innerHeight - offsetHeight - 15;
+      if (sidebar < mapHeight)
+          $('#map').height(mapHeight);
+      else
+          $('#map').height(sidebar);
 	  // $('#map').width(window.innerWidth - sidebarWidth);
 	  map.reposition();
 	  map.resize();
