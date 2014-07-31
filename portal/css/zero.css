@@ -51,7 +51,7 @@ padding-right:0px;
 	cursor: default;
 }
 
-.nav-tabs > .active > a, .nav-tabs > .active > a:hover { 
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:focus { 
 	outline: 0 !important;
 	color: #555555;
 	background-color: #ffffff;
@@ -139,7 +139,7 @@ padding-right:0px;
 .interventionBtns:focus{
 	background-color:white;
 }*/
-.btn-default:hover{
+.btn-default:hover, .btn-default:focus{
 	background-color:#fafafa;
 }
 

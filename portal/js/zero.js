@@ -1,5 +1,5 @@
 //-----------------------Used to Toggle Switch Button-----------------------------------//	
-	$('.btn-toggle').click(function() {
+	$('.btn-toggle').on("touchstart click" ,function() {
     $(this).find('.btn').toggleClass('active');  
     
     if ($(this).find('.btn-primary').size()>0) {
@@ -20,7 +20,7 @@
 });
 
 //--------------------Used for the dropdown menu for the search------------------------------//
-$(".dropdown-menu li a").click(function(){
+$(".dropdown-menu li a").on("touchstart click",function(){
   var selText = $(this).text();
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 });

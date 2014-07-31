@@ -113,7 +113,7 @@ white-space:normal;
 	}
 
 	
-	.btn-default:hover{
+	.btn-default:hover, .btn-default:focus{
 	background-color:#fafafa;
 }
 

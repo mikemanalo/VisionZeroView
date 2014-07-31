@@ -49,7 +49,7 @@ function checkCrashLegend(){
 
 
 $(document).ready(function() {
-	$(".crashTypeSwitchBtns").on('click', function(e) {
+	$(".crashTypeSwitchBtns").on('touchstart  click', function(e) {
 		console.log("get click");
 		
 		map.infoWindow.hide();
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-	$(".crashTimeSwitchBtns").on('click', function(e) {
+	$(".crashTimeSwitchBtns").on('touchstart  click', function(e) {
 		console.log("get click");
 	
 		map.infoWindow.hide();
@@ -118,7 +118,7 @@ $(document).ready(function() {
 	// test //
 	all = true;
 
-	$('.crashTypes').on('click', function() {
+	$('.crashTypes').on('touchstart click', function() {
 		map.infoWindow.hide();
 
 			($('.crashTypes').css("background-color", "rgb(255,255,255)"));

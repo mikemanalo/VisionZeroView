@@ -22,7 +22,7 @@ dojo.connect(map, "onload", function() {
 	$("#labelDiv").css("visibility", "visible");
 });
 
-$(".interventionBtns").on("click", function() {
+$(".interventionBtns").on(" touchstart  click", function() {
 map.infoWindow.hide();
 	interventionLayerIDs = [];
 	var test = this;
@@ -139,7 +139,7 @@ $(".list_item").click(function(){
 });*/
 
 
-$(".outreachBtns").on("click", function() {
+$(".outreachBtns").on("touchstart  click", function() {
 	map.infoWindow.hide();
 	outreachLayerIDs = [];
 
@@ -315,7 +315,7 @@ function checkSummaryLegend() {
 //	var police, community, council;
 //var injurySum, fatalitySum;
 
-$(".summarySwitchBtns").on("click", function() {
+$(".summarySwitchBtns").on("touchstart  click", function() {
 	map.infoWindow.hide();
 	//summaryLayerIDs = [];
 
@@ -355,7 +355,7 @@ $(".summarySwitchBtns").on("click", function() {
 
 });
 
-$(".districtBtns").on("click", function() {
+$(".districtBtns").on("touchstart  click", function() {
 	map.infoWindow.hide();
 	//police, community, council;
 

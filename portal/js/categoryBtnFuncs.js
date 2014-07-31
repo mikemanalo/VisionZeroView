@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 });
 
-$(".categoriesNav").on('click', function() {
+$(".categoriesNav").on('touchstart click', function() {
 
 	var id = this.id;
 
