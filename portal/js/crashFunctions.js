@@ -55,7 +55,7 @@ $(document).ready(function() {
 
 		
 		
-				$("#fatalitiesBtn").css("color", "rgb(204,204,204)");
+				$("#fatalitiesBtn").css("color", "#777");
 				$("#injuriesBtn").css("color", "rgb(255,255,255)");
 			
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
 				injury = false;
 				fatality = true;
 
-				$("#injuriesBtn").css("color", "rgb(204,204,204)");
+				$("#injuriesBtn").css("color", "#777");
 				$("#fatalitiesBtn").css("color", "rgb(255,255,255)");
 			}
 			toggleCrashLayers();
@@ -88,7 +88,7 @@ $(document).ready(function() {
 				monthly = true;
 				yearly = false;
 
-				$("#yearlyBtn").css("color", "rgb(204,204,204)");
+				$("#yearlyBtn").css("color", "#777");
 				$("#monthlyBtn").css("color", "rgb(255,255,255)");
 
 			} else if ($("#yearlyBtn").hasClass('active')) {
@@ -97,7 +97,7 @@ $(document).ready(function() {
 				yearly = true;
 
 
-				$("#monthlyBtn").css("color", "rgb(204,204,204)");
+				$("#monthlyBtn").css("color", "#777");
 				$("#yearlyBtn").css("color", "rgb(255,255,255)");
 			}
 			toggleCrashLayers();
@@ -115,7 +115,7 @@ $(document).ready(function() {
 		map.infoWindow.hide();
 
 			($('.crashTypes').css("background-color", "rgb(255,255,255)"));
-			($('.crashTypes').css("color", "rgb(204,204,204)"));
+			($('.crashTypes').css("color", "#777"));
 			($(this).css("background-color", "#3276b1"));
 			($(this).css("color", "white"));
 
@@ -187,6 +187,7 @@ function toggleCrashLayers() {
 
 	var currentCrashMap = who+ " " + what + ": "+ when  ;
 	console.log(currentCrashMap);
+	$("#boxLabel").text("Citywide totals for:");
 	$("#layerLabel").text(currentCrashMap);
 
 	//injury_monthly_ped_Layer.setVisibility(true);
@@ -788,14 +789,14 @@ function checkCrashCatState() {
 				console.log("Injuries");
 				injury = true;
 				fatality = false;
-				$("#fatalitiesBtn").css("color", "rgb(204,204,204)");
+				$("#fatalitiesBtn").css("color", "#777");
 				$("#injuriesBtn").css("color", "rgb(255,255,255)");
 
 			} else if ($("#fatalitiesBtn").hasClass('active')) {
 				console.log("Fatalities");
 				injury = false;
 				fatality = true;
-				$("#injuriesBtn").css("color", "rgb(204,204,204)");
+				$("#injuriesBtn").css("color", "#777");
 				$("#fatalitiesBtn").css("color", "rgb(255,255,255)");
 			}
 			toggleCrashLayers();
@@ -809,14 +810,14 @@ function checkCrashCatState() {
 				console.log("monthly");
 				monthly = true;
 				yearly = false;
-				$("#yearlyBtn").css("color", "rgb(204,204,204)");
+				$("#yearlyBtn").css("color", "#777");
 				$("#monthlyBtn").css("color", "rgb(255,255,255)");
 
 			} else if ($("#yearlyBtn").hasClass('active')) {
 				console.log("yearly");
 				monthly = false;
 				yearly = true;
-				$("#monthlyBtn").css("color", "rgb(204,204,204)");
+				$("#monthlyBtn").css("color", "#777");
 				$("#yearlyBtn").css("color", "rgb(255,255,255)");
 			}
 			toggleCrashLayers();

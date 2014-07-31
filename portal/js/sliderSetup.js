@@ -205,7 +205,7 @@ function sliderLookup(value) {
 			locYear = "2013";
 			break;
 		case 5:
-			locYear = "2014";
+			locYear = "2014 YTD";
 			break;
 
 		default:

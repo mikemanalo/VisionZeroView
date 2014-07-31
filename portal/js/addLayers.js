@@ -34,8 +34,8 @@ $(".interventionBtns").on("click", function() {
 			$( test ).find( "span" ).css( "opacity", 1);
 		} else {
 			$(test).css("background-color", "white");
-									$( test ).find( "i" ).css( "opacity", .3);
-			$( test ).find( "span" ).css( "opacity", .3);
+									$( test ).find( "i" ).css( "opacity", .6);
+			$( test ).find( "span" ).css( "opacity", .6);
 
 		}
 	}, 30);
@@ -156,8 +156,8 @@ $(".outreachBtns").on("click", function() {
 		} else {
 			$(this).addClass('active');
 			$(test).css("background-color", "white");
-			$( test ).find( "i" ).css( "opacity", .3);
-			$( test ).find( "span" ).css( "opacity", .3);
+			$( test ).find( "i" ).css( "opacity", .6);
+			$( test ).find( "span" ).css( "opacity", .6);
 
 		}
 	}, 30);
@@ -326,7 +326,7 @@ $(".summarySwitchBtns").on("click", function() {
 	console.log(summaryLayerIDs);
 	setTimeout(function() {
 		if ($("#summaryInjuries").hasClass('active')) {
-			$("#summaryFatalities").css("color", "rgb(204,204,204)");
+			$("#summaryFatalities").css("color", "#777");
 			$("#summaryInjuries").css("color", "white");
 			console.log("injury active");
 			injurySum = true;
@@ -336,7 +336,7 @@ $(".summarySwitchBtns").on("click", function() {
 
 			//	checkSummaryInjuryBtns(summaryLayerIDs);
 		} else if ($("#summaryFatalities").hasClass('active')) {
-			$("#summaryInjuries").css("color", "rgb(204,204,204)");
+			$("#summaryInjuries").css("color", "#777");
 			$("#summaryFatalities").css("color", "white");
 			console.log("fatality active");
 			fatalitySum = true;
@@ -361,7 +361,7 @@ $(".districtBtns").on("click", function() {
 	//	summaryLayerIDs = [];
 	summaryLayerIDs.length = 0;
 	var locID; ($('.districtBtns').css("background-color", "rgb(255,255,255)"));
-	$('.districtBtns').css("color", "rgb(204,204,204)"); ($(this).css("background-color", "#3276b1")); ($(this).css("color", "white"));
+	$('.districtBtns').css("color", "#777"); ($(this).css("background-color", "#3276b1")); ($(this).css("color", "white"));
 
 	if (sumView == "policePrecinct") {
 		police = true, community = false, council = false;

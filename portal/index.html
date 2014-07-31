@@ -61,7 +61,7 @@
     <div id="dummy"></div>
 
     <!-- Fixed navbar -->
-    <div id="navbarDIV" class="navbar navbar-default " role="navigation">
+    <div id="navbarDIV" class="navbar navbar-default" role="navigation">
         <div id="titileDIV" class="container">
             <div class="navbar-header col-xs-12 col-sm-3 col-md-3 col-lg-3">
 
@@ -86,7 +86,7 @@
 
                 <div id="collapse-layer" class="collapse navbar-collapse pull-left col-xs-12 col-sm-12 col-md-5 col-lg-5">
                     <ul class="nav navbar-nav nav-tabs topLine">
-                        <li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Injuries<span class="categoriesFontIcon">8</span></a></li>
+                        <li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">Crashes<span class="categoriesFontIcon">8</span></a></li>
                         <li><a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">Interventions<span class="categoriesFontIcon">9</span></a></li>
                         <li><a href="#outreachNav" class="btn categoriesOn categoriesNav categoriesFont" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">Outreach <span class="categoriesFontIcon">!</span></a></li>
                         <li><a href="#summaryNav" class="btn categoriesOn categoriesNav categoriesFont" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">Summary <span class="categoriesFontIcon">0</span></a></li>
@@ -104,7 +104,7 @@
                         <form id="searchInput" role="search" class="navbar-input-group navbar-form ">
                             <div class="form-group">
                                 <div class="input-group input-group-sm">
-                                    <span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
+                                    <span id="searchBorough" class="input-group-addon dropdown-toggle" data-toggle="dropdown"href="#">Boro<span class="caret"></span></span>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Manhattan</a></li>
                                         <li><a href="#">Bronx</a></li>
@@ -129,7 +129,7 @@
             <form id="searchInput1" role="search" class="input-group form center-block" style="top: -1em; margin: 0 auto;">
                 <div class="form-group">
                     <div class="input-group input-group-md" style="bottom: 0.8em; padding-right: 15px; padding-left: 15px;">
-                        <span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown">Boro<span class="caret"></span></span>
+                        <span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown" href="#">Boro<span class="caret"></span></span>
                         <ul class="dropdown-menu">
                             <li><a href="#">Manhattan</a></li>
                             <li><a href="#">Bronx</a></li>
@@ -157,7 +157,7 @@
                     <div id="labelDiv">
                         <table id="labelTable">
                             <tr>
-                                <td class="labelRow"><span id="boxLabel">Citywide Totals for</span> </td>
+                                <td class="labelRow"><span id="boxLabel"></span> </td>
                             </tr>
                             <tr>
                                 <td class="labelRow"><span id="layerLabel" class="crashLabel1"></span></td>
@@ -166,10 +166,10 @@
                                 <td class="labelRow"><span id="dateLabel" class="crashLabel2"></span></td>
                             </tr>
                             <tr>
-                                <td class="labelRow"><span id="stat1" class="stats">Fatality: (stat here)</span> </td>
+                                <td class="labelRow"><span id="stat1" class="stats"></span> </td>
                             </tr>
                             <tr>
-                                <td class="labelRow"><span id="stat2" class="stats">Injury: (state here)</span> </td>
+                                <td class="labelRow"><span id="stat2" class="stats"></span> </td>
                             </tr>
                         </table>
                     </div>
@@ -187,14 +187,24 @@
                 <div class="container-fluid">
 
                     <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
+						<!--<div class="container-fluid" style="background-color:#F8F8F8; border: 1px solid #DDDDDD; margin-bottom:1em;">
+								<ul class="nav navbar-nav nav-tabs topLine">
+									<li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab"><span class="categoriesFontIcon">8</span></a></li>
+									<li><a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab"><span class="categoriesFontIcon">9</span></a></li>
+									<li><a href="#outreachNav" class="btn categoriesOn categoriesNav categoriesFont" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab"><span class="categoriesFontIcon">!</span></a></li>
+									<li><a href="#summaryNav" class="btn categoriesOn categoriesNav categoriesFont" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab"><span class="categoriesFontIcon">0</span></a></li>
+								</ul>
+							</div>-->
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
+							
                                 <div class="container-fluid">
+								
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 class="mainTitle">Injuries and Fatalities Information</h3>
+										 
+                                            <h3 class="mainTitle">Crash Information</h3>
 
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
@@ -202,15 +212,15 @@
                                                     <div class="col-sm-12 bottomMargin">
 
                                                         <div class="btn-group btn-group-3 center-block input-group" data-toggle="buttons">
-                                                            <label class="btn btn-default crashTypes" style="color: rgb(204,204,204)">
+                                                            <label class="btn btn-default crashTypes" style="color: #777;">
                                                                 <input type="radio" name="options" id="ped"><i class="icon-ok btnWho">5</i>
                                                             </label>
 
-                                                            <label class="btn btn-default crashTypes " style="color: rgb(204,204,204)">
+                                                            <label class="btn btn-default crashTypes " style="color: #777;">
                                                                 <input type="radio" name="options" id="bike"><i class="icon-ok btnWho">2</i>
                                                             </label>
 
-                                                            <label class="btn btn-default crashTypes" style="color: rgb(204,204,204)">
+                                                            <label class="btn btn-default crashTypes" style="color: #777;">
                                                                 <input type="radio" name="options" id="motor"><i class="icon-ok btnWho">1</i>
                                                             </label>
 
@@ -229,7 +239,7 @@
                                                                 Injury
                                                             </label>
 
-                                                            <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn" style="width: 50%; font-size: 16px; color: rgb(204,204,204)">
+                                                            <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn" style="width: 50%; font-size: 16px; color: #777">
                                                                 Fatality
                                                             </label>
                                                         </div>
@@ -241,17 +251,17 @@
                                                     <div class="col-sm-12 bottomMargin">
                                                         <div class="btn-group btn-group-2 btn-toggle  center-block input-group crashTypeBtnBlock">
                                                             <label class="btn btn-sm active btn-primary crashTimeSwitchBtns" id="monthlyBtn" style="width: 50%; font-size: 16px;">
-                                                                By Month
+                                                                Monthly
                                                             </label>
 
-                                                            <label class="btn btn-sm btn-default crashTimeSwitchBtns" id="yearlyBtn" style="width: 50%; font-size: 16px; color: rgb(204,204,204)">
-                                                                By Year
+                                                            <label class="btn btn-sm btn-default crashTimeSwitchBtns" id="yearlyBtn" style="width: 50%; font-size: 16px; color: #777">
+                                                                Yearly
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
+											 <div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                             <div id="injuryLegend" class="col-xs-6 col-sm-6 graphTitle">
                                                 <h4>Number of Injuries per Location</h4>
                                                 <img src="img/legend/Injury_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
@@ -268,12 +278,12 @@
                                                 <img src="img/legend/Injury_heat.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
                                                 <h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
                                             </div>
-
+</div>
                                             <div class="form-group" style="margin-bottom: 1em;">
 
                                                 <div class="col-sm-12">
                                                     <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; margin-top: 2em; width: 100%;">
-                                                        Crash Data Information
+                                                        Crash Info Description
                                                     </button>
 
                                                     <div class="modal fade" id="InjuryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -281,7 +291,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Crash Information</h4>
+                                                                    <h4 class="modal-title" id="myModalLabel">Crash Info Description</h4>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     Injuries and fatalities are grouped by intersection and summarized by month and year using Motor Vehicle Collision data provided by NYPD.  Current year is January to the end of the latest full month.  
@@ -307,17 +317,17 @@
                                             <div class="btn-group-vertical center-block" data-toggle="buttons">
                                                 <button id="LPIBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #6B3E98; white-space: normal; opacity: .3;">%</i>
+                                                        <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #6B3E98; white-space: normal; opacity: .6;">%</i>
                                                         <input type="checkbox" class="list_item" id="LeadingPedestrianSignals" value='2'>
-                                                        <span style="opacity: .3">Leading Pedestrian Signals</span>
+                                                        <span style="opacity: .6">Leading Pedestrian Signals</span>
                                                     </label>
                                                 </button>
 
                                                 <button id="engineeringBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #2DA349; white-space: normal; padding-left: 0.2em; right: 0.5em; opacity: .3;">^</i>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #2DA349; white-space: normal; padding-left: 0.2em; right: 0.5em; opacity: .6;">^</i>
                                                         <input type="checkbox" class="list_item" id="EngineeringImprovements" value="3">
-                                                        <span style="opacity: .3">Engineering Improvements</span>
+                                                        <span style="opacity: .6">Engineering Improvements</span>
                                                     </label>
                                                 </button>
 
@@ -331,17 +341,17 @@
 
                                                 <button id="speedHumpsBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #B65B2A; opacity: .3;">@</i>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #B65B2A; opacity: .6;">@</i>
                                                         <input type="checkbox" class="list_item" id="SpeedHump" value="5">
-                                                        <span style="opacity: .3">Speed Humps</span>
+                                                        <span style="opacity: .6">Speed Humps</span>
                                                     </label>
                                                 </button>
 
                                                 <button id="SSFSBtn" class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #F57D20; opacity: .3;">$</i>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #F57D20; opacity: .6;">$</i>
                                                         <input type="checkbox" class="list_item" id="SafeStreetsForSeniors" value="6">
-                                                        <span style="opacity: .3">Safe Streets For Seniors</span>
+                                                        <span style="opacity: .6">Safe Streets For Seniors</span>
                                                     </label>
                                                 </button>
 
@@ -349,7 +359,7 @@
                                                     <label class="checkbox">
                                                         <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #F5989C;">$</i>
                                                         <input type="checkbox" class="list_item" id="NeighborhoodSlowZone" value="7">
-                                                        <span style="opacity: .3">Neighborhood Slow Zone</span>
+                                                        <span style="opacity: .6">Neighborhood Slow Zone</span>
                                                     </label>
                                                 </button>
 
@@ -416,6 +426,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                                             <h4 class="modal-title" id="myModalLabel">Safety Intervention Descriptions</h4>
                                                         </div>
                                                         <div class="modal-body">
@@ -461,12 +472,7 @@
 															
 													
                                                         </div>
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel">Metadata</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Add a metadata here.
-                                                        </div>
+                                                        
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                         </div>
@@ -494,31 +500,31 @@
 
                                                 <button id="SeniorBtn" class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #377eb8; opacity: .3;">%</i>
-                                                        <input type="checkbox" class="list_item1" id="SeniorCenters" value="4" style="opacity: .3">
-                                                        <span style="opacity: .3">Senior Centers</span>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #377eb8; opacity: .6;">%</i>
+                                                        <input type="checkbox" class="list_item1" id="SeniorCenters" value="4" style="opacity: .6">
+                                                        <span style="opacity: .6">Senior Centers</span>
                                                     </label>
                                                 </button>
 
                                                 <button id="TLCBtn" class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #B77753; opacity: .3;">%</i>
-                                                        <input type="checkbox" class="list_item1" id="TLC" value="3" style="opacity: .3">
-                                                        <span style="opacity: .3">TLC</span>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #B77753; opacity: .6;">%</i>
+                                                        <input type="checkbox" class="list_item1" id="TLC" value="3" style="opacity: .6">
+                                                        <span style="opacity: .6">TLC</span>
                                                 </button>
 
                                                 <button id="TownHallBtn" class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #984ea3; opacity: .3;">%</i>
-                                                        <input type="checkbox" class="list_item1" id="TownHallMeeting" value="3" style="opacity: .3">
-                                                        <span style="opacity: .3">Town Hall Meetings</span>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #984ea3; opacity: .6;">%</i>
+                                                        <input type="checkbox" class="list_item1" id="TownHallMeeting" value="3" style="opacity: .6">
+                                                        <span style="opacity: .6">Town Hall Meetings</span>
                                                 </button>
 
                                                 <button id="WorkshopBtn" class="btn btn-default outreachBtns" style="text-align: left; white-space: normal;">
                                                     <label class="checkbox">
-                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #ff7f00; opacity: .3;">%</i>
-                                                        <input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .3">
-                                                        <span style="opacity: .3">Workshops</span>
+                                                        <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #ff7f00; opacity: .6;">%</i>
+                                                        <input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
+                                                        <span style="opacity: .6">Workshops</span>
                                                 </button>
 
                                             </div>
@@ -568,6 +574,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                                             <h4 class="modal-title" id="myModalLabel">Outreach Description</h4>
                                                         </div>
                                                         <div class="modal-body">
@@ -598,12 +605,7 @@
 															
 														
                                                         </div>
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel">Metadata</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Add a metadata here.
-                                                        </div>
+                                                        
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                         </div>
@@ -628,7 +630,7 @@
                                                                 Injury
                                                             </label>
 
-                                                            <label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width: 50%; font-size: 16px; color: rgb(204,204,204); white-space: normal;">
+                                                            <label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width: 50%; font-size: 16px; color: #777; white-space: normal;">
                                                                 Fatality
                                                             </label>
                                                         </div>
@@ -644,22 +646,23 @@
                                                                 <input type="radio" name="options" id="policePrecinct" checked=""><span class="districtLabel">Police Precinct</span>
                                                             </label>
 
-                                                            <label class="btn btn-default districtBtns" style="color: rgb(204,204,204); white-space: normal;">
+                                                            <label class="btn btn-default districtBtns" style="color: #777; white-space: normal;">
                                                                 <input type="radio" name="options" id="communityDistrict"><span class="districtLabel">Community District</span>
                                                             </label>
 
-                                                            <label class="btn btn-default  districtBtns" style="color: rgb(204,204,204); white-space: normal;">
+                                                            <label class="btn btn-default  districtBtns" style="color: #777; white-space: normal;">
                                                                 <input type="radio" name="options" id="cityCouncilDistrict"><span class="districtLabel">City Council District</span>
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+											<div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                             <div id="fatalitySumLegend" class="col-sm-12" style="margin-bottom: 1em; color: #565656; font-weight: 800;">
                                                 <h4>Density of Fatalities by<br>
                                                     <span id="fatalSumLegendType">Police Precinct</span></h4>
                                                 <img src="img/legend/Fatal_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
-                                                <h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
+                                                <h6><span style="margin-left: 0.2em; margin-bottom" class="pull-left">Low</span><span class="pull-right">High</span></h6>
                                             </div>
 
                                             <div id="injurySumLegend" class="col-sm-12" style="margin-bottom: 1em; color: #565656; font-weight: 800;">
@@ -670,7 +673,7 @@
                                             </div>
 
                                             <p class="footNote">Normalized by Area (sq. miles).</p>
-
+											</div>
                                             <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 4em; width: 100%;">
                                                 Methodology Description
                                             </button>
@@ -825,7 +828,7 @@
 
 		    showLoading();
 		    spatialRef = new esri.SpatialReference({ "wkid": 4326 });
-		    var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
+		   // var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
 		    infoTemplate = new InfoTemplate("Location", "${location}");
 		    infoTemplate1 = new InfoTemplate("Location", "${location}");
 		    symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
@@ -840,7 +843,7 @@
 		        zoom: 2,
 		        sliderPosition: "top-right",
 		        sliderStyle: "small",
-		        extent: customExtentAndSR,
+		        //extent: customExtentAndSR,
 		    });
 
 		    spatialRef = map.spatialReference;

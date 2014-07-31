@@ -210,4 +210,18 @@
 	.interventionBtns{
 	font-size:0.98em;
 	}
+	
+	#jqxslider {
+    width: 45em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em !important;
+}
+
+#jqxslider2 {
+    width: 45em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em !important;
+}
 }

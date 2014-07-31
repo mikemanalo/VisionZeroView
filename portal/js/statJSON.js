@@ -68,10 +68,23 @@ var stats =
 {"FREQUENCY":3747,"SUM_CRASHES":4497,"SUM_Inj_Crashes":895,"SUM_Fatalities":8,"SUM_Injuries":1274,"SUM_PedFat":4,"SUM_PedInj":270,"SUM_BikeFat":2,"SUM_BikeInj":106,"SUM_MVOFat":2,"SUM_MVOInj":898,"SUM_Non_Inj":3602,"Date":"6/1/2014"}];
 
 
+var stats2 = 
+[{"FREQUENCY":27500,"SUM_CRASHES":161695,"SUM_Inj_Crashes":32016,"SUM_Fat_Crashes":144,"SUM_Fatalities":152,"SUM_Injuries":44552,"SUM_PedFat":85,"SUM_PedInj":11079,"SUM_BikeFat":0,"SUM_BikeInj":3001,"SUM_MVOFat":56,"SUM_MVOInj":30472,"SUM_nonInj":129679,"Date":"1/1/2009"},
+{"FREQUENCY":27695,"SUM_CRASHES":165669,"SUM_Inj_Crashes":33766,"SUM_Fat_Crashes":134,"SUM_Fatalities":139,"SUM_Injuries":46864,"SUM_PedFat":77,"SUM_PedInj":11522,"SUM_BikeFat":12,"SUM_BikeInj":3755,"SUM_MVOFat":50,"SUM_MVOInj":31587,"SUM_nonInj":131903,"Date":"1/1/2010"},
+{"FREQUENCY":27754,"SUM_CRASHES":160119,"SUM_Inj_Crashes":32638,"SUM_Fat_Crashes":131,"SUM_Fatalities":134,"SUM_Injuries":44625,"SUM_PedFat":74,"SUM_PedInj":11438,"SUM_BikeFat":15,"SUM_BikeInj":3516,"SUM_MVOFat":45,"SUM_MVOInj":29671,"SUM_nonInj":127481,"Date":"1/1/2011"},
+{"FREQUENCY":27369,"SUM_CRASHES":158811,"SUM_Inj_Crashes":33723,"SUM_Fat_Crashes":163,"SUM_Fatalities":171,"SUM_Injuries":45842,"SUM_PedFat":79,"SUM_PedInj":11332,"SUM_BikeFat":15,"SUM_BikeInj":3567,"SUM_MVOFat":77,"SUM_MVOInj":30943,"SUM_nonInj":125088,"Date":"1/1/2012"},
+{"FREQUENCY":27905,"SUM_CRASHES":163189,"SUM_Inj_Crashes":34357,"SUM_Fat_Crashes":178,"SUM_Fatalities":189,"SUM_Injuries":46402,"SUM_PedFat":108,"SUM_PedInj":11833,"SUM_BikeFat":10,"SUM_BikeInj":3672,"SUM_MVOFat":71,"SUM_MVOInj":30897,"SUM_nonInj":128832,"Date":"1/1/2013"},
+{"FREQUENCY":20985,"SUM_CRASHES":66283,"SUM_Inj_Crashes":12117,"SUM_Fat_Crashes":59,"SUM_Fatalities":62,"SUM_Injuries":16252,"SUM_PedFat":34,"SUM_PedInj":4475,"SUM_BikeFat":4,"SUM_BikeInj":970,"SUM_MVOFat":24,"SUM_MVOInj":10807,"SUM_nonInj":54166,"Date":"1/1/2014"}]
 
 
 
 $('#jqxslider').bind('change', function(event) {
+
+	checkStats();
+		
+});
+
+$('#jqxslider2').bind('change', function(event) {
 
 	checkStats();
 		
@@ -117,33 +130,35 @@ function checkStats(){
 			$("#stat1").text("yearly stats available soon");
 			$("#stat2").text("please check again later");
 			
-			/*
-		var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+			
+		var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 	//	console.log("statpage" + curInjuryValue );
 		if (ped){
-			$("#stat1").text("Pedestrian Fatalities: " + stats[curInjuryValue].SUM_PedFat);
-			$("#stat2").text("Pedestrian Injuries: " + stats[curInjuryValue].SUM_PedInj);
+			$("#stat1").text("Pedestrian Fatalities: " + stats2[curInjuryValue].SUM_PedFat);
+			$("#stat2").text("Pedestrian Injuries: " + stats2[curInjuryValue].SUM_PedInj);
 			
 			//console.log($("#stat1").text);	
 		}
 		else if (bike){
-			$("#stat1").text("Cyclist Fatalities: " + stats[curInjuryValue].SUM_BikeFat);
-			$("#stat2").text("Cyclist Injuries: " + stats[curInjuryValue].SUM_BikeInj);
+			$("#stat1").text("Cyclist Fatalities: " + stats2[curInjuryValue].SUM_BikeFat);
+			$("#stat2").text("Cyclist Injuries: " + stats2[curInjuryValue].SUM_BikeInj);
 			
 			//console.log($("#stat1").text);	
 		}
 		else if (motor){
-			$("#stat1").text("Cyclist Fatalities: " + stats[curInjuryValue].SUM_MVOFat);
-			$("#stat2").text("Cyclist Injuries: " + stats[curInjuryValue].SUM_MVOInj);
+			$("#stat1").text("Motorist Fatalities: " + stats2[curInjuryValue].SUM_MVOFat);
+			$("#stat2").text("Motorist Injuries: " + stats2[curInjuryValue].SUM_MVOInj);
 			
 			//console.log($("#stat1").text);	
 		}
 		else if (all){
-			$("#stat1").text("Cyclist Fatalities: " + stats[curInjuryValue].SUM_Fatalities);
-			$("#stat2").text("Cyclist Injuries: " + stats[curInjuryValue].SUM_Injuries);
+			$("#stat1").text("All Fatalities: " + stats2[curInjuryValue].SUM_Fatalities);
+			$("#stat2").text("All Injuries: " + stats2[curInjuryValue].SUM_Injuries);
 			
 			//*/
 		
 		
 	}
+}
+
 }
