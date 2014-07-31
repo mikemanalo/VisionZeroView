@@ -2,39 +2,46 @@
 
 
 function checkCrashLegend(){
-	var locScale = map.getScale();
-//	console.log("year: " + yearly + " month: " + monthly + "  injury: " + injury + " fatality: " + fatality );
-	
-	if (injury){
-		if (yearly){
+       var locScale = map.getScale();
+//     console.log("year: " + yearly + " month: " + monthly + "  injury: " + injury + " fatality: " + fatality );
+       
+       if (injury){
+              if (yearly){
 
-			if (locScale > 64000) {
-				$("#densityLegend").css("display", "block");
-				$("#fatalityLegend").css("display", "none");
-				$("#injuryLegend").css("display", "none");
-			}
-			else if (locScale < 64001) {
-				$("#densityLegend").css("display", "none");
-				$("#fatalityLegend").css("display", "block");
-				$("#injuryLegend").css("display", "block");
-			}
-		}
-		else if (monthly){
+                     if (locScale > 64000) {
+                           $("#densityLegend").css("display", "block");  //densityLegendText
+                           $("#fatalityLegend").css("display", "none");
+                           $("#injuryLegend").css("display", "none");
+                           
+                           if (ped) $("#densityLegendText").text("Density of Pedestrian Injuries By Year");
+                           else if (bike) $("#densityLegendText").text("Density of Cyclist Injuries By Year");
+                            else if (motor) $("#densityLegendText").text("Density of Motorist Injuries By Year");
+                           else if (all) $("#densityLegendText").text("Density of All Injuries By Year");
+                           
+                     }
+                     else if (locScale < 64001) {
+                           $("#densityLegend").css("display", "none");
+                           $("#fatalityLegend").css("display", "block");
+                           $("#injuryLegend").css("display", "block");
+                     }
+              }
+              else if (monthly){
 
-				$("#densityLegend").css("display", "none");
-				$("#fatalityLegend").css("display", "block");
-				$("#injuryLegend").css("display", "block");
-		}
-	}
-		
-	else if (fatality){
+                           $("#densityLegend").css("display", "none");
+                           $("#fatalityLegend").css("display", "block");
+                           $("#injuryLegend").css("display", "block");
+              }
+       }
+              
+       else if (fatality){
 
-				$("#densityLegend").css("display", "none");
-				$("#fatalityLegend").css("display", "block");
-				$("#injuryLegend").css("display", "none");
-			}
+                           $("#densityLegend").css("display", "none");
+                           $("#fatalityLegend").css("display", "block");
+                           $("#injuryLegend").css("display", "none");
+                     }
 
 }
+
 
 
 
@@ -527,7 +534,7 @@ else if (yearly) {
 
 				visibleInjuryLayerIds.length = 0;
 
-				visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6, curInjuryValue + 7);
+				visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
 
 				fatality_monthly_ped_Layer.setVisibleLayers(visibleInjuryLayerIds);
 
@@ -538,7 +545,7 @@ else if (yearly) {
 
 					visibleInjuryLayerIds.length = 0;
 
-					visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6, curInjuryValue + 7);
+					visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
 
 					fatality_monthly_ped_Layer.setVisibleLayers(visibleInjuryLayerIds);
 				});

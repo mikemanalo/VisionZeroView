@@ -54,9 +54,7 @@ function isIE()
 }
 
 //---Drop Down Fix?-//
-/*$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { 
-    e.stopPropagation(); 
-});*/
+
 
 $('[data-toggle=dropdown]').each(function() {
  this.addEventListener('click', function() {}, false);

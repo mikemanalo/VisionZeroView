@@ -218,10 +218,26 @@
     margin-bottom: 1.3em !important;
 }
 
-#jqxslider2 {
+	#jqxslider2 {
     width: 45em !important;
     margin-left:auto; margin-right: auto;
     margin-top: 1.3em;
     margin-bottom: 1.3em !important;
 }
+
+@media (mid-width:776;) and (max-width:882px;){
+	#jqxslider {
+    width: 10em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em !important;
+	}
+
+	#jqxslider2 {
+    width: 10em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em !important;
+	}
+
 }

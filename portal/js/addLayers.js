@@ -23,6 +23,7 @@ dojo.connect(map, "onload", function() {
 });
 
 $(".interventionBtns").on("click", function() {
+map.infoWindow.hide();
 	interventionLayerIDs = [];
 	var test = this;
 
@@ -139,6 +140,7 @@ $(".list_item").click(function(){
 
 
 $(".outreachBtns").on("click", function() {
+	map.infoWindow.hide();
 	outreachLayerIDs = [];
 
 	outreachLayerIDs.length = 0;

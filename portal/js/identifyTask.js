@@ -87,7 +87,7 @@ function executeIdentifyTask(evt) {
 				else if (ped)
 					deferred = injury_monthly_ped_IdentifyTask.execute(allIdentifyParams);
 				else if (motor)
-					deferred = injury_monthly_motor_IdentifyTasksk.execute(allIdentifyParams);
+                   deferred = injury_monthly_motor_IdentifyTask.execute(allIdentifyParams);
 				else if (bike)
 					deferred = injury_monthly_bike_IdentifyTask.execute(allIdentifyParams);
 			}

@@ -205,7 +205,7 @@
                                         <div class="col-md-12">
 										 
                                             <h3 class="mainTitle">Crash Information</h3>
-
+											
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
                                                     <h5 class="subTitleTop">Mode of Transportation</h5>
@@ -261,7 +261,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-											 <div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+											
+											<div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                             <div id="injuryLegend" class="col-xs-6 col-sm-6 graphTitle">
                                                 <h4>Number of Injuries per Location</h4>
                                                 <img src="img/legend/Injury_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
@@ -274,11 +275,13 @@
                                             </div>
 
                                             <div id="densityLegend" class="col-sm-12 graphTitle" style="display: none">
-                                                <h4>Density of All Injuries By Year </h4>
+                                                <h4><span id="densityLegendText"></span> </h4>
+
                                                 <img src="img/legend/Injury_heat.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
                                                 <h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
                                             </div>
 </div>
+											
                                             <div class="form-group" style="margin-bottom: 1em;">
 
                                                 <div class="col-sm-12">
@@ -621,6 +624,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h3 class="mainTitle">Summary Information</h3>
+											
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
                                                     <h5 class="subTitleTop">Categories</h5>
@@ -656,7 +660,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
+												
+												
+												
                                             </div>
+											
 											<div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                             <div id="fatalitySumLegend" class="col-sm-12" style="margin-bottom: 1em; color: #565656; font-weight: 800;">
                                                 <h4>Density of Fatalities by<br>
@@ -674,9 +682,8 @@
 
                                             <p class="footNote">Normalized by Area (sq. miles).</p>
 											</div>
-                                            <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 4em; width: 100%;">
-                                                Methodology Description
-                                            </button>
+											
+                                            
 
                                             <div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
