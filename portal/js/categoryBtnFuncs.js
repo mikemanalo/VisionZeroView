@@ -14,7 +14,7 @@ function hideSlider() {
 }
 
 function showSlider() {
-    $("#sliderDiv").hide();
+    $("#sliderDiv").show();
 }
 
 

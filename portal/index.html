@@ -898,8 +898,13 @@
 		    });
 
 
-		    dojo.connect(map, "onLoad", hideLoading);
-		    dojo.connect(map, "onLoad", showSlider);
+		    //dojo.connect(map, "onLoad", hideLoading);
+		    //dojo.connect(map, "onLoad", showSlider);
+
+		    dojo.connect(map, "onLoad", function () {
+		        hideLoading();
+		        showSlider();
+		    });
 		    dojo.connect(map, "onExtentChange", checkCrashLegend);
 		});
 
