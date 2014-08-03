@@ -9,6 +9,15 @@ function hideLoading() {
     $("#loadingImg").hide();
 }
 
+function hideSlider() {
+    $("#sliderDiv").hide();
+}
+
+function showSlider() {
+    $("#sliderDiv").hide();
+}
+
+
 $(document).ready(function() {
 
 	$("#ArterialSlowZone").prop('checked', true);

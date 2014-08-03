@@ -175,7 +175,7 @@
                         </table>
                     </div>
 
-                    <div id="sliderDiv" class="col-sm-2">
+                    <div id="sliderDiv" class="col-sm-2" style="display:none">
                         <div id='jqxslider'></div>
                         <div id='jqxslider2' style="display: none"></div>
                     </div>
@@ -786,7 +786,8 @@
     </div>
 
     <!--=====================================================================================================================================================-->
-    <script src="http://js.arcgis.com/3.9compact/"></script>
+    <!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
+   <script src="http://js.arcgis.com/3.10/"></script>
     <script>
         var map;
         //var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
@@ -857,6 +858,7 @@
 
 
 		    showLoading();
+		    hideSlider();
 		    spatialRef = new esri.SpatialReference({ "wkid": 4326 });
 		    // var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
 		    infoTemplate = new InfoTemplate("Location", "${location}");
@@ -895,8 +897,9 @@
 		        toggleCrashLayers();
 		    });
 
-		    dojo.connect(map, "onLoad", hideLoading);
 
+		    dojo.connect(map, "onLoad", hideLoading);
+		    dojo.connect(map, "onLoad", showSlider);
 		    dojo.connect(map, "onExtentChange", checkCrashLegend);
 		});
 
