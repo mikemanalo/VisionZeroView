@@ -63,7 +63,8 @@ $(document).ready(function() {
 		
 		
 				$("#fatalitiesBtn").css("color", "#777");
-				$("#injuriesBtn").css("color", "rgb(255,255,255)");
+				$("#injuriesBtn").css("color", "#FFF");
+			
 			
 
 			} else if ($("#fatalitiesBtn").hasClass('active')) {
@@ -188,13 +189,13 @@ function toggleCrashLayers() {
 	else if (ped)
 		who = "Pedestrian";
 	else if (bike)
-		who = "Bicycle";
+		who = "Cyclist";
 	else if (motor)
 		who = "Motorist";
 
 	var currentCrashMap = who+ " " + what + ": "+ when  ;
 	console.log(currentCrashMap);
-	$("#boxLabel").text("Citywide totals for:");
+	$("#boxLabel").text("Citywide Total For");
 	$("#layerLabel").text(currentCrashMap);
 
 	//injury_monthly_ped_Layer.setVisibility(true);

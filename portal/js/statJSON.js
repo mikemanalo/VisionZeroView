@@ -69,7 +69,7 @@ var stats =
 
 
 var stats2 = 
-[{"FREQUENCY":27500,"SUM_CRASHES":161695,"SUM_Inj_Crashes":32016,"SUM_Fat_Crashes":144,"SUM_Fatalities":152,"SUM_Injuries":44552,"SUM_PedFat":85,"SUM_PedInj":11079,"SUM_BikeFat":0,"SUM_BikeInj":3001,"SUM_MVOFat":56,"SUM_MVOInj":30472,"SUM_nonInj":129679,"Date":"1/1/2009"},
+[{"FREQUENCY":27500,"SUM_CRASHES":161695,"SUM_Inj_Crashes":32016,"SUM_Fat_Crashes":144,"SUM_Fatalities":152,"SUM_Injuries":44552,"SUM_PedFat":85,"SUM_PedInj":11079,"SUM_BikeFat":11,"SUM_BikeInj":3001,"SUM_MVOFat":56,"SUM_MVOInj":30472,"SUM_nonInj":129679,"Date":"1/1/2009"},
 {"FREQUENCY":27695,"SUM_CRASHES":165669,"SUM_Inj_Crashes":33766,"SUM_Fat_Crashes":134,"SUM_Fatalities":139,"SUM_Injuries":46864,"SUM_PedFat":77,"SUM_PedInj":11522,"SUM_BikeFat":12,"SUM_BikeInj":3755,"SUM_MVOFat":50,"SUM_MVOInj":31587,"SUM_nonInj":131903,"Date":"1/1/2010"},
 {"FREQUENCY":27754,"SUM_CRASHES":160119,"SUM_Inj_Crashes":32638,"SUM_Fat_Crashes":131,"SUM_Fatalities":134,"SUM_Injuries":44625,"SUM_PedFat":74,"SUM_PedInj":11438,"SUM_BikeFat":15,"SUM_BikeInj":3516,"SUM_MVOFat":45,"SUM_MVOInj":29671,"SUM_nonInj":127481,"Date":"1/1/2011"},
 {"FREQUENCY":27369,"SUM_CRASHES":158811,"SUM_Inj_Crashes":33723,"SUM_Fat_Crashes":163,"SUM_Fatalities":171,"SUM_Injuries":45842,"SUM_PedFat":79,"SUM_PedInj":11332,"SUM_BikeFat":15,"SUM_BikeInj":3567,"SUM_MVOFat":77,"SUM_MVOInj":30943,"SUM_nonInj":125088,"Date":"1/1/2012"},

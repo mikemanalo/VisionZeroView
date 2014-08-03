@@ -1,5 +1,5 @@
 //-----------------------Used to Toggle Switch Button-----------------------------------//	
-	$('.btn-toggle').on("touchstart click" ,function() {
+$('.btn-toggle').click(function() {
     $(this).find('.btn').toggleClass('active');  
     
     if ($(this).find('.btn-primary').size()>0) {
