@@ -1,14 +1,7 @@
 ///////////////////// SAFETY INTERVENTIONS //////////////////////////////////////////////////////////////
 //////////// new July 25 ///////////
 
-function showLoading() {
-	$("#loadingImg").show();
-}
 
-//show map loading image
-function hideLoading() {
-	$("#loadingImg").hide();
-}
 
 
 $(document).ready(function() {

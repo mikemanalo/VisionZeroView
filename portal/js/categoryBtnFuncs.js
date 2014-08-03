@@ -1,4 +1,14 @@
 //// initial state after docuemtn.load ////////////
+
+function showLoading() {
+    $("#loadingImg").show();
+}
+
+//show map loading image
+function hideLoading() {
+    $("#loadingImg").hide();
+}
+
 $(document).ready(function() {
 
 	$("#ArterialSlowZone").prop('checked', true);
@@ -42,11 +52,25 @@ $(".categoriesNav").on('touchstart click', function() {
 			opacity : .8
 
 		});
+		summaryInjuryLayer.on("update-start", function () {
+		    showLoading();
+		});
+
+		summaryInjuryLayer.on("update-end", function () {
+		    hideLoading();
+		});
 		map.addLayer(summaryInjuryLayer);
 		summaryFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer", {
 			id : "summaryFatalityLayer",
 			opacity : .8
 
+		});
+		summaryFatalityLayer.on("update-start", function () {
+		    showLoading();
+		});
+
+		summaryFatalityLayer.on("update-end", function () {
+		    hideLoading();
 		});
 		map.addLayer(summaryFatalityLayer);
 		console.log("injurSum = " + injurySum + "    fatalitySum = " + fatalitySum);
@@ -71,6 +95,15 @@ $(".categoriesNav").on('touchstart click', function() {
 			opacity : .8
 
 		});
+
+		interventionLayer.on("update-start", function () {		    
+		    showLoading();		    
+		});
+
+		interventionLayer.on("update-end", function () {		    
+		    hideLoading();		    
+		});
+
 		map.addLayer(interventionLayer);
 		interventions = true;
 		interventionLayerIDs = [];
@@ -89,6 +122,13 @@ $(".categoriesNav").on('touchstart click', function() {
 			id : "outreachLayer",
 			opacity : .8
 
+		});
+		outreachLayer.on("update-start", function () {
+		    showLoading();
+		});
+
+		outreachLayer.on("update-end", function () {
+		    hideLoading();
 		});
 		map.addLayer(outreachLayer);
 		outreach = true;
