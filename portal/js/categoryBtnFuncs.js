@@ -52,27 +52,29 @@ $(".categoriesNav").on('touchstart click', function() {
 			opacity : .8
 
 		});
-		summaryInjuryLayer.on("update-start", function () {
+		AddLayer(summaryInjuryLayer,false);
+		/*summaryInjuryLayer.on("update-start", function () {
 		    showLoading();
 		});
 
 		summaryInjuryLayer.on("update-end", function () {
 		    hideLoading();
 		});
-		map.addLayer(summaryInjuryLayer);
+		map.addLayer(summaryInjuryLayer);*/
 		summaryFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer", {
 			id : "summaryFatalityLayer",
 			opacity : .8
 
 		});
-		summaryFatalityLayer.on("update-start", function () {
+		AddLayer(summaryFatalityLayer,false);
+		/*summaryFatalityLayer.on("update-start", function () {
 		    showLoading();
 		});
 
 		summaryFatalityLayer.on("update-end", function () {
 		    hideLoading();
 		});
-		map.addLayer(summaryFatalityLayer);
+		map.addLayer(summaryFatalityLayer);*/
 		console.log("injurSum = " + injurySum + "    fatalitySum = " + fatalitySum);
 		
 		if (injurySum) {summaryInjuryLayer.setVisibility(true);  summaryFatalityLayer.setVisibility(false);}
@@ -95,16 +97,16 @@ $(".categoriesNav").on('touchstart click', function() {
 			opacity : .8
 
 		});
-
-		interventionLayer.on("update-start", function () {		    
+		AddLayer(interventionLayer,true);
+		/*interventionLayer.on("update-start", function () {		    
 		    showLoading();		    
 		});
 
 		interventionLayer.on("update-end", function () {		    
 		    hideLoading();		    
 		});
-
-		map.addLayer(interventionLayer);
+        */
+		//map.addLayer(interventionLayer);
 		interventions = true;
 		interventionLayerIDs = [];
 		setTimeout(function() {
@@ -123,14 +125,8 @@ $(".categoriesNav").on('touchstart click', function() {
 			opacity : .8
 
 		});
-		outreachLayer.on("update-start", function () {
-		    showLoading();
-		});
-
-		outreachLayer.on("update-end", function () {
-		    hideLoading();
-		});
-		map.addLayer(outreachLayer);
+		AddLayer(outreachLayer, true);
+		
 		outreach = true;
 		outreachLayerIDs = [];
 
