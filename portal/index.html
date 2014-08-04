@@ -859,8 +859,11 @@
 
 		    showLoading();
 		    hideSlider();
-		    spatialRef = new esri.SpatialReference({ "wkid": 4326 });
-		    // var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
+		    spatialRef = new esri.SpatialReference({ "wkid": 102718 });
+		    //XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
+		    
+		    var initialExtent = new esri.geometry.Extent({ "xmin": 842170.34, "ymin": 128499.74, "xmax": 1141736.31, "ymax": 315617.79, "spatialReference": { "wkid": 102718 } });
+		    var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
 		    infoTemplate = new InfoTemplate("Location", "${location}");
 		    infoTemplate1 = new InfoTemplate("Location", "${location}");
 		    symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
@@ -871,15 +874,15 @@
 
 		    map = new Map("map", {
 		        logo: false,
-		        center: [993908, 194290],
-		        zoom: 2,
+		        //center: [999099, 164979],
+		        zoom: 0,
 		        sliderPosition: "top-right",
 		        sliderStyle: "small",
-		        //extent: customExtentAndSR,
+		        extent: initialExtent
 		    });
 
 		    spatialRef = map.spatialReference;
-		    var tiled = new Tiled("http://www.sustainablestreets.info:6080/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
+		    var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");
 		    //  test July 24
 		    //var tiled = new Tiled("http://dotdevgisiis01/ArcGIS/rest/services/GISAPP_GAZETTEER/NYCDOTBasemap14AGrey/MapServer");
 		    map.addLayer(tiled);
@@ -897,16 +900,16 @@
 		        toggleCrashLayers();
 		    });
 
-
-		    //dojo.connect(map, "onLoad", hideLoading);
-		    //dojo.connect(map, "onLoad", showSlider);
-
-		    dojo.connect(map, "onLoad", function () {
+            dojo.connect(map, "onLoad", function () {
 		        hideLoading();
 		        showSlider();
 		    });
 		    dojo.connect(map, "onExtentChange", checkCrashLegend);
+		    
 		});
+
+       
+
 
     </script>
 
