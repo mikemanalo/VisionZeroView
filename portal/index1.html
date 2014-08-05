@@ -175,10 +175,12 @@
                         </table>
                     </div>
 
-                    <div id="sliderDiv" class="col-sm-2" >
+					
+                      <div id="sliderDiv" class="col-sm-2"  >
                         <div id='jqxslider'></div>
                         <div id='jqxslider2' style="display: none"></div>
                     </div>
+                  
                 </div>
             </div>
 
@@ -855,10 +857,11 @@
 		    }
 
 
-
-
+// $("#sliderBox").css("display", "none"); 
+			
 		    showLoading();
 		    hideSlider();
+		  //$("#sliderDiv").css("display", "none"); 
 		    spatialRef = new esri.SpatialReference({ "wkid": 102718 });
 		    //XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
 		    
@@ -898,9 +901,14 @@
 		        sliderSetup();
 		        checkCrashCatState();
 		        toggleCrashLayers();
+		        		       // hideLoading();
+		      // $("#sliderDiv").css("display", "block"); 
+		      //  showSlider();
+		       
 		    });
 
             dojo.connect(map, "onLoad", function () {
+		       //
 		        hideLoading();
 		        showSlider();
 		    });

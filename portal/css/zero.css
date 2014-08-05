@@ -201,6 +201,9 @@ padding-right:0px;
 	bottom-padding:15px;
 }
 
+
+/* edit Aug 6th ********************/
+
 #sliderDiv {
 	position:absolute;
 	width:100%; 
@@ -211,7 +214,7 @@ padding-right:0px;
 	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#B3B3BE', endColorstr='#AEB7BC');*/
 	background-color:#AEB7BC;
 	z-index:19; 
-	opacity:0.9;
+	opacity:0;
 	border-left: 15px solid #FFF;
 	border-right: 15px solid #FFF;
 }
@@ -229,6 +232,8 @@ padding-right:0px;
     margin-top: 1.3em;
     margin-bottom: 1.3em !important;
 }
+
+
  
  .tooltip {
      position: absolute;

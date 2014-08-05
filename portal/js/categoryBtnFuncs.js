@@ -10,11 +10,15 @@ function hideLoading() {
 }
 
 function hideSlider() {
+	
     $("#sliderDiv").hide();
+    
 }
 
 function showSlider() {
     $("#sliderDiv").show();
+      $("#sliderDiv").css("opacity", 1);
+
 }
 
 

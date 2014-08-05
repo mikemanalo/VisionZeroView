@@ -1,6 +1,5 @@
 
 			   $(document).ready(function () {
-			   	 $("#sliderDiv").css("display", "none"); 
                 $("#jqxslider").jqxSlider({
                     theme: 'orange',
                     value: 0,
@@ -14,13 +13,19 @@
               //  createTooltip();
                 var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();
                 var lowerTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(1)").children();
+                //  $(lowerTicks[i]).css("display", "none");
+                  console.log("upperTicks.length: " + upperTicks.length);
                 for (var i = 0; i < upperTicks.length; i++) {
                     if (i % 12 !=0) {
+                    	console.log("get here");
+                    	
                       //  $(upperTicks[i]).css("display", "none");
-                        $(lowerTicks[i]).css("display", "none");
-                    };
-                };
-                 $("#sliderDiv").css("display", "block");  
+                       
+                      var  lowerTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(1)").children().css("display", "none");
+                         $(lowerTicks[i]).css("display", "none");
+                    }
+                    else {console.log("lower: " + i);}
+                }; 
 			});
 			
 				$(document).ready(function () {
@@ -207,7 +212,7 @@ function sliderLookup(value) {
 			locYear = "2013";
 			break;
 		case 5:
-			locYear = "2014 YTD";
+			locYear = "2014";
 			break;
 
 		default:
@@ -242,7 +247,7 @@ function slider2Lookup(value) {
 			locYear = "2013";
 			break;
 		case 5:
-			locYear = "2014";
+			locYear = "2014 YTD";
 			break;
 
 		default:

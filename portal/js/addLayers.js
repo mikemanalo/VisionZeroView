@@ -11,14 +11,13 @@ $(document).ready(function() {
 });
 dojo.connect(map, "onload", function() {
 	console.log("loaded");
-	$("#sliderDiv").css("display", "block");
-	$("#labelDiv").css("visibility", "visible");
+
 });
 
 $(".interventionBtns").on(" touchstart  click", function() {
 map.infoWindow.hide();
 	interventionLayerIDs = [];
-	/*var test = this;
+	var test = this;
 
 	interventionLayerIDs.length = 0;
 	setTimeout(function() {
@@ -35,12 +34,12 @@ map.infoWindow.hide();
 	}, 30);
 
 	//interventionLayer.setVisibleLayers();
-	console.log(interventionLayerIDs);*/
+	console.log(interventionLayerIDs);
 	//$("#ArterialSlowZone").removeAttr("checked");
 
 	setTimeout(function() {
 		checkInterventionBtns(interventionLayerIDs);
-	}, 30);
+	}, 20);
 
 });
 
@@ -137,7 +136,7 @@ $(".outreachBtns").on("touchstart  click", function() {
 	outreachLayerIDs = [];
 
 	outreachLayerIDs.length = 0;
-	/*
+	
 
 	var test = this;
 
@@ -157,12 +156,12 @@ $(".outreachBtns").on("touchstart  click", function() {
 		}
 	}, 30);
 
-	outreachLayer.setVisibleLayers(outreachLayerIDs);
-	console.log(outreachLayerIDs);*/
+	//outreachLayer.setVisibleLayers(outreachLayerIDs);
+	//console.log(outreachLayerIDs);
 
 	setTimeout(function() {
 		checkOutreachBtns(outreachLayerIDs);
-	}, 30);
+	}, 20);
 
 });
 
