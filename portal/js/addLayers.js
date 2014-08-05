@@ -18,7 +18,7 @@ dojo.connect(map, "onload", function() {
 $(".interventionBtns").on(" touchstart  click", function() {
 map.infoWindow.hide();
 	interventionLayerIDs = [];
-	var test = this;
+	/*var test = this;
 
 	interventionLayerIDs.length = 0;
 	setTimeout(function() {
@@ -35,7 +35,7 @@ map.infoWindow.hide();
 	}, 30);
 
 	//interventionLayer.setVisibleLayers();
-	console.log(interventionLayerIDs);
+	console.log(interventionLayerIDs);*/
 	//$("#ArterialSlowZone").removeAttr("checked");
 
 	setTimeout(function() {
@@ -137,7 +137,7 @@ $(".outreachBtns").on("touchstart  click", function() {
 	outreachLayerIDs = [];
 
 	outreachLayerIDs.length = 0;
-	
+	/*
 
 	var test = this;
 
@@ -158,7 +158,7 @@ $(".outreachBtns").on("touchstart  click", function() {
 	}, 30);
 
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
-	console.log(outreachLayerIDs);
+	console.log(outreachLayerIDs);*/
 
 	setTimeout(function() {
 		checkOutreachBtns(outreachLayerIDs);
@@ -313,11 +313,11 @@ $(".summarySwitchBtns").on("touchstart  click", function() {
 	//summaryLayerIDs = [];
 
 	summaryLayerIDs.length = 0;
-	if (injurySum) {
+	/*if (injurySum) {
 		summaryInjuryLayer.setVisibleLayers(summaryLayerIDs);
 	} else if (fatalitySum) {
 		summaryFatalityLayer.setVisibleLayers(summaryLayerIDs);
-	}
+	}*/
 	console.log(summaryLayerIDs);
 	setTimeout(function() {
 		if ($("#summaryInjuries").hasClass('active')) {
@@ -326,8 +326,8 @@ $(".summarySwitchBtns").on("touchstart  click", function() {
 			console.log("injury active");
 			injurySum = true;
 			fatalitySum = false;
-			summaryInjuryLayer.setVisibility(true);
-			summaryFatalityLayer.setVisibility(false);
+			//summaryInjuryLayer.setVisibility(true);
+			//summaryFatalityLayer.setVisibility(false);
 
 			//	checkSummaryInjuryBtns(summaryLayerIDs);
 		} else if ($("#summaryFatalities").hasClass('active')) {
@@ -336,8 +336,9 @@ $(".summarySwitchBtns").on("touchstart  click", function() {
 			console.log("fatality active");
 			fatalitySum = true;
 			injurySum = false;
-			summaryInjuryLayer.setVisibility(false);
-			summaryFatalityLayer.setVisibility(true);
+			//summaryInjuryLayer.setVisibility(false);
+			//summaryFatalityLayer.setVisibility(true);
+			
 			//	checkSummaryFatalityBtns(summaryLayerIDs);
 		}
 	}, 20);
