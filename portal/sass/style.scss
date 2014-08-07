@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'mixins';
+
+/**
+  INDEX:
+  Gneral Styling
+
+  All - Sizes
+    ALL01 -
+
+  Features
+    FT01: Feature Name
+**/
+
+/**********************************************
+ALL01 - Global Elements
+***********************************************/
+body{
+   @include breakpoint(XS) {
+   }
+}
+
+
+
+/**********************************************
+FT01 - Feature Name
+***********************************************/
+// Ideally we would do an @import 'feature';
+// Responsive updates would be done with the feature including the mixins refer to _variables.scss to se ethe breakpoints
