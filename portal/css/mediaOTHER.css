@@ -58,33 +58,10 @@
 	border: 1px solid transparent;
 	border-radius: 4px;
 	}
-	/*#layerNav.navbar-toggle {
-	position: relative;
-	float: right;
-	margin-right: 15px;
-	padding: 8px 13px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	background-color: transparent;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	}*/
-
 }
 
-/*USed to display the Layer toggle button in the title bar*/
-@media (max-width: 1000px) and (min-width:768px){
-
-   /* #layerNav.navbar-toggle {
-        display: block;
-    }*/
-	
-	/*#searchNav{
-	display:none !important;
-	visibility:hidden ! important;
-	}*/
-	
+/*Used to display the Layer toggle button in the title bar*/
+@media (max-width: 1000px) and (min-width:768px){	
 	.btn {
 	display: inline-block;
 	margin-bottom: 0;
@@ -162,7 +139,7 @@
 	}
 }
 
-/* Used to hide the second search input at a "desktop view"*/
+/* Used to hide the second search input(search input in the modal) at a "desktop view"*/
 @media(min-width:1108px){
 	#collapseOne{
 	display:block !important;
@@ -171,14 +148,14 @@
 	}
 }
 
-/* Used for formatting iPad"*/
+/* Used for formatting iPad landscape"*/
 @media(min-width:1016px){
 	h3, .h3 {
 	font-size: 20px !important;
 	}
 	
 	h4, .h4{
-	font-size:16px !important;
+	font-size:14px !important;
 	font-weight:700;
 	}
 	
