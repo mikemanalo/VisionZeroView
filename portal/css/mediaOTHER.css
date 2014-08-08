@@ -1,5 +1,5 @@
 /*Used to switch the first search input into a toggle button at smaller screen widths*/
-@media (max-width: 1107px) {
+@media (max-width: 1147px) {
 
     #searchNav.navbar-toggle {
         display: block;
@@ -136,6 +136,13 @@
 	.crashTimeSwitchBtns{
 	font-size:10px !important;
 	white-space:normal;
+	}
+	
+	#searchNav{
+		font-size:11px;
+		margin-right: 2em !important;
+		margin-top: 2.5em !important;
+		margin-left: 15px;
 	}
 }
 
