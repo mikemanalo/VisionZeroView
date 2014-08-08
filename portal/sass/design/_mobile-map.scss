@@ -1,0 +1,53 @@
+#layerNav-mobile {
+  display: none;
+}
+
+@include breakpoint(SM) {
+
+  #mainRow {
+    margin: 0;
+  }
+
+  .mobile-map {
+    margin-bottom: 0 !important; // shameful but had to be done
+    padding: 0;
+  }
+
+  #map {
+    //height: 100% !important;
+  }
+
+  #map_root {
+    margin: 0;
+    // height: 100% !important;
+    width: 100% !important; // shameful but had to be done
+  }
+
+  #labelDiv {
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px 12px 15px;
+    height: auto;
+    width: auto;
+    z-index: 8;
+  }
+
+  #labelTable {
+    padding: 0;
+    .labelRow {
+      padding: 0;
+    }
+  }
+
+  #layerNav {
+    display: none;
+  }
+
+  #layerNav-mobile {
+    display: block;
+    left: 10px;
+    top: 10px;
+    margin: 0;
+  }
+
+}

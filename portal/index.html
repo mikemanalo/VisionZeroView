@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="css/mediaLG.css">
     <link rel="stylesheet" type="text/css" href="css/mediaOTHER.css">
     <link rel="stylesheet" type="text/css" href="css/sidemenu.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--<link rel="stylesheet" type="text/css" href="css/site.min.css"> -->
 
     <link rel="apple-touch-icon" sizes="57x57" href="../img/logo/touch-icon-iphone.png">
@@ -39,6 +40,11 @@
 </head>
 
 <body>
+    <div id="site-wrapper"> <!-- off canvas nav ID -->
+    <div id="site-canvas"> <!-- off canvas nav ID -->
+
+    <div id="site-overlay"></div> <!-- off canvas nav ID -->
+
     <!--Black Bar-->
     <div id="blackBar" class="container-fluid">
         <div class="blackBar">
@@ -65,7 +71,14 @@
         <div id="titileDIV" class="container">
             <div class="navbar-header col-xs-12 col-sm-3 col-md-3 col-lg-3">
 
-                <button id="layerNav" type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#collapse-layer">
+                <button id="layerNav" type="button" class="toggle-nav navbar-toggle pull-left" data-toggle="collapse" data-target="#collapse-layer">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <button id="layerNav-mobile" type="button" class="navbar-toggle toggle-nav pull-left">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -149,7 +162,7 @@
     <div id="mainContent">
         <div id="mainRow" class="row">
 
-            <div class="col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
+            <div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
                 <div id="map" class="container-fluid">
                     <!--[if lt IE 10]>
 				<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -186,6 +199,33 @@
 
             <div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9 clearfix" id="sidebar">
                 <div class="container-fluid">
+
+                    <ul class="nav navbar-nav nav-tabs topLine">
+                        <li class="active">
+                            <a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab">
+                                <span class="categoriesFontIcon">8</span>
+                                Crashes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">
+                                <span class="categoriesFontIcon">9</span>
+                                Interventions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#outreachNav" class="btn categoriesOn categoriesNav categoriesFont" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab">
+                                <span class="categoriesFontIcon">!</span>
+                                Outreach
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#summaryNav" class="btn categoriesOn categoriesNav categoriesFont" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab">
+                                <span class="categoriesFontIcon">0</span>
+                                Summary
+                            </a>
+                        </li>
+                    </ul>
 
                     <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                         <!--<div class="container-fluid" style="background-color:#F8F8F8; border: 1px solid #DDDDDD; margin-bottom:1em;">
@@ -316,8 +356,8 @@
                                                                     <h4 class="modal-title" id="myModalLabel">Crash Info Description</h4>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    Injuries and fatalities are grouped by intersection and summarized by month and year using Motor Vehicle Collision data provided by NYPD.  Current year is January to the end of the latest full month.  
-															
+                                                                    Injuries and fatalities are grouped by intersection and summarized by month and year using Motor Vehicle Collision data provided by NYPD.  Current year is January to the end of the latest full month.
+
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -391,12 +431,12 @@
                                             <!--<div class="btn-group-vertical center-block" data-toggle="buttons">
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 															<label class="checkbox interventionBtns">
-															 <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>	
+															 <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>
 															  <input type="checkbox" class="list_item" id="LeadingPedestrianSignals"value=2>
 															  <span>Leading Pedestrian Signals</span>
 															</label>
 														</button>
-														
+
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 														<label class="checkbox interventionBtns">
 														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em">^</i>
@@ -404,7 +444,7 @@
 														 	<span>Engineering Improvements</span>
 														</label>
 														</button>
-														
+
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal; background-color:#e4e4e4";>
 														<label class="checkbox interventionBtns">
 														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#1679B7;">@</i>
@@ -412,7 +452,7 @@
 														 <span>Arterial Slow Zones</span>
 														</label>
 														</button>
-														
+
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 														<label class="checkbox interventionBtns">
 														 <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B65B2A;">@</i>
@@ -420,7 +460,7 @@
 														 <span>Speed Humps</span>
 														</label>
 														</button>
-														
+
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 														<label class="checkbox interventionBtns">
 														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F57D20;">$</i>
@@ -428,7 +468,7 @@
 														 <span>Safe Streets For Seniors</span>
 														</label>
 														</button>
-														
+
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
 														<label class="checkbox interventionBtns">
 														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F5989C;">$</i>
@@ -436,7 +476,7 @@
 														  <span>Neighborhood Slow Zone</span>
 														</label>
 														</button>
-														
+
 												</div>-->
 
 
@@ -455,29 +495,29 @@
 
                                                             <i>Leading Pedestrian Interval Signals</i><br>
                                                             Intersections where DOT installs signals that show a walk sign for pedestrians before showing a green light to vehicle traffic. The goal of these signals is to improve street safety by giving pedestrians a chance to establish their presence in the crosswalk before vehicles make turns across that crosswalk.
-														
+
                                                             <br>
                                                             <br>
                                                             <i>Street Improvement Projects</i><br>
                                                             Safety-oriented engineering improvements that use multiple treatments (signals, markings, concrete etc) on both corridors and intersections. Improvements are generally aimed at better organizing traffic, improving travel times, creating shorter, safer pedestrian crossings, and safe routes for bicycle travel. The map displays operational (non-capital) projects from 2013 and 2014
-														
+
                                                             <br>
                                                             <br>
 
                                                             <i>Arterial Slow Zones</i><br>
                                                             The Arterial Slow Zone program uses a combination of a lower speed limit, signal timing changes, distinctive signs and increased enforcement to improve safety on some of New York City's most high-crash corridors.
-														
+
                                                             <br>
                                                             <br>
                                                             <i>Speed Humps</i><br>
-                                                            Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. 
-														
+                                                            Speed Humps are a raised area of a roadway designed to reduce vehicle speeds.
+
                                                             <br>
                                                             <br>
                                                             <i>Safe Streets for Seniors</i>
                                                             <br>
                                                             The Safe Streets for Seniors program is an initiative aimed at increasing safety for older New Yorkers. Based on factors such as senior population density, injury crashes, and senior trip generators, DOT has selected and studied 25 Senior Pedestrian Focus Areas. Within these areas, DOT evaluates potential safety improvements and also conducts education outreach to senior centers.
-														
+
                                                             <br>
                                                             <br>
                                                             <i>Neighborhood Slow Zones</i><br>
@@ -591,31 +631,31 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <i>Schools</i><br>
-                                                            DOT is conducting outreach to numerous schools in the five boroughs, using age-appropriate materials to educate school children about traffic safety. 
-														
+                                                            DOT is conducting outreach to numerous schools in the five boroughs, using age-appropriate materials to educate school children about traffic safety.
+
                                                             <br>
                                                             <br>
                                                             <i>Senior Centers</i><br>
-                                                            DOT is partnering with Senior Centers across New York City to increase communication and obtain specific feedback from older New Yorkers about the challenges they face and potential street safety improvements. 
-														
+                                                            DOT is partnering with Senior Centers across New York City to increase communication and obtain specific feedback from older New Yorkers about the challenges they face and potential street safety improvements.
+
                                                             <br>
                                                             <br>
                                                             <i>TLC</i><br>
                                                             As a partner agency in the Vision Zero Initiative, the Taxi and Limousine Commission has committed to implement a number of safety reforms designed to increase driver awareness, step up enforcement, and improve technology.
-														
+
                                                             <br>
                                                             <br>
                                                             <i>Town Hall Meetings</i><br>
-                                                            In Spring 2014, DOT partnered with New York City Councilmembers across the five boroughs to host a number of Town Halls, where community members could come learn more about Vision Zero and give specific suggestions or concerns regarding traffic safety in their neighborhoods. 
-														
+                                                            In Spring 2014, DOT partnered with New York City Councilmembers across the five boroughs to host a number of Town Halls, where community members could come learn more about Vision Zero and give specific suggestions or concerns regarding traffic safety in their neighborhoods.
+
                                                             <br>
                                                             <br>
                                                             <i>Workshops</i><br>
                                                             In Spring 2014, DOT hosted nine pedestrian safety workshops across the five boroughs aimed at gathering community feedback on areas in need of safety improvements. This feedback will be used to shape the Borough Pedestrian Safety Action Plans, to be released later in 2014.
-															
-															
-															
-														
+
+
+
+
                                                         </div>
 
                                                         <div class="modal-footer">
@@ -719,23 +759,23 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <i>Police Precinct</i><br>
-                                                            New York City is divided into a number of police precincts with officers who manage enforcement within that area. 
-														
+                                                            New York City is divided into a number of police precincts with officers who manage enforcement within that area.
+
                                                             <br>
                                                             <br>
                                                             <i>Community District</i><br>
                                                             New York City is comprised of five boroughs, containing 59 community districts citywide established by local law in 1975.  Local communities are represented by community boards that create opportunity for active participation in the political process and provision of services to address evolving community needs.
-														
+
                                                             <br>
                                                             <br>
                                                             <i>City Council District</i><br>
-                                                            New York City is divided into 51 City Council districts, each represented by a councilmember elected by residents of the district. 
-														
+                                                            New York City is divided into 51 City Council districts, each represented by a councilmember elected by residents of the district.
+
                                                             <br>
                                                             <br>
                                                             <i>Density of Injuries by (Police Precinct, Community District, City Council District)</i><br>
-                                                            Number of traffic injuries and fatalities occurring in a given area, normalized by the population of that area. 
-											
+                                                            Number of traffic injuries and fatalities occurring in a given area, normalized by the population of that area.
+
                                                         </div>
 
 
@@ -785,6 +825,9 @@
         </div>
     </div>
 
+</div>
+</div>
+
     <!--=====================================================================================================================================================-->
     <!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
    <script src="http://js.arcgis.com/3.10/"></script>
@@ -795,7 +838,7 @@
         var symbol, fillSymbol;
 
 
-        var allIdentifyParams; // for all Identify task parameters         
+        var allIdentifyParams; // for all Identify task parameters
         var interventionIdentifyTask;
         var outreachIdentifyTask;
         var summaryFatalIdentifyTask;
@@ -861,7 +904,7 @@
 		    hideSlider();
 		    spatialRef = new esri.SpatialReference({ "wkid": 102718 });
 		    //XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
-		    
+
 		    var initialExtent = new esri.geometry.Extent({ "xmin": 842170.34, "ymin": 128499.74, "xmax": 1141736.31, "ymax": 315617.79, "spatialReference": { "wkid": 102718 } });
 		    var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
 		    infoTemplate = new InfoTemplate("Location", "${location}");
@@ -905,10 +948,10 @@
 		        showSlider();
 		    });
 		    dojo.connect(map, "onExtentChange", checkCrashLegend);
-		    
+
 		});
 
-       
+
 
 
     </script>
@@ -938,6 +981,7 @@
     <script type="text/javascript" src="js/geocoder.js"></script>
     <script type="text/javascript" src="js/geocoder1.js"></script>
     <script type="text/javascript" src="js/statJSON.js"></script>
+    <script type="text/javascript" src="js/offCanvas.js"></script>
     <!--<script type="text/javascript" src="js/applib.js"></script>-->
 
 

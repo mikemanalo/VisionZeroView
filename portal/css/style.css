@@ -1,16 +1,227 @@
-/**
-  INDEX:
-  Gneral Styling
-
-  All - Sizes
-    ALL01 -
-
-  Features
-    FT01: Feature Name
-**/
 /**********************************************
 ALL01 - Global Elements
 ***********************************************/
+@media (max-width: 767px) {
+  .navbar {
+    border-width: 0 0 1px 0;
+    margin-bottom: 0;
+    min-height: 55px;
+  }
+
+  .container > .navbar-header {
+    margin: 0;
+    padding: 0;
+  }
+
+  #searchNav1.navbar-toggle {
+    font-size: 1.8em;
+    padding: 0;
+    margin: 0 !important;
+    top: 10px;
+    right: 10px;
+  }
+
+  #blackBar {
+    display: none;
+  }
+
+  #mainContent {
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+  }
+}
+@media (max-width: 767px) {
+  body #sliderDiv {
+    display: none !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .vzLogo {
+    margin-top: 1.2em !important;
+    width: 13em;
+  }
+}
 /**********************************************
-FT01 - Feature Name
+FT01 - Off Canvas Navigation
 ***********************************************/
+@media (max-width: 767px) {
+  #site-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  #site-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform: translateZ(0) translateX(0);
+    -ms-transform: translateZ(0) translateX(0);
+    -o-transform: translateZ(0) translateX(0);
+    -webkit-transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -moz-transition: 300ms ease all;
+    -ms-transition: 300ms ease all;
+    -o-transition: 300ms ease all;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  #site-wrapper.show-nav #site-canvas {
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+  }
+
+  .show-nav #site-canvas {
+    -moz-transform: translateX(260px);
+    -ms-transform: translateX(260px);
+    -o-transform: translateX(260px);
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+    -moz-transform: translateZ(0) translateX(260px);
+    -ms-transform: translateZ(0) translateX(260px);
+    -o-transform: translateZ(0) translateX(260px);
+    -webkit-transform: translateZ(0) translateX(260px);
+    transform: translateZ(0) translateX(260px);
+    -moz-transform: translate3d(260px, 0, 0);
+    -ms-transform: translate3d(260px, 0, 0);
+    -o-transform: translate3d(260px, 0, 0);
+    -webkit-transform: translate3d(260px, 0, 0);
+    transform: translate3d(260px, 0, 0);
+  }
+
+  #sidebar {
+    width: 260px;
+    height: 100%;
+    padding-bottom: 10px;
+    position: absolute;
+    left: -260px;
+    top: 0;
+  }
+  #sidebar .nav {
+    display: block;
+    margin-top: 0;
+  }
+
+  #site-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .categoriesFontIcon {
+    font-size: 18px;
+    margin: 0 3px 0 0;
+  }
+
+  .nav-tabs > li {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active a:hover,
+  .nav-tabs > li.active a:focus {
+    color: #fff !important;
+    background-color: #3276B1 !important;
+    border: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  .nav-tabs > li > a {
+    border-radius: 0;
+  }
+
+  .navbar-nav > li > a {
+    font-size: 22px;
+    margin-right: 0;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  #sidebar .nav {
+    display: none;
+  }
+}
+/**********************************************
+FT02 - Mobile Map
+***********************************************/
+#layerNav-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #mainRow {
+    margin: 0;
+  }
+
+  .mobile-map {
+    margin-bottom: 0 !important;
+    padding: 0;
+  }
+
+  #map_root {
+    margin: 0;
+    width: 100% !important;
+  }
+
+  #labelDiv {
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px 12px 15px;
+    height: auto;
+    width: auto;
+    z-index: 8;
+  }
+
+  #labelTable {
+    padding: 0;
+  }
+  #labelTable .labelRow {
+    padding: 0;
+  }
+
+  #layerNav {
+    display: none;
+  }
+
+  #layerNav-mobile {
+    display: block;
+    left: 10px;
+    top: 10px;
+    margin: 0;
+  }
+}
