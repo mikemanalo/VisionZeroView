@@ -73,7 +73,6 @@ white-space:normal;
 .crashTypeBtnBlock{
 	margin-left: auto; margin-right: auto;
 	width: 100%;
-	 
 }
 
 .districtBtns {
@@ -82,13 +81,19 @@ white-space:normal;
 	white-space: normal;
 }
 
-.outreachBtns{
-	text-align: left; 
-	white-space: normal;
+.interventionBtns{
+text-align:left;
+white-space:normal;
 }
 
-.districtLabel{
-	margin-left:auto; margin-right: auto;
+.outreachBtns{
+	text-align: left !important; 
+	white-space: normal;
+}
+.districtBtns{
+text-align: center !important; 
+	white-space: normal;
+	color:#FFF;
 }
 
 .input-group.districtBtnGroup{
