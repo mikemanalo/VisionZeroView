@@ -225,3 +225,19 @@ FT02 - Mobile Map
     margin: 0;
   }
 }
+/**********************************************
+FT03 - Filters
+***********************************************/
+#custom_carousel .subTitleTop,
+#custom_carousel .subTitle {
+  display: none;
+}
+#custom_carousel .form-group .col-sm-12 {
+  padding: 0 !important;
+}
+
+.carousel-inner .container-fluid {
+  background: none !important;
+  border: none !important;
+  padding: 0;
+}

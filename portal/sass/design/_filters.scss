@@ -1,0 +1,19 @@
+#custom_carousel {
+  .subTitleTop,
+  .subTitle {
+    display: none;
+  }
+  .form-group {
+    .col-sm-12 { // should never override bootstrap styles but need to in this case :(
+      padding: 0 !important;
+    }
+  }
+}
+
+.carousel-inner {
+  .container-fluid { // more overrides :(
+    background: none !important;
+    border: none !important;
+    padding: 0;
+  }
+}
