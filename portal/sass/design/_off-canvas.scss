@@ -92,7 +92,7 @@
   }
 
   .categoriesFontIcon {
-    font-size: 18px;
+    font-size: 14px;
     margin: 0 3px 0 0;
   }
 
@@ -107,13 +107,16 @@
         a:focus {
           color: #fff !important; // shameful override
           background-color: #3276B1 !important; // shameful override
-          border:none;
+          border-color: #3276B1;
           -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
         }
       }
       > a {
         border-radius: 0;
+        &:hover {
+          border-color: #eee;
+        }
       }
     }
   }
@@ -121,10 +124,10 @@
   .navbar-nav {
     > li {
       > a {
-        font-size: 22px;
+        font-size: 16px;
         margin-right: 0;
-        padding-top: 16px;
-        padding-bottom: 18px;
+        padding-top: 12px;
+        padding-bottom: 12px;
         text-align: left;
       }
     }

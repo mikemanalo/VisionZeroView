@@ -141,7 +141,7 @@ FT01 - Off Canvas Navigation
   }
 
   .categoriesFontIcon {
-    font-size: 18px;
+    font-size: 14px;
     margin: 0 3px 0 0;
   }
 
@@ -155,19 +155,22 @@ FT01 - Off Canvas Navigation
   .nav-tabs > li.active a:focus {
     color: #fff !important;
     background-color: #3276B1 !important;
-    border: none;
+    border-color: #3276B1;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   }
   .nav-tabs > li > a {
     border-radius: 0;
   }
+  .nav-tabs > li > a:hover {
+    border-color: #eee;
+  }
 
   .navbar-nav > li > a {
-    font-size: 22px;
+    font-size: 16px;
     margin-right: 0;
-    padding-top: 16px;
-    padding-bottom: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     text-align: left;
   }
 }
@@ -228,12 +231,40 @@ FT02 - Mobile Map
 /**********************************************
 FT03 - Filters
 ***********************************************/
+#custom_carousel .mainTitle {
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 8px;
+}
 #custom_carousel .subTitleTop,
 #custom_carousel .subTitle {
   display: none;
 }
 #custom_carousel .form-group .col-sm-12 {
+  margin-bottom: 10px;
   padding: 0 !important;
+  text-align: center;
+}
+#custom_carousel .center-block {
+  display: inline-block;
+  width: 100%;
+}
+#custom_carousel .center-block .btn-sm {
+  padding: 11px 0;
+}
+#custom_carousel .btnWho {
+  font-size: 2em;
+}
+#custom_carousel .btn {
+  padding-top: 10px;
+}
+#custom_carousel .btn.active {
+  border-color: #285E8E;
 }
 
 .carousel-inner .container-fluid {
