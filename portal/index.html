@@ -92,11 +92,10 @@
                     </ul>
                 </div>
 
-                <button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="collapse" data-target="#collapseOne">
+                <button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="modal" data-target="#collapseOne">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="glyphicon glyphicon-search"></span>  Search
                 </button>
-
 
                 <div id="collapse-search" class="collapse navbar-collapse pull-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <ul id="collapse-search_ul" class="nav navbar-nav navbar-right">
@@ -135,7 +134,7 @@
 						<div class="form-group">
 							<div class="input-group input-group-md" style="padding-right: 15px; padding-left: 15px;">
 								<span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown" href="#">Borough<span class="caret"></span></span>
-								<ul class="dropdown-menu">
+								<ul class="dropdown-menu" style="margin-left: 15px;">
 									<li><a href="#">Manhattan</a></li>
 									<li><a href="#">Bronx</a></li>
 									<li><a href="#">Brooklyn</a></li>
@@ -143,7 +142,7 @@
 									<li><a href="#">Staten Island</a></li>
 								</ul>
 								<input id="address1" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
-								<span id="btnsearch1" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+								<span id="btnsearch1" class="input-group-addon" data-dismiss="modal"><span class="glyphicon glyphicon-search"></span></span>
 							</div>
 						</div>
 					</form>
@@ -162,46 +161,30 @@
 				<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		    <![endif]-->
                     <img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif" />
-                    <div id="labelDiv">
-                        <table id="labelTable">
-                            <tr>
-                                <td class="labelRow"><span id="boxLabel"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="layerLabel" class="crashLabel1"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="dateLabel" class="crashLabel2"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="stat1" class="stats"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="stat2" class="stats"></span></td>
-                            </tr>
-                        </table>
-                    </div>
 
-                    <div id="sliderDiv" class="col-sm-2" >
-                        <div id='jqxslider'></div>
-                        <div id='jqxslider2' style="display: none"></div>
+                    <div id="sliderDiv" class="hidden-xs col-sm-2" >
+						<!--<div id="dateLabel" class="crashLabel2"></div>-->
+                        <div id='jqxslider'class="hidden-xs"></div>
+                        <div id='jqxslider2' class="hidden-xs" style="display: none"></div>
+						
                     </div>
                 </div>
             </div>
 
-
-
             <div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9 clearfix" id="sidebar">
                 <div class="container-fluid">
-
                     <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 class="mainTitle">Crash Information</h3>
-                                            <div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+								
+												<h3 class="mainTitle">Crash Information
+												<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#InjuryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+												</h3>
+
+											<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
                                                     <h5 class="subTitleTop">Filters</h5>
                                                     <div class="col-sm-12 bottomMargin">
@@ -228,13 +211,13 @@
 
                                                 <div class="form-group">
                                                     <div class="col-sm-12 bottomMargin">
-                                                        <div class="btn-group btn-group-2 center-block btn-toggle input-group" data-toggle="buttons">
+                                                        <div class="btn-group btn-group-2 center-block btn-toggle input-group">
                                                             <label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="injuriesBtn" style="width: 50%; font-size: 16px;">
-                                                                <input type="radio" name="options" id="injur">Injury
+                                                                Injury
                                                             </label>
 
                                                             <label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn" style="width: 50%; font-size: 16px; color: #777;">
-                                                                <input type="radio" name="options" id="fata">Fatality
+                                                                Fatality
                                                             </label>
 
                                                         </div>
@@ -243,7 +226,7 @@
 
                                                 <div class="form-group">
                                                     <div class="col-sm-12 bottomMargin">
-                                                        <div class="btn-group btn-group-2 btn-toggle  center-block input-group crashTypeBtnBlock">
+                                                        <div class="btn-group btn-group-2 btn-toggle center-block input-group crashTypeBtnBlock">
                                                             <label class="btn btn-sm active btn-primary crashTimeSwitchBtns" id="monthlyBtn" style="width: 50%; font-size: 16px;">
                                                                 Monthly
                                                             </label>
@@ -257,38 +240,41 @@
                                             </div>
 
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
-                                                <div id="injuryLegend" class="col-xs-12 col-sm-12 graphTitle" style="margin-bottom: 0.5em;">
-													
-                                                    <h4>Number of Injuries</h4>
-                                                    <img src="img/legend/Injury_Leg.svg" class="img-responsive text-center " alt="Responsive image" style="width: auto; margin-top: 1em;">
+											   <h5 class="subTitleTop" style="margin-bottom: 1.7em;">Legend</h5>
+											   <h4 style="margin-left:1.2em; margin-right:10px;">Number of <span id="layerLabel" class="crashLabel1"></span></h4>
+												
+												<div id="injuryLegend" class="col-xs-12 col-sm-12 graphTitle" style="margin-bottom: 0.2em;">
+                                                    <img src="img/legend/Injury_Leg.svg" class="img-responsive text-center " alt="Responsive image" style="width: auto; margin-top: 0.3em;">
                                                 </div>
 
                                                 <div id="fatalityLegend" class="col-xs-12 col-sm-12 graphTitle" style="margin-bottom: 0.5em;">
-                                                    <h4>Number of Fatalities</h4>
-                                                    <img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1em;">
+                                                    <img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1.7em;">
                                                 </div>
 
-                                                <div id="densityLegend" class="col-sm-12 graphTitle" style="display: none; margin-bottom: 0.5em;">
+                                                <div id="densityLegend" class="col-sm-12 graphTitle" style="display: none; margin-bottom: 1.7em;">
                                                     <h4><span id="densityLegendText"></span></h4>
-
                                                     <img src="img/legend/Injury_heat.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
                                                     <h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
                                                 </div>
+												
+												<h4 style="margin-left:1.2em; margin-right:10px; margin-top: 9.5em;">Citywide Totals for <span id="dateLabel" ></span> </h4> 
+												<div id="stat1" class="stats"></div>
+											    <div id="stat2" class="stats"></div>
                                             </div>
 
                                             <div class="form-group">
 
                                                 <div class="col-sm-12">
-                                                    <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; width: 100%;">
-                                                        Crash Info Description
-                                                    </button>
+                                                   <!-- <button class="btn btn-primary btn-sm center-block" data-toggle="modal" data-target="#InjuryModal" style="text-align: center; white-space:normal;">
+                                                        <span class="glyphicon glyphicon-info-sign"></span>  Crash Information 
+                                                    </button>-->
 
                                                     <div class="modal fade" id="InjuryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Crash Info Description</h4>
+                                                                    <h4 class="modal-title" id="myModalLabel">Crash Info </h4>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     Injuries and fatalities are grouped by intersection and summarized by month and year using Motor Vehicle Collision data provided by NYPD.  Current year is January to the end of the latest full month.  
@@ -310,10 +296,13 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 class="mainTitle">Safety Interventions</h3>
-											
-											<h5 class="subTitleTop" style="margin-left:0px;">Filters</h5>
-                                            <div class="btn-group-vertical center-block" data-toggle="buttons">
+                                            <h3 class="mainTitle">Safety Interventions
+											<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SafetyModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+											</h3>
+
+											<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+											<h5 class="subTitleTop" style="margin-left:1em;">Filters</h5>
+                                            <div class="btn-group-vertical" data-toggle="buttons" style="display:block; margin-left:10px; margin-right:10px; margin-bottom:1.5em;">
                                                 <button id="LPIBtn" class="btn btn-default interventionBtns">
                                                     <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #6B3E98; white-space: normal; opacity: .6;">%</i>
                                                     <input type="checkbox" class="list_item" id="LeadingPedestrianSignals" value='2'>
@@ -351,10 +340,11 @@
                                                 </button>
 
                                             </div>
+											</div>
 
-                                            <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em; width: 100%">
-                                                Intervention Descriptions
-                                            </button>
+                                            <!--<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; white-space:normal; margin-top: 3em;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>  Safety Intervention
+                                            </button>-->
 
                                             <div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -410,9 +400,19 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <h3 class="mainTitle">Public Outreach</h3>
-											<h5 class="subTitleTop" style="margin-left:0px;">Filters</h5>
-                                            <div class="btn-group-vertical center-block" data-toggle="buttons">
+                                            <!--<h3 class="mainTitle">Public Outreach</h3>-->
+											<div class="container-fluid">
+												<h3 class="mainTitle">Public Outreach
+													<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+												</h3>
+											</div>
+											<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+											
+											<div class="container-fluid">
+											<h5 class="subTitleTop" style="margin-left:1em;">Filters</h5>
+                                            </div>
+											
+											<div class="btn-group-vertical" data-toggle="buttons" style="display:block; margin-left:10px; margin-right:10px; margin-bottom:1.5em;">
 
                                                 <button id="SchoolBtn" class="btn btn-default outreachBtns active" style="background-color: #e4e4e4;">
                                                     <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #4daf4a;">%</i>
@@ -439,16 +439,19 @@
                                                 </button>
 
                                                 <button id="WorkshopBtn" class="btn btn-default outreachBtns">
-                                                    <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #ff7f00; opacity: .6;">%</i>
-                                                    <input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
-                                                    <span style="opacity: .6">Workshops</span>
+													<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #ff7f00; opacity: .6;">%</i>
+													<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
+                                                    <span style="opacity:0.6; color">Workshops</span>
+                                                   
                                                 </button>
 
                                             </div>
+									
+											</div>
 
-                                            <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: center; margin-top: 3em; width: 100%;">
-                                                Outreach Description
-                                            </button>
+                                            <!--<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#OutreachModal" style="text-align: white-space:normal; center; margin-top: 3em;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>  Outreach Description
+                                            </button>-->
 
                                             <div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -496,20 +499,23 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 class="mainTitle">Summary Information</h3>
-
+											<div class="container-fluid">
+												<h3  style="word-wrap:break-word;" class="mainTitle">Summary Information
+												<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SummaryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+												</h3>
+											</div>
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
                                                     <h5 class="subTitleTop">Filters</h5>
                                                     <div class="col-sm-12 bottomMargin">
-                                                        <div class="btn-group btn-toggle summaryBox center-block" data-toggle="buttons" style="width: 100%;">
+                                                        <div class="btn-group btn-toggle summaryBox center-block"  style="width: 100%;">
                                                             <label class="btn btn-sm active btn-primary summarySwitchBtns" id="summaryInjuries" style="width: 50%; font-size: 16px; white-space: normal;">
-                                                                <input type="radio" name="options" id="injurSum">
+                                                                
                                                                 Injury
                                                             </label>
 
                                                             <label class="btn btn-sm btn-default summarySwitchBtns" id="summaryFatalities" style="width: 50%; font-size: 16px; color: #777; white-space: normal;">
-                                                                <input type="radio" name="options" id="fataSum">Fatality
+                                                                Fatality
                                                             </label>
                                                         </div>
                                                     </div>
@@ -535,7 +541,8 @@
                                             </div>
 
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
-                                                <div id="fatalitySumLegend" class="col-sm-12" style="margin-bottom: 1em; color: #565656; font-weight: 800;">
+                                                <h5 class="subTitleTop">Legend</h5>
+												<div id="fatalitySumLegend" class="col-sm-12" style="margin-bottom: 1em; color: #565656; font-weight: 800;">
                                                     <h4>Density of Fatalities by<br>
                                                         <span id="fatalSumLegendType">Police Precinct</span></h4>
                                                     <img src="img/legend/Fatal_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
@@ -552,9 +559,9 @@
                                                 <p class="footNote">Normalized by Area (sq. miles).</p>
                                             </div>
 
-                                            <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; margin-top: 3em; width: 100%;">
-                                                Methodology Description
-                                            </button>
+                                            <!--<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SummaryModal" style="text-align: center; white-space:normal; margin-top: 3em;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>  Methodology Description
+                                            </button>-->
 
 
                                             <div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -722,7 +729,7 @@
 		    map = new Map("map", {
 		        logo: false,
 		        //center: [999099, 164979],
-		        zoom: 0,
+		        zoom: 3,
 		        sliderPosition: "top-right",
 		        sliderStyle: "small",
 		        extent: initialExtent
