@@ -257,18 +257,18 @@ padding-right:0px;
 	font-size 20 px !important;*/
 }
 
-.jqx-fill-state-normal{
+/*.jqx-fill-state-normal{
  	background: rgb(242,101,34) !important;
-}
+}*/
 	
 .summaryBox{
 	margin-left:auto; margin-right: auto;
 	/*padding-top: 2em;*/
 }
 
-.jqx-fill-state-pressed-orange{
+/*.jqx-fill-state-pressed-orange{
  	background: rgb(242,101,34) !important;
-}
+}*/
 	
 
 .jqx-switchbutton-label{
@@ -277,7 +277,7 @@ padding-right:0px;
 	text-align: center !important;
 	text-transform: none !important;
 	color:#FFF;
-	background-color: #3494D1;
+	/*background-color: #3494D1;*/
 	font-size:700;
 }	
 
@@ -381,6 +381,4 @@ padding-bottom:2em;
 
 /*========================================================================================================================================================================*/
 
-.jqx-fill-state-normal {
-    background: none repeat scroll 0% 0% rgba(255, 255, 255, 1) !important;
-}
+

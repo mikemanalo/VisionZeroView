@@ -2,7 +2,7 @@
 			   $(document).ready(function () {
 			   	 $("#sliderDiv").css("display", "none"); 
                 $("#jqxslider").jqxSlider({
-                    theme: 'orange',
+                    theme: 'Fresh',
                     value: 0,
                     min: 0,
                     max: 64,  // ticks until May 2014, will need updating
@@ -25,7 +25,7 @@
 			
 				$(document).ready(function () {
                 $("#jqxslider2").jqxSlider({
-                    theme: 'orange',
+                    theme: 'Fresh',
                     value: 0,
                     min: 0,
                     max: 5,  // ticks until May 2014, will need updating

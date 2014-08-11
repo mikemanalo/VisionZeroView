@@ -42,6 +42,9 @@ function IdentifyTaskInit() {
 
 function executeIdentifyTask(evt) {
 
+	var wait = map.centerAt(evt.mapPoint);
+	wait.addCallback(function (){
+
 	if (injury) {
 
 		var locScale = map.getScale();
@@ -497,6 +500,6 @@ function executeIdentifyTask(evt) {
 				
 	}
 
-
+}); // wait callback
 
 }
