@@ -1,22 +1,28 @@
+var siteOverlay = $('#site-overlay');
+var siteWrapper = $('#site-wrapper');
+
+// handles the click function of the hamburger menu
 $(function(){
-  $('#site-overlay').fadeOut('fast');
+  siteOverlay.fadeOut('fast');
   $('.toggle-nav').click(function(){
-    $('#site-wrapper').toggleClass('show-nav');
-    $('#site-overlay').fadeIn('fast');
+    siteWrapper.toggleClass('show-nav');
+    siteOverlay.fadeIn('fast');
 });
 
+// allows the user to use the escape key to close the responsive menu
 $(document).keyup(function(e) {
-    if (e.keyCode == 27) { //esc key
-        if ($('#site-wrapper').hasClass('show-nav')) {
-          $('#site-overlay').fadeOut('fast');
-            $('#site-wrapper').toggleClass('show-nav');
-        }
+  if (e.keyCode == 27) { //esc key
+    if (siteWrapper.hasClass('show-nav')) {
+      siteOverlay.fadeOut('fast');
+      siteWrapper.toggleClass('show-nav');
     }
+  }
 });
 
-$('#site-overlay').click(function(){
-  $('#site-overlay').fadeOut('fast');
-  $('#site-wrapper').toggleClass('show-nav');
+// retracts the responsive menu when the darkened overlay is clicked
+siteOverlay.click(function(){
+  siteOverlay.fadeOut('fast');
+  siteWrapper.toggleClass('show-nav');
 })
 
 });

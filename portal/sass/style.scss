@@ -12,6 +12,7 @@
 //     FT01: Off Canvas Navigation
 //     FT02: Mobile Map
 //     FT03: Filters
+//     FT04: Data Points
 //
 
 /**********************************************
@@ -32,10 +33,10 @@ ALL01 - Global Elements
   }
 
   #searchNav1.navbar-toggle { // override of existing styles
-    font-size: 1.8em;
+    font-size: 1.6em;
     padding: 0;
     margin: 0 !important;
-    top: 10px;
+    top: 13px;
     right: 10px;
   }
 
@@ -98,7 +99,14 @@ FT03 - Filters
 @import 'design/filters';
 
 /**********************************************
-FT04 - Search
+FT04 - Data Points
+***********************************************/
+
+@import 'design/data-points';
+@import 'design/loading-animation';
+
+/**********************************************
+FT05 - Search
 ***********************************************/
 
 @import 'design/search';
