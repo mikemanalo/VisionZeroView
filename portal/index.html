@@ -85,7 +85,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <button id="searchNav1" type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#collapseOne">
+                <button id="searchNav1" type="button" class="navbar-toggle pull-right" data-toggle="modal" data-target="#modal-search">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
@@ -106,7 +106,8 @@
                     </ul>
                 </div>
 
-                <button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="collapse" data-target="#collapseOne">
+                <button id="searchNav" type="button" class="navbar-toggle pull-right hidden-xs" data-toggle="modal" data-target="#modal-search">
+
                     <span class="sr-only">Toggle navigation</span>
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
@@ -137,8 +138,14 @@
         </div>
     </div>
 
-    <div id="collapseOne" class="panel-collapse collapse no-transition col-sx-12  col-sm-12 col-md-12 col-lg-12  pull-right" style="top: 1.5em; margin-left: 0px; margin-right: 0px; overflow-y: none;">
-        <div class="panel-body">
+    <div id="modal-search" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Search</h4>
+          </div>
+          <div class="modal-body">
             <form id="searchInput1" role="search" class="input-group form center-block" style="top: -1em; margin: 0 auto;">
                 <div class="form-group">
                     <div class="input-group input-group-md" style="bottom: 0.8em; padding-right: 15px; padding-left: 15px;">
@@ -155,8 +162,10 @@
                     </div>
                 </div>
             </form>
-        </div>
-    </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <!-- Begin page content -->
     <div id="mainContent">
