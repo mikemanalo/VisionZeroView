@@ -9,38 +9,40 @@
 }
 
 
-/*Orange Title on Menu*/
+/* Orange Title on Menu */
 .mainTitle{
-	text-align: center; 
+	/*text-align: center; */
 	color: #F26522; 
 	margin-top: 0px; 
 	white-space:normal;
+	font-weight: 800;
+	margin-left:0.5em;
 }		
 
 /* Titles like "Categories" or "Administrative Units"*/
-.subTitle{
+/*.subTitle{
 	margin-top:2.2em; 
-	/*margin-left:1em; */
 	color:#565656; 
 	font-weight:700;
 	text-align:center;
-}
+}*/
 
+/* Used Changes the margin-to"*/
 .subTitleTop{
 	margin-top:1em; 
-	margin-left:0em; 
-	color:#565656; 
+	margin-left:1.2em; 
+	color:#333333; 
 	font-weight:700;
-	text-align:center;
+	text-align:left;
 }
 
-.subTitleBottom{
+/*.subTitleBottom{
 	margin-top:2.2em; 
 	margin-left:0em; 
 	color:#565656; 
 	font-weight:700;
 	text-align:center;
-}
+}*/
 
 .btnWho{
 	font-family: 'icomoon'; 
@@ -68,21 +70,32 @@
 .crashTypeSwitchBtns  {
 font-size:1em;
 white-space:normal;
-	/*margin-bottom: 1em;*/
 }
 
 .crashTypeBtnBlock{
 	margin-left: auto; margin-right: auto;
 	width: 100%;
-	 
 }
 
 .districtBtns {
 	/*margin-bottom: 1em;*/
+	text-align: left; 
+	white-space: normal;
 }
 
-.districtLabel{
-	margin-left:auto; margin-right: auto;
+.interventionBtns{
+text-align:left;
+white-space:normal;
+}
+
+.outreachBtns{
+	text-align: left !important; 
+	white-space: normal;
+}
+.districtBtns{
+text-align: center !important; 
+	white-space: normal;
+	color:#FFF;
 }
 
 .input-group.districtBtnGroup{
@@ -93,15 +106,16 @@ white-space:normal;
 
 .crashLabel1{
 	float:left 
-	margin-left:2em;
+	/*margin-left:2em;*/
 	font-size: 16px;
-
 }
 
 .crashLabel2{
-	float:left 
-	margin-left:2em;
+	/*float:left;
+	margin-left:2em;*/
+	top:1em;
 	font-size: 1.5em;
+	text-align: center;
 }
 	
 .btn-group-3 label.btn  {
@@ -111,18 +125,17 @@ white-space:normal;
 .crashIcon{
 	font-family: 'icomoon'; 
 	font-size: 1.8em;
-	}
+}
 
 	
-	.btn-default:hover, .btn-default:focus{
+.btn-default:hover, .btn-default:focus{
 	background-color:#fafafa;
 }
 
 .list_item1{
-display: none;
-
+	display: none;
 }
-.list_item{
-display: none;
 
+.list_item{
+	display: none;
 }

@@ -5,6 +5,7 @@ html {
 
 body{
 	margin-bottom: 1.75em;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container-fluid{
@@ -14,7 +15,7 @@ padding-right:0px;
 
 
 
-/*===============================================================Black Bar========================================================================================*/
+/*===============================================================Black Bar with NYC and 311 links========================================================================================*/
 #blackBar.container-fluid{
 	padding-left:0em;
 	padding-right:0em;
@@ -32,7 +33,7 @@ padding-right:0px;
 	font-weight: 700;
 }	
 
-/*===============================================================Title Bar========================================================================================*/
+/*===============================================================Title Bar includes main navigation tabs and the desktop dearch input======================================================================================*/
 .navbar {
     position: relative;
     min-height: 50px;
@@ -121,11 +122,6 @@ padding-right:0px;
 	border-left: 0px
 }
 
-/*.panel-body {
-  height: 100%;
-  padding-bottom: 0px;
-}*/
-
 .navbar-form .input-group-btn,
 .navbar-form .input-group-addon {
 	width: auto;
@@ -136,22 +132,9 @@ padding-right:0px;
     right: auto;
 }
 
-/*.interventionBtns.active{
-	background-color:white;
-}
-.interventionBtns:focus{
-	background-color:white;
-}*/
 .btn-default:hover, .btn-default:focus{
 	background-color:#fafafa;
 }
-
-/*.outreachBtns.active{
-	background-color:white;
-}
-.outreachBtns:focus{
-	background-color:white;
-}*/
 	
 .btn-group-3 label.btn  {
 	width: 25%;
@@ -207,7 +190,7 @@ padding-right:0px;
 #sliderDiv {
 	position:absolute;
 	width:100%; 
-	height:4em; 
+	height:6em; 
 	bottom:0em; 
 	left:0em;
 	/*background: linear-gradient(#B3B3BE, #AEB7BC) repeat scroll 0% 0% #AEB7BC;
@@ -235,7 +218,7 @@ padding-right:0px;
 
 
  
- .tooltip {
+ /*.tooltip {
      position: absolute;
      width: 35px;
      height: 40px;
@@ -257,7 +240,7 @@ padding-right:0px;
 	 z-index: 2000;
 	 padding: 3px;
 	 text-align: center;
-}
+}*/
  
  .esriPopup .titleButton.maximize {  
      display: none;  
@@ -266,26 +249,26 @@ padding-right:0px;
 #layerLabel{
 	font-weight: 700 ! important;
 	font-size:16 px ! important;
-
+	/*margin-left:1em;*/
 }
 
 #dateLabel{
-	font-weight: 500 !important;
-	font-size 20 px !important;
+	/*font-weight: 500 !important;
+	font-size 20 px !important;*/
 }
 
-.jqx-fill-state-normal{
+/*.jqx-fill-state-normal{
  	background: rgb(242,101,34) !important;
-}
+}*/
 	
 .summaryBox{
 	margin-left:auto; margin-right: auto;
 	/*padding-top: 2em;*/
 }
 
-.jqx-fill-state-pressed-orange{
+/*.jqx-fill-state-pressed-orange{
  	background: rgb(242,101,34) !important;
-}
+}*/
 	
 
 .jqx-switchbutton-label{
@@ -294,7 +277,7 @@ padding-right:0px;
 	text-align: center !important;
 	text-transform: none !important;
 	color:#FFF;
-	background-color: #3494D1;
+	/*background-color: #3494D1;*/
 	font-size:700;
 }	
 
@@ -313,47 +296,45 @@ padding: .3em;
 }
 
 #labelTable{
-       padding: .5em;
+   padding: 0.5em;
 }
        
 .labelRow{
-       padding-left: .8em;
-       padding:top: .8em;
+   padding-left: .8em;
+   padding:top: .8em;
 }
 
 #boxLabel{
 font-weight:700 !important;
-font-size: 17px !important;}
+font-size: 17px !important;
+margin-left:1em;
+}
+
 
 #stat1, #stat2{
 font-weight:500 !important;
+margin-left:1.4em;
 }
 
 #stat1{
-	margin-top:1.5em;
-}
+	margin-top: -0.19em;
 	
-/*#labelDiv {
-position: absolute;
-top: 1.3em;
-left: 2.7em;
-width: 220px;
-height: 140px;
-background-color: #FFF;
-opacity: 0.8;
-z-index: 39;
-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.075);
-display: block;
 }
 
-#labelTable{
-	padding: 1em;
+#stat2{
+padding-bottom:2em;
 }
 	
-.labelRow{
-	padding-left: 1.2em;
-	padding:top: .8em;
-}*/
+.btn-circle {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+}	
+	
 /*==================================================================Footer=========================================================================================*/
 #footer {
 	position: absolute;
@@ -369,13 +350,6 @@ display: block;
 	font-weight: bold;
 	text-shadow: 0px -1px 1px #000;
 }
-
-
-
- 
-
-
-
 
 
 /*====================================================Fonts======================================================================================================*/		
@@ -403,13 +377,8 @@ display: block;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-/*==============================================================================================================================================================*/
 
-/*fix for z-index on ipad*/
-/*.navbar ul.nav li a {
-    z-index: 10001 !important;
 
-}*/
-
+/*========================================================================================================================================================================*/
 
 

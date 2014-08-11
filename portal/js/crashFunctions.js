@@ -12,6 +12,7 @@ function checkCrashLegend(){
                            $("#densityLegend").css("display", "block");  //densityLegendText
                            $("#fatalityLegend").css("display", "none");
                            $("#injuryLegend").css("display", "none");
+						   $("#layerLabel").css("display", "none");
                            
                            if (ped) $("#densityLegendText").text("Density of Pedestrian Injuries By Year");
                            else if (bike) $("#densityLegendText").text("Density of Cyclist Injuries By Year");
@@ -23,6 +24,7 @@ function checkCrashLegend(){
                            $("#densityLegend").css("display", "none");
                            $("#fatalityLegend").css("display", "block");
                            $("#injuryLegend").css("display", "block");
+						   $("#layerLabel").css("display", "block");
                      }
               }
               else if (monthly){
@@ -193,7 +195,7 @@ function toggleCrashLayers() {
 	else if (motor)
 		who = "Motorist";
 
-	var currentCrashMap = who+ " " + what + ": "+ when  ;
+	var currentCrashMap = "Number of "+ who + " " + what + ": "+ when  ;
 	console.log(currentCrashMap);
 	$("#boxLabel").text("Citywide Total For");
 	$("#layerLabel").text(currentCrashMap);
@@ -227,8 +229,13 @@ function toggleCrashLayers() {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 					console.log(curInjuryValue);
-							var toolTipVal = sliderLookup(curInjuryValue);
-				$("#dateLabel").text(toolTipVal);
+					var toolTipVal = sliderLookup(curInjuryValue);
+					$("#dateLabel").text(toolTipVal);
+					
+					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					console.log(curInjuryValue);
+					var toolTipVal = sliderLookup(curInjuryValue);
+					$("#date2Label").text(toolTipVal);
 				
 				console.log("stats? :"+ stats[curInjuryValue].SUM_BikeFat);
 				
@@ -263,7 +270,13 @@ function toggleCrashLayers() {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 					var toolTipVal = sliderLookup(curInjuryValue);
-				$("#dateLabel").text(toolTipVal);
+					$("#dateLabel").text(toolTipVal);
+					
+					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+					$("#date2Label").text(toolTipVal);
+					
+					
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -281,6 +294,11 @@ function toggleCrashLayers() {
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#date2Label").text(toolTipVal);
+				
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -309,6 +327,11 @@ function toggleCrashLayers() {
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#date2Label").text(toolTipVal);
+				
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -343,6 +366,11 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+				var toolTipVal = slider2Lookup(curInjuryValue);
+				$("#date2Label").text(toolTipVal);
+				
 				console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 7);
@@ -360,6 +388,12 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
+					
+					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+
+					var toolTipVal = slider2Lookup(curInjuryValue);
+					$("#date2Label").text(toolTipVal);
+					
 					console.log(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 7);
@@ -397,6 +431,12 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
+					
+					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+
+					var toolTipVal = slider2Lookup(curInjuryValue);
+					$("#date2Label").text(toolTipVal);
+					
 					console.log(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 7);
@@ -416,6 +456,11 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+				var toolTipVal = slider2Lookup(curInjuryValue);
+				$("#date2Label").text(toolTipVal);
+				
 				console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 7);
@@ -433,6 +478,12 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
+					
+					
+					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+
+					var toolTipVal = slider2Lookup(curInjuryValue);
+					$("#date2Label").text(toolTipVal);
 					console.log(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 7);
@@ -452,6 +503,11 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+				var toolTipVal = slider2Lookup(curInjuryValue);
+				$("#date2Label").text(toolTipVal);
+				
 				console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 7);
@@ -469,6 +525,12 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
+					
+					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+
+					var toolTipVal = slider2Lookup(curInjuryValue);
+					$("#date2Label").text(toolTipVal);
+					
 					console.log(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 7);
@@ -513,6 +575,11 @@ else if (yearly) {
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 					var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				
+				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+				$("#date2Label").text(toolTipVal);
+				
 					curInjuryValue = (curInjuryValue * 4);
 
 					visibleInjuryLayerIds.length = 0;

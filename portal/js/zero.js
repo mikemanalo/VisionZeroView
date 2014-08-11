@@ -59,3 +59,15 @@ function isIE()
 $('[data-toggle=dropdown]').each(function() {
  this.addEventListener('click', function() {}, false);
 });
+
+ 
+
+//-----------------------------------------------------------------------------------------------------------------------//
+/*$(function () {
+    $("#btnsearch1").on("touchstart click",function(){
+        $('#collapseOne').modal('toggle');
+		
+    });
+});
+*/
+

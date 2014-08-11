@@ -198,3 +198,18 @@ function allLayersOff() {
 
 }
 
+function disableCatButtons(){
+       $("#injuryCat").attr("disabled","disabled");
+       $("#interventionCat").attr("disabled","disabled");
+       $("#outreachCat").attr("disabled","disabled");
+       $("#summaryCat").attr("disabled","disabled");
+}
+
+
+
+function enableCatButtons(){
+       $("#injuryCat").removeAttr("disabled");
+       $("#interventionCat").removeAttr("disabled");
+       $("#outreachCat").removeAttr("disabled");
+       $("#summaryCat").removeAttr("disabled");
+}
