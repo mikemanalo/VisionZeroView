@@ -1,0 +1,146 @@
+@include breakpoint(SM) {
+
+  #site-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  #site-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    //we need a compromise here so modals are usable. Can't have the bodal backdrop working and the slide in nav.
+    z-index: 1041;
+
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+
+    -moz-transform: translateZ(0) translateX(0);
+    -ms-transform: translateZ(0) translateX(0);
+    -o-transform: translateZ(0) translateX(0);
+    -webkit-transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+
+    -moz-transition: 200ms ease all;
+    -ms-transition: 200ms ease all;
+    -o-transition: 200ms ease all;
+    -webkit-transition: 200ms ease all;
+    transition: 200ms ease all;
+
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  #site-wrapper.show-nav #site-canvas {
+      -webkit-transform: translateX(260px);
+      transform: translateX(260px);
+  }
+
+  .show-nav #site-canvas {
+    -moz-transform: translateX(260px);
+    -ms-transform: translateX(260px);
+    -o-transform: translateX(260px);
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+
+    -moz-transform: translateZ(0) translateX(260px);
+    -ms-transform: translateZ(0) translateX(260px);
+    -o-transform: translateZ(0) translateX(260px);
+    -webkit-transform: translateZ(0) translateX(260px);
+    transform: translateZ(0) translateX(260px);
+
+    -moz-transform: translate3d(260px, 0, 0);
+    -ms-transform: translate3d(260px, 0, 0);
+    -o-transform: translate3d(260px, 0, 0);
+    -webkit-transform: translate3d(260px, 0, 0);
+    transform: translate3d(260px, 0, 0);
+  }
+
+  #sidebar {
+    width: 260px;
+    height: 100%;
+    padding-bottom: 10px;
+    position: absolute;
+    left: -260px;
+    top: 0;
+    .nav {
+      display: block;
+      margin-top: 0;
+    }
+  }
+
+  #site-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,.5);
+  }
+
+  .categoriesFontIcon {
+    font-size: 14px;
+    margin: 0 3px 0 0;
+  }
+
+  .nav-tabs {
+    > li {
+      float: none;
+      margin: 0;
+      width: 100%;
+      &.active {
+        > a,
+        a:hover,
+        a:focus {
+          color: #fff !important; // shameful override
+          background-color: #3276B1 !important; // shameful override
+          border-color: #3276B1;
+          -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        }
+      }
+      > a {
+        border-radius: 0;
+        &:hover {
+          border-color: #eee;
+        }
+      }
+    }
+  }
+
+  .navbar-nav {
+    > li {
+      > a {
+        font-size: 16px;
+        margin-right: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+      }
+    }
+  }
+
+}
+
+@media (min-width: 768px) {
+  #sidebar {
+    .nav {
+      display: none;
+    }
+  }
+}

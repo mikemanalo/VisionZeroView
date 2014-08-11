@@ -1,0 +1,20 @@
+.esriPopup {
+  .titlePane {
+    background-color: #285E8E;
+    border: none;
+    padding: 5px 10px;
+  }
+  .titleButton {
+    &.close {
+      right: 10px;
+      top: 7px;
+    }
+    &.next,
+    &.prev {
+      top: 7px;
+    }
+  }
+  .actionsPane {
+    padding: 0 10px 10px 10px;
+  }
+}

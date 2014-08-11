@@ -1,0 +1,112 @@
+@import 'variables';
+@import 'mixins';
+
+//
+//   INDEX:
+//   General Styling
+
+//   All - Sizes
+//     ALL01 -
+
+//   Features
+//     FT01: Off Canvas Navigation
+//     FT02: Mobile Map
+//     FT03: Filters
+//     FT04: Data Points
+//
+
+/**********************************************
+ALL01 - Global Elements
+***********************************************/
+
+@include breakpoint(SM) {
+
+  .navbar {
+    border-width: 0 0 1px 0;
+    margin-bottom: 0;
+    min-height: 55px;
+  }
+
+  .container>.navbar-header {
+    margin: 0;
+    padding: 0;
+  }
+
+  #searchNav1.navbar-toggle { // override of existing styles
+    font-size: 1.6em;
+    padding: 0;
+    margin: 0 !important;
+    top: 13px;
+    right: 10px;
+  }
+
+  #blackBar {
+    display: none;
+  }
+
+  #mainContent {
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+}
+
+body {
+  @include breakpoint(SM) {
+    #sliderDiv {
+      display: none !important; // very shameful, but had to be done
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .vzLogo {
+    margin-top: 1.2em !important;
+    width: 13em;
+  }
+}
+
+
+
+/**********************************************
+FT01 - Off Canvas Navigation
+***********************************************/
+// Ideally we would do an @import 'feature';
+// Responsive updates would be done with the feature including the mixins refer to _variables.scss to see the breakpoints
+
+@import 'design/off-canvas';
+
+/**********************************************
+FT02 - Mobile Map
+***********************************************/
+
+@import 'design/mobile-map';
+
+/**********************************************
+FT03 - Filters
+***********************************************/
+
+@import 'design/filters';
+
+/**********************************************
+FT04 - Data Points
+***********************************************/
+
+@import 'design/data-points';
+@import 'design/loading-animation';
+
+/**********************************************
+FT05 - Search
+***********************************************/
+
+@import 'design/search';
