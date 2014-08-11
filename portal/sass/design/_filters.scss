@@ -36,6 +36,16 @@
       border-color: #285E8E;
     }
   }
+  .btn-group-vertical {
+    i {
+      margin-top: 2px;
+    }
+    .btn {
+      &.active {
+        border-color: #ADADAD;
+      }
+    }
+  }
 }
 
 .carousel-inner {

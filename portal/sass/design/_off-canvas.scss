@@ -30,11 +30,11 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 
-    -moz-transition: 300ms ease all;
-    -ms-transition: 300ms ease all;
-    -o-transition: 300ms ease all;
-    -webkit-transition: 300ms ease all;
-    transition: 300ms ease all;
+    -moz-transition: 200ms ease all;
+    -ms-transition: 200ms ease all;
+    -o-transition: 200ms ease all;
+    -webkit-transition: 200ms ease all;
+    transition: 200ms ease all;
 
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -82,7 +82,7 @@
   }
 
   #site-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
