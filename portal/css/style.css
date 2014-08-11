@@ -67,6 +67,7 @@ FT01 - Off Canvas Navigation
     width: 100%;
     height: 100%;
     position: relative;
+    z-index: 1041;
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);

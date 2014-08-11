@@ -11,6 +11,8 @@
     width: 100%;
     height: 100%;
     position: relative;
+    //we need a compromise here so modals are usable. Can't have the bodal backdrop working and the slide in nav.
+    z-index: 1041;
 
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
