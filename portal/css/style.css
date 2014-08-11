@@ -223,63 +223,106 @@ FT02 - Mobile Map
   }
 
   #layerNav-mobile {
+    border-color: #20396F;
     display: block;
     left: 10px;
     top: 10px;
     margin: 0;
   }
+  #layerNav-mobile:hover, #layerNav-mobile:focus {
+    background-color: #20396F;
+  }
+
+  .map-icon {
+    background-color: #20396F;
+    border-radius: 4px;
+    color: #fff;
+    position: absolute;
+    top: auto;
+    right: 10px;
+    z-index: 1040;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .glyphicon-info-sign {
+    bottom: 10px;
+  }
+
+  .glyphicon-screenshot {
+    top: 65px;
+    bottom: auto;
+  }
+
+  .glyphicon-share {
+    bottom: 50px;
+  }
 }
 /**********************************************
 FT03 - Filters
 ***********************************************/
-#custom_carousel .mainTitle {
-  font-size: 12px;
-  text-align: left;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  margin-top: 0px;
-  text-transform: uppercase;
-  border-bottom: 1px solid #EEE;
-  padding-bottom: 8px;
-}
-#custom_carousel .subTitleTop,
-#custom_carousel .subTitle {
-  display: none;
-}
-#custom_carousel .form-group .col-sm-12 {
-  margin-bottom: 10px;
-  padding: 0 !important;
-  text-align: center;
-}
-#custom_carousel .center-block {
-  display: inline-block;
-  width: 100%;
-}
-#custom_carousel .center-block .btn-sm {
-  padding: 11px 0;
-}
-#custom_carousel .btnWho {
-  font-size: 2em;
-}
-#custom_carousel .btn {
-  padding-top: 10px;
-}
-#custom_carousel .btn.active {
-  border-color: #285E8E;
-}
-#custom_carousel .btn-group-vertical i {
-  margin-top: 2px;
-}
-#custom_carousel .btn-group-vertical .btn.active {
-  border-color: #ADADAD;
-}
+@media (max-width: 767px) {
+  #custom_carousel .mainTitle {
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding-top: 10px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 8px;
+  }
+  #custom_carousel .subTitleTop,
+  #custom_carousel .subTitle {
+    display: none;
+  }
+  #custom_carousel .form-group .col-sm-12 {
+    margin-bottom: 10px;
+    padding: 0 !important;
+    text-align: center;
+  }
+  #custom_carousel .center-block {
+    display: inline-block;
+    width: 100%;
+  }
+  #custom_carousel .center-block .btn-sm {
+    padding: 11px 0;
+  }
+  #custom_carousel .btnWho {
+    font-size: 2em;
+  }
+  #custom_carousel .btn {
+    padding-top: 10px;
+  }
+  #custom_carousel .btn.active {
+    border-color: #285E8E;
+  }
+  #custom_carousel .btn-group-vertical {
+    margin: 0 !important;
+  }
+  #custom_carousel .btn-group-vertical i {
+    margin-top: 3px;
+  }
+  #custom_carousel .btn-group-vertical .btn.active {
+    border-color: #ADADAD;
+  }
+  #custom_carousel .interventionBtns,
+  #custom_carousel .outreachBtns {
+    padding: 13px 10px;
+  }
+  #custom_carousel .districtBtnGroup label {
+    padding: 13px 10px;
+  }
 
-.carousel-inner .container-fluid {
-  background: none !important;
-  border: none !important;
-  padding: 0;
+  .carousel-inner .container-fluid {
+    background: none !important;
+    border: none !important;
+    padding: 0;
+  }
 }
-
 /**********************************************
 FT04 - Data Points
 ***********************************************/

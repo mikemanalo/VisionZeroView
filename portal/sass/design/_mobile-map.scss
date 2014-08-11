@@ -44,10 +44,43 @@
   }
 
   #layerNav-mobile {
+    border-color: #20396F;
     display: block;
     left: 10px;
     top: 10px;
     margin: 0;
+    &:hover,
+    &:focus {
+      background-color: #20396F;
+    }
+  }
+
+  .map-icon {
+    background-color: #20396F;
+    border-radius: 4px;
+    color: #fff;
+    position: absolute;
+    top: auto;
+    right: 10px;
+    z-index: 1040;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .glyphicon-info-sign {
+    bottom: 10px;
+  }
+
+  .glyphicon-screenshot {
+    top: 65px;
+    bottom: auto;
+  }
+
+  .glyphicon-share {
+    bottom: 50px;
   }
 
 }
+

@@ -1,57 +1,72 @@
-#custom_carousel {
-  .mainTitle {
-    font-size: 12px;
-    text-align: left;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 0px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #EEE;
-    padding-bottom: 8px;
-  }
-  .subTitleTop,
-  .subTitle {
-    display: none;
-  }
-  .form-group {
-    .col-sm-12 { // should never override bootstrap styles but need to in this case :(
+@include breakpoint(SM) {
+
+  #custom_carousel {
+    .mainTitle {
+      font-size: 12px;
+      text-align: left;
       margin-bottom: 10px;
-      padding: 0 !important;
-      text-align: center;
+      margin-left: 0;
+      padding-top: 10px;
+      margin-top: 0px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #EEE;
+      padding-bottom: 8px;
     }
-  }
-  .center-block {
-    display: inline-block;
-    width: 100%;
-    .btn-sm {
-      padding: 11px 0;
+    .subTitleTop,
+    .subTitle {
+      display: none;
     }
-  }
-  .btnWho {
-    font-size: 2em;
-  }
-  .btn {
-    padding-top: 10px;
-    &.active {
-      border-color: #285E8E;
+    .form-group {
+      .col-sm-12 { // should never override bootstrap styles but need to in this case :(
+        margin-bottom: 10px;
+        padding: 0 !important;
+        text-align: center;
+      }
     }
-  }
-  .btn-group-vertical {
-    i {
-      margin-top: 2px;
+    .center-block {
+      display: inline-block;
+      width: 100%;
+      .btn-sm {
+        padding: 11px 0;
+      }
+    }
+    .btnWho {
+      font-size: 2em;
     }
     .btn {
+      padding-top: 10px;
       &.active {
-        border-color: #ADADAD;
+        border-color: #285E8E;
+      }
+    }
+    .btn-group-vertical {
+      margin: 0 !important; // shameful bootstrap override
+      i {
+        margin-top: 3px;
+      }
+      .btn {
+        &.active {
+          border-color: #ADADAD;
+        }
+      }
+    }
+    .interventionBtns,
+    .outreachBtns {
+      padding: 13px 10px;
+    }
+    .districtBtnGroup {
+      label {
+        padding: 13px 10px;
       }
     }
   }
-}
 
-.carousel-inner {
-  .container-fluid { // more overrides :(
-    background: none !important;
-    border: none !important;
-    padding: 0;
+  .carousel-inner {
+    .container-fluid { // more overrides :(
+      background: none !important;
+      border: none !important;
+      padding: 0;
+    }
   }
+
 }

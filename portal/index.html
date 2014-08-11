@@ -169,43 +169,18 @@
     <div id="mainContent">
         <div id="mainRow" class="row">
 
+            <!-- share, geo-location, and information (legend) icons -->
+            <div class="map-icon glyphicon glyphicon-share"></div>
+            <div class="map-icon glyphicon glyphicon-screenshot"></div>
+            <div class="map-icon glyphicon glyphicon-info-sign"></div>
+
             <div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
                 <div id="map" class="container-fluid">
                     <!--[if lt IE 10]>
 				<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		    <![endif]-->
                     <img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif" />
-                    <div id="labelDiv">
-                        <table id="labelTable">
-                            <tr>
-                                <td class="labelRow"><span id="boxLabel"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="layerLabel" class="crashLabel1"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="dateLabel" class="crashLabel2"></span></td>
-                            </tr>
-                            <tr>
-                                <select>
-                                    <option value="" disabled="" selected="selected">Select Month</option>
-                                    <option value="1">Dec</option>
-                                    <option value="2">Nov</option>
-                                </select>
-                                <select>
-                                    <option value="" disabled="" selected="selected">Select Year</option>
-                                    <option value="1">2014</option>
-                                    <option value="2">2013</option>
-                                </select>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="stat1" class="stats"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="labelRow"><span id="stat2" class="stats"></span></td>
-                            </tr>
-                        </table>
-                    </div>
+
 
                     <div id="sliderDiv" class="hidden-xs col-sm-2" >
 						<div id="date2Label" class="crashLabel2"></div>
@@ -253,9 +228,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
 
-												<h3 class="mainTitle">Crash Information
+												<h3 class="mainTitle hidden-xs">Crash Information
 												<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#InjuryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 												</h3>
+
+                                                <h3 class="mainTitle visible-xs">Filters
+                                                <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#InjuryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+                                                </h3>
 
 											<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
@@ -369,9 +348,13 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 class="mainTitle">Safety Interventions
+                                            <h3 class="mainTitle hidden-xs">Safety Interventions
 											<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SafetyModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 											</h3>
+
+                                            <h3 class="mainTitle visible-xs">Filters
+                                            <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SafetyModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+                                            </h3>
 
 											<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
 											<h5 class="subTitleTop" style="margin-left:1em;">Filters</h5>
@@ -414,7 +397,6 @@
 
                                             </div>
 											</div>
-
 
                                             <!--<div class="btn-group-vertical center-block" data-toggle="buttons">
 														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
@@ -472,7 +454,6 @@
                                                 Intervention Descriptions
                                             </button>
 
-
                                             <div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -529,9 +510,13 @@
                                         <div class="col-sm-12">
                                             <!--<h3 class="mainTitle">Public Outreach</h3>-->
 											<div class="container-fluid">
-												<h3 class="mainTitle">Public Outreach
+												<h3 class="mainTitle hidden-xs">Public Outreach
 													<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 												</h3>
+
+                                                <h3 class="mainTitle visible-xs">Filters
+                                                    <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+                                                </h3>
 											</div>
 											<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
 
@@ -628,9 +613,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
 											<div class="container-fluid">
-												<h3  style="word-wrap:break-word;" class="mainTitle">Summary Information
+												<h3 style="word-wrap:break-word;" class="mainTitle hidden-xs">Summary Information
 												<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SummaryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 												</h3>
+
+                                                <h3 style="word-wrap:break-word;" class="mainTitle visible-xs">Filters
+                                                <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SummaryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+                                                </h3>
 											</div>
                                             <div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
                                                 <div class="form-group">
