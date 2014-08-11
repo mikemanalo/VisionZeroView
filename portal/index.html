@@ -724,16 +724,23 @@
 		    fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
 		    symbol1 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
 		    fillSymbol1 = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
-		    infoWindowPopup = new esri.dijit.Popup(null, dojo.create("div"));
+		    //infoWindowPopup = new esri.dijit.Popup({anchor:top}, dojo.create("div"));
 
-		    map = new Map("map", {
-		        logo: false,
-		        //center: [999099, 164979],
-		        zoom: 3,
-		        sliderPosition: "top-right",
-		        sliderStyle: "small",
-		        extent: initialExtent
-		    });
+		    infoWindowPopup = new Popup({
+                           anchor: "top"
+                                  }, dojo.create("div"));
+
+
+                  map = new Map("map", {
+                      logo: false,
+                      //center: [999099, 164979],
+                      zoom: 3,
+                      sliderPosition: "top-right",
+                      sliderStyle: "small",
+                      extent: initialExtent,
+                      infoWindow:infoWindowPopup
+                  });
+
 
 		    spatialRef = map.spatialReference;
 		    var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");

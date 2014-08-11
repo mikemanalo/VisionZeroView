@@ -60,11 +60,7 @@ $('[data-toggle=dropdown]').each(function() {
  this.addEventListener('click', function() {}, false);
 });
 
-
-$('#jqxSlider').jqxSlider({ theme:'energyblue', tooltip: true }); 
-var tooltip = $('#jqxSlider').jqxSlider('tooltip'); 
-$('#jqxSlider2').jqxSlider({ theme:'energyblue',  tooltip: true }); 
-var tooltip = $('#jqxSlider2').jqxSlider('tooltip'); 
+ 
 
 //-----------------------------------------------------------------------------------------------------------------------//
 /*$(function () {
