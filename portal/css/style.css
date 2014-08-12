@@ -188,7 +188,7 @@ FT01 - Off Canvas Navigation
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 1070;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -234,11 +234,12 @@ FT01 - Off Canvas Navigation
 /**********************************************
 FT02 - Mobile Map
 ***********************************************/
-#layerNav-mobile {
-  display: none;
-}
-
 @media (max-width: 767px) {
+  #layerNav-mobile {
+    display: none;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
   #mainRow {
     margin: 0;
   }
@@ -276,8 +277,8 @@ FT02 - Mobile Map
   #layerNav-mobile {
     border-color: #20396F;
     display: block;
-    left: 10px;
-    top: 10px;
+    left: 11px;
+    top: 11px;
     margin: 0;
   }
   #layerNav-mobile:hover, #layerNav-mobile:focus {
@@ -286,11 +287,12 @@ FT02 - Mobile Map
 
   .map-icon {
     background-color: #20396F;
+    border: none;
     border-radius: 4px;
     color: #fff;
     position: absolute;
     top: auto;
-    right: 10px;
+    bottom: 10px;
     z-index: 1040;
     cursor: pointer;
     padding: 5px;
@@ -299,16 +301,21 @@ FT02 - Mobile Map
   }
 
   .glyphicon-info-sign {
-    bottom: 10px;
+    right: 10px;
   }
 
   .glyphicon-screenshot {
-    top: 65px;
-    bottom: auto;
+    right: 50px;
+    bottom: 50px;
   }
 
   .glyphicon-share {
+    right: 50px;
+  }
+
+  .glyphicon-question-sign {
     bottom: 50px;
+    right: 10px;
   }
 }
 /**********************************************
@@ -325,6 +332,9 @@ FT03 - Filters
     text-transform: uppercase;
     border-bottom: 1px solid #EEE;
     padding-bottom: 8px;
+  }
+  #custom_carousel .mainTitle > span {
+    display: none;
   }
   #custom_carousel .subTitleTop,
   #custom_carousel .subTitle {
@@ -377,6 +387,9 @@ FT03 - Filters
 /**********************************************
 FT04 - Data Points
 ***********************************************/
+.esriPopup {
+  z-index: 1060;
+}
 .esriPopup .titlePane {
   background-color: #285E8E;
   border: none;
@@ -407,3 +420,7 @@ FT05 - Search
 #modal-search .input-group {
   position: static;
 }
+
+/**********************************************
+FT06 - Date Slider
+***********************************************/

@@ -11,6 +11,9 @@
       text-transform: uppercase;
       border-bottom: 1px solid #EEE;
       padding-bottom: 8px;
+      > span {
+        display: none;
+      }
     }
     .subTitleTop,
     .subTitle {

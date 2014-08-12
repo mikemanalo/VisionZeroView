@@ -170,9 +170,67 @@
         <div id="mainRow" class="row">
 
             <!-- share, geo-location, and information (legend) icons -->
-            <div class="map-icon glyphicon glyphicon-share"></div>
-            <div class="map-icon glyphicon glyphicon-screenshot"></div>
-            <div class="map-icon glyphicon glyphicon-info-sign"></div>
+            <button class="map-icon glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#legend-modal"></button>
+            <button class="map-icon glyphicon glyphicon-share" data-toggle="modal" data-target="#share-modal"></button>
+            <button class="map-icon glyphicon glyphicon-screenshot"></button>
+            <button class="map-icon glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></button>
+
+            <!-- Legend Modal -->
+            <div class="modal fade" id="legend-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-describedby="A legend describing the points you currently see on the map.">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Legend</h4>
+                  </div>
+                  <div class="modal-body">
+                    Legend
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Legend Modal -->
+
+            <!-- Share Modal -->
+            <div class="modal fade" id="share-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-describedby="Copy and paste the following URL and post it to any of your favourite social networks.">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Share</h4>
+                  </div>
+                  <div class="modal-body">
+                    Share
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Share Modal -->
+
+            <!-- Section Information Modal -->
+            <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-describedby="A description of the current section you are in.">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Information</h4>
+                  </div>
+                  <div class="modal-body">
+                    Information
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Information Modal -->
 
             <div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
 
