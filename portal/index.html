@@ -169,11 +169,13 @@
     <div id="mainContent">
         <div id="mainRow" class="row">
 
-            <!-- share, geo-location, and information (legend) icons -->
-            <button class="map-icon glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#legend-modal"></button>
-            <button class="map-icon glyphicon glyphicon-share" data-toggle="modal" data-target="#share-modal"></button>
-            <button class="map-icon glyphicon glyphicon-screenshot"></button>
-            <button class="map-icon glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></button>
+            <div class="mobile-icons visible-xs">
+                <!-- share, geo-location, and information (legend) icons -->
+                <button class="map-icon glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#legend-modal"></button>
+                <button class="map-icon glyphicon glyphicon-share" data-toggle="modal" data-target="#share-modal"></button>
+                <button class="map-icon glyphicon glyphicon-screenshot"></button>
+                <button class="map-icon glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></button>
+            </div>
 
             <!-- Legend Modal -->
             <div class="modal fade" id="legend-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-describedby="A legend describing the points you currently see on the map.">

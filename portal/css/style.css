@@ -425,6 +425,14 @@ FT05 - Search
   position: static;
 }
 
+@media (max-width: 767px) {
+  #modal-search .form-group {
+    margin: 0;
+  }
+  #modal-search .input-group {
+    padding: 0 !important;
+  }
+}
 /**********************************************
 FT06 - Date Slider
 ***********************************************/
