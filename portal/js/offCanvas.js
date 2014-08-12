@@ -33,10 +33,11 @@ siteOverlay.click(function(){
 
 // hide the "month" select box when Yearly is selected"
 $(document).ready(function() {
+  var crashDateMonth = $(".crash-date-month");
   $("#yearlyBtn").click(function() {
-    $(".crash-date-month").hide(); // hide the month select box
+    crashDateMonth.hide(); // hide the month select box
   });
   $("#monthlyBtn").click(function() {
-    $(".crash-date-month").show(); // show the month select box
+    crashDateMonth.show(); // show the month select box
   });
 });
