@@ -101,7 +101,7 @@ body {
     padding:0;
   }
 
-  #jqxslider {
+  #jqxslider,  #jqxslider2 {
     > div {
       display: none;
     }
@@ -119,10 +119,18 @@ body {
       margin-top: 10px;
     }
 
-    #jqxslider {
+    #jqxslider, #jqxslider2 {
       width: auto !important;
       order:1;
       margin:10px 10px 10px 0 !important;
+    }
+
+    #date2Label {
+      order:4;
+    }
+
+    #jqxslider2 {
+      order:3;
     }
   }
 }

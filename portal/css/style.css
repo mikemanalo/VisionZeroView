@@ -62,10 +62,10 @@ ALL01 - Global Elements
     padding: 0;
   }
 
-  #jqxslider > div {
+  #jqxslider > div, #jqxslider2 > div {
     display: none;
   }
-  #jqxslider .jqx-rc-all {
+  #jqxslider .jqx-rc-all, #jqxslider2 .jqx-rc-all {
     display: block;
   }
 
@@ -77,10 +77,16 @@ ALL01 - Global Elements
     order: 2;
     margin-top: 10px;
   }
-  #sliderDiv #jqxslider {
+  #sliderDiv #jqxslider, #sliderDiv #jqxslider2 {
     width: auto !important;
     order: 1;
     margin: 10px 10px 10px 0 !important;
+  }
+  #sliderDiv #date2Label {
+    order: 4;
+  }
+  #sliderDiv #jqxslider2 {
+    order: 3;
   }
 }
 /**********************************************
