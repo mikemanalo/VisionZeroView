@@ -23,15 +23,15 @@ padding-right:0px;
 }
 
 .blackBar{
-	background:#000; 
+	background:#000;
 	height:1.75em;
 }
 
 .blackBarFont{
-	color:#FFF !important; 
-	font-size: 0.75em; 
+	color:#FFF !important;
+	font-size: 0.75em;
 	font-weight: 700;
-}	
+}
 
 /*===============================================================Title Bar includes main navigation tabs and the desktop dearch input======================================================================================*/
 .navbar {
@@ -55,14 +55,14 @@ padding-right:0px;
 	cursor: default;
 }
 
-.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:focus { 
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:focus {
 	outline: 0 !important;
 	color: #555555;
 	background-color: #ffffff;
 	border: 1px solid #DDD;
 	border-bottom-color: transparent;
 	cursor: default;
-}	
+}
 
 .nav-tabs {
     border-bottom: 0px solid #DDD;
@@ -72,7 +72,7 @@ padding-right:0px;
     padding-top: 15px;
     padding-bottom: 20px;
 }
-	
+
 #titileDIV.container{
 	margin-left:0px;
 	margin-right:0px;
@@ -80,7 +80,7 @@ padding-right:0px;
 	padding-right:0em;
 	width:100%;
 }
-	
+
 .vzLogo {
     width: 20em;
     margin-top: 1.8em;
@@ -92,10 +92,10 @@ padding-right:0px;
 	margin-top: 1.2em;
 }
 #searchBorough, #searchBorough1{
-	background-color: rgba(255,255,255,1); 
-	background: rgba(255,255,255,1); 
-	color: #666666; 
-	border: 1px solid #D5D5D5; 
+	background-color: rgba(255,255,255,1);
+	background: rgba(255,255,255,1);
+	color: #666666;
+	border: 1px solid #D5D5D5;
 	border-right: 0px;
 }
 
@@ -105,20 +105,20 @@ padding-right:0px;
 }
 
 #address, #address1{
-	background-color: rgba(255,255,255,1); 
-	background: rgba(255,255,255,1); 
-	color: ##D5D5D5; 
-	background-color: rgba(255,255,255,1); 
-	background: rgba(255,255,255,1); 
+	background-color: rgba(255,255,255,1);
+	background: rgba(255,255,255,1);
+	color: ##D5D5D5;
+	background-color: rgba(255,255,255,1);
+	background: rgba(255,255,255,1);
 	border: 1px solid #D5D5D5;
 }
 
 #btnsearch, #btnsearch1{
 
-	background-color: rgba(255,255,255,1); 
-	background: rgba(255,255,255,1); 
-	border: 1px solid #D5D5D5; 
-	color: ##D5D5D5; 
+	background-color: rgba(255,255,255,1);
+	background: rgba(255,255,255,1);
+	border: 1px solid #D5D5D5;
+	color: ##D5D5D5;
 	border-left: 0px
 }
 
@@ -135,7 +135,7 @@ padding-right:0px;
 .btn-default:hover, .btn-default:focus{
 	background-color:#fafafa;
 }
-	
+
 .btn-group-3 label.btn  {
 	width: 25%;
 }
@@ -150,7 +150,7 @@ padding-right:0px;
 
 /*===================================================================All Things Inside the Map DIV==================================================================*/
 #loadingImg{
-	
+
 	top:50%;
 	right: 35%;
 	position:fixed;
@@ -169,7 +169,7 @@ padding-right:0px;
     width: 100px; /* width of the spinner gif */
     height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
 }
-	
+
 #map{
     height:100%;
     width:100%;
@@ -178,7 +178,7 @@ padding-right:0px;
 #mainRow{
 	margin-left: 15px;
 	margin-right: 15px;
-}	
+}
 
 #mainContent{
 	bottom-padding:15px;
@@ -189,19 +189,19 @@ padding-right:0px;
 
 #sliderDiv {
 	position:absolute;
-	width:100%; 
-	height:6em; 
-	bottom:0em; 
+	width:100%;
+	height:6em;
+	bottom:0em;
 	left:0em;
 	/*background: linear-gradient(#B3B3BE, #AEB7BC) repeat scroll 0% 0% #AEB7BC;
 	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#B3B3BE', endColorstr='#AEB7BC');*/
 	background-color:#AEB7BC;
-	z-index:19; 
+	z-index:19;
 	opacity:0;
 	border-left: 15px solid #FFF;
 	border-right: 15px solid #FFF;
 }
-	 
+
 #jqxslider {
     width: 45em !important;
     margin-left:auto; margin-right: auto;
@@ -217,7 +217,7 @@ padding-right:0px;
 }
 
 
- 
+
  /*.tooltip {
      position: absolute;
      width: 35px;
@@ -229,7 +229,7 @@ padding-right:0px;
      padding: 3px;
      text-align: center;
  }
- 
+
 .tooltip2 {
 	 position: absolute;
 	 width: 35px;
@@ -241,11 +241,11 @@ padding-right:0px;
 	 padding: 3px;
 	 text-align: center;
 }*/
- 
- .esriPopup .titleButton.maximize {  
-     display: none;  
+
+ .esriPopup .titleButton.maximize {
+     display: none;
 }
-	
+
 #layerLabel{
 	font-weight: 700 ! important;
 	font-size:16 px ! important;
@@ -260,7 +260,7 @@ padding-right:0px;
 /*.jqx-fill-state-normal{
  	background: rgb(242,101,34) !important;
 }*/
-	
+
 .summaryBox{
 	margin-left:auto; margin-right: auto;
 	/*padding-top: 2em;*/
@@ -269,7 +269,7 @@ padding-right:0px;
 /*.jqx-fill-state-pressed-orange{
  	background: rgb(242,101,34) !important;
 }*/
-	
+
 
 .jqx-switchbutton-label{
 	font-size: 15px !important;
@@ -279,7 +279,7 @@ padding-right:0px;
 	color:#FFF;
 	/*background-color: #3494D1;*/
 	font-size:700;
-}	
+}
 
 #labelDiv {
 position: absolute;
@@ -298,7 +298,7 @@ padding: .3em;
 #labelTable{
    padding: 0.5em;
 }
-       
+
 .labelRow{
    padding-left: .8em;
    padding:top: .8em;
@@ -312,19 +312,19 @@ margin-left:1em;
 
 
 #stat1, #stat2{
-font-weight:500 !important;
-margin-left:1.4em;
+  font-weight:500 !important;
+  margin-left:1.0em;
 }
 
 #stat1{
 	margin-top: -0.19em;
-	
+
 }
 
 #stat2{
 padding-bottom:2em;
 }
-	
+
 .btn-circle {
   width: 25px;
   height: 25px;
@@ -333,8 +333,8 @@ padding-bottom:2em;
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
-}	
-	
+}
+
 /*==================================================================Footer=========================================================================================*/
 #footer {
 	position: absolute;
@@ -352,7 +352,7 @@ padding-bottom:2em;
 }
 
 
-/*====================================================Fonts======================================================================================================*/		
+/*====================================================Fonts======================================================================================================*/
 @font-face {
 	font-family: 'icomoon';
 	src:url('../fonts/icomoon/fonts/icomoon.eot?-poohim');

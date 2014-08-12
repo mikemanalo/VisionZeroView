@@ -95,6 +95,38 @@ body {
   }
 }
 
+//ipad fixes
+@include breakpoint(iPad) {
+  #sidebar {
+    padding:0;
+  }
+
+  #jqxslider {
+    > div {
+      display: none;
+    }
+    .jqx-rc-all {
+      display: block;
+    }
+  }
+
+  #sliderDiv {
+    display: flex !important;
+    height: auto !important;
+
+    #date2Label {
+      order:2;
+      margin-top: 10px;
+    }
+
+    #jqxslider {
+      width: auto !important;
+      order:1;
+      margin:10px 10px 10px 0 !important;
+    }
+  }
+}
+
 
 
 /**********************************************

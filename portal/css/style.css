@@ -57,6 +57,32 @@ ALL01 - Global Elements
     width: 13em;
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  #sidebar {
+    padding: 0;
+  }
+
+  #jqxslider > div {
+    display: none;
+  }
+  #jqxslider .jqx-rc-all {
+    display: block;
+  }
+
+  #sliderDiv {
+    display: flex !important;
+    height: auto !important;
+  }
+  #sliderDiv #date2Label {
+    order: 2;
+    margin-top: 10px;
+  }
+  #sliderDiv #jqxslider {
+    width: auto !important;
+    order: 1;
+    margin: 10px 10px 10px 0 !important;
+  }
+}
 /**********************************************
 FT01 - Off Canvas Navigation
 ***********************************************/

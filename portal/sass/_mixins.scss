@@ -15,4 +15,7 @@
   @else if $point == LG {
     @media (max-width: $LG)  { @content; }
   }
+  @else if $point == iPad {
+    @media (min-width: $MD) and (max-width: $LG)  { @content; }
+  }
 }
