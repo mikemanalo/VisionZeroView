@@ -248,8 +248,7 @@ FT02 - Mobile Map
   #layerNav-mobile {
     display: none;
   }
-}
-@media (max-width: 767px) and (max-width: 767px) {
+
   #mainRow {
     margin: 0;
   }
@@ -265,10 +264,14 @@ FT02 - Mobile Map
   }
 
   #labelDiv {
-    top: 10px;
-    left: 10px;
-    padding: 10px 15px 12px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
     height: auto;
+    top: auto;
+    left: 10px;
+    bottom: 65px;
+    padding: 6px 10px 10px 10px;
     width: auto;
     z-index: 8;
   }
@@ -306,7 +309,7 @@ FT02 - Mobile Map
     z-index: 1040;
     cursor: pointer;
     padding: 5px;
-    font-size: 24px;
+    font-size: 30px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   }
 
@@ -315,16 +318,16 @@ FT02 - Mobile Map
   }
 
   .glyphicon-screenshot {
-    right: 50px;
-    bottom: 50px;
+    right: 55px;
+    bottom: 55px;
   }
 
   .glyphicon-share {
-    right: 50px;
+    right: 55px;
   }
 
   .glyphicon-question-sign {
-    bottom: 50px;
+    bottom: 55px;
     right: 10px;
   }
 }

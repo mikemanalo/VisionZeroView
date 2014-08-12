@@ -277,7 +277,7 @@
 					<div id="labelDiv" class="hidden-sm hidden-md hidden-lg">
 						 <table id="labelTable">
                             <tr>
-                                <td class="labelRow">Citywide Totals</td>
+                                <td class="labelRow"><strong>Citywide Totals</strong></td>
                             </tr>
                             <!--<tr>
                                 <td class="labelRow"><span id="layerLabel" class="crashLabel1"></span></td>
@@ -285,18 +285,7 @@
                             <tr>
                                 <td class="labelRow"><span id="dateLabel" class="crashLabel2"></span></td>
                             </tr>-->
-                            <tr>
-                                <select>
-                                    <option value="" disabled="" selected="selected">Select Month</option>
-                                    <option value="1">Dec</option>
-                                    <option value="2">Nov</option>
-                                </select>
-                                <select>
-                                    <option value="" disabled="" selected="selected">Select Year</option>
-                                    <option value="1">2014</option>
-                                    <option value="2">2013</option>
-                                </select>
-                            </tr>
+
                             <tr>
                                 <td class="labelRow"><span id="stat1Mobile" class="stats"></span></td>
                             </tr>
@@ -304,6 +293,19 @@
                                 <td class="labelRow"><span id="stat2Mobile" class="stats"></span></td>
                             </tr>
                         </table>
+                        <div class="crash-dates">
+                            <span class="crash-dates-label">Date:</span>
+                            <select class="crash-date-month">
+                                <option value="" disabled="" selected="selected">Month</option>
+                                <option value="1">Dec</option>
+                                <option value="2">Nov</option>
+                            </select>
+                            <select class="crash-date-year">
+                                <option value="" disabled="" selected="selected">Year</option>
+                                <option value="1">2014</option>
+                                <option value="2">2013</option>
+                            </select>
+                        </div>
 					</div>
                         <div id="date3Label" class="crashLabel2"></div>
                     <div id="sliderDiv" class="hidden-xs" >
@@ -434,9 +436,6 @@
                                                     <h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
                                                 </div>
 
-												<h4 style="margin-left:1.2em; margin-right:10px; margin-top: 9.5em;">Citywide Totals for <span id="dateLabel" ></span> </h4>
-												<div id="stat1" class="stats"></div>
-											    <div id="stat2" class="stats"></div>
                                             </div>
 
                                             <div class="form-group">
