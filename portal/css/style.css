@@ -87,24 +87,26 @@ ALL01 - Global Elements
     display: block;
   }
 
+  #date3Label {
+    display: none;
+  }
+
   #sliderDiv {
-    display: flex !important;
     height: auto !important;
   }
   #sliderDiv #date2Label {
-    order: 2;
-    margin-top: 10px;
+    float: right;
   }
   #sliderDiv #jqxslider, #sliderDiv #jqxslider2 {
     width: auto !important;
-    order: 1;
-    margin: 10px 10px 10px 0 !important;
+    margin: 0 !important;
+    float: left;
+    clear: none;
   }
-  #sliderDiv #date2Label {
-    order: 4;
-  }
-  #sliderDiv #jqxslider2 {
-    order: 3;
+}
+@media (min-width: 1024px) {
+  #date2Label {
+    display: none;
   }
 }
 /**********************************************

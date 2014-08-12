@@ -131,31 +131,30 @@ body {
     }
   }
 
+  #date3Label {
+    display: none;
+  }
   #sliderDiv {
-    display: flex !important;
     height: auto !important;
 
     #date2Label {
-      order:2;
-      margin-top: 10px;
+      float:right;
     }
 
     #jqxslider, #jqxslider2 {
       width: auto !important;
-      order:1;
-      margin:10px 10px 10px 0 !important;
-    }
-
-    #date2Label {
-      order:4;
-    }
-
-    #jqxslider2 {
-      order:3;
+      margin:0 !important;
+      float:left;
+      clear: none;
     }
   }
 }
 
+@include breakpoint(XL) {
+  #date2Label{
+    display: none;
+  }
+}
 
 
 /**********************************************
