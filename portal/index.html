@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="css/mediaLG.css">
     <link rel="stylesheet" type="text/css" href="css/mediaOTHER.css">
     <link rel="stylesheet" type="text/css" href="css/sidemenu.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
     <!--<link rel="stylesheet" type="text/css" href="css/site.min.css"> -->
 
     <link rel="apple-touch-icon" sizes="57x57" href="../img/logo/touch-icon-iphone.png">
@@ -40,7 +40,7 @@
 </head>
 
 <body>
-    <div id="site-wrapper"> <!-- off canvas nav ID -->
+	<div id="site-wrapper"> <!-- off canvas nav ID -->
     <div id="site-canvas"> <!-- off canvas nav ID -->
 
     <div id="site-overlay"></div> <!-- off canvas nav ID -->
@@ -99,14 +99,13 @@
                 <div id="collapse-layer" class="collapse navbar-collapse pull-left col-xs-12 col-sm-12 col-md-5 col-lg-5">
                     <ul class="nav navbar-nav nav-tabs topLine">
                         <li class="active"><a href="#injurysNav" class="btn categoriesOn categoriesNav categoriesFont" id="injuryCat" data-target="#custom_carousel" data-slide-to="0" data-toggle="tab"><span class="categoriesFontIcon">8</span>  Crashes</a></li>
-                        <li><a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab"><span class="categoriesFontIcon">9</span>  Interventions</a></li>
+                        <li><a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab"><span class="categoriesFontIcon">9</span>  Street Design</a></li>
                         <li><a href="#outreachNav" class="btn categoriesOn categoriesNav categoriesFont" id="outreachCat" data-target="#custom_carousel" data-slide-to="2" data-toggle="tab"><span class="categoriesFontIcon">!</span>  Outreach</a></li>
                         <li><a href="#summaryNav" class="btn categoriesOn categoriesNav categoriesFont" id="summaryCat" data-target="#custom_carousel" data-slide-to="3" data-toggle="tab"><span class="categoriesFontIcon">0</span>  Summary </a></li>
                     </ul>
                 </div>
 
-
-                <button id="searchNav" type="button" class="navbar-toggle pull-right hidden-xs" data-toggle="modal" data-target="#modal-search">
+                <button id="searchNav" type="button" class="navbar-toggle pull-right  hidden-xs" data-toggle="modal" data-target="#collapseOne">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="glyphicon glyphicon-search"></span>  Search
                 </button>
@@ -136,7 +135,7 @@
         </div>
     </div>
 
-    <div id="modal-search" class="modal fade">
+	<div id="modal-search" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -147,7 +146,7 @@
             <form id="searchInput1" role="search" class="input-group form center-block" style="top: -1em; margin: 0 auto;">
                 <div class="form-group">
                     <div class="input-group input-group-md" style="bottom: 0.8em; padding-right: 15px; padding-left: 15px;">
-                        <span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown" href="#">Boro<span class="caret"></span></span>
+                        <span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown" href="#">Borough<span class="caret"></span></span>
                         <ul class="dropdown-menu">
                             <li><a href="#">Manhattan</a></li>
                             <li><a href="#">Bronx</a></li>
@@ -164,6 +163,35 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+	<!--<div class="modal fade" id="collapseOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel">Search By Adress and Intersection </h4>
+				</div>
+				<div class="modal-body">
+					<form id="searchInput1" role="search" class="input-group form center-block" style=" margin: 0 auto;">
+						<div class="form-group">
+							<div class="input-group input-group-md" style="padding-right: 15px; padding-left: 15px;">
+								<span id="searchBorough1" class="input-group-addon dropdown-toggle" data-toggle="dropdown" href="#">Borough<span class="caret"></span></span>
+								<ul class="dropdown-menu" style="margin-left: 15px;">
+									<li><a href="#">Manhattan</a></li>
+									<li><a href="#">Bronx</a></li>
+									<li><a href="#">Brooklyn</a></li>
+									<li><a href="#">Queens</a></li>
+									<li><a href="#">Staten Island</a></li>
+								</ul>
+								<input id="address1" class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
+								<span id="btnsearch1" class="input-group-addon" data-dismiss="modal"><span class="glyphicon glyphicon-search"></span></span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>-->
 
     <!-- Begin page content -->
     <div id="mainContent">
@@ -241,24 +269,53 @@
             <!-- End Information Modal -->
 
             <div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
-
                 <div id="map" class="container-fluid">
                     <!--[if lt IE 10]>
-				<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		    <![endif]-->
-
+					<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+					<![endif]-->
                     <img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif" />
-
+					<div id="labelDiv" class="hidden-sm hidden-md hidden-lg">
+						 <table id="labelTable">
+                            <tr>
+                                <td class="labelRow">Citywide Totals</td>
+                            </tr>
+                            <!--<tr>
+                                <td class="labelRow"><span id="layerLabel" class="crashLabel1"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="labelRow"><span id="dateLabel" class="crashLabel2"></span></td>
+                            </tr>-->
+                            <tr>
+                                <select>
+                                    <option value="" disabled="" selected="selected">Select Month</option>
+                                    <option value="1">Dec</option>
+                                    <option value="2">Nov</option>
+                                </select>
+                                <select>
+                                    <option value="" disabled="" selected="selected">Select Year</option>
+                                    <option value="1">2014</option>
+                                    <option value="2">2013</option>
+                                </select>
+                            </tr>
+                            <tr>
+                                <td class="labelRow"><span id="stat1Mobile" class="stats"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="labelRow"><span id="stat2Mobile" class="stats"></span></td>
+                            </tr>
+                        </table>
+					</div>
 
                     <div id="sliderDiv" class="hidden-xs col-sm-2" >
 						<div id="date2Label" class="crashLabel2"></div>
-                        <div id='jqxslider'></div>
-                        <div id='jqxslider2'></div>
+                        <div id='jqxslider'class="hidden-xs"></div>
+                        <div id='jqxslider2' class="hidden-xs" style="display: none"></div>
+
                     </div>
                 </div>
             </div>
 
-            <div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9 clearfix" id="sidebar">
+			<div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9 clearfix" id="sidebar">
                 <div class="container-fluid">
 
                     <ul class="nav navbar-nav nav-tabs topLine">
@@ -271,7 +328,7 @@
                         <li>
                             <a href="#intervenNav" class="btn categoriesOn categoriesNav categoriesFont" id="interventionCat" data-target="#custom_carousel" data-slide-to="1" data-toggle="tab">
                                 <span class="categoriesFontIcon">9</span>
-                                Interventions
+                                Street Design
                             </a>
                         </li>
                         <li>
@@ -288,6 +345,8 @@
                         </li>
                     </ul>
 
+            <!--<div class=" col-xs-12 col-sm-3  col-md-3 col-lg-3 col-sm-pull-9 clearfix" id="sidebar">-->
+                <div class="container-fluid">
                     <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                         <div class="carousel-inner">
                             <div class="item active">
@@ -295,8 +354,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
 
-												<h3 class="mainTitle hidden-xs">Crash Information
-												<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#InjuryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+												<h3 class="mainTitle hidden-xs">Traffic Crashes
+												<span style="font-size: 16px; vertical-align: middle;" class="hidden-xs"><a data-toggle="modal" data-target="#InjuryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 												</h3>
 
                                                 <h3 class="mainTitle visible-xs">Filters
@@ -393,7 +452,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Crash Info </h4>
+                                                                    <h4 class="modal-title" id="myModalLabel">Traffic Crashes </h4>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     Injuries and fatalities are grouped by intersection and summarized by month and year using Motor Vehicle Collision data provided by NYPD.  Current year is January to the end of the latest full month.
@@ -415,8 +474,9 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 class="mainTitle hidden-xs">Safety Interventions
-											<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SafetyModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+
+                                            <h3 class="mainTitle hidden-xs">Street Design
+											<span style="font-size: 16px; vertical-align: middle;" class="hidden-xs"><a data-toggle="modal" data-target="#SafetyModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 											</h3>
 
                                             <h3 class="mainTitle visible-xs">Filters
@@ -465,68 +525,17 @@
                                             </div>
 											</div>
 
-                                            <!--<div class="btn-group-vertical center-block" data-toggle="buttons">
-														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-															<label class="checkbox interventionBtns">
-															 <i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#6B3E98; white-space: normal;">%</i>
-															  <input type="checkbox" class="list_item" id="LeadingPedestrianSignals"value=2>
-															  <span>Leading Pedestrian Signals</span>
-															</label>
-														</button>
 
-														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-														<label class="checkbox interventionBtns">
-														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#2DA349; white-space: normal; padding-left:0.2em; right:0.5em">^</i>
-														 <input type="checkbox" class="list_item" id="EngineeringImprovements" value=3>
-														 	<span>Engineering Improvements</span>
-														</label>
-														</button>
-
-														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal; background-color:#e4e4e4";>
-														<label class="checkbox interventionBtns">
-														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#1679B7;">@</i>
-														 <input type="checkbox" class="list_item"  id="ArterialSlowZone" value=4>
-														 <span>Arterial Slow Zones</span>
-														</label>
-														</button>
-
-														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-														<label class="checkbox interventionBtns">
-														 <i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#B65B2A;">@</i>
-														 <input type="checkbox" class="list_item" id="SpeedHump"  value=5>
-														 <span>Speed Humps</span>
-														</label>
-														</button>
-
-														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-														<label class="checkbox interventionBtns">
-														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F57D20;">$</i>
-														 <input type="checkbox" class="list_item" id="SafeStreetsForSeniors" value=6>
-														 <span>Safe Streets For Seniors</span>
-														</label>
-														</button>
-
-														<button class="btn btn-default interventionBtns" style="text-align: left; white-space: normal;">
-														<label class="checkbox interventionBtns">
-														<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color:#F5989C;">$</i>
-														 <input type="checkbox" class="list_item" id="NeighborhoodSlowZone" value=7>
-														  <span>Neighborhood Slow Zone</span>
-														</label>
-														</button>
-
-												</div>-->
-
-
-                                            <button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; margin-top: 3em; width: 100%">
-                                                Intervention Descriptions
-                                            </button>
+                                            <!--<button class="btn btn-primary btn-md center-block" data-toggle="modal" data-target="#SafetyModal" style="text-align: center; white-space:normal; margin-top: 3em;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>  Safety Intervention
+                                            </button>-->
 
                                             <div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                            <h4 class="modal-title" id="myModalLabel">Safety Intervention Descriptions</h4>
+                                                            <h4 class="modal-title" id="myModalLabel">Safety Safety Design Descriptions</h4>
                                                         </div>
                                                         <div class="modal-body">
 
@@ -577,8 +586,9 @@
                                         <div class="col-sm-12">
                                             <!--<h3 class="mainTitle">Public Outreach</h3>-->
 											<div class="container-fluid">
+
 												<h3 class="mainTitle hidden-xs">Public Outreach
-													<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+													<span style="font-size: 16px; vertical-align: middle;" class="hidden-xs"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 												</h3>
 
                                                 <h3 class="mainTitle visible-xs">Filters
@@ -662,7 +672,6 @@
                                                             <br>
                                                             <i>Workshops</i><br>
                                                             In Spring 2014, DOT hosted nine pedestrian safety workshops across the five boroughs aimed at gathering community feedback on areas in need of safety improvements. This feedback will be used to shape the Borough Pedestrian Safety Action Plans, to be released later in 2014.
-
                                                         </div>
 
                                                         <div class="modal-footer">
@@ -680,8 +689,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
 											<div class="container-fluid">
-												<h3 style="word-wrap:break-word;" class="mainTitle hidden-xs">Summary Information
-												<span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SummaryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
+
+												<h3 style="word-wrap:break-word;" class="hidden-xs mainTitle">Summary Information
+												<span style="font-size: 16px; vertical-align: middle;" class="hidden-xs"><a data-toggle="modal" data-target="#SummaryModal"><span class="glyphicon glyphicon-info-sign"></span></a></span>
 												</h3>
 
                                                 <h3 style="word-wrap:break-word;" class="mainTitle visible-xs">Filters
@@ -822,9 +832,6 @@
             </span>
         </div>
     </div>
-
-</div>
-</div>
 
     <!--=====================================================================================================================================================-->
     <!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
@@ -986,7 +993,7 @@
     <script type="text/javascript" src="js/geocoder.js"></script>
     <script type="text/javascript" src="js/geocoder1.js"></script>
     <script type="text/javascript" src="js/statJSON.js"></script>
-    <script type="text/javascript" src="js/offCanvas.js"></script>
+	<script type="text/javascript" src="js/offCanvas.js"></script>
     <!--<script type="text/javascript" src="js/applib.js"></script>-->
 
 
