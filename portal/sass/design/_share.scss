@@ -1,0 +1,14 @@
+@include breakpoint(SM) {
+
+  #share-modal {
+    .modal-body {
+      text-align: center;
+    }
+  }
+
+  .share-url {
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+}

@@ -27,6 +27,10 @@ ALL01 - Global Elements
 
 @include breakpoint(SM) {
 
+  .modal-footer {
+    margin-top: 0;
+  }
+
   #searchNav1 {
     .glyphicon-search {
       color: #20396f;
@@ -192,3 +196,9 @@ FT06 - Date Slider
 ***********************************************/
 
 @import 'design/date-slider';
+
+/**********************************************
+FT07 - Share
+***********************************************/
+
+@import 'design/share';

@@ -6,6 +6,10 @@ ALL01 - Global Elements
 }
 
 @media (max-width: 767px) {
+  .modal-footer {
+    margin-top: 0;
+  }
+
   #searchNav1 .glyphicon-search {
     color: #20396f;
   }
@@ -424,3 +428,16 @@ FT05 - Search
 /**********************************************
 FT06 - Date Slider
 ***********************************************/
+/**********************************************
+FT07 - Share
+***********************************************/
+@media (max-width: 767px) {
+  #share-modal .modal-body {
+    text-align: center;
+  }
+
+  .share-url {
+    font-weight: bold;
+    margin: 10px 0;
+  }
+}
