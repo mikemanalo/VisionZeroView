@@ -21,6 +21,26 @@ ALL01 - Global Elements
 
 @include breakpoint(SM) {
 
+  #searchNav1 {
+    .glyphicon-search {
+      color: #20396f;
+    }
+  }
+
+  .navbar-default {
+    .navbar-toggle {
+      .icon-bar {
+        background-color: #20396f;
+      }
+      &:hover,
+      &:focus {
+        .icon-bar {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
   .navbar {
     border-width: 0 0 1px 0;
     margin-bottom: 0;
@@ -64,7 +84,6 @@ ALL01 - Global Elements
 body {
   @include breakpoint(SM) {
     #sliderDiv {
-      display: none !important; // very shameful, but had to be done
     }
   }
 }
@@ -105,8 +124,10 @@ FT04 - Data Points
 @import 'design/data-points';
 @import 'design/loading-animation';
 
+<<<<<<< HEAD
 /**********************************************
 FT05 - Search
 ***********************************************/
 
 @import 'design/search';
+@import 'design/date-slider';
