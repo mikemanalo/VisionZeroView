@@ -1,3 +1,5 @@
+// This JS takes care of the responsive navigation
+
 var siteOverlay = $('#site-overlay');
 var siteWrapper = $('#site-wrapper');
 
@@ -25,4 +27,16 @@ siteOverlay.click(function(){
   siteWrapper.toggleClass('show-nav');
 })
 
+});
+
+//
+
+// hide the "month" select box when Yearly is selected"
+$(document).ready(function() {
+  $("#yearlyBtn").click(function() {
+    $(".crash-date-month").hide(); // hide the month select box
+  });
+  $("#monthlyBtn").click(function() {
+    $(".crash-date-month").show(); // show the month select box
+  });
 });
