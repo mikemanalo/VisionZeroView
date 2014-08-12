@@ -1,58 +1,363 @@
-/*
-Syntax error: Invalid CSS after "...ing-animation';": expected selector or at-rule, was "<<<<<<< HEAD"
-        on line 127 of /opt/local/apache2/htdocs/project_trees/VisionZero_Map_Portal/portal/sass/style.scss
+/**********************************************
+ALL01 - Global Elements
+***********************************************/
+@media (max-width: 767px) {
+  #searchNav1 .glyphicon-search {
+    color: #20396f;
+  }
 
-Backtrace:
-/opt/local/apache2/htdocs/project_trees/VisionZero_Map_Portal/portal/sass/style.scss:127
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1147:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1085:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:28:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:342:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:139:in `block (2 levels) in compile'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:138:in `block in compile'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/logger.rb:45:in `red'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:137:in `compile'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:118:in `compile_if_required'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:101:in `each'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:101:in `block in run'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/compiler.rb:100:in `run'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:30:in `block in temporary_multipath_handler'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `each'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `temporary_multipath_handler'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:17:in `block (2 levels) in run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:16:in `each'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:16:in `block in run'
-/Library/Ruby/Gems/2.0.0/gems/rb-fsevent-0.9.3/lib/rb-fsevent/fsevent.rb:43:in `call'
-/Library/Ruby/Gems/2.0.0/gems/rb-fsevent-0.9.3/lib/rb-fsevent/fsevent.rb:43:in `run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:20:in `run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/commands/watch_project.rb:87:in `perform'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/commands/base.rb:18:in `execute'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/commands/project_base.rb:19:in `execute'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/bin/compass:30:in `block in <top (required)>'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/bin/compass:44:in `call'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/bin/compass:44:in `<top (required)>'
-/usr/bin/compass:23:in `load'
-/usr/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...ing-animation';\": expected selector or at-rule, was \"<<<<<<< HEAD\"\A         on line 127 of /opt/local/apache2/htdocs/project_trees/VisionZero_Map_Portal/portal/sass/style.scss"; }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #20396f;
+  }
+  .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #fff;
+  }
+
+  .navbar {
+    border-width: 0 0 1px 0;
+    margin-bottom: 0;
+    min-height: 55px;
+  }
+
+  .container > .navbar-header {
+    margin: 0;
+    padding: 0;
+  }
+
+  #searchNav1.navbar-toggle {
+    font-size: 1.6em;
+    padding: 0;
+    margin: 0 !important;
+    top: 13px;
+    right: 10px;
+  }
+
+  #blackBar {
+    display: none;
+  }
+
+  #mainContent {
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+  }
+}
+@media (max-width: 370px) {
+  .vzLogo {
+    margin-top: 1.2em !important;
+    width: 13em;
+  }
+}
+/**********************************************
+FT01 - Off Canvas Navigation
+***********************************************/
+@media (max-width: 767px) {
+  #site-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  #site-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1041;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform: translateZ(0) translateX(0);
+    -ms-transform: translateZ(0) translateX(0);
+    -o-transform: translateZ(0) translateX(0);
+    -webkit-transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -moz-transition: 200ms ease all;
+    -ms-transition: 200ms ease all;
+    -o-transition: 200ms ease all;
+    -webkit-transition: 200ms ease all;
+    transition: 200ms ease all;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  #site-wrapper.show-nav #site-canvas {
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+  }
+
+  .show-nav #site-canvas {
+    -moz-transform: translateX(260px);
+    -ms-transform: translateX(260px);
+    -o-transform: translateX(260px);
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+    -moz-transform: translateZ(0) translateX(260px);
+    -ms-transform: translateZ(0) translateX(260px);
+    -o-transform: translateZ(0) translateX(260px);
+    -webkit-transform: translateZ(0) translateX(260px);
+    transform: translateZ(0) translateX(260px);
+    -moz-transform: translate3d(260px, 0, 0);
+    -ms-transform: translate3d(260px, 0, 0);
+    -o-transform: translate3d(260px, 0, 0);
+    -webkit-transform: translate3d(260px, 0, 0);
+    transform: translate3d(260px, 0, 0);
+  }
+
+  #sidebar {
+    width: 260px;
+    height: 100%;
+    padding-bottom: 10px;
+    position: absolute;
+    left: -260px;
+    top: 0;
+  }
+  #sidebar .nav {
+    display: block;
+    margin-top: 0;
+  }
+
+  #site-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .categoriesFontIcon {
+    font-size: 14px;
+    margin: 0 3px 0 0;
+  }
+
+  .nav-tabs > li {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active a:hover,
+  .nav-tabs > li.active a:focus {
+    color: #fff !important;
+    background-color: #3276B1 !important;
+    border-color: #3276B1;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  .nav-tabs > li > a {
+    border-radius: 0;
+  }
+  .nav-tabs > li > a:hover {
+    border-color: #eee;
+  }
+
+  .navbar-nav > li > a {
+    font-size: 16px;
+    margin-right: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  #sidebar .nav {
+    display: none;
+  }
+}
+/**********************************************
+FT02 - Mobile Map
+***********************************************/
+#layerNav-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #mainRow {
+    margin: 0;
+  }
+
+  .mobile-map {
+    margin-bottom: 0 !important;
+    padding: 0;
+  }
+
+  #map_root {
+    margin: 0;
+    width: 100% !important;
+  }
+
+  #labelDiv {
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px 12px 15px;
+    height: auto;
+    width: auto;
+    z-index: 8;
+  }
+
+  #labelTable {
+    padding: 0;
+  }
+  #labelTable .labelRow {
+    padding: 0;
+  }
+
+  #layerNav {
+    display: none;
+  }
+
+  #layerNav-mobile {
+    border-color: #20396F;
+    display: block;
+    left: 10px;
+    top: 10px;
+    margin: 0;
+  }
+  #layerNav-mobile:hover, #layerNav-mobile:focus {
+    background-color: #20396F;
+  }
+
+  .map-icon {
+    background-color: #20396F;
+    border-radius: 4px;
+    color: #fff;
+    position: absolute;
+    top: auto;
+    right: 10px;
+    z-index: 1040;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .glyphicon-info-sign {
+    bottom: 10px;
+  }
+
+  .glyphicon-screenshot {
+    top: 65px;
+    bottom: auto;
+  }
+
+  .glyphicon-share {
+    bottom: 50px;
+  }
+}
+/**********************************************
+FT03 - Filters
+***********************************************/
+@media (max-width: 767px) {
+  #custom_carousel .mainTitle {
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding-top: 10px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 8px;
+  }
+  #custom_carousel .subTitleTop,
+  #custom_carousel .subTitle {
+    display: none;
+  }
+  #custom_carousel .form-group .col-sm-12 {
+    margin-bottom: 10px;
+    padding: 0 !important;
+    text-align: center;
+  }
+  #custom_carousel .center-block {
+    display: inline-block;
+    width: 100%;
+  }
+  #custom_carousel .center-block .btn-sm {
+    padding: 11px 0;
+  }
+  #custom_carousel .btnWho {
+    font-size: 2em;
+  }
+  #custom_carousel .btn {
+    padding-top: 10px;
+  }
+  #custom_carousel .btn.active {
+    border-color: #285E8E;
+  }
+  #custom_carousel .btn-group-vertical {
+    margin: 0 !important;
+  }
+  #custom_carousel .btn-group-vertical i {
+    margin-top: 3px;
+  }
+  #custom_carousel .btn-group-vertical .btn.active {
+    border-color: #ADADAD;
+  }
+  #custom_carousel .interventionBtns,
+  #custom_carousel .outreachBtns {
+    padding: 13px 10px;
+  }
+  #custom_carousel .districtBtnGroup label {
+    padding: 13px 10px;
+  }
+
+  .carousel-inner .container-fluid {
+    background: none !important;
+    border: none !important;
+    padding: 0;
+  }
+}
+/**********************************************
+FT04 - Data Points
+***********************************************/
+.esriPopup .titlePane {
+  background-color: #285E8E;
+  border: none;
+  padding: 5px 10px;
+}
+.esriPopup .titleButton.close {
+  right: 10px;
+  top: 7px;
+}
+.esriPopup .titleButton.next, .esriPopup .titleButton.prev {
+  top: 7px;
+}
+.esriPopup .actionsPane {
+  padding: 0 10px 10px 10px;
+}
+
+#loadingImg {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 7px;
+  top: 42%;
+  right: 39%;
+}
+
+/**********************************************
+FT05 - Search
+***********************************************/
+#modal-search .input-group {
+  position: static;
+}
