@@ -108,6 +108,10 @@ ALL01 - Global Elements
   #date2Label {
     display: none;
   }
+
+  #date3Label {
+    display: block;
+  }
 }
 /**********************************************
 FT01 - Off Canvas Navigation
