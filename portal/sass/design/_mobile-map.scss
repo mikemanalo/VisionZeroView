@@ -60,32 +60,38 @@
     border: none;
     border-radius: 4px;
     color: #fff;
-    position: absolute;
-    top: auto;
     bottom: 10px;
     z-index: 1040;
     cursor: pointer;
     padding: 5px;
-    font-size: 30px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   }
 
-  .glyphicon-info-sign {
-    right: 10px;
-  }
+  .mobile-icons {
 
-  .glyphicon-screenshot {
-    right: 55px;
-    bottom: 55px;
-  }
+    .map-icon {
+       position: absolute;
+       top: auto;
+       font-size: 30px;
+    }
 
-  .glyphicon-share {
-    right: 55px;
-  }
+    .glyphicon-info-sign {
+      right: 10px;
+    }
 
-  .glyphicon-question-sign {
-    bottom: 55px;
-    right: 10px;
+    .icon-icon_22494 {
+      right: 55px;
+      bottom: 55px;
+    }
+
+    .glyphicon-share {
+      right: 55px;
+    }
+
+    .glyphicon-question-sign {
+      bottom: 55px;
+      right: 10px;
+    }
   }
 
 }

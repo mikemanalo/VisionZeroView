@@ -18,6 +18,10 @@
 	margin-left:0.5em;
 }
 
+.mainTitle > span {
+	cursor: pointer;
+}
+
 /* Titles like "Categories" or "Administrative Units"*/
 /*.subTitle{
 	margin-top:2.2em;

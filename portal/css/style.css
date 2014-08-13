@@ -5,6 +5,14 @@ ALL01 - Global Elements
   border-radius: 0;
 }
 
+.modal-title {
+  position: relative;
+}
+.modal-title .map-icon {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
 @media (max-width: 767px) {
   .modal-footer {
     margin-top: 0;
@@ -305,30 +313,29 @@ FT02 - Mobile Map
     border: none;
     border-radius: 4px;
     color: #fff;
-    position: absolute;
-    top: auto;
     bottom: 10px;
     z-index: 1040;
     cursor: pointer;
     padding: 5px;
-    font-size: 30px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   }
 
-  .glyphicon-info-sign {
+  .mobile-icons .map-icon {
+    position: absolute;
+    top: auto;
+    font-size: 30px;
+  }
+  .mobile-icons .glyphicon-info-sign {
     right: 10px;
   }
-
-  .glyphicon-screenshot {
+  .mobile-icons .icon-icon_22494 {
     right: 55px;
     bottom: 55px;
   }
-
-  .glyphicon-share {
+  .mobile-icons .glyphicon-share {
     right: 55px;
   }
-
-  .glyphicon-question-sign {
+  .mobile-icons .glyphicon-question-sign {
     bottom: 55px;
     right: 10px;
   }
@@ -465,4 +472,10 @@ FT07 - Share
     font-weight: bold;
     margin: 10px 0;
   }
+}
+/**********************************************
+FT08 - Legend
+***********************************************/
+#smallScreenModalLegend img {
+  margin-top: 10px !important;
 }

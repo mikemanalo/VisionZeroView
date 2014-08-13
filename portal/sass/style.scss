@@ -25,6 +25,14 @@ ALL01 - Global Elements
   border-radius:0;
 }
 
+.modal-title {
+  position: relative;
+  .map-icon {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
+
 @include breakpoint(SM) {
 
   .modal-footer {
@@ -205,3 +213,9 @@ FT07 - Share
 ***********************************************/
 
 @import 'design/share';
+
+/**********************************************
+FT08 - Legend
+***********************************************/
+
+@import 'design/legend';
