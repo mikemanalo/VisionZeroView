@@ -52,13 +52,12 @@ function checkCrashLegend(){
 
 $(document).ready(function() {
 	$(".crashTypeSwitchBtns").on('touchstart  click', function(e) {
-		console.log("get click");
 
 		map.infoWindow.hide();
 
 		setTimeout(function() {
 			if ($("#injuriesBtn").hasClass('active')) {
-				console.log("Injuries");
+				//console.log("Injuries");
 				injury = true;
 				fatality = false;
 
@@ -70,7 +69,7 @@ $(document).ready(function() {
 
 
 			} else if ($("#fatalitiesBtn").hasClass('active')) {
-				console.log("Fatalities");
+				//console.log("Fatalities");
 				injury = false;
 				fatality = true;
 
@@ -88,13 +87,12 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$(".crashTimeSwitchBtns").on('touchstart  click', function(e) {
-		console.log("get click");
 
 		map.infoWindow.hide();
 
 		setTimeout(function() {
 			if ($("#monthlyBtn").hasClass('active')) {
-				console.log("monthly");
+				//console.log("monthly");
 				monthly = true;
 				yearly = false;
 
@@ -102,7 +100,7 @@ $(document).ready(function() {
 				$("#monthlyBtn").css("color", "rgb(255,255,255)");
 
 			} else if ($("#yearlyBtn").hasClass('active')) {
-				console.log("yearly");
+				//console.log("yearly");
 				monthly = false;
 				yearly = true;
 
@@ -131,7 +129,7 @@ $(document).ready(function() {
 
 
 		var mode = ($(this).find('input').attr('id'));
-		console.log(mode);
+		//console.log(mode);
 		switch (mode) {
 			case 'ped':
 				ped = true;
@@ -160,7 +158,7 @@ $(document).ready(function() {
 			default:
 				all = true;
 		}
-		console.log(ped + " " + bike + " " + motor + " " + all);
+		//console.log(ped + " " + bike + " " + motor + " " + all);
 		toggleCrashLayers();
 	});
 
@@ -196,7 +194,7 @@ function toggleCrashLayers() {
 		who = "Motorist";
 
 	var currentCrashMap = "Number of "+ who + " " + what + ": "+ when  ;
-	console.log(currentCrashMap);
+	//console.log(currentCrashMap);
 	$("#boxLabel").text("Citywide Total For");
 	$("#layerLabel").text(currentCrashMap);
 
@@ -214,6 +212,10 @@ function toggleCrashLayers() {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+				var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 8);
 				//// commented out for dotdevgisiis01 demo
 
@@ -228,18 +230,12 @@ function toggleCrashLayers() {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-					console.log(curInjuryValue);
 					var toolTipVal = sliderLookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
 
-					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-					console.log(curInjuryValue);
-					var toolTipVal = sliderLookup(curInjuryValue);
+					$("#dateLabel").text(toolTipVal);;
 					$("#date2Label").text(toolTipVal);
 					$("#date3Label").text(toolTipVal);
-
-				console.log("stats? :"+ stats[curInjuryValue].SUM_BikeFat);
-
 
 					curInjuryValue = (curInjuryValue * 8);
 
@@ -259,6 +255,9 @@ function toggleCrashLayers() {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+								var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -272,13 +271,8 @@ function toggleCrashLayers() {
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 					var toolTipVal = sliderLookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-
-					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-					var toolTipVal = sliderLookup(curInjuryValue);
 					$("#date2Label").text(toolTipVal);
 					$("#date3Label").text(toolTipVal);
-
-
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -296,12 +290,8 @@ function toggleCrashLayers() {
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-
-				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#date2Label").text(toolTipVal);
 				$("#date3Label").text(toolTipVal);
-
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -313,6 +303,10 @@ function toggleCrashLayers() {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -330,12 +324,8 @@ function toggleCrashLayers() {
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-
-				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#date2Label").text(toolTipVal);
 				$("#date3Label").text(toolTipVal);
-
 				curInjuryValue = (curInjuryValue * 8);
 
 				visibleInjuryLayerIds.length = 0;
@@ -347,6 +337,10 @@ function toggleCrashLayers() {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+									var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 8);
 
 					visibleInjuryLayerIds.length = 0;
@@ -370,16 +364,11 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-
-				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#date2Label").text(toolTipVal);
 				$("#date3Label").text(toolTipVal);
 
-				console.log(toolTipVal);
-
 				curInjuryValue = (curInjuryValue * 7);
-				console.log("cur: " + curInjuryValue);
+				//console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -393,17 +382,11 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-
-					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-
-					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#date2Label").text(toolTipVal);
 					$("#date3Label").text(toolTipVal);
 
-					console.log(toolTipVal);
-
 					curInjuryValue = (curInjuryValue * 7);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
@@ -420,10 +403,12 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-				console.log(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
+				//console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 7);
-				console.log("cur: " + curInjuryValue);
+				//console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -437,17 +422,11 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-
-					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-
-					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#date2Label").text(toolTipVal);
 					$("#date3Label").text(toolTipVal);
 
-					console.log(toolTipVal);
-
 					curInjuryValue = (curInjuryValue * 7);
-					console.log("cur: " + curInjuryValue);
+				//	console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
@@ -463,16 +442,11 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-
-				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#date2Label").text(toolTipVal);
 				$("#date3Label").text(toolTipVal);
 
-				console.log(toolTipVal);
-
 				curInjuryValue = (curInjuryValue * 7);
-				console.log("cur: " + curInjuryValue);
+			//	console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -486,18 +460,11 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-
-
-					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-
-					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#date2Label").text(toolTipVal);
 					$("#date3Label").text(toolTipVal);
 
-					console.log(toolTipVal);
-
 					curInjuryValue = (curInjuryValue * 7);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
@@ -513,16 +480,11 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-
-				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#date2Label").text(toolTipVal);
 				$("#date3Label").text(toolTipVal);
 
-				console.log(toolTipVal);
-
 				curInjuryValue = (curInjuryValue * 7);
-				console.log("cur: " + curInjuryValue);
+			//	console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -536,22 +498,18 @@ else if (yearly) {
 
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-
-					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-
-					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#date2Label").text(toolTipVal);
 					$("#date3Label").text(toolTipVal);
 
-					console.log(toolTipVal);
+				//	console.log(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 7);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
 					visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6);
-					console.log(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6);
+				//	console.log(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6);
 
 					injury_yearly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
 				});
@@ -586,12 +544,9 @@ else if (yearly) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 					var toolTipVal = sliderLookup(curInjuryValue);
-				$("#dateLabel").text(toolTipVal);
-
-				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-					var toolTipVal = sliderLookup(curInjuryValue);
-				$("#date2Label").text(toolTipVal);
-				$("#date3Label").text(toolTipVal);
+					$("#dateLabel").text(toolTipVal);
+					$("#date2Label").text(toolTipVal);
+					$("#date3Label").text(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 4);
 
@@ -611,6 +566,8 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 4);
 
 				visibleInjuryLayerIds.length = 0;
@@ -622,6 +579,10 @@ else if (yearly) {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+					var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
 
 					visibleInjuryLayerIds.length = 0;
@@ -639,6 +600,7 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 				var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 4);
 
 				visibleInjuryLayerIds.length = 0;
@@ -650,6 +612,10 @@ else if (yearly) {
 				$('#jqxslider').bind('change', function(event) {
 					map.infoWindow.hide();
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+									var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
 
 					visibleInjuryLayerIds.length = 0;
@@ -665,12 +631,16 @@ else if (yearly) {
 				$('#jqxslider').css("display", "block");
 				$('#jqxslider2').css("display", "none");
 				var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+								var toolTipVal = sliderLookup(curInjuryValue);
+				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 				curInjuryValue = (curInjuryValue * 4);
 
 				visibleInjuryLayerIds.length = 0;
 
 				visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
-				console.log("ids: " +visibleInjuryLayerIds );
+				//console.log("ids: " +visibleInjuryLayerIds );
 
 				fatality_monthly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
 
@@ -679,6 +649,8 @@ else if (yearly) {
 					var curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 					var toolTipVal = sliderLookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
 
 					visibleInjuryLayerIds.length = 0;
@@ -686,7 +658,7 @@ else if (yearly) {
 					visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
 
 					fatality_monthly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
-					console.log("ids after click: " +visibleInjuryLayerIds );
+					//console.log("ids after click: " +visibleInjuryLayerIds );
 				});
 			}
 		}// end monthly
@@ -702,10 +674,12 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-				console.log(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
+				//console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 4);
-				console.log("cur: " + curInjuryValue);
+				//console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -718,10 +692,12 @@ else if (yearly) {
 					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-					console.log(toolTipVal);
+					$("#date2Label").text(toolTipVal);
+					$("#date3Label").text(toolTipVal);
+					//console.log(toolTipVal);
 
 					curInjuryValue = (curInjuryValue * 4);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
@@ -738,10 +714,12 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-				console.log(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
+				//console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 4);
-				console.log("cur: " + curInjuryValue);
+				//console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -754,10 +732,12 @@ else if (yearly) {
 					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-					console.log(toolTipVal);
+					$("#date2Label").text(toolTipVal);
+					$("#date3Label").text(toolTipVal);
+				//	console.log(toolTipVal);
 					//$("#dateLabel").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
@@ -773,10 +753,12 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-				console.log(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
+				//console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 4);
-				console.log("cur: " + curInjuryValue);
+				//console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -789,9 +771,11 @@ else if (yearly) {
 					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
-					console.log(toolTipVal);
+					$("#date2Label").text(toolTipVal);
+					$("#date3Label").text(toolTipVal);
+					//console.log(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
@@ -807,10 +791,12 @@ else if (yearly) {
 				var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 				var toolTipVal = slider2Lookup(curInjuryValue);
 				$("#dateLabel").text(toolTipVal);
-				console.log(toolTipVal);
+				$("#date2Label").text(toolTipVal);
+				$("#date3Label").text(toolTipVal);
+				//console.log(toolTipVal);
 
 				curInjuryValue = (curInjuryValue * 4);
-				console.log("cur: " + curInjuryValue);
+			//	console.log("cur: " + curInjuryValue);
 
 				visibleInjuryLayerIds.length = 0;
 
@@ -823,13 +809,15 @@ else if (yearly) {
 					var curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 					var toolTipVal = slider2Lookup(curInjuryValue);
 					$("#dateLabel").text(toolTipVal);
+					$("#date2Label").text(toolTipVal);
+					$("#date3Label").text(toolTipVal);
 					curInjuryValue = (curInjuryValue * 4);
-					console.log("cur: " + curInjuryValue);
+					//console.log("cur: " + curInjuryValue);
 
 					visibleInjuryLayerIds.length = 0;
 
 					visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
-					console.log(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6);
+				//	console.log(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6);
 
 					fatality_yearly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
 				});
@@ -874,14 +862,14 @@ function checkCrashCatState() {
 
 		setTimeout(function() {
 			if ($("#injuriesBtn").hasClass('active')) {
-				console.log("Injuries");
+				//console.log("Injuries");
 				injury = true;
 				fatality = false;
 				$("#fatalitiesBtn").css("color", "#777");
 				$("#injuriesBtn").css("color", "rgb(255,255,255)");
 
 			} else if ($("#fatalitiesBtn").hasClass('active')) {
-				console.log("Fatalities");
+				//console.log("Fatalities");
 				injury = false;
 				fatality = true;
 				$("#injuriesBtn").css("color", "#777");
@@ -895,14 +883,14 @@ function checkCrashCatState() {
 
 		setTimeout(function() {
 			if ($("#monthlyBtn").hasClass('active')) {
-				console.log("monthly");
+				//console.log("monthly");
 				monthly = true;
 				yearly = false;
 				$("#yearlyBtn").css("color", "#777");
 				$("#monthlyBtn").css("color", "rgb(255,255,255)");
 
 			} else if ($("#yearlyBtn").hasClass('active')) {
-				console.log("yearly");
+				//console.log("yearly");
 				monthly = false;
 				yearly = true;
 				$("#monthlyBtn").css("color", "#777");
@@ -913,7 +901,7 @@ function checkCrashCatState() {
 
 	//map.infoWindow.hide();
 
-	console.log(ped + " " + bike + " " + motor + " " + all);
-	toggleCrashLayers();
+	//console.log(ped + " " + bike + " " + motor + " " + all);
+//	toggleCrashLayers();
 
 }

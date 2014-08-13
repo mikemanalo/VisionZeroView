@@ -188,20 +188,19 @@ padding-right:0px;
 /* edit Aug 6th ********************/
 
 #sliderDiv {
-	position:absolute;
-	bottom:0;
-	left:0;
-  right:0;
-	/*background: linear-gradient(#B3B3BE, #AEB7BC) repeat scroll 0% 0% #AEB7BC;
-	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#B3B3BE', endColorstr='#AEB7BC');*/
-  background-color:rgba(0,20,77,0.7);
-	z-index:19;
-	opacity:0;
-	border-left: 15px solid #FFF;
-	border-right: 15px solid #FFF;
-  color: white;
-  padding:10px;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0,0,0,0.7);
+z-index: 19;
+opacity: 0;
+border-left: 15px solid #FFF;
+border-right: 15px solid #FFF;
+color: white;
+padding: 10px;
 }
+
 
 #date3Label {
   position: absolute;
@@ -346,6 +345,13 @@ padding-bottom:2em;
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
+}
+
+       /* new August 12 */
+.ie8page{
+       padding:2em;
+       font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+       font-size:2em;
 }
 
 /*==================================================================Footer=========================================================================================*/
