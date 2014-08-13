@@ -38,6 +38,7 @@ ALL01 - Global Elements
     margin: 0 !important;
     top: 13px;
     right: 10px;
+    position: absolute;
   }
 
   #blackBar {
@@ -293,6 +294,7 @@ FT02 - Mobile Map
     left: 11px;
     top: 11px;
     margin: 0;
+    position: absolute;
   }
   #layerNav-mobile:hover, #layerNav-mobile:focus {
     background-color: #20396F;
@@ -423,8 +425,14 @@ FT04 - Data Points
   background-color: #000;
   padding: 10px;
   border-radius: 7px;
-  top: 42%;
-  right: 39%;
+  top: 50%;
+  left: 50%;
+  margin: -26px 0 0 -26px;
+}
+@media (max-width: 767px) {
+  #loadingImg {
+    margin-top: -78px;
+  }
 }
 
 /**********************************************
