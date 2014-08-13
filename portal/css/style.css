@@ -104,7 +104,9 @@ ALL01 - Global Elements
     height: auto !important;
   }
   #sliderDiv #date2Label {
-    float: right;
+    position: absolute;
+    left: 85px;
+    top: 9px;
   }
   #sliderDiv #jqxslider, #sliderDiv #jqxslider2 {
     width: auto !important;
@@ -340,6 +342,11 @@ FT02 - Mobile Map
     right: 10px;
   }
 }
+.esriSimpleSliderTR {
+  top: 10px;
+  right: 10px;
+}
+
 /**********************************************
 FT03 - Filters
 ***********************************************/
@@ -460,6 +467,45 @@ FT05 - Search
 /**********************************************
 FT06 - Date Slider
 ***********************************************/
+#sliderDiv .jqx-slider-right,
+#sliderDiv .jqx-slider-left {
+  margin-top: 0 !important;
+  background: none !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 28px !important;
+  padding: 0 !important;
+}
+#sliderDiv .jqx-icon-arrow-right,
+#sliderDiv .jqx-icon-arrow-left {
+  background: none;
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+#sliderDiv .jqx-icon-arrow-right:hover,
+#sliderDiv .jqx-icon-arrow-left:hover {
+  color: #F26522;
+}
+#sliderDiv .jqx-icon-arrow-right:before {
+  content: "\e092";
+}
+@media (min-width: 1023px) {
+  #sliderDiv .jqx-icon-arrow-left {
+    left: -20px;
+  }
+}
+#sliderDiv .jqx-icon-arrow-left:before {
+  content: "\e091";
+}
+
 /**********************************************
 FT07 - Share
 ***********************************************/

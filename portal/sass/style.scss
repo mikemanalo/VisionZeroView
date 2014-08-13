@@ -147,7 +147,9 @@ body {
     height: auto !important;
 
     #date2Label {
-      float:right;
+      position: absolute;
+      left: 85px;
+      top: 9px;
     }
 
     #jqxslider, #jqxslider2 {
