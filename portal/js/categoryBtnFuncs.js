@@ -61,7 +61,7 @@ $(".categoriesNav").on('touchstart click', function() {
 	if (id == "summaryCat") {
 
 		summaryInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer", {
-			id : "summaryInjuryLayer"//,opacity : .8
+			id : "summaryInjuryLayer",opacity : .8
 
 		});
 		AddLayer(summaryInjuryLayer,false);
@@ -131,7 +131,7 @@ $(".categoriesNav").on('touchstart click', function() {
 	} else if (id == "outreachCat") {
 
 		outreachLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/OUTREACH/MapServer", {
-			id : "outreachLayer"//,opacity : .8
+			id : "outreachLayer",opacity : .8
 
 		});
 		AddLayer(outreachLayer, true);

@@ -176,7 +176,7 @@ function executeIdentifyTask(evt) {
 			allIdentifyParams.geometry = evt.mapPoint;
 			allIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
 			allIdentifyParams.mapExtent = map.extent;
-			console.log(allIdentifyParams.layerIds);
+			//console.log(allIdentifyParams.layerIds);
 
 			if (all)
 				deferred = fatality_yearly_all_IdentifyTask.execute(allIdentifyParams);
@@ -443,7 +443,7 @@ function executeIdentifyTask(evt) {
 
 		deferred.addCallback(function(response) {
  
- console.log("get to callback");
+ //console.log("get to callback");
 
 			if (response.length > 0) {
 				map.infoWindow.show(evt.mapPoint);
@@ -460,22 +460,24 @@ function executeIdentifyTask(evt) {
 				var template = new esri.InfoTemplate();
 				switch (locName){
 					case  "Summary_2014_PP_ALL_FATALITIES":	case  "Summary_2014_PP_ALL_INJURIES":			
-					locTxt = "<table><tr><td><b>Precinct: </b>" + "&nbsp;" + "</td><td>${Precinct}</td></tr>";
+					locTxt = "<table><tr><td><b>PRECINCT: </b>" + "&nbsp;" + "</td><td>${Precinct}</td></tr>";
 					template.setTitle("Police Precinct Summary: 2014 YTD");
 					break;
 					
 					case  "Summary_2014_CD_ALL_FATALITIES":	case  "Summary_2014_CD_ALL_INJURIES":			
-					locTxt = "<table><tr><td><b>Community District: </b>" + "&nbsp;" + "</td><td>${BoroCD}</td></tr>";
+					locTxt = "<table><tr><td><b>COMMUNITY DISTRICT: </b>" + "&nbsp;" + "</td><td>${BoroCD}</td></tr>";
 					template.setTitle("Community District Summary: 2014 YTD");
 					break;
 					
 					case  "Summary_2014_CC_ALL_FATALITIES":	case  "Summary_2014_CC_ALL_INJURIES":			
-					locTxt = "<table><tr><td><b>Council District: </b>" + "&nbsp;" + "</td><td>${CounDist}</td></tr>";
+					locTxt = "<table><tr><td><b>COUNCIL DISTRICT: </b>" + "&nbsp;" + "</td><td>${CounDist}</td></tr>";
 					template.setTitle("City Council Summary: 2014 YTD");
 					break;
 					
 				}
-									
+					// new August 12 ///
+					
+				locTxt += "<tr><td><b><h4>CRASH DATA</h4></b>" + "</td></tr>";									
 				locTxt += "<tr><td><b>Total fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_Fatalities}</td></tr>";
 				locTxt += "<tr><td><b>Total Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_Injuries}</td></tr>";
 				locTxt += "<tr><td><b>Pedestrian Fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_PedFatalities}</td></tr>";
@@ -484,8 +486,19 @@ function executeIdentifyTask(evt) {
 				locTxt += "<tr><td><b>Bicycle Injuries:</b>" + "&nbsp;" + " </td><td> ${SUM_BikeInjuries}</td></tr>";
 				locTxt += "<tr><td><b>Motorist Fatalites:</b>" + " &nbsp;" + " </td><td>${SUM_MVOFatalities}</td></tr>";
 				locTxt += "<tr><td><b>Motorist Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_MVOInjuries}</td></tr>";
-				locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_nonInj_Crashes}</td></tr></table>";
-
+				locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_nonInj_Crashes}</td></tr>";
+				
+				locTxt += "<tr><td><b><h4>DEMOGRAPHIC DATA</h4></b>" + "</td></tr>";									
+				locTxt += "<tr><td><b>Total Population:</b>" + "&nbsp;" + " </td><td>${TotalPop}</td></tr>";
+				locTxt += "<tr><td><b>Age Under 5:</b>" + "&nbsp;" + " </td><td>${Ages_Under5}</td></tr>";
+				locTxt += "<tr><td><b>Age 5-9:</b>" + "&nbsp;" + " </td><td>${Ages_5to9}</td></tr>";
+				locTxt += "<tr><td><b>Age 10-14:</b>" + "&nbsp; " + " </td><td>${Ages_10to14}</td></tr>";
+				locTxt += "<tr><td><b>Age 15-19:</b>" + "&nbsp;" + " </td><td> ${Ages_15to19}</td></tr>";
+				locTxt += "<tr><td><b>Age 20-24:</b>" + "&nbsp;" + " </td><td> ${Ages_20to24}</td></tr>";
+				locTxt += "<tr><td><b>Age 25-44:</b>" + " &nbsp;" + " </td><td>${Ages_25to44}</td></tr>";
+				locTxt += "<tr><td><b>Age 45-64:</b>" + "&nbsp;" + " </td><td>${Ages_45to64}</td></tr>";
+				locTxt += "<tr><td><b>Age 65 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_65andOver}</td></tr>";
+				locTxt += "<tr><td><b>Age 18 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_18andOver}</td></tr></table>";
 									
 				template.setContent(locTxt);
 
@@ -499,7 +512,9 @@ function executeIdentifyTask(evt) {
 
 				
 	}
+	// new August 12 /// 
 
+map.infoWindow.resize (270,180);
 }); // wait callback
 
 }

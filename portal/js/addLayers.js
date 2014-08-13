@@ -3,7 +3,7 @@
 
 
 
-
+/*
 $(document).ready(function() {
 	console.log("body?");
 	//	$("#page").css("visibility", "visible");
@@ -12,7 +12,7 @@ $(document).ready(function() {
 dojo.connect(map, "onload", function() {
 	console.log("loaded");
 
-});
+});*/
 
 $(".interventionBtns").on(" touchstart  click", function() {
 map.infoWindow.hide();
@@ -31,10 +31,10 @@ map.infoWindow.hide();
 			$( test ).find( "span" ).css( "opacity", .6);
 
 		}
-	}, 30);
+	}, 20);
 
 	//interventionLayer.setVisibleLayers();
-	console.log(interventionLayerIDs);
+//	console.log(interventionLayerIDs);
 	//$("#ArterialSlowZone").removeAttr("checked");
 
 	setTimeout(function() {
@@ -90,7 +90,7 @@ function checkInterventionBtns(interventionLayerIDs) {
 	}
 
 	interventionLayer.setVisibleLayers(interventionLayerIDs);
-	console.log(interventionLayerIDs);
+	//console.log(interventionLayerIDs);
 
 }
 

@@ -94,6 +94,7 @@ function sliderSetup () {
 		tooltip.css('top', thumbY - tooltip.outerHeight(true) - 25);
 		var toolTipVal = sliderLookup(value);
 		$("#dateLabel").text(toolTipVal);
+		$("#date2Label").text(toolTipVal);
 		tooltip.text(toolTipVal);
 	}
 	
@@ -207,7 +208,7 @@ function sliderLookup(value) {
 			locYear = "2013";
 			break;
 		case 5:
-			locYear = "2014 YTD";
+			locYear = "2014";
 			break;
 
 		default:
@@ -242,7 +243,7 @@ function slider2Lookup(value) {
 			locYear = "2013";
 			break;
 		case 5:
-			locYear = "2014";
+			locYear = "2014 YTD";
 			break;
 
 		default:

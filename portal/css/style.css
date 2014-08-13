@@ -1,7 +1,26 @@
 /**********************************************
 ALL01 - Global Elements
 ***********************************************/
+#navbarDIV {
+  border-radius: 0;
+}
+
 @media (max-width: 767px) {
+  .modal-footer {
+    margin-top: 0;
+  }
+
+  #searchNav1 .glyphicon-search {
+    color: #20396f;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #20396f;
+  }
+  .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #fff;
+  }
+
   .navbar {
     border-width: 0 0 1px 0;
     margin-bottom: 0;
@@ -40,16 +59,54 @@ ALL01 - Global Elements
     position: relative;
   }
 }
-@media (max-width: 767px) {
-  body #sliderDiv {
-    display: none !important;
-  }
-}
-
 @media (max-width: 370px) {
   .vzLogo {
     margin-top: 1.2em !important;
     width: 13em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #searchNav.navbar-toggle {
+    margin: 35px 0 0 !important;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+  #sidebar {
+    padding: 0;
+  }
+
+  #jqxslider > div, #jqxslider2 > div {
+    display: none;
+  }
+  #jqxslider .jqx-rc-all, #jqxslider2 .jqx-rc-all {
+    display: block;
+  }
+
+  #date3Label {
+    display: none;
+  }
+
+  #sliderDiv {
+    height: auto !important;
+  }
+  #sliderDiv #date2Label {
+    float: right;
+  }
+  #sliderDiv #jqxslider, #sliderDiv #jqxslider2 {
+    width: auto !important;
+    margin: 0 !important;
+    float: left;
+    clear: none;
+  }
+}
+@media (min-width: 1024px) {
+  #date2Label {
+    display: none;
   }
 }
 /**********************************************
@@ -137,7 +194,7 @@ FT01 - Off Canvas Navigation
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 1070;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -183,11 +240,11 @@ FT01 - Off Canvas Navigation
 /**********************************************
 FT02 - Mobile Map
 ***********************************************/
-#layerNav-mobile {
-  display: none;
-}
-
 @media (max-width: 767px) {
+  #layerNav-mobile {
+    display: none;
+  }
+
   #mainRow {
     margin: 0;
   }
@@ -203,10 +260,14 @@ FT02 - Mobile Map
   }
 
   #labelDiv {
-    top: 10px;
-    left: 10px;
-    padding: 10px 15px 12px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
     height: auto;
+    top: auto;
+    left: 10px;
+    bottom: 65px;
+    padding: 6px 10px 10px 10px;
     width: auto;
     z-index: 8;
   }
@@ -223,66 +284,121 @@ FT02 - Mobile Map
   }
 
   #layerNav-mobile {
+    border-color: #20396F;
     display: block;
-    left: 10px;
-    top: 10px;
+    left: 11px;
+    top: 11px;
     margin: 0;
+  }
+  #layerNav-mobile:hover, #layerNav-mobile:focus {
+    background-color: #20396F;
+  }
+
+  .map-icon {
+    background-color: #20396F;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    position: absolute;
+    top: auto;
+    bottom: 10px;
+    z-index: 1040;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 30px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .glyphicon-info-sign {
+    right: 10px;
+  }
+
+  .glyphicon-screenshot {
+    right: 55px;
+    bottom: 55px;
+  }
+
+  .glyphicon-share {
+    right: 55px;
+  }
+
+  .glyphicon-question-sign {
+    bottom: 55px;
+    right: 10px;
   }
 }
 /**********************************************
 FT03 - Filters
 ***********************************************/
-#custom_carousel .mainTitle {
-  font-size: 12px;
-  text-align: left;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  margin-top: 0px;
-  text-transform: uppercase;
-  border-bottom: 1px solid #EEE;
-  padding-bottom: 8px;
-}
-#custom_carousel .subTitleTop,
-#custom_carousel .subTitle {
-  display: none;
-}
-#custom_carousel .form-group .col-sm-12 {
-  margin-bottom: 10px;
-  padding: 0 !important;
-  text-align: center;
-}
-#custom_carousel .center-block {
-  display: inline-block;
-  width: 100%;
-}
-#custom_carousel .center-block .btn-sm {
-  padding: 11px 0;
-}
-#custom_carousel .btnWho {
-  font-size: 2em;
-}
-#custom_carousel .btn {
-  padding-top: 10px;
-}
-#custom_carousel .btn.active {
-  border-color: #285E8E;
-}
-#custom_carousel .btn-group-vertical i {
-  margin-top: 2px;
-}
-#custom_carousel .btn-group-vertical .btn.active {
-  border-color: #ADADAD;
-}
+@media (max-width: 767px) {
+  #custom_carousel .mainTitle {
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding-top: 10px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 8px;
+  }
+  #custom_carousel .mainTitle > span {
+    display: none;
+  }
+  #custom_carousel .subTitleTop,
+  #custom_carousel .subTitle {
+    display: none;
+  }
+  #custom_carousel .form-group .col-sm-12 {
+    margin-bottom: 10px;
+    padding: 0 !important;
+    text-align: center;
+  }
+  #custom_carousel .center-block {
+    display: inline-block;
+    width: 100%;
+  }
+  #custom_carousel .center-block .btn-sm {
+    padding: 11px 0;
+  }
+  #custom_carousel .btnWho {
+    font-size: 2em;
+  }
+  #custom_carousel .btn {
+    padding-top: 10px;
+  }
+  #custom_carousel .btn.active {
+    border-color: #285E8E;
+  }
+  #custom_carousel .btn-group-vertical {
+    margin: 0 !important;
+  }
+  #custom_carousel .btn-group-vertical i {
+    margin-top: 3px;
+  }
+  #custom_carousel .btn-group-vertical .btn.active {
+    border-color: #ADADAD;
+  }
+  #custom_carousel .interventionBtns,
+  #custom_carousel .outreachBtns {
+    padding: 13px 10px;
+  }
+  #custom_carousel .districtBtnGroup label {
+    padding: 13px 10px;
+  }
 
-.carousel-inner .container-fluid {
-  background: none !important;
-  border: none !important;
-  padding: 0;
+  .carousel-inner .container-fluid {
+    background: none !important;
+    border: none !important;
+    padding: 0;
+  }
 }
-
 /**********************************************
 FT04 - Data Points
 ***********************************************/
+.esriPopup {
+  z-index: 1060;
+}
 .esriPopup .titlePane {
   background-color: #285E8E;
   border: none;
@@ -312,4 +428,29 @@ FT05 - Search
 ***********************************************/
 #modal-search .input-group {
   position: static;
+}
+
+@media (max-width: 767px) {
+  #modal-search .form-group {
+    margin: 0;
+  }
+  #modal-search .input-group {
+    padding: 0 !important;
+  }
+}
+/**********************************************
+FT06 - Date Slider
+***********************************************/
+/**********************************************
+FT07 - Share
+***********************************************/
+@media (max-width: 767px) {
+  #share-modal .modal-body {
+    text-align: center;
+  }
+
+  .share-url {
+    font-weight: bold;
+    margin: 10px 0;
+  }
 }

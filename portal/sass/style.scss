@@ -13,13 +13,43 @@
 //     FT02: Mobile Map
 //     FT03: Filters
 //     FT04: Data Points
+//     FT05: Search
+//     FT06: Date Slider
 //
 
 /**********************************************
 ALL01 - Global Elements
 ***********************************************/
 
+#navbarDIV {
+  border-radius:0;
+}
+
 @include breakpoint(SM) {
+
+  .modal-footer {
+    margin-top: 0;
+  }
+
+  #searchNav1 {
+    .glyphicon-search {
+      color: #20396f;
+    }
+  }
+
+  .navbar-default {
+    .navbar-toggle {
+      .icon-bar {
+        background-color: #20396f;
+      }
+      &:hover,
+      &:focus {
+        .icon-bar {
+          background-color: #fff;
+        }
+      }
+    }
+  }
 
   .navbar {
     border-width: 0 0 1px 0;
@@ -64,7 +94,6 @@ ALL01 - Global Elements
 body {
   @include breakpoint(SM) {
     #sliderDiv {
-      display: none !important; // very shameful, but had to be done
     }
   }
 }
@@ -76,6 +105,56 @@ body {
   }
 }
 
+//ipad fixes
+@include breakpoint(iPad) {
+
+  #searchNav.navbar-toggle {
+    margin:35px 0 0 !important;
+    padding:0;
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+  #sidebar {
+    padding:0;
+  }
+
+  #jqxslider,  #jqxslider2 {
+    > div {
+      display: none;
+    }
+    .jqx-rc-all {
+      display: block;
+    }
+  }
+
+  #date3Label {
+    display: none;
+  }
+  #sliderDiv {
+    height: auto !important;
+
+    #date2Label {
+      float:right;
+    }
+
+    #jqxslider, #jqxslider2 {
+      width: auto !important;
+      margin:0 !important;
+      float:left;
+      clear: none;
+    }
+  }
+}
+
+@include breakpoint(XL) {
+  #date2Label{
+    display: none;
+  }
+}
 
 
 /**********************************************
@@ -110,3 +189,15 @@ FT05 - Search
 ***********************************************/
 
 @import 'design/search';
+
+/**********************************************
+FT06 - Date Slider
+***********************************************/
+
+@import 'design/date-slider';
+
+/**********************************************
+FT07 - Share
+***********************************************/
+
+@import 'design/share';
