@@ -494,8 +494,17 @@ FT06 - Date Slider
 #sliderDiv .jqx-icon-arrow-left:hover {
   color: #F26522;
 }
+#sliderDiv .jqx-icon-arrow-right {
+  content: "\e092";
+}
 #sliderDiv .jqx-icon-arrow-right:before {
   content: "\e092";
+  position: absolute;
+  display: block;
+  top: -12px;
+}
+#sliderDiv .jqx-icon-arrow-left {
+  content: "\e091";
 }
 @media (min-width: 1023px) {
   #sliderDiv .jqx-icon-arrow-left {
@@ -504,6 +513,9 @@ FT06 - Date Slider
 }
 #sliderDiv .jqx-icon-arrow-left:before {
   content: "\e091";
+  position: absolute;
+  display: block;
+  top: -12px;
 }
 
 /**********************************************
