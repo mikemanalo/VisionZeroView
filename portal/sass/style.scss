@@ -25,6 +25,14 @@ ALL01 - Global Elements
   border-radius:0;
 }
 
+.modal-title {
+  position: relative;
+  .map-icon {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
+
 @include breakpoint(SM) {
 
   .modal-footer {
@@ -68,6 +76,7 @@ ALL01 - Global Elements
     margin: 0 !important;
     top: 13px;
     right: 10px;
+    position: absolute;
   }
 
   #blackBar {
@@ -138,7 +147,9 @@ body {
     height: auto !important;
 
     #date2Label {
-      float:right;
+      position: absolute;
+      left: 85px;
+      top: 9px;
     }
 
     #jqxslider, #jqxslider2 {
@@ -153,6 +164,9 @@ body {
 @include breakpoint(XL) {
   #date2Label{
     display: none;
+  }
+  #date3Label{
+    display: block;
   }
 }
 
@@ -201,3 +215,9 @@ FT07 - Share
 ***********************************************/
 
 @import 'design/share';
+
+/**********************************************
+FT08 - Legend
+***********************************************/
+
+@import 'design/legend';

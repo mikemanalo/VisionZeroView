@@ -28,7 +28,7 @@
     }
     #collapse-search.collapse.in{
   		display:block !important;
-	}	
+	}
 	#searchNav{
 	margin-right:2em !important;
 	margin-top:2em !important;
@@ -58,18 +58,18 @@
 	border: 1px solid transparent;
 	border-radius: 4px;
 	}
-	
+
 	.mainTitle{
 	/*text-align: center; */
-	color: #F26522; 
-	margin-top: 0px; 
+	color: #F26522;
+	margin-top: 0px;
 	white-space:normal;
 	font-weight: 800;
-}	
+}
 }
 
 /*Used to display the Layer toggle button in the title bar*/
-@media (max-width: 1015px) and (min-width:768px){	
+@media (max-width: 1015px) and (min-width:768px){
 	.btn {
 	display: inline-block;
 	margin-bottom: 0;
@@ -89,20 +89,20 @@
 	-ms-user-select: none;
 	user-select: none;
 	}
-	
+
 	h3, .h3 {
 	font-size: 18px !important;
 	}
-	
+
 	h4, .h4{
 	font-size:12px !important;
 	font-weight:700;
 	}
-	
+
 	.crashTypes.btn{
 	font-family: 'icomoon';
 	font-size: 0.8em !important;
-	
+
 	display: inline-block;
 	margin-bottom: 0;
 	font-weight: 400;
@@ -124,35 +124,35 @@
 	.interventionBtns{
 	font-size:0.9em;
 	}
-	
+
 	.outreachBtns{
 	font-size:0.9em;
 	}
-	
+
 	.summarySwitchBtns{
 	font-size:10px !important;
 	}
-	
+
 	.crashTypeSwitchBtns{
 	font-size:10px !important;
 	}
-	
+
 	.footNote{
 	font-size:9px !important;
 	}
-	
+
 	.crashTimeSwitchBtns{
 	font-size:10px !important;
 	white-space:normal;
 	}
-	
+
 	#searchNav{
 		font-size:11px;
 		margin-right: 2em !important;
 		margin-top: 2.6em !important;
 		margin-left: 15px;
 	}
-	
+
 	.mainTitle {
 /* text-align: center; */
 color: #F26522;
@@ -176,19 +176,19 @@ font-weight: 800;
 	h3, .h3 {
 	font-size: 20px !important;
 	}
-	
+
 	h4, .h4{
 	font-size:14px !important;
 	font-weight:700;
 	}
-	
+
 	.topLine{
 	margin-top:1.3em;
 	}
 	.crashTypes.btn{
 	font-family: 'icomoon';
 	font-size: 0.9em !important;
-	
+
 	display: inline-block;
 	margin-bottom: 0;
 	font-weight: 400;
@@ -210,19 +210,16 @@ font-weight: 800;
 	.interventionBtns{
 	font-size:0.98em;
 	}
-	
+
 	#jqxslider {
-    width: 45em !important;
-    margin-left:auto; margin-right: auto;
-    margin-top: 1.3em;
-    margin-bottom: 1.3em !important;
+
+    margin-left:auto;
+    margin-right: auto;
 }
 
 	#jqxslider2 {
     width: 45em !important;
-    margin-left:auto; margin-right: auto;
-    margin-top: 1.3em;
-    margin-bottom: 1.3em !important;
+    margin: 0 auto;
 }
 
 @media (mid-width:776;) and (max-width:882px;){

@@ -63,11 +63,17 @@ $('[data-toggle=dropdown]').each(function() {
  
 
 //-----------------------------------------------------------------------------------------------------------------------//
-/*$(function () {
-    $("#btnsearch1").on("touchstart click",function(){
-        $('#collapseOne').modal('toggle');
-		
+$( '#searchInput' ).on( 'keypress', function( e ) {
+        if ((e.keyCode == 13) && (e.target.type != "textarea")) {
+            e.preventDefault();
+            $( this ).trigger( 'submit' );
+        }
     });
-});
-*/
+
+$( '#searchInput1' ).on( 'keypress', function( e ) {
+       if ((e.keyCode == 13) && (e.target.type != "textarea")) {
+            e.preventDefault();
+            $( this ).trigger( 'submit' );
+        }
+    } );
 

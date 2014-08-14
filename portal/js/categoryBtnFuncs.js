@@ -94,6 +94,7 @@ $(".categoriesNav").on('touchstart click', function() {
 		$("#jqxslider").css("display", "none");
 		$("#jqxslider2").css("display", "none");
 		$("#labelDiv").css("display", "none");
+		$("#date3Label").css("display", "none");
 		fatality = false;
 		injury = false;
 		monthly = false;
@@ -127,6 +128,7 @@ $(".categoriesNav").on('touchstart click', function() {
 		$("#jqxslider").css("display", "none");
 		$("#jqxslider2").css("display", "none");
 		$("#labelDiv").css("display", "none");
+		$("#date3Label").css("display", "none");
 
 	} else if (id == "outreachCat") {
 
@@ -147,12 +149,17 @@ $(".categoriesNav").on('touchstart click', function() {
 		$("#jqxslider").css("display", "none");
 		$("#jqxslider2").css("display", "none");
 		$("#labelDiv").css("display", "none");
+		$("#date3Label").css("display", "none");
+		
 
 	} else if (id == "injuryCat") {
 
 		checkCrashCatState();
 		$("#sliderDiv").css("display", "block");
 		$("#labelDiv").css("display", "block");
+		$("#date3Label").css("display", "block");
+		
+		
 		if (monthly) {
 			$("#jqxslider").css("display", "block");
 			$("#jqxslider2").css("display", "none");

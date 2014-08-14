@@ -6,7 +6,7 @@ function zoomTo(lat, lon) {
 					/*var point = new Point(lon, lat, {
 						wkid : "4326"
 					});*/
-					console.log(point);
+					//console.log(point);
 
 					var wmpoint = webMercatorUtils.geographicToWebMercator(point);
 					//map.centerAt(point);

@@ -5,4 +5,12 @@
 }
 
 @include breakpoint(SM) {
+  #modal-search {
+    .form-group {
+      margin: 0;
+    }
+    .input-group {
+      padding: 0 !important; // bootstrap override :(
+    }
+  }
 }

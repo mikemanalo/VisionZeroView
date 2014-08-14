@@ -9,7 +9,7 @@
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
-                    tooltip: true
+                    tooltip: false
                 });
               //  createTooltip();
                 var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();
@@ -32,7 +32,7 @@
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
-                    tooltip: true
+                    tooltip: false
                 });
               //  createTooltip();
                 var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();

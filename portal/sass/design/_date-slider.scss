@@ -1,21 +1,48 @@
-// @include breakpoint(SM) {
+#sliderDiv {
 
-//   #sliderDiv {
-//     background: transparent;
-//     border: none;
-//     padding: 0;
-//   }
+  .jqx-slider-right,
+  .jqx-slider-left {
+    // there's about to be some insane overrides here because of inline js style injection
+    margin-top: 0 !important;
+    background: none !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 28px !important;
+    padding: 0 !important;
+  }
 
-//   #jqxslider {
-//     margin: 0;
-//     > div {
-//       display: none;
-//     }
-//   }
+  .jqx-icon-arrow-right,
+  .jqx-icon-arrow-left {
+    background: none;
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    &:hover {
+      color: #F26522;
+    }
+  }
 
-//   .jqx-slider-left,
-//   .jqx-slider-right {
-//     display: block;
-//   }
+  .jqx-icon-arrow-right {
+    &:before {
+      content: "\e092";
+    }
+  }
 
-// }
+  .jqx-icon-arrow-left {
+    @media (min-width: 1023px) {
+      left: -20px;
+    }
+
+    &:before {
+      content: "\e091";
+    }
+  }
+
+}
