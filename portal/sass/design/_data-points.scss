@@ -15,7 +15,47 @@
       top: 7px;
     }
   }
+
+  .contentPane {
+    background-color: $white;
+
+    h4 {
+      margin:15px 0 2px;
+    }
+
+    tr td{
+      padding-bottom:1px;
+    }
+  }
   .actionsPane {
-    padding: 0 10px 10px 10px;
+    padding: 3px 10px;
+    background-color: $grey_light;
+    position:relative;
+    border-top: 1px solid $grey;
+    text-align: right;
+
+    &::after{
+      content:'';
+      display: block;
+      width:0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 20px solid $grey_light;
+      position: absolute;
+      bottom:-15px;
+      left:50%;
+      margin-left:-15px;
+      z-index: 50;
+    }
+
+    a {
+      text-decoration: none;
+      margin-right:0;
+      margin-left:5px;
+      color:#666;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
   }
 }
