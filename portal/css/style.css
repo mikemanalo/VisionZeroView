@@ -286,6 +286,9 @@ FT02 - Mobile Map
     width: auto;
     z-index: 8;
   }
+  #labelDiv select {
+    width: 70px;
+  }
 
   #labelTable {
     padding: 0;
