@@ -1,5 +1,4 @@
 #sliderDiv {
-
   .jqx-slider-right,
   .jqx-slider-left {
     // there's about to be some insane overrides here because of inline js style injection
@@ -30,19 +29,27 @@
   }
 
   .jqx-icon-arrow-right {
+    content: "\e092";
+
     &:before {
       content: "\e092";
+      position:absolute;
+      display: block;
+      top:-12px;
     }
   }
 
   .jqx-icon-arrow-left {
+    content: "\e091";
+
     @media (min-width: 1023px) {
       left: -20px;
     }
-
     &:before {
       content: "\e091";
+      position:absolute;
+      display: block;
+      top:-12px;
     }
   }
-
 }
