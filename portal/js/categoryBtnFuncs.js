@@ -57,35 +57,30 @@ $(".categoriesNav").on('touchstart click', function() {
 	removeLayer();
 	allLayersOff();
 	map.infoWindow.hide();
-
+	var _layerURL, _layerID;
+	
 	if (id == "summaryCat") {
 
-		summaryInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer", {
+		/*summaryInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer", {
 			id : "summaryInjuryLayer",opacity : .8
 
 		});
-		AddLayer(summaryInjuryLayer,false);
-		/*summaryInjuryLayer.on("update-start", function () {
-		    showLoading();
-		});
+		AddLayer(summaryInjuryLayer,false);*/
+		
+		_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer";
+		_layerID = "summaryInjuryLayer";
+		summaryInjuryLayer = AddDynamicLayer(_layerURL, _layerID,true);
+		
+		_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer";
+		_layerID = "summaryFatalityLayer";
+		summaryFatalityLayer = AddDynamicLayer(_layerURL, _layerID,true);
 
-		summaryInjuryLayer.on("update-end", function () {
-		    hideLoading();
-		});
-		map.addLayer(summaryInjuryLayer);*/
-		summaryFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer", {
+		/*summaryFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer", {
 			id : "summaryFatalityLayer"//,opacity : .8
 
 		});
-		AddLayer(summaryFatalityLayer,false);
-		/*summaryFatalityLayer.on("update-start", function () {
-		    showLoading();
-		});
+		AddLayer(summaryFatalityLayer,false);*/
 
-		summaryFatalityLayer.on("update-end", function () {
-		    hideLoading();
-		});
-		map.addLayer(summaryFatalityLayer);*/
 		console.log("injurSum = " + injurySum + "    fatalitySum = " + fatalitySum);
 		
 		if (injurySum) {summaryInjuryLayer.setVisibility(true);  summaryFatalityLayer.setVisibility(false);}
@@ -103,13 +98,13 @@ $(".categoriesNav").on('touchstart click', function() {
 		setTimeout(function(){ checkSummaryBtns(summaryLayerIDs);}, 20);
 
 	} else if (id == "interventionCat") {
-
-		interventionLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SAFETY_INTERVENTION/MapServer", {
+		/*
+		interventionLayer = new esri.layers.ArcGISDynamicMapServiceLayer(, {
 			id : "interventionLayer",opacity : .8
 
 		});
 		AddLayer(interventionLayer,true);
-		/*interventionLayer.on("update-start", function () {		    
+		interventionLayer.on("update-start", function () {		    
 		    showLoading();		    
 		});
 
@@ -118,6 +113,12 @@ $(".categoriesNav").on('touchstart click', function() {
 		});
         */
 		//map.addLayer(interventionLayer);
+		
+		
+		_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SAFETY_INTERVENTION/MapServer";
+		_layerID = "interventionLayer";
+		interventionLayer = AddDynamicLayer(_layerURL, _layerID,true);
+		
 		interventions = true;
 		interventionLayerIDs = [];
 		setTimeout(function() {
@@ -132,11 +133,15 @@ $(".categoriesNav").on('touchstart click', function() {
 
 	} else if (id == "outreachCat") {
 
+		_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/OUTREACH/MapServer";
+		_layerID = "outreachLayer";
+		outreachLayer = AddDynamicLayer(_layerURL, _layerID,true);
+		/*
 		outreachLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/OUTREACH/MapServer", {
 			id : "outreachLayer",opacity : .8
 
 		});
-		AddLayer(outreachLayer, true);
+		AddLayer(outreachLayer, true);*/
 		
 		outreach = true;
 		outreachLayerIDs = [];
