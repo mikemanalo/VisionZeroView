@@ -108,13 +108,14 @@ function AddDynamicLayer(layerURL, layerID, visible) {
 		,opacity:.8,
 		"imageParameters" : imageParameters
 	});
-	
+
     DynamicLayer.setDisableClientCaching(false);
     map.addLayer(DynamicLayer);
 
     DynamicLayer.setVisibility(visible);
     
-    
+   	//DynamicLayer.on("load", function() { DynamicLayer.minScale = 0; DynamicLayer.maxScale = 0; });
+
     DynamicLayer.on("update-start", function () {
         showLoading();
     });

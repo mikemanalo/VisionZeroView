@@ -36,6 +36,7 @@ function IdentifyTaskInit() {
               summaryFatalIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer");
                            
               dojo.connect(map, "onClick", executeIdentifyTask);
+              dojo.connect(map, "touchend", executeIdentifyTask);
        });
 
 }

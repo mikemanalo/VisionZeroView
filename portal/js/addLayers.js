@@ -256,15 +256,22 @@ function checkOutreachBtns(outreachLayerIDs) {
 
 function hasClass(elementID, className)
 {
-var classList = document.getElementById(elementID).className.split(/\s+/);
-for (var i = 0; i < classList.length; i++) {
-   if(classList[i]==className)
-   {
-	return true
-   }
-     //do something
-   }
-   return false;
+	if (isIE()) {
+		alert("IE?");
+		var classList = document.getElementById(elementID).className.split(/\s+/);
+		for (var i = 0; i < classList.length; i++) {
+		   if(classList[i]==className)
+		   {
+			return true
+		   }
+		     //do something
+		 }
+		 return false;
+   
+	}
+  else{
+   return $("#"+elementID).hasClass(className);
+  }
 }
 ///////////////////////////////// SUMMARY ////////////////////////////////////////////////////////////////////
 
@@ -319,7 +326,9 @@ $(".summarySwitchBtns").on("touchstart  click", function() {
 	}*/
 	console.log(summaryLayerIDs);
 	setTimeout(function() {
-		if ($("#summaryInjuries").hasClass('active')) {
+		//if ($("#summaryInjuries").hasClass('active')) {
+		//hasClass
+		if (hasClass('summaryInjuries','active')) {
 			$("#summaryFatalities").css("color", "#777");
 			$("#summaryInjuries").css("color", "white");
 			console.log("injury active");
@@ -329,7 +338,7 @@ $(".summarySwitchBtns").on("touchstart  click", function() {
 			//summaryFatalityLayer.setVisibility(false);
 
 			//	checkSummaryInjuryBtns(summaryLayerIDs);
-		} else if ($("#summaryFatalities").hasClass('active')) {
+		} else if (hasClass('summaryFatalities','active')) {
 			$("#summaryInjuries").css("color", "#777");
 			$("#summaryFatalities").css("color", "white");
 			console.log("fatality active");
