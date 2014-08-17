@@ -1,4 +1,9 @@
 
+$("#smallScreenGeolocate").on('touchstart click', function() {
+	
+	getCurrentLocation();
+});
+
 
 
 $("#smallScreenInfo").on('touchstart click', function() {

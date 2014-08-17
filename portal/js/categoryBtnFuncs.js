@@ -45,7 +45,6 @@ $(document).ready(function() {
 	injurySum = true, fatalitySum = false;
 	
 	
-	//$(".btn.btn-default.districtBtns
 
 });
 

@@ -257,7 +257,7 @@ function checkOutreachBtns(outreachLayerIDs) {
 function hasClass(elementID, className)
 {
 	if (isIE()) {
-		alert("IE?");
+		
 		var classList = document.getElementById(elementID).className.split(/\s+/);
 		for (var i = 0; i < classList.length; i++) {
 		   if(classList[i]==className)
