@@ -2,19 +2,26 @@
 function resizeMap() {
 
   //sidebarWidth = $('#SideBar').outerWidth(true);
-    //console.log(sidebarWidth);
+    console.log("map resize");
     var titileDIV = $('#navbarDIV').outerHeight(true);
     var blackBar = $('#blackBar').outerHeight(true);
     var footer = $('#footer').outerHeight(true);
     var sidebar = $('#sidebar').outerHeight(true);
     var offsetHeight = titileDIV + blackBar + footer;
+    //hack for weird IE DOM load issue
+    var mapHeight = window.innerHeight - offsetHeight - 15;
+      // console.log("Map Height " + mapHeight);
+      $('#map').height(mapHeight);
+      
   if (map && window.location.hash == "") {
       var mapHeight = window.innerHeight - offsetHeight - 15;
+      console.log("sidebar " + sidebar);
+      console.log("Map Height " + mapHeight);
       if (sidebar < mapHeight)
           $('#map').height(mapHeight);
       else
           $('#map').height(sidebar);
-	  // $('#map').width(window.innerWidth - sidebarWidth);
+	 
 	  map.reposition();
 	  map.resize();
   }

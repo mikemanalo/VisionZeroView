@@ -114,7 +114,7 @@ function AddDynamicLayer(layerURL, layerID, visible) {
 
     DynamicLayer.setVisibility(visible);
     
-   	//DynamicLayer.on("load", function() { DynamicLayer.minScale = 0; DynamicLayer.maxScale = 0; });
+   	DynamicLayer.on("load", function() { DynamicLayer.minScale = 0; DynamicLayer.maxScale = 0; });
 
     DynamicLayer.on("update-start", function () {
         showLoading();

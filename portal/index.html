@@ -2,19 +2,17 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"><![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+<!--[if gt IE 8]>	   <html class="no-js" lang="en"><![endif]-->
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content=""/ >
+    
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <title>Vision Zero</title>
@@ -308,7 +306,7 @@
 						<div id="date3Label" class="crashLabel2 hidden-xs">Date</div>
                         <div id="sliderDiv" class="hidden-xs" >
 						<div id="date2Label" class="crashLabel2"></div>
-                        <div id='jqxslider'class="hidden-xs"></div>
+                        <div id='jqxslider' class="hidden-xs"></div>
                         <div id='jqxslider2' class="hidden-xs" style="display: none"></div>
                     </div>
                 </div>
@@ -901,6 +899,8 @@
 		        esri.config.defaults.io.alwaysUseProxy = false;
 		        esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
 		    }
+			resizeMap();
+		    mapWinEvent();
 
 			$(window).unload(function() {
                      $('select option').remove();
@@ -990,9 +990,7 @@
 								  });
 
 
-		    resizeMap();
-		    mapWinEvent();
-
+		    
 
 		    $(document).ready(function() {
 				   var isIE8 = isIE();
