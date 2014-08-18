@@ -308,10 +308,10 @@ function executeIdentifyTask(evt) {
                                   locTxt = "<table><tr><td><b>On Street:" + "&nbsp;" + " </b>${FIRST_Main}</td></tr>";
                                   locTxt += "<tr><td>From" + "&nbsp;" + " ${FIRST_From}";
                                   locTxt += " To" + "&nbsp;" + "${FIRST_ToSt}</td></tr>";
-                                  locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${Date_installed}</td></tr>";
+                                  locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${ Date_installed}</td></tr>";
                                   locTxt += "<tr><td><b>Num. of Humps:</b> " + "&nbsp;" + "${Num_speedhumps}</td></tr></table>";
                                   template.setTitle("Speed Humps");
-                                  break;        
+                                  break;     
 
                                   case  "LPI":                             
                                   locTxt = "<table><tr><td><b>Main Street:" + "&nbsp;" + " </b>${MainStreet}</td></tr>";
@@ -383,7 +383,7 @@ function executeIdentifyTask(evt) {
 
                                   case  "workshop_locations":                            
                                   locTxt = "<table><tr><td><b>Location:" + "&nbsp;" + " </b>${Sheet1__Na}</td></tr>";
-                                  locTxt += "<tr><td><b>Year:</b>" + "&nbsp;" + " ${Sheet1__AD}</td></tr></table>";
+                                  locTxt += "<tr><td><b>Address:</b>" + "&nbsp;" + " ${Sheet1__AD}</td></tr></table>";
                                   template.setTitle("Workshops");
                                   break;
                                   
@@ -395,9 +395,9 @@ function executeIdentifyTask(evt) {
                                   break;
 
                                   case  "tlc":                             
-                                  locTxt = "<table><tr><td><b>Location:" + "&nbsp;" + "</b>${Title}</td></tr>";
-                                  locTxt += "<tr><td><b>Address:" + "&nbsp;" + "</b>${Location}</td></tr></table>";
-                                  template.setTitle("TLC");
+                                  locTxt = "<table><tr><td><b>Event:" + "&nbsp;" + "</b>${Event}</td></tr>";
+                                  locTxt += "<tr><td><b>Address:" + "&nbsp;" + "</b>${Address}}</td></tr>";
+                                  locTxt += "<tr><td><b>Date:" + "&nbsp;" + "</b>${Date}</td></tr></table>";
                                   break;        
 
 
@@ -475,7 +475,7 @@ function executeIdentifyTask(evt) {
                            }
                                   // new August 12 ///
                                   
-                           locTxt += "<tr><td><b><h4>CRASH DATA</h4></b>" + "</td></tr>";                                                             
+                          locTxt += "<tr><td><b><h4>CRASH DATA</h4></b>" + "</td></tr>";                                                             
                            locTxt += "<tr><td><b>Total fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_Fatalities}</td></tr>";
                            locTxt += "<tr><td><b>Total Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_Injuries}</td></tr>";
                            locTxt += "<tr><td><b>Pedestrian Fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_PedFatalities}</td></tr>";
@@ -496,7 +496,17 @@ function executeIdentifyTask(evt) {
                            locTxt += "<tr><td><b>Age 25-44:</b>" + " &nbsp;" + " </td><td>${Ages_25to44}</td></tr>";
                            locTxt += "<tr><td><b>Age 45-64:</b>" + "&nbsp;" + " </td><td>${Ages_45to64}</td></tr>";
                            locTxt += "<tr><td><b>Age 65 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_65andOver}</td></tr>";
-                           locTxt += "<tr><td><b>Age 18 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_18andOver}</td></tr></table>";
+                           locTxt += "<tr><td><b>Age 18 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_18andOver}</td></tr>";
+                           
+                           locTxt += "<tr><td><b><h4>INTERVENTION DATA</h4></b>" + "</td></tr>";                                                       
+                           locTxt += "<tr><td><b>Leading Pedestrian Intervals:</b>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr><br>";
+                           locTxt += "<tr><td><b>Safety Projects - Intersections:</b>" + "&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr><br>";
+                           locTxt += "<tr><td><b>Safety Projects - Corridors</b>" + "&nbsp;" + " </td><td>${SUM_SIPCorridors}</td></tr><br>";
+                           locTxt += "<tr><td><b>Speed Humps:</b>" + "&nbsp; " + " </td><td>${SUM_SpeedHumps}</td></tr><br>";
+                           locTxt += "<tr><td><b>Arterial Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_ASZ}</td></tr><br>";
+                           locTxt += "<tr><td><b>Neighborhood Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_NeighSlowZones}</td></tr></table>";
+
+
                                                               
                            template.setContent(locTxt);
 

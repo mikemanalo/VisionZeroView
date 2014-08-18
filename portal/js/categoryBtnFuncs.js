@@ -23,30 +23,29 @@ function showSlider() {
 
 
 $(document).ready(function() {
+       $("#ArterialSlowZone").prop('checked', true);
+       $("#ArterialSlowZone").addClass('active');
+       $("#SafeStreetsForSeniors").prop('checked', false);
+       $("#NeighborhoodSlowZone").prop('checked', false);
+       $("#EngineeringImprovements").prop('checked', false);
+       $("#SpeedHump").prop('checked', false);
+       $("#LeadingPedestrianSignals").prop('checked', false);
 
-	$("#ArterialSlowZone").prop('checked', true);
-	$("#ArterialSlowZone").addClass('active');
-	$("#SafeStreetsForSeniors").prop('checked', false);
-	$("#NeighborhoodSlowZone").prop('checked', false);
-	$("#EngineeringImprovements").prop('checked', false);
-	$("#SpeedHump").prop('checked', false);
-	$("#LeadingPedestrianSignals").prop('checked', false);
-
-	$("#Schools").prop('checked', true);
-	$("#Schools").addClass('active');
-	$("#TLC").prop('checked', false);
-	$("#TownHallMeeting").prop('checked', false);
-	$("#Workshops").prop('checked', false);
-	$("#SeniorCenters").prop('checked', false);
-	
-	$("#summaryInjuries").prop('checked', true);
-	$("#summaryInjuries").addClass('active');
-	police = true, community= false, council=false;
-	injurySum = true, fatalitySum = false;
-	
-	
-
+       $("#Schools").prop('checked', true);
+       $("#Schools").addClass('active');
+       $("#TLC").prop('checked', false);
+       $("#TownHallMeeting").prop('checked', false);
+       $("#Workshops").prop('checked', false);
+       $("#SeniorCenters").prop('checked', false);
+       
+       $("#summaryInjuries").prop('checked', true);
+       $("#summaryInjuries").addClass('active');
+       $("#allLabel").addClass('active');
+       police = true, community= false, council=false;
+       injurySum = true, fatalitySum = false;
+       all = true; ped = false, bike = false, motor = false;
 });
+
 
 $(".categoriesNav").on(evt, function() {
 	var id = this.id;

@@ -1,7 +1,7 @@
 function zoomTo(lat, lon) {
 
        require(["esri/geometry/Point", "esri/geometry/webMercatorUtils", "esri/graphic"], function(Point, webMercatorUtils, Graphic) {
-              //     map.infoWindow.hide();
+       map.infoWindow.hide();
 
      function zoomTo(lat, lon) {
 

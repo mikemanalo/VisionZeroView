@@ -24,7 +24,7 @@ function checkCrashLegend(){
                            $("#densityLegend").css("display", "none");
                            $("#fatalityLegend").css("display", "block");
                            $("#injuryLegend").css("display", "block");
-                                            $("#layerLabel").css("display", "block");
+                           $("#layerLabel").css("display", "block");
                      }
               }
               else if (monthly){
@@ -271,7 +271,7 @@ function toggleCrashLayers() {
        var what, when, who;
 
        if (injury)
-              what = "Injuries";
+              what = "Injuries and Fatalities";
        else
               what = "Fatalities";
        if (yearly)
