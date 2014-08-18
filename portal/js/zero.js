@@ -20,7 +20,7 @@ $('.btn-toggle').click(function() {
 });
 
 //--------------------Used for the dropdown menu for the search------------------------------//
-$(".dropdown-menu li a").on("touchstart click",function(){
+$(".dropdown-menu li a").on(evt,function(){
   var selText = $(this).text();
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 });
@@ -63,11 +63,17 @@ $('[data-toggle=dropdown]').each(function() {
  
 
 //-----------------------------------------------------------------------------------------------------------------------//
-/*$(function () {
-    $("#btnsearch1").on("touchstart click",function(){
-        $('#collapseOne').modal('toggle');
-		
+$( '#searchInput' ).on( 'keypress', function( e ) {
+        if ((e.keyCode == 13) && (e.target.type != "textarea")) {
+            e.preventDefault();
+            $( this ).trigger( 'submit' );
+        }
     });
-});
-*/
+
+$( '#searchInput1' ).on( 'keypress', function( e ) {
+       if ((e.keyCode == 13) && (e.target.type != "textarea")) {
+            e.preventDefault();
+            $( this ).trigger( 'submit' );
+        }
+    } );
 

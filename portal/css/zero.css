@@ -194,7 +194,7 @@ left: 0;
 right: 0;
 background-color: rgba(0,0,0,0.7);
 z-index: 19;
-opacity: 0;
+/**opacity: 0;**/
 border-left: 15px solid #FFF;
 border-right: 15px solid #FFF;
 color: white;
@@ -390,5 +390,9 @@ padding-bottom:2em;
 
 
 /*========================================================================================================================================================================*/
-
+/*Used to change the color of the i icon*/
+a {
+color:#3276B1;
+text-decoration: none;
+}
 

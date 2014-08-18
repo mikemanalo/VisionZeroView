@@ -33,7 +33,7 @@ siteOverlay.click(function(){
 
 // hide the "month" select box when Yearly is selected"
 $(document).ready(function() {
-  var crashDateMonth = $(".crash-date-month");
+  var crashDateMonth = $("#monthSelect");
   $("#yearlyBtn").click(function() {
     crashDateMonth.hide(); // hide the month select box
   });
