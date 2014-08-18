@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         cssmin: {
             sitecss: {
                 options: {
-                    banner: '/* My minified css file */'
+                    banner: '/* Vision Zero CSS file*/'
                 },
                 files: {
                     'css/site.min.css': [
@@ -28,19 +28,19 @@ module.exports = function (grunt) {
             },
             applib: {
                 src: [
-                    'js/addCrashLayers.js',
-                    'js/addLayers.js',
-                    'js/categoryBtnFuncs.js',
-                    'js/js/classie.js',
-                    'js/crashFunctions.js',
-                    'js/geocoder.js',
-                    'js/identifyTask.js',
-                    'js/resize.js',
-                    'js/sliderSetup.js',
-                    'js/statFunctions.js',
-                    'js/statJSON.js',
                     'js/zero.js',
-                    'js/offCanvas.js'
+                    'js/crashFunctions.js',
+					'js/addCrashLayers.js',
+					'js/identifyTask.js',
+					'js/sliderSetup.js',
+					'js/categoryBtnFuncs.js',
+					'js/resize.js',
+                    'js/addLayers.js',
+                     'js/geocoder.js',
+                     'js/statJSON.js',
+                     'js/offCanvas.js',
+                    'js/map_config.js',
+                    'js/smallScreenButtonFuncs.js'     
                 ],
                 dest: 'js/applib.js'
             }
