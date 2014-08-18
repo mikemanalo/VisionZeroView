@@ -1,12 +1,12 @@
 
-$("#smallScreenGeolocate").on('touchstart click', function() {
+$("#smallScreenGeolocate").on(evt, function() {
 	
 	getCurrentLocation();
 });
 
 
 
-$("#smallScreenInfo").on('touchstart click', function() {
+$("#smallScreenInfo").on(evt, function() {
 	
 	//console.log("test");
 	
@@ -48,7 +48,7 @@ $("#smallScreenInfo").on('touchstart click', function() {
 	
 });
 
-$("#smallScreenLegend").on('touchstart click', function() {
+$("#smallScreenLegend").on(evt, function() {
 	  var locScale = map.getScale();
 	  var legendModal;
 	     if (injury){

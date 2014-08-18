@@ -14,7 +14,7 @@ dojo.connect(map, "onload", function() {
 
 });*/
 
-$(".interventionBtns").on(" touchstart  click", function() {
+$(".interventionBtns").on(evt, function() {
 map.infoWindow.hide();
 	interventionLayerIDs = [];
 	var test = this;
@@ -90,6 +90,7 @@ function checkInterventionBtns(interventionLayerIDs) {
 	}
 
 	interventionLayer.setVisibleLayers(interventionLayerIDs);
+	//alert(interventionLayerIDs);
 	//console.log(interventionLayerIDs);
 
 }
@@ -131,7 +132,7 @@ $(".list_item").click(function(){
 });*/
 
 
-$(".outreachBtns").on("touchstart  click", function() {
+$(".outreachBtns").on(evt, function() {
 	map.infoWindow.hide();
 	outreachLayerIDs = [];
 
@@ -236,7 +237,7 @@ function checkOutreachBtns(outreachLayerIDs) {
 		var locID = 3;
 		outreachLayerIDs.push(locID);
 		console.log("townhall added");
-		outreachLayerIDs.push(locID);
+		
 
 	}
 	if (hasClass('WorkshopBtn', 'active')) {
@@ -244,9 +245,10 @@ function checkOutreachBtns(outreachLayerIDs) {
 		var locID = 4;
 		outreachLayerIDs.push(locID);
 		console.log("workshops added");
-		outreachLayerIDs.push(locID);
+		
 
 	}
+	
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
 
 
@@ -314,7 +316,7 @@ function checkSummaryLegend() {
 //	var police, community, council;
 //var injurySum, fatalitySum;
 
-$(".summarySwitchBtns").on("touchstart  click", function() {
+$(".summarySwitchBtns").on(evt, function() {
 	map.infoWindow.hide();
 	//summaryLayerIDs = [];
 
@@ -357,7 +359,7 @@ $(".summarySwitchBtns").on("touchstart  click", function() {
 
 });
 
-$(".districtBtns").on("touchstart  click", function() {
+$(".districtBtns").on(evt, function() {
 	map.infoWindow.hide();
 	//police, community, council;
 

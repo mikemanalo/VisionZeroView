@@ -42,7 +42,7 @@ function zoomTo(lat, lon) {
 
 function LocationSearch() {
 
-    $("#btnsearch").on("touchstart click", function () {
+    $("#btnsearch").on(evt, function () {
         // alert("Handler for .click() called.");
         var adminBoundary = $("#searchBorough").text().trim();
         var search = $("#address").val();
@@ -286,7 +286,7 @@ $(document).ready(function () {
 
 
 
-    $(".dropdown-menu li a").on("touchstart click", function () {
+    $(".dropdown-menu li a").on(evt, function () {
         var selText = $(this).text();
         $(this).parents('.input-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
     });

@@ -20,7 +20,7 @@ $('.btn-toggle').click(function() {
 });
 
 //--------------------Used for the dropdown menu for the search------------------------------//
-$(".dropdown-menu li a").on("touchstart click",function(){
+$(".dropdown-menu li a").on(evt,function(){
   var selText = $(this).text();
   $(this).parents('.input-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
 });

@@ -48,13 +48,22 @@ $(document).ready(function() {
 
 });
 
-$(".categoriesNav").on('touchstart click', function() {
-
+$(".categoriesNav").on(evt, function() {
 	var id = this.id;
+	activeCategory = id;
 
 	allCrashLayersOff();
 	removeLayer();
 	allLayersOff();
+
+	setTimeout(function() {
+		CategoryNav(id);
+	}, 1000);
+
+});
+
+function CategoryNav(id){
+	
 	map.infoWindow.hide();
 	var _layerURL, _layerID;
 	
@@ -173,9 +182,8 @@ $(".categoriesNav").on('touchstart click', function() {
 
 		}
 	}
-
-});
-
+	
+}
 function removeLayer() {
 	var layer1 = map.getLayer("outreachLayer");
 	var layer2 = map.getLayer("interventionLayer");
