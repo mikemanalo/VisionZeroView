@@ -193,7 +193,7 @@
 							<!-- share, geo-location, and information (legend) icons -->
 							<button id="smallScreenLegend" class="map-icon glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#legend-modal"></button>
 							<button id="smallScreenShare" class="map-icon glyphicon glyphicon-share" data-toggle="modal" data-target="#share-modal"></button>
-							<button id="smallScreenGeolocate" class="map-icon icon-icon_22494"></button>
+							<button id="smallScreenGeolocate" class="map-icon icon-icon_22494" onclick="getCurrentLocation();"></button>
 							<button id="smallScreenInfo" class="map-icon glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></button>
 						</div>
 
@@ -297,12 +297,6 @@
 										<tr>
 											<td class="labelRow"><strong>Citywide Totals</strong></td>
 										</tr>
-										<!--<tr>
-										<td class="labelRow"><span id="layerLabel" class="crashLabel1"></span></td>
-										</tr>
-										<tr>
-										<td class="labelRow"><span id="dateLabel" class="crashLabel2"></span></td>
-										</tr>-->
 
 										<tr>
 											<td class="labelRow"><span id="stat1Mobile" class="stats"></span></td>
@@ -313,7 +307,7 @@
 									</table>
 									<div class="crash-dates visible-xs">
 										<span class="crash-dates-label">Date:</span>
-										<select id="monthSelect">
+										<select id="monthSelect" class="crash-date-month">
 											<option value="" disabled="" selected="selected">Month</option>
 											<option value="0">Jan</option>
 											<option value="1">Feb</option>
@@ -328,7 +322,7 @@
 											<option value="10">Nov</option>
 											<option value="11">Dec</option>
 										</select>
-										<select id="yearSelect">
+										<select id="yearSelect" class="crash-date-year">
 											<option value="" disabled="" selected="selected">Year</option>
 											<option value="0">2009</option>
 											<option value="1">2010</option>
@@ -860,197 +854,190 @@
 					</div>
 
 					<!--=====================================================================================================================================================-->
-					<!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
-					<script src="http://js.arcgis.com/3.10/"></script>
-					<script>
-						var map;
-						//var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
-						//var arcgisserver = "a841-dotqaweb01.nyc.gov";
-						var symbol, fillSymbol;
+			<!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
+			<script src="http://js.arcgis.com/3.10/"></script>
+			<script>
+				var map;
+				//var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
+				//var arcgisserver = "a841-dotqaweb01.nyc.gov";
+				var symbol, fillSymbol;
 
-						var geoGraphic, nycPolygon;
-						var allIdentifyParams;
-						// for all Identify task parameters
-						var interventionIdentifyTask;
-						var outreachIdentifyTask;
-						var summaryFatalIdentifyTask;
-						var infoWindowPopup;
+				var geoGraphic, nycPolygon;
+				var allIdentifyParams;
+				// for all Identify task parameters
+				var interventionIdentifyTask;
+				var outreachIdentifyTask;
+				var summaryFatalIdentifyTask;
+				var infoWindowPopup;
 
-						var referenceLayer, interventionLayer, outreachLayer, summaryInjuryLayer, summaryFatalityLayer;
-						var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
-						var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
-						var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
-						var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer;
+				var referenceLayer, interventionLayer, outreachLayer, summaryInjuryLayer, summaryFatalityLayer;
+				var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
+				var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
+				var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
+				var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer;
 
-						var fatality, injury, monthly, yearly, all, ped, bike, motor;
-						var interventions, outreach;
+				var fatality, injury, monthly, yearly, all, ped, bike, motor;
+				var interventions, outreach;
 
-						var police, community, council;
-						var injurySum, fatalitySum;
+				var police, community, council;
+				var injurySum, fatalitySum;
 
-						var interventionLayerIDs, outreachLayerIDs;
-						var summaryLayerIDs = [];
-						var infoTemplate;
-						var queryTask, query;
-						var gslocation = {
-							location : "",
-							lat : "",
-							lon : ""
-						};
+				var interventionLayerIDs, outreachLayerIDs;
+				var summaryLayerIDs = [];
+				var infoTemplate;
+				var queryTask, query;
+				var gslocation = {
+					location : "",
+					lat : "",
+					lon : ""
+				};
 
-						var spatialRef;
+				var spatialRef;
 
-						var sliderVal;
-						var evt = 'ontouchend' in document ? 'touchend' : 'click';
+				var sliderVal;
+				var evt = 'ontouchend' in document ? 'touchend' : 'click';
 
-						// Get a reference to the ArcGIS Map class
-						var curWidth;
-						var curDocWidth;
+				// Get a reference to the ArcGIS Map class
+				var curWidth;
+				var curDocWidth;
 
-						require(["esri/map", "esri/layers/ArcGISTiledMapServiceLayer", "esri/dijit/LocateButton", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/layers/ImageParameters", "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color", "dojo/dom", "dojo/on", "dojo/query", "dojo/domReady!"], function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
-							
-							if (isIE()) {
-								//alert("IE!");
+				require(["esri/map", "esri/layers/ArcGISTiledMapServiceLayer", "esri/dijit/LocateButton", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/layers/ImageParameters", "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color", "dojo/dom", "dojo/on", "dojo/query", "dojo/domReady!"], function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
+					//alert(evt);
+					if (isIE()) {
+						//alert("IE!");
 
-								esri.config.defaults.io.proxyUrl = "http://" + arcgisserver + "/gisproxy/proxy.ashx";
-								esri.config.defaults.io.alwaysUseProxy = false;
-								esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
-							}
-							
+						esri.config.defaults.io.proxyUrl = "http://" + arcgisserver + "/gisproxy/proxy.ashx";
+						esri.config.defaults.io.alwaysUseProxy = false;
+						esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
+					}
+					
+			
 
 
-							resizeMap();
-							mapWinEvent();
+					$(window).unload(function() {
+						$('select option').remove();
+					});
 
-							$(window).unload(function() {
-								$('select option').remove();
+					$(window).resize(function() {
+						if ($('#yearSelect').is(':visible')) {
+							$("#jqxslider").jqxSlider({
+								value : 64
 							});
-
-							$(window).resize(function() {
-								if ($('#yearSelect').is(':visible')) {
-									$("#jqxslider").jqxSlider({
-										value : 64
-									});
-									$("#jqxslider2").jqxSlider({
-										value : 5
-									});
-								}
-								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-									$("#monthSelect").val("4");
-									$("#yearSelect").val("5");
-								}
-								checkStats();
-
+							$("#jqxslider2").jqxSlider({
+								value : 5
 							});
+						}
+						if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
+							$("#monthSelect").val("4");
+							$("#yearSelect").val("5");
+						}
+						checkStats();
 
-							showLoading();
-							hideSlider();
-							spatialRef = new esri.SpatialReference({
-								"wkid" : 102718
-							});
-							//XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
+					});
 
-							var initialExtent = new esri.geometry.Extent({
-								"xmin" : 842170.34,
-								"ymin" : 128499.74,
-								"xmax" : 1141736.31,
-								"ymax" : 315617.79,
-								"spatialReference" : {
-									"wkid" : 102718
-								}
-							});
-							var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
-							infoTemplate = new InfoTemplate("Location", "${location}");
-							infoTemplate1 = new InfoTemplate("Location", "${location}");
-							symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
-							fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
-							symbol1 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
-							fillSymbol1 = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
-							//infoWindowPopup = new esri.dijit.Popup({anchor:top}, dojo.create("div"));
+					showLoading();
+					hideSlider();
+					spatialRef = new esri.SpatialReference({
+						"wkid" : 102718
+					});
+					//XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
 
-							infoWindowPopup = new Popup({
-								anchor : "top"
-							}, dojo.create("div"));
+					var initialExtent = new esri.geometry.Extent({
+						"xmin" : 842170.34,
+						"ymin" : 128499.74,
+						"xmax" : 1141736.31,
+						"ymax" : 315617.79,
+						"spatialReference" : {
+							"wkid" : 102718
+						}
+					});
+					var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
+					infoTemplate = new InfoTemplate("Location", "${location}");
+					infoTemplate1 = new InfoTemplate("Location", "${location}");
+					symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
+					fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
+					symbol1 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
+					fillSymbol1 = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
+					//infoWindowPopup = new esri.dijit.Popup({anchor:top}, dojo.create("div"));
 
-							/// new August 12 ////////
+					infoWindowPopup = new Popup({
+						anchor : "top"
+					}, dojo.create("div"));
 
-							$(document).ready(function() {
+					/// new August 12 ////////
 
-								//console.log(curWidth + "    " + curDocWidth);
-								if ((curWidth < 767) || (curDocWidth < 767)) {
+	$(document).ready(function() {
+		var curWidth = $(window).width();
+		var curDocWidth = $(document).width();
+		if ((curWidth < 767) || (curDocWidth < 767)) {
+			map = new Map("map", {
+				logo : false,
+				//center: [999099, 164979],
+				zoom : 3,
+				sliderPosition : "top-right",
+				sliderStyle : "small",
+				extent : initialExtent,
+				infoWindow : infoWindowPopup,
+				minScale : 64000
+			});
 
-									map = new Map("map", {
-										logo : false,
-										//center: [999099, 164979],
-										zoom : 3,
-										sliderPosition : "top-right",
-										sliderStyle : "small",
-										extent : initialExtent,
-										infoWindow : infoWindowPopup,
-										minScale : 64000
+			 spatialRef = map.spatialReference;
+			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer", {minScale : 64000 });
+			 map.addLayer(tiled);
+			 
+		} else {
+			map = new Map("map", {
+				logo : false,
+				//center: [999099, 164979],
+				zoom : 3,
+				sliderPosition : "top-right",
+				sliderStyle : "small",
+				extent : initialExtent,
+				infoWindow : infoWindowPopup
+			});
 
-									});
+			 spatialRef = map.spatialReference;
+			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");
+			 map.addLayer(tiled);
 
-									spatialRef = map.spatialReference;
-									var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer", {
-										minScale : 64000
-									});
+			}
+			
+					resizeMap();
+					mapWinEvent();
+		});
 
-									map.addLayer(tiled);
-								} else {
+	$(document).ready(function() {
+		var isIE8 = isIE();
+		if ((isIE8 === 8) || (isIE8 === 7)) {
+		} else {
+			 $('body').css('visibility', 'visible');
+			 //     $('map').css('visibility', 'visible');
+			 //addCrashLocations();
+			 addCrashLayers();
+			 IdentifyTaskInit();
+			 sliderSetup();
+			 checkCrashCatState();
+			 toggleCrashLayers();
+		}
+   });
 
-									map = new Map("map", {
-										logo : false,
-										//center: [999099, 164979],
-										zoom : 3,
-										sliderPosition : "top-right",
-										sliderStyle : "small",
-										extent : initialExtent,
-										infoWindow : infoWindowPopup
 
-									});
+	dojo.connect(map, "onLoad", function () {
+			  hideLoading();
+				   $("#jqxslider").jqxSlider({value: 64});
+		$("#monthSelect").val("4");
+		$("#yearSelect").val("5");
+		var monthVal = $("#monthSelect").val();
+				   var yearVal = $("#yearSelect").val();
+				   selectMonthVal = parseInt(monthVal);
+				   selectYearVal = parseInt(yearVal);
 
-									spatialRef = map.spatialReference;
-									var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");
+			  showSlider();
+	});
 
-									map.addLayer(tiled);
+	dojo.connect(map, "onExtentChange", checkCrashLegend);
 
-								}
-							});
-
-							$(document).ready(function() {
-								var isIE8 = isIE();
-								if ((isIE8 === 8) || (isIE8 === 7)) {
-								} else {
-									$('body').css('visibility', 'visible');
-									//     $('map').css('visibility', 'visible');
-									//addCrashLocations();
-									addCrashLayers();
-									IdentifyTaskInit();
-									sliderSetup();
-									checkCrashCatState();
-									toggleCrashLayers();
-								}
-							});
-
-							dojo.connect(map, "onLoad", function() {
-								hideLoading();
-								$("#jqxslider").jqxSlider({
-									value : 64
-								});
-								$("#monthSelect").val("4");
-								$("#yearSelect").val("5");
-								var monthVal = $("#monthSelect").val();
-								var yearVal = $("#yearSelect").val();
-								selectMonthVal = parseInt(monthVal);
-								selectYearVal = parseInt(yearVal);
-
-								showSlider();
-							});
-
-							dojo.connect(map, "onExtentChange", checkCrashLegend);
-
-						});
+});
 
 					</script>
 
@@ -1076,7 +1063,7 @@
 					<script type="text/javascript" src="js/resize.js"></script>
 					<script type="text/javascript" src="js/addLayers.js"></script>
 					<script type="text/javascript" src="js/geocoder.js"></script>
-					<!--  <script type="text/javascript" src="js/geocoder1.js"></script>-->
+					<script type="text/javascript" src="js/geocoder1.js"></script>
 					<script type="text/javascript" src="js/statJSON.js"></script>
 					<script type="text/javascript" src="js/offCanvas.js"></script>
 					<script type="text/javascript" src="js/map_config.js"></script>

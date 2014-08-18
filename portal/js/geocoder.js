@@ -48,8 +48,14 @@ function LocationSearch() {
         var search = $("#address").val();
 
         GeoParser(search, adminBoundary)
-
     });
+	
+	$('#address').keydown(function(event){    
+		if(event.keyCode==13){
+		event.preventDefault();
+		$('#btnsearch').trigger('click');
+		}
+	});
 }
 
 function GeoParser(searchValue, adminBoundary) {

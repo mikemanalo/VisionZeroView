@@ -159,10 +159,10 @@ function setStats(curInjuryValue) {
               }
               else if (all){
                      console.log(curInjuryValue);
-                   //  $("#stat1").text("All Fatalities: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Fatalities));
-                    // $("#stat2").text("All Injuries: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Injuries));
-                    // $("#stat1Mobile").text("All Fatalities: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Fatalities));
-                     //$("#stat2Mobile").text("All Injuries: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Injuries));
+                     $("#stat1").text("All Fatalities: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Fatalities));
+                     $("#stat2").text("All Injuries: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Injuries));
+                     $("#stat1Mobile").text("All Fatalities: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Fatalities));
+                     $("#stat2Mobile").text("All Injuries: " +  commaSeparateNumber(stats[curInjuryValue].SUM_Injuries));
                                     
               }
               

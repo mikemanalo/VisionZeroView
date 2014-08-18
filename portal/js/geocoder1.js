@@ -1,56 +1,135 @@
 function zoomTo(lat, lon) {
-				require(["esri/geometry/Point", "esri/geometry/webMercatorUtils", "esri/graphic"], function(Point, webMercatorUtils, Graphic) {
-					map.graphics.clear();
-					var point = new Point(lon, lat);
 
-					/*var point = new Point(lon, lat, {
-						wkid : "4326"
-					});*/
-					//console.log(point);
+       require(["esri/geometry/Point", "esri/geometry/webMercatorUtils", "esri/graphic"], function(Point, webMercatorUtils, Graphic) {
+              //     map.infoWindow.hide();
 
-					var wmpoint = webMercatorUtils.geographicToWebMercator(point);
-					//map.centerAt(point);
+     function zoomTo(lat, lon) {
 
-					//var locationGraphic = new Graphic(wmpoint, symbol);
+       require(["esri/geometry/Point", "esri/geometry/webMercatorUtils", "esri/graphic"], function(Point, webMercatorUtils, Graphic) {
+              //     map.infoWindow.hide();
+
+              map.graphics.clear();
+              var point = new Point(lon, lat, map.spatialReference);
+
+              var wmpoint = webMercatorUtils.geographicToWebMercator(point);
+
+              var xmin = point.x - 3000;
+              var ymin = point.y - 3000;
+              var xmax = point.x + 3000;
+              var ymax = point.y + 3000;
+
+              var pointExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax, map.spatialReference);
+              //     map.setExtent(pointExtent);
+
+              //var featureExtent = point.getExtent().expand(5.0);
+              //map.setExtent(featureExtent);
+
+              //var locationGraphic = new Graphic(point, symbol);
+              var locationGraphic = new Graphic(point, symbol, gslocation, infoTemplate);
+              map.graphics.add(locationGraphic);
+
+              map.infoWindow.setTitle(locationGraphic.getTitle());
+              map.infoWindow.setContent(locationGraphic.getContent());
+
+              //display the info window with the address information
+
+              var screenPnt = map.toScreen(point);
+              var wait = map.centerAndZoom(point, 7);
+              wait.addCallback(function(screenPnt) {
+
+                     map.infoWindow.resize(200, 100);
+
+                     map.infoWindow.show(point);
+
+              });
+              // wait callback
+
+       });
+}
+
+function LocationSearch1() {
+
+       $("#btnsearch1").on("touchstart click", function() {
+              // alert("Handler for .click() called.");
+              var adminBoundary = $("#searchBorough1").text().trim();
+              var search = $("#address1").val();
+
+              GeoParser(search, adminBoundary);
+              //event.preventDefault();
+
+       });
+
+       $('#address1').keydown(function(event) {
+              if (event.keyCode == 13) {
+                     event.preventDefault();
+                     $('#btnsearch1').trigger('click');
+
+              }
+       });
+
+}
+         map.graphics.clear();
+              var point = new Point(lon, lat, map.spatialReference);
+
+              var wmpoint = webMercatorUtils.geographicToWebMercator(point);
+
+              var xmin = point.x - 3000;
+              var ymin = point.y - 3000;
+              var xmax = point.x + 3000;
+              var ymax = point.y + 3000;
+
+              var pointExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax, map.spatialReference);
+              //     map.setExtent(pointExtent);
+
+              //var featureExtent = point.getExtent().expand(5.0);
+              //map.setExtent(featureExtent);
+
+              //var locationGraphic = new Graphic(point, symbol);
+              var locationGraphic = new Graphic(point, symbol, gslocation, infoTemplate);
+              map.graphics.add(locationGraphic);
+
+              map.infoWindow.setTitle(locationGraphic.getTitle());
+              map.infoWindow.setContent(locationGraphic.getContent());
+
+              //display the info window with the address information
+
+              var screenPnt = map.toScreen(point);
+              var wait = map.centerAndZoom(point, 7);
+              wait.addCallback(function(screenPnt) {
+
+                     map.infoWindow.resize(200, 100);
+
+                     map.infoWindow.show(point);
+
+              });
+              // wait callback
+
+       });
+}
+
+function LocationSearch1() {
+
+       $("#btnsearch1").on(evt, function() {
+              // alert("Handler for .click() called.");
+              var adminBoundary = $("#searchBorough1").text().trim();
+              var search = $("#address1").val();
+
+              GeoParser(search, adminBoundary);
+              //event.preventDefault();
+
+       });
+
+       $('#address1').keydown(function(event) {
+              if (event.keyCode == 13) {
+                     event.preventDefault();
+                     $('#btnsearch1').trigger('click');
+
+              }
+       });
+
+}
 
 
-					var xmin = point.x - 3000;
-	        		var ymin = point.y - 3000;
-	        		var xmax = point.x + 3000;
-	        		var ymax = point.y  + 3000;  
-	        
-	        		var pointExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax, map.spatialReference);
-					map.setExtent(pointExtent);
-
-					//var featureExtent = point.getExtent().expand(5.0);
-					//map.setExtent(featureExtent);
-
-					//var locationGraphic = new Graphic(point, symbol);
-					var locationGraphic = new Graphic(point, symbol, gslocation, infoTemplate);
-					map.graphics.add(locationGraphic);
-
-					map.infoWindow.setTitle(locationGraphic.getTitle());
-					map.infoWindow.setContent(locationGraphic.getContent());
-
-					//display the info window with the address information
-					var screenPnt = map.toScreen(point);
-					map.infoWindow.resize(200, 100);
-					map.infoWindow.show(screenPnt, map.getInfoWindowAnchor(screenPnt));
-
-				});
-			}
-
-			function LocationSearch1() {
-
-				$("#btnsearch1").on("touchstart click",function() {
-					// alert("Handler for .click() called.");
-					var adminBoundary = $("#searchBorough1").text().trim();
-					var search = $("#address1").val();
-
-					GeoParser(search, adminBoundary)
-
-				});
-			}
 
 			function GeoParser(searchValue, adminBoundary) {
 				//alert(adminBoundary);
