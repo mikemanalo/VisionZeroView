@@ -335,8 +335,8 @@ FT02 - Mobile Map
   }
   .mobile-icons .icon-icon_22494 {
     right: 55px;
-    bottom: 55px;
-  }
+    /*bottom: 55px;*/ /*Bring back for phase 2*/
+	}
   .mobile-icons .glyphicon-share {
     right: 55px;
   }

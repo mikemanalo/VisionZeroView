@@ -34,5 +34,9 @@
 	.summarySwitchBtns{
 	font-size:12 px !important;
 	}
+	
+	#share-modal .modal-body {
+    text-align: center;
+}
 
 }

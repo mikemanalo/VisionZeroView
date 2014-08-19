@@ -1,6 +1,10 @@
 /*Desktop*/
-/*@media(min-width:992px){
-	.vzLogo {
+@media(min-width:992px){
+	#share-modal .modal-body {
+    text-align: center;
+}
+
+	/*.vzLogo {
     width: 20em;
 	margin-top: 1.8em !important;
 	margin-left: auto;
@@ -31,5 +35,5 @@
 	display:block !important;
 	visibility: hidden !important;
 	height:0px !important;
-	}
-}*/
+	}*/
+}
