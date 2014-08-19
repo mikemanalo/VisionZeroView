@@ -14,84 +14,108 @@ dojo.connect(map, "onload", function() {
 
 });*/
 
-$(".interventionBtns").on(evt, function() {
-map.infoWindow.hide();
-	interventionLayerIDs = [];
-	var test = this;
+$(".interventionBtns").on(evt, function (event) {
 
-	interventionLayerIDs.length = 0;
-	setTimeout(function() {
-		if ($(test).hasClass('active')) {
-			$(test).css("background-color", "#e4e4e4");
-						$( test ).find( "i" ).css( "opacity", 1);
-			$( test ).find( "span" ).css( "opacity", 1);
-		} else {
-			$(test).css("background-color", "white");
-									$( test ).find( "i" ).css( "opacity", .6);
-			$( test ).find( "span" ).css( "opacity", .6);
+    event.preventDefault();
+    event.stopPropagation();
 
-		}
-	}, 20);
+    map.infoWindow.hide();
+    interventionLayerIDs = [];
+    var btnID = this.id;
+    var btn = $("#" + btnID);
+    //console.log(btnID);
+    //console.log(btn);
 
-	//interventionLayer.setVisibleLayers();
-//	console.log(interventionLayerIDs);
-	//$("#ArterialSlowZone").removeAttr("checked");
+    //alert(this.hasClass("active"));
+    //console.log($( this ));
+    //console.log($( this ).hasClass("active"));
 
-	setTimeout(function() {
-		checkInterventionBtns(interventionLayerIDs);
-	}, 20);
+
+    interventionLayerIDs.length = 0;
+    setTimeout(function () {
+        //		if(hasClass('test', 'active')==false){
+        if (btn.hasClass('active')) {
+
+            btn.removeClass('active');
+
+            btn.css("background-color", "white");
+            btn.find("i").css("opacity", .6);
+            btn.find("span").css("opacity", .6);
+
+        } else {
+            //alert('active');
+
+            btn.addClass('active');
+
+            btn.css("background-color", "#e4e4e4");
+            btn.find("i").css("opacity", 1);
+            btn.find("span").css("opacity", 1);
+
+        }
+    }, 20);
+
+
+    //interventionLayer.setVisibleLayers();
+    //	console.log(interventionLayerIDs);
+    //$("#ArterialSlowZone").removeAttr("checked");
+
+    setTimeout(function () {
+        checkInterventionBtns(interventionLayerIDs);
+    }, 20);
+
+    //return false;	
 
 });
 
 function checkInterventionBtns(interventionLayerIDs) {
 
-	//if ($("#ArterialSlowZone").is(':checked')) {
-	if (hasClass('ASZBtn', 'active')){
+    //if ($("#ArterialSlowZone").is(':checked')) {
+    if (hasClass('ASZBtn', 'active')) {
 
-		var locID = 3;
-		interventionLayerIDs.push(locID);
+        var locID = 3;
+        interventionLayerIDs.push(locID);
 
-	}
+    }
 
-	//if ($("#SafeStreetsForSeniors").is(':checked')) {
-	if (hasClass('SSFSBtn', 'active')){
+    //if ($("#SafeStreetsForSeniors").is(':checked')) {
+    if (hasClass('SSFSBtn', 'active')) {
 
-		var locID = 5;
-		interventionLayerIDs.push(locID);
-	}
+        var locID = 5;
+        interventionLayerIDs.push(locID);
+    }
 
-	//if ($("#NeighborhoodSlowZone").is(':checked')) {
-	if (hasClass('slowZonesBtn', 'active')){
+    //if ($("#NeighborhoodSlowZone").is(':checked')) {
+    if (hasClass('slowZonesBtn', 'active')) {
 
-		var locID = 6;
-		interventionLayerIDs.push(locID);
-	}
+        var locID = 6;
+        interventionLayerIDs.push(locID);
+    }
 
-	//if ($("#EngineeringImprovements").is(':checked')) {
-	if (hasClass('engineeringBtn', 'active')){
+    //if ($("#EngineeringImprovements").is(':checked')) {
+    if (hasClass('engineeringBtn', 'active')) {
 
-		var locID = 1;
-		var locID2 = 2;
-		interventionLayerIDs.push(locID, locID2);
-	}
+        var locID = 1;
+        var locID2 = 2;
+        interventionLayerIDs.push(locID, locID2);
+    }
 
-	//if ($("#SpeedHump").is(':checked')) {
-	if (hasClass('speedHumpsBtn', 'active')){
+    //if ($("#SpeedHump").is(':checked')) {
+    if (hasClass('speedHumpsBtn', 'active')) {
 
-		var locID = 4;
-		interventionLayerIDs.push(locID);
-	}
+        var locID = 4;
+        interventionLayerIDs.push(locID);
+    }
 
-	//if ($("#LeadingPedestrianSignals").is(':checked')) {
-	if (hasClass('LPIBtn', 'active')){
+    //if ($("#LeadingPedestrianSignals").is(':checked')) {
+    if (hasClass('LPIBtn', 'active')) {
 
-		var locID = 0;
-		interventionLayerIDs.push(locID);
-	}
+        var locID = 0;
+        interventionLayerIDs.push(locID);
+    }
 
-	interventionLayer.setVisibleLayers(interventionLayerIDs);
-	//alert(interventionLayerIDs);
-	//console.log(interventionLayerIDs);
+    interventionLayer.setVisibleLayers(interventionLayerIDs);
+    //alert(interventionLayerIDs);
+    //console.log(interventionLayerIDs);
 
 }
 
@@ -132,291 +156,299 @@ $(".list_item").click(function(){
 });*/
 
 
-$(".outreachBtns").on(evt, function() {
-	map.infoWindow.hide();
-	outreachLayerIDs = [];
+$(".outreachBtns").on(evt, function (event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-	outreachLayerIDs.length = 0;
-	
+    map.infoWindow.hide();
+    outreachLayerIDs = [];
+    var btnID = this.id;
+    var btn = $("#" + btnID);
+    outreachLayerIDs.length = 0;
 
-	var test = this;
 
-	setTimeout(function() {
-		if ($(test).hasClass('active')) {
-			$(this).removeClass('active');
-			$(test).css("background-color", "#e4e4e4");
-			$( test ).find( "i" ).css( "opacity", 1);
-			$( test ).find( "span" ).css( "opacity", 1);
-		//	$(test).prop('checked', 'checked');
-		} else {
-			$(this).addClass('active');
-			$(test).css("background-color", "white");
-			$( test ).find( "i" ).css( "opacity", .6);
-			$( test ).find( "span" ).css( "opacity", .6);
+    var test = this;
 
-		}
-	}, 30);
+    setTimeout(function () {
+        //		if(hasClass('test', 'active')==false){
+        if (btn.hasClass('active')) {
 
-	//outreachLayer.setVisibleLayers(outreachLayerIDs);
-	//console.log(outreachLayerIDs);
+            btn.removeClass('active');
 
-	setTimeout(function() {
-		checkOutreachBtns(outreachLayerIDs);
-	}, 20);
+            btn.css("background-color", "white");
+            btn.find("i").css("opacity", .6);
+            btn.find("span").css("opacity", .6);
+
+        } else {
+            //alert('active');
+
+            btn.addClass('active');
+
+            btn.css("background-color", "#e4e4e4");
+            btn.find("i").css("opacity", 1);
+            btn.find("span").css("opacity", 1);
+
+        }
+    }, 20);
+
+    //outreachLayer.setVisibleLayers(outreachLayerIDs);
+    //console.log(outreachLayerIDs);
+
+    setTimeout(function () {
+        checkOutreachBtns(outreachLayerIDs);
+    }, 20);
 
 });
 
 function checkOutreachBtns(outreachLayerIDs) {
-/*
-	if ($("#Schools").is(':checked')) {
+    /*
+        if ($("#Schools").is(':checked')) {
+    
+            var locID = 0;
+            outreachLayerIDs.push(locID);
+            $("#Schools").prop('checked', 'checked');
+    
+        }
+        if ($("#SeniorCenters").is(':checked')) {
+    
+            var locID = 1;
+            outreachLayerIDs.push(locID);
+            console.log("seniors added");
+    
+        }
+        if ($("#TLC").is(':checked')) {
+    
+            var locID = 2;
+            outreachLayerIDs.push(locID);
+            console.log("tlc added");
+    
+        }
+        if ($("#TownHallMeeting").is(':checked')) {
+    
+            var locID = 3;
+            outreachLayerIDs.push(locID);
+            console.log("townhall added");
+            outreachLayerIDs.push(locID);
+    
+        }
+        if ($("#Workshops").is(':checked')) {
+    
+            var locID = 4;
+            outreachLayerIDs.push(locID);
+            console.log("workshops added");
+            outreachLayerIDs.push(locID);
+    
+        }
+        outreachLayer.setVisibleLayers(outreachLayerIDs);
+        console.log(outreachLayerIDs);
+    */
 
-		var locID = 0;
-		outreachLayerIDs.push(locID);
-		$("#Schools").prop('checked', 'checked');
+    //if ($("#Schools").hasClass('active')) {
+    if (hasClass('SchoolBtn', 'active')) {
+        console.log("School checked");
+        var locID = 0;
+        outreachLayerIDs.push(locID);
+        $("#Schools").prop('checked', 'checked');
 
-	}
-	if ($("#SeniorCenters").is(':checked')) {
+    }
 
-		var locID = 1;
-		outreachLayerIDs.push(locID);
-		console.log("seniors added");
+    if (hasClass('SeniorBtn', 'active')) {
 
-	}
-	if ($("#TLC").is(':checked')) {
+        var locID = 1;
+        outreachLayerIDs.push(locID);
+        console.log("seniors added");
 
-		var locID = 2;
-		outreachLayerIDs.push(locID);
-		console.log("tlc added");
+    }
+    if (hasClass('TLCBtn', 'active')) {
 
-	}
-	if ($("#TownHallMeeting").is(':checked')) {
+        var locID = 2;
+        outreachLayerIDs.push(locID);
+        console.log("tlc added");
 
-		var locID = 3;
-		outreachLayerIDs.push(locID);
-		console.log("townhall added");
-		outreachLayerIDs.push(locID);
+    }
+    if (hasClass('TownHallBtn', 'active')) {
 
-	}
-	if ($("#Workshops").is(':checked')) {
+        var locID = 3;
+        outreachLayerIDs.push(locID);
+        console.log("townhall added");
 
-		var locID = 4;
-		outreachLayerIDs.push(locID);
-		console.log("workshops added");
-		outreachLayerIDs.push(locID);
 
-	}
-	outreachLayer.setVisibleLayers(outreachLayerIDs);
-	console.log(outreachLayerIDs);
-*/
+    }
+    if (hasClass('WorkshopBtn', 'active')) {
 
-	//if ($("#Schools").hasClass('active')) {
-	if (hasClass('SchoolBtn', 'active')) {
-		console.log("School checked");
-		var locID = 0;
-		outreachLayerIDs.push(locID);
-		$("#Schools").prop('checked', 'checked');
+        var locID = 4;
+        outreachLayerIDs.push(locID);
+        console.log("workshops added");
 
-	}
-	
-	if (hasClass('SeniorBtn', 'active')) {
 
-		var locID = 1;
-		outreachLayerIDs.push(locID);
-		console.log("seniors added");
+    }
 
-	}
-	if (hasClass('TLCBtn', 'active')) {
-
-		var locID = 2;
-		outreachLayerIDs.push(locID);
-		console.log("tlc added");
-
-	}
-	if (hasClass('TownHallBtn', 'active')) {
-
-		var locID = 3;
-		outreachLayerIDs.push(locID);
-		console.log("townhall added");
-		
-
-	}
-	if (hasClass('WorkshopBtn', 'active')) {
-
-		var locID = 4;
-		outreachLayerIDs.push(locID);
-		console.log("workshops added");
-		
-
-	}
-	
-	outreachLayer.setVisibleLayers(outreachLayerIDs);
+    outreachLayer.setVisibleLayers(outreachLayerIDs);
 
 
 
 
 }
 
-function hasClass(elementID, className)
-{
-	if (isIE()) {
-		
-		var classList = document.getElementById(elementID).className.split(/\s+/);
-		for (var i = 0; i < classList.length; i++) {
-		   if(classList[i]==className)
-		   {
-			return true
-		   }
-		     //do something
-		 }
-		 return false;
-   
-	}
-  else{
-   return $("#"+elementID).hasClass(className);
-  }
+function hasClass(elementID, className) {
+    if (isIE()) {
+
+        var classList = document.getElementById(elementID).className.split(/\s+/);
+        for (var i = 0; i < classList.length; i++) {
+            if (classList[i] == className) {
+                return true
+            }
+            //do something
+        }
+        return false;
+
+    }
+    else {
+        return $("#" + elementID).hasClass(className);
+    }
 }
 ///////////////////////////////// SUMMARY ////////////////////////////////////////////////////////////////////
 
 function checkSummaryLegend() {
-	//var locScale = map.getScale();
-	//	console.log("year: " + yearly + " month: " + monthly + "  injury: " + injury + " fatality: " + fatality );
+    //var locScale = map.getScale();
+    //	console.log("year: " + yearly + " month: " + monthly + "  injury: " + injury + " fatality: " + fatality );
 
-	if (injurySum) {
+    if (injurySum) {
 
-		if (police) {
-			$("#injurySumLegendType").text("Police Precinct");
+        if (police) {
+            $("#injurySumLegendType").text("Police Precinct");
 
-		} else if (community) {
-			$("#injurySumLegendType").text("Community District");
+        } else if (community) {
+            $("#injurySumLegendType").text("Community District");
 
-		} else if (council) {
-			$("#injurySumLegendType").text("City Council District");
+        } else if (council) {
+            $("#injurySumLegendType").text("City Council District");
 
-		}
-		$("#injurySumLegend").css("display", "block");
-		$("#fatalitySumLegend").css("display", "none");
-	} else if (fatalitySum) {
+        }
+        $("#injurySumLegend").css("display", "block");
+        $("#fatalitySumLegend").css("display", "none");
+    } else if (fatalitySum) {
 
-		if (police) {
-			$("#fatalSumLegendType").text("Police Precinct");
+        if (police) {
+            $("#fatalSumLegendType").text("Police Precinct");
 
-		} else if (community) {
-			$("#fatalSumLegendType").text("Community District");
+        } else if (community) {
+            $("#fatalSumLegendType").text("Community District");
 
-		} else if (council) {
-			$("#fatalSumLegendType").text("City Council District");
+        } else if (council) {
+            $("#fatalSumLegendType").text("City Council District");
 
-		}
-		$("#injurySumLegend").css("display", "none");
-		$("#fatalitySumLegend").css("display", "block");
-	}
+        }
+        $("#injurySumLegend").css("display", "none");
+        $("#fatalitySumLegend").css("display", "block");
+    }
 
 }
 
 //	var police, community, council;
 //var injurySum, fatalitySum;
 
-$(".summarySwitchBtns").on(evt, function() {
-	map.infoWindow.hide();
-	//summaryLayerIDs = [];
+$(".summarySwitchBtns").on(evt, function () {
+    map.infoWindow.hide();
+    //summaryLayerIDs = [];
 
-	summaryLayerIDs.length = 0;
-	/*if (injurySum) {
+    summaryLayerIDs.length = 0;
+    /*if (injurySum) {
 		summaryInjuryLayer.setVisibleLayers(summaryLayerIDs);
 	} else if (fatalitySum) {
 		summaryFatalityLayer.setVisibleLayers(summaryLayerIDs);
 	}*/
-	console.log(summaryLayerIDs);
-	setTimeout(function() {
-		//if ($("#summaryInjuries").hasClass('active')) {
-		//hasClass
-		if (hasClass('summaryInjuries','active')) {
-			$("#summaryFatalities").css("color", "#777");
-			$("#summaryInjuries").css("color", "white");
-			console.log("injury active");
-			injurySum = true;
-			fatalitySum = false;
-			//summaryInjuryLayer.setVisibility(true);
-			//summaryFatalityLayer.setVisibility(false);
+    console.log(summaryLayerIDs);
+    setTimeout(function () {
+        //if ($("#summaryInjuries").hasClass('active')) {
+        //hasClass
+        if (hasClass('summaryInjuries', 'active')) {
+            $("#summaryFatalities").css("color", "#777");
+            $("#summaryInjuries").css("color", "white");
+            console.log("injury active");
+            injurySum = true;
+            fatalitySum = false;
+            //summaryInjuryLayer.setVisibility(true);
+            //summaryFatalityLayer.setVisibility(false);
 
-			//	checkSummaryInjuryBtns(summaryLayerIDs);
-		} else if (hasClass('summaryFatalities','active')) {
-			$("#summaryInjuries").css("color", "#777");
-			$("#summaryFatalities").css("color", "white");
-			console.log("fatality active");
-			fatalitySum = true;
-			injurySum = false;
-			//summaryInjuryLayer.setVisibility(false);
-			//summaryFatalityLayer.setVisibility(true);
-			
-			//	checkSummaryFatalityBtns(summaryLayerIDs);
-		}
-	}, 20);
+            //	checkSummaryInjuryBtns(summaryLayerIDs);
+        } else if (hasClass('summaryFatalities', 'active')) {
+            $("#summaryInjuries").css("color", "#777");
+            $("#summaryFatalities").css("color", "white");
+            console.log("fatality active");
+            fatalitySum = true;
+            injurySum = false;
+            //summaryInjuryLayer.setVisibility(false);
+            //summaryFatalityLayer.setVisibility(true);
 
-	setTimeout(function() {
-		checkSummaryBtns(summaryLayerIDs);
-	}, 20);
+            //	checkSummaryFatalityBtns(summaryLayerIDs);
+        }
+    }, 20);
+
+    setTimeout(function () {
+        checkSummaryBtns(summaryLayerIDs);
+    }, 20);
 
 });
 
-$(".districtBtns").on(evt, function() {
-	map.infoWindow.hide();
-	//police, community, council;
+$(".districtBtns").on(evt, function () {
+    map.infoWindow.hide();
+    //police, community, council;
 
-	var sumView = ($(this).find('input').attr('id'));
-	//	summaryLayerIDs = [];
-	summaryLayerIDs.length = 0;
-	var locID; ($('.districtBtns').css("background-color", "rgb(255,255,255)"));
-	$('.districtBtns').css("color", "#777"); ($(this).css("background-color", "#3276b1")); ($(this).css("color", "white"));
+    var sumView = ($(this).find('input').attr('id'));
+    //	summaryLayerIDs = [];
+    summaryLayerIDs.length = 0;
+    var locID; ($('.districtBtns').css("background-color", "rgb(255,255,255)"));
+    $('.districtBtns').css("color", "#777"); ($(this).css("background-color", "#3276b1")); ($(this).css("color", "white"));
 
-	if (sumView == "policePrecinct") {
-		police = true, community = false, council = false;
-		console.log("precinct");
-		//id push here
-		setTimeout(function() {
-			checkSummaryBtns(summaryLayerIDs);
-		}, 20);
-	} else if (sumView == "communityDistrict") {
-		police = false, community = true, council = false;
-		console.log("communityDistrict");
-		setTimeout(function() {
-			checkSummaryBtns(summaryLayerIDs);
-		}, 20);
-	} else if (sumView == "cityCouncilDistrict") {
-		police = false, community = false, council = true;
-		console.log("cityCouncilDistrict");
-		setTimeout(function() {
-			checkSummaryBtns(summaryLayerIDs);
-		}, 20);
-	}
+    if (sumView == "policePrecinct") {
+        police = true, community = false, council = false;
+        console.log("precinct");
+        //id push here
+        setTimeout(function () {
+            checkSummaryBtns(summaryLayerIDs);
+        }, 20);
+    } else if (sumView == "communityDistrict") {
+        police = false, community = true, council = false;
+        console.log("communityDistrict");
+        setTimeout(function () {
+            checkSummaryBtns(summaryLayerIDs);
+        }, 20);
+    } else if (sumView == "cityCouncilDistrict") {
+        police = false, community = false, council = true;
+        console.log("cityCouncilDistrict");
+        setTimeout(function () {
+            checkSummaryBtns(summaryLayerIDs);
+        }, 20);
+    }
 });
 
 function checkSummaryBtns(summaryLayerIDs) {
 
-	console.log("check");
-	//	summaryLayerIDs = [];
-	summaryLayerIDs.length = 0;
+    console.log("check");
+    //	summaryLayerIDs = [];
+    summaryLayerIDs.length = 0;
 
-	if (police)
-		summaryLayerIDs.push(0);
-	else if (community)
-		summaryLayerIDs.push(1);
-	else if (council)
-		summaryLayerIDs.push(2);
+    if (police)
+        summaryLayerIDs.push(0);
+    else if (community)
+        summaryLayerIDs.push(1);
+    else if (council)
+        summaryLayerIDs.push(2);
 
-	if (injurySum) {
-		console.log("get here?");
-		summaryInjuryLayer.setVisibility(true);
-		summaryFatalityLayer.setVisibility(false);
-		summaryInjuryLayer.setVisibleLayers(summaryLayerIDs);
-	} else if (fatalitySum) {
-		summaryInjuryLayer.setVisibility(false);
-		summaryFatalityLayer.setVisibility(true);
-		summaryFatalityLayer.setVisibleLayers(summaryLayerIDs);
-	}
+    if (injurySum) {
+        console.log("get here?");
+        summaryInjuryLayer.setVisibility(true);
+        summaryFatalityLayer.setVisibility(false);
+        summaryInjuryLayer.setVisibleLayers(summaryLayerIDs);
+    } else if (fatalitySum) {
+        summaryInjuryLayer.setVisibility(false);
+        summaryFatalityLayer.setVisibility(true);
+        summaryFatalityLayer.setVisibleLayers(summaryLayerIDs);
+    }
 
-	checkSummaryLegend();
+    checkSummaryLegend();
 
-	console.log(summaryLayerIDs);
+    console.log(summaryLayerIDs);
 
 }
