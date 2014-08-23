@@ -88,9 +88,15 @@ function checkInterventionBtns(interventionLayerIDs) {
 		var locID = 0;
 		interventionLayerIDs.push(locID);
 	}
+	
+	if(interventionLayerIDs.length === 0){
+	
+	  interventionLayerIDs.push(-1);
+	}
 
+	
 	interventionLayer.setVisibleLayers(interventionLayerIDs);
-	//console.log(interventionLayerIDs);
+	console.log(interventionLayerIDs);
 
 }
 
@@ -247,6 +253,13 @@ function checkOutreachBtns(outreachLayerIDs) {
 		outreachLayerIDs.push(locID);
 
 	}
+	
+	if(outreachLayerIDs.length === 0){
+	
+	  outreachLayerIDs.push(-1);
+	}
+
+	
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
 
 

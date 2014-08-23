@@ -190,17 +190,25 @@ function removeLayer() {
     var layer3 = map.getLayer("referenceLayer");
     var layer4 = map.getLayer("summaryInjuryLayer");
     var layer5 = map.getLayer("summaryFatalityLayer");
-    if (layer1)
+    if (layer1){
         map.removeLayer(layer1);
-    if (layer2)
+       // $('#map_layers img[src*=OUTREACH]').parent().remove();
+       }
+    if (layer2){
         map.removeLayer(layer2);
-    if (layer3)
+     //   $('#map_layers img[src*=INTERVENTION]').parent().remove();
+     }
+    if (layer3){
         map.removeLayer(layer3);
-    if (layer4)
+      }
+    if (layer4){
         map.removeLayer(layer4);
-    if (layer5)
+      //   $('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
+        }
+    if (layer5){
         map.removeLayer(layer5);
-
+      //  $('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+	}
 }
 
 function allLayersOff() {
