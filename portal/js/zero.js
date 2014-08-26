@@ -78,3 +78,9 @@ $( '#searchInput1' ).on( 'keypress', function( e ) {
     } );
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------//
+$(document).ready(function() {
+$('#searchBorough, #searchBorough1 ').click(function () {
+       $('#address, #address1').val("");
+       
+});
+});
