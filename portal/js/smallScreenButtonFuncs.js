@@ -12,7 +12,7 @@ $("#smallScreenInfo").on(evt, function() {
 	
 	if ((fatality)||(injury)){
 		
-		$("#smallScreenModalInfo").html("Injuries and fatalities are grouped by intersection and summarized by month and year using Motor Vehicle Collision data provided by NYPD.  Current year is January to the end of the latest full month.");
+		$("#smallScreenModalInfo").html("Crash data is obtained from the Traffic Accident Management System (TAMS), which is maintained by the New York City Police Department (NYPD).  All midblock crashes are mapped to the nearest intersection. Injuries and fatalities are grouped by intersection and summarized by month and year. This data is queried and aggregated on a monthly basis and is current as of the query date.  Current year data is January to the end of the latest full month.  All crash data is mapped to a simplified NYC street model.  Crashes occurring at complex intersections with multiple roadways are mapped onto a single point.  Injury and fatality crashes occurring on highways are excluded from this data.  Please note that this data is preliminary and may contain errors, accordingly, the data on this site is for informational purposes only.  Although all attempts to provide the most accurate information are made, errors may be present and any person who relies upon this data does so at their own risk.");
 				
 	}
 	else if (interventions){
