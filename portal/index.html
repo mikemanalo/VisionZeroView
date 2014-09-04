@@ -863,9 +863,7 @@
 				var curDocWidth;
 
 				require(["esri/map", "esri/layers/ArcGISTiledMapServiceLayer", "esri/dijit/LocateButton", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/layers/ImageParameters", "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color", "dojo/dom", "dojo/on", "dojo/query", "dojo/domReady!"], function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
-				    //alert(evt);
-				    esriConfig.defaults.io.corsDetection = false;
-
+					//alert(evt);
 					if (isIE()) {
 						//alert("IE!");
 
@@ -945,7 +943,7 @@
 			});
 
 			 spatialRef = map.spatialReference;
-			 var tiled = new Tiled(basemapURL, { minScale: 64000 });
+			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer", {minScale : 64000 });
 			 map.addLayer(tiled);
 			 
 		} else {
@@ -960,7 +958,7 @@
 			});
 
 			 spatialRef = map.spatialReference;
-			 var tiled = new Tiled(basemapURL);
+			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");
 			 map.addLayer(tiled);
 
 			}
