@@ -329,6 +329,7 @@ function toggleCrashLayers() {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                 checkStats();
                                   injuryMonthlySet(curInjuryValue);
                            }); // new scope
               
@@ -361,6 +362,7 @@ function toggleCrashLayers() {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   injuryMonthlySet(curInjuryValue);
                            }); // new scope
 
@@ -392,6 +394,7 @@ function toggleCrashLayers() {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   injuryMonthlySet(curInjuryValue);
                            }); // new scope
                            
@@ -424,6 +427,7 @@ function toggleCrashLayers() {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   injuryMonthlySet(curInjuryValue);
                            }); // new scope
 
@@ -465,6 +469,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   injuryYearlySet(curInjuryValue);
                            }); // new scope
                            
@@ -496,6 +501,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   injuryYearlySet(curInjuryValue);
                            }); // new scope
        
@@ -527,6 +533,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   injuryYearlySet(curInjuryValue);
                            }); // new scope
        
@@ -558,6 +565,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   injuryYearlySet(curInjuryValue);
                            }); // new scope
 
@@ -601,6 +609,7 @@ else if (yearly) {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityMonthlySet(curInjuryValue);
                            }); // new scope
 
@@ -632,6 +641,7 @@ else if (yearly) {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityMonthlySet(curInjuryValue);
                            }); // new scope
                            
@@ -664,6 +674,7 @@ else if (yearly) {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityMonthlySet(curInjuryValue);
                            }); // new scope
        
@@ -695,6 +706,7 @@ else if (yearly) {
                            $('#jqxslider').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityMonthlySet(curInjuryValue);
                            }); // new scope
 
@@ -731,6 +743,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityYearlySet(curInjuryValue);
                            }); // new scope
                            
@@ -763,6 +776,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityYearlySet(curInjuryValue);
                            }); // new scope
                            
@@ -795,6 +809,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityYearlySet(curInjuryValue);
                            }); // new scope
 
@@ -826,6 +841,7 @@ else if (yearly) {
                            $('#jqxslider2').bind('change', function(event) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+                                  checkStats();
                                   fatalityYearlySet(curInjuryValue);
                            }); // new scope
                            

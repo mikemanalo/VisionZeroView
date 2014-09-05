@@ -81,7 +81,7 @@ var stats2 =
 
 ////////////////////////////////////    mobile view crash layer selector ///////////////////////////////////////////////////////////////////////////////
 
-$('#jqxslider').bind('change', function(event) {
+/*$('#jqxslider').bind('change', function(event) {
 
        checkStats();
               
@@ -91,7 +91,7 @@ $('#jqxslider2').bind('change', function(event) {
 
        checkStats();
               
-});
+});*/
 
 function checkStats(){
              
