@@ -943,7 +943,7 @@
 			});
 
 			 spatialRef = map.spatialReference;
-			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer", {minScale : 64000 });
+			 var tiled = new Tiled(basemapURL, {minScale : 64000 });
 			 map.addLayer(tiled);
 			 
 		} else {
@@ -958,7 +958,7 @@
 			});
 
 			 spatialRef = map.spatialReference;
-			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");
+			 var tiled = new Tiled(basemapURL);
 			 map.addLayer(tiled);
 
 			}
