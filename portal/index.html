@@ -633,7 +633,11 @@
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #ff7f00; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
 																		<span style="opacity:0.6; color">Workshops</span>
-
+																		
+																	<button id="StreetTeamBtn" class="btn btn-default outreachBtns">
+																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #FF73DF; opacity: .6;">%</i>
+																		<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
+																		<span style="opacity:0.6; color">Street Teams</span>
 																	</button>
 
 																</div>
@@ -674,6 +678,12 @@
 																			<i>Workshops</i>
 																			<br>
 																			In Spring 2014, DOT hosted nine pedestrian safety workshops across the five boroughs aimed at gathering community feedback on areas in need of safety improvements. This feedback will be used to shape the Borough Pedestrian Safety Action Plans, to be released later in 2014.
+																			<br>
+																			<br>
+																			<i>Street Teams</i>
+																			<br>Street Team members trained the general public with Vision Zero hands-on safety exercises including safe walking and biking, car safety tips and an opportunity to get inside of large delivery trucks to experience their blind spots.  Vision Zero promotional materials were handed out along with educational handouts.
+																			<br>
+																			<br>																		
 																		</div>
 
 																		<div class="modal-footer">
@@ -974,6 +984,8 @@
 			 $('body').css('visibility', 'visible');
 			 //     $('map').css('visibility', 'visible');
 			 //addCrashLocations();
+			 $("#monthSelect").val("6");
+			 $("#yearSelect").val("5");
 			 addCrashLayers();
 			 IdentifyTaskInit();
 			 sliderSetup();
@@ -985,10 +997,10 @@
 
 	dojo.connect(map, "onLoad", function () {
 		hideLoading();
-		$("#jqxslider").jqxSlider({value: 64});
+		$("#jqxslider").jqxSlider({value: 66});
 		$("#jqxslider2").jqxSlider({value: 5});
-		$("#monthSelect").val("4");
-		$("#yearSelect").val("5");
+	//	$("#monthSelect").val("6");
+	//	$("#yearSelect").val("5");
 		var monthVal = $("#monthSelect").val();
 		var yearVal = $("#yearSelect").val();
 		selectMonthVal = parseInt(monthVal);

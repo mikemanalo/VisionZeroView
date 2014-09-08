@@ -242,7 +242,7 @@ function checkOutreachBtns(outreachLayerIDs) {
 		var locID = 3;
 		outreachLayerIDs.push(locID);
 		console.log("townhall added");
-		outreachLayerIDs.push(locID);
+	//	outreachLayerIDs.push(locID);
 
 	}
 	if (hasClass('WorkshopBtn', 'active')) {
@@ -250,7 +250,15 @@ function checkOutreachBtns(outreachLayerIDs) {
 		var locID = 4;
 		outreachLayerIDs.push(locID);
 		console.log("workshops added");
+		//outreachLayerIDs.push(locID);
+
+	}
+	if (hasClass('StreetTeamBtn', 'active')) {
+
+		var locID = 5;
 		outreachLayerIDs.push(locID);
+		console.log("workshops added");
+		//outreachLayerIDs.push(locID);
 
 	}
 	
@@ -273,7 +281,7 @@ var classList = document.getElementById(elementID).className.split(/\s+/);
 for (var i = 0; i < classList.length; i++) {
    if(classList[i]==className)
    {
-	return true
+	return true;
    }
      //do something
    }

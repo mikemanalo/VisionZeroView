@@ -401,6 +401,11 @@ function executeIdentifyTask(evt) {
 								  template.setTitle("TLC");
                                   break;        
 
+                                  case  "Street_teams_flyers":                             
+                                  locTxt = "<table><tr><td><b>Date:" + "&nbsp;" + "</b>${Date}</td></tr>";
+                                  locTxt += "<tr><td><b>Total flyers:" + "&nbsp;" + "</b>${Total_Flye}</td></tr></table>";
+								  template.setTitle("Street Teams");
+                                  break; 
 
                                                                      
                                    default:

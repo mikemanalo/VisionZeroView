@@ -2,11 +2,26 @@
 //// initial state after docuemtn.load ////////////
 
 function showLoading() {
+	$('button').addClass('disabled'); 
+    $('button').prop('disabled', true);
+    
+    $('a').addClass('disabled');
+    $('a').prop('disabled', true);
+    $('a').attr('disabled', true);
+
     $("#loadingImg").show();
 }
 
 //show map loading image
 function hideLoading() {
+	$('button').removeClass('disabled');
+    $('button').prop('disabled', false);
+    
+    $('a').removeClass('disabled');
+    $('a').prop('disabled', false);
+    $('a').attr('disabled', false);
+
+
     $("#loadingImg").hide();
 }
 
