@@ -256,3 +256,64 @@ function enableCatButtons() {
     $("#summaryCat").removeAttr("disabled");
 }
 
+function GhostLayerCleanup() {
+
+	if (activeCategory == "interventionCat") {
+		//$('#map_layers img[src*=INTERVENTION]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=OUTREACH]').parent().remove();
+	}
+	if (activeCategory == "outreachCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+		//$('#map_layers img[src*=OUTREACH]').parent().remove();
+	}
+	if (activeCategory == "summaryCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().remove();
+		//$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
+		//$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=OUTREACH]').parent().remove();
+	}
+	if (activeCategory == "injuryCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=OUTREACH]').parent().remove();
+	}
+}
+
+function LayerVisibility() {
+
+	if (activeCategory == "interventionCat") {
+		$('#map_layers img[src*=INTERVENTION]').parent().show();
+		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=OUTREACH]').parent().hide();
+	}
+	if (activeCategory == "outreachCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=OUTREACH]').parent().show();
+	}
+	if (activeCategory == "summaryCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().hide();
+		//$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().show();
+		//$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().show();
+		$('#map_layers img[src*=OUTREACH]').parent().hide();
+	}
+	if (activeCategory == "injuryCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=OUTREACH]').parent().hide();
+	}
+}
