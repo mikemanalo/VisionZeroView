@@ -1,0 +1,148 @@
+#sidebar{
+	height:20%;
+	overflow:auto;
+}
+
+.categoriesFontIcon{
+	font-family: 'icomoon';
+}
+
+
+/* Orange Title on Menu */
+.mainTitle{
+	/*text-align: center; */
+	color: #F26522;
+	margin-top: 0px;
+	white-space:normal;
+	font-weight: 800;
+	margin-left:0.5em;
+}
+
+.mainTitle > span {
+	cursor: pointer;
+}
+
+/* Titles like "Categories" or "Administrative Units"*/
+/*.subTitle{
+	margin-top:2.2em;
+	color:#565656;
+	font-weight:700;
+	text-align:center;
+}*/
+
+/* Used Changes the margin-to"*/
+.subTitleTop{
+	margin-top:1em;
+	margin-left:1.2em;
+	color:#333333;
+	font-weight:700;
+	text-align:left;
+}
+
+/*.subTitleBottom{
+	margin-top:2.2em;
+	margin-left:0em;
+	color:#565656;
+	font-weight:700;
+	text-align:center;
+}*/
+
+.btnWho{
+	font-family: 'icomoon';
+	font-size: 1.8em;
+}
+
+.bottomMargin{
+	margin-bottom: 1.5em;
+}
+
+
+.graphTitle{
+	color:#565656;
+	font-weight:800;
+	padding-bottom: 5px;
+}
+
+.graphTitle img {
+	margin-top: 0 !important;
+}
+
+.footNote{
+	margin-left: 1.5em;
+	font-size: 0.9em;
+	font-weight:200;
+}
+
+
+.crashTypeSwitchBtns  {
+font-size:1em;
+white-space:normal;
+}
+
+.crashTypeBtnBlock{
+	margin-left: auto; margin-right: auto;
+	width: 100%;
+}
+
+.districtBtns {
+	/*margin-bottom: 1em;*/
+	text-align: left;
+	white-space: normal;
+}
+
+.interventionBtns{
+text-align:left;
+white-space:normal;
+}
+
+.outreachBtns{
+	text-align: left !important;
+	white-space: normal;
+}
+.districtBtns{
+text-align: center !important;
+	white-space: normal;
+	color:#FFF;
+}
+
+.input-group.districtBtnGroup{
+	width: 99% !important;
+	padding-top:2em!important;
+	padding-bottom: 2em!important;
+}
+
+.crashLabel1{
+	float:left
+	/*margin-left:2em;*/
+	font-size: 16px;
+}
+
+.crashLabel2{
+	/*float:left;
+	margin-left:2em;*/
+	top:1em;
+	font-size: 1.4em;
+	text-align: center;
+}
+
+.btn-group-3 label.btn  {
+	width: 25%;
+}
+
+.crashIcon{
+	font-family: 'icomoon';
+	font-size: 1.8em;
+}
+
+
+.btn-default:hover, .btn-default:focus{
+	background-color:#fafafa;
+}
+
+.list_item1{
+	display: none;
+}
+
+.list_item{
+	display: none;
+}
