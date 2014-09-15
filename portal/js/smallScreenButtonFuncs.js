@@ -8,7 +8,6 @@ $("#smallScreenGeolocate").on(evt, function() {
 
 $("#smallScreenInfo").on(evt, function() {
 	
-	//console.log("test");
 	
 	if ((fatality)||(injury)){
 		
@@ -30,7 +29,7 @@ $("#smallScreenInfo").on(evt, function() {
 	else if (outreach){
 		var outreachInfo = " <i>Schools</i><br> DOT is conducting outreach to numerous schools in the five boroughs, using age-appropriate materials to educate school children about traffic safety. <br><br>";
     	outreachInfo += "<i>Senior Centers</i><br>DOT is partnering with Senior Centers across New York City to increase communication and obtain specific feedback from older New Yorkers about the challenges they face and potential street safety improvements. <br><br>";
-    	outreachInfo += "<i>TLC</i><br>As a partner agency in the Vision Zero Initiative, the Taxi and Limousine Commission has committed to implement a number of safety reforms designed to increase driver awareness, step up enforcement, and improve technology. Educating drivers about Vision Zero is a key strategy TLC is using to work towards the goal of zero traffic fatalities by 2020.  In addition to updating taxi school to put a greater focus on traffic safety and to make sure drivers know how to safety navigate new street features, such as bike lanes, bus lanes, and mixing zones, TLC staff are visiting for-hire vehicle bases, taxi fleets, and other venues around the city where they can speak to drivers about Vision Zero.  At these meetings, TLC provides information on behaviors that cause serious crashes and tips for safe driving.  At the end of these sessions, drivers are invited to sign the TLC Safe Driver Pledge to demonstrate their personal commitment to safe driving.  TLC also regularly engages industry stakeholder groups in Vision Zero through small group meetings and Commission meetings.  These groups provide feedback on TLC’s implementation of the Vision Zero Action Plan and, because they communicate regularly with drivers, are excellent partners for ensuring that all drivers prioritize safe driving. <br><br>";
+    	outreachInfo += "<i>Taxi & Car Service Trainings</i><br>Taxi fleets, for-hire vehicle bases, and industry associations have been welcoming TLC into their establishments to discuss Vision Zero and traffic safety.  TLC staff use a presentation to guide this discussion, and at the end of the session drivers sign the TLC Safe Driver Pledge.<br><br>";
     	outreachInfo += "<i>Town Hall Meetings</i><br>In Spring 2014, DOT partnered with New York City Councilmembers across the five boroughs to host a number of Town Halls, where community members could come learn more about Vision Zero and give specific suggestions or concerns regarding traffic safety in their neighborhoods.<br><br>";
     	outreachInfo +="<i>Workshops</i><br>In Spring 2014, DOT hosted nine pedestrian safety workshops across the five boroughs aimed at gathering community feedback on areas in need of safety improvements. This feedback will be used to shape the Borough Pedestrian Safety Action Plans, to be released later in 2014.<br><br>";
     	outreachInfo +="<i>Street Teams</i><br>Street Team members trained the general public with Vision Zero hands-on safety exercises including safe walking and biking, car safety tips and an opportunity to get inside of large delivery trucks to experience their blind spots.  Vision Zero promotional materials were handed out along with educational handouts.";
@@ -84,11 +83,10 @@ else if(outreach){
 	}
 	
 	else if(interventions){
-	console.log("get here");
 		legendModal = "<img src='img/legend/Intervention_Leg.svg' class='text-center' alt='Responsive image' style='width: 100%; margin-top: 1em;'>";
 	}
 	else if (injurySum){
-		//var summaryModalLegend;
+
 		if (police) {
 			legendModal = "Density of Injuries by Police Precinct<br>";
 
@@ -106,7 +104,6 @@ else if(outreach){
         legendModal +="<h6><span style='margin-left: 0.2em;' class='pull-left'>Low</span><span class='pull-right'>High</span></h6>";	
 	}
 	else if (fatalitySum){
-	console.log("how bout her");
 		
 		if (police) {
 			legendModal = "Density of Fatalities by Police Precinct<br>";
@@ -149,12 +146,9 @@ function smallScreenCrashLayer(){
        if (monthly){
        
               var layerNum = ((selectYearVal * 12) + selectMonthVal);
-              //console.log("value = " + layerNum);
-
        }
        else if (yearly){
-              var layerNum = (selectYearVal );
-              //console.log("value = " + layerNum);
+
               
        }
        return layerNum;

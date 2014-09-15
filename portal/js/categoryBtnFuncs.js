@@ -1,6 +1,8 @@
 
 //// initial state after docuemtn.load ////////////
 
+var activeCategory;
+
 function showLoading() {
 	$('button').addClass('disabled'); 
     $('button').prop('disabled', true);
@@ -84,12 +86,6 @@ function CategoryNav(id) {
 
     if (id == "summaryCat") {
 
-        /*summaryInjuryLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer", {
-                     id : "summaryInjuryLayer",opacity : .8
-
-              });
-              AddLayer(summaryInjuryLayer,false);*/
-
         _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer";
         _layerID = "summaryInjuryLayer";
         summaryInjuryLayer = AddDynamicLayer(_layerURL, _layerID, true);
@@ -98,13 +94,7 @@ function CategoryNav(id) {
         _layerID = "summaryFatalityLayer";
         summaryFatalityLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
-        /*summaryFatalityLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer", {
-                     id : "summaryFatalityLayer"//,opacity : .8
 
-              });
-              AddLayer(summaryFatalityLayer,false);*/
-
-        console.log("injurSum = " + injurySum + "    fatalitySum = " + fatalitySum);
 
         if (injurySum) { summaryInjuryLayer.setVisibility(true); summaryFatalityLayer.setVisibility(false); }
         else if (fatalitySum) { summaryInjuryLayer.setVisibility(false); summaryFatalityLayer.setVisibility(true); }
@@ -121,21 +111,7 @@ function CategoryNav(id) {
         setTimeout(function () { checkSummaryBtns(summaryLayerIDs); }, 20);
 
     } else if (id == "interventionCat") {
-        /*
-              interventionLayer = new esri.layers.ArcGISDynamicMapServiceLayer(, {
-                     id : "interventionLayer",opacity : .8
 
-              });
-              AddLayer(interventionLayer,true);
-              interventionLayer.on("update-start", function () {                
-                  showLoading();             
-              });
-
-              interventionLayer.on("update-end", function () {                  
-                  hideLoading();             
-              });
-        */
-        //map.addLayer(interventionLayer);
 
 
         _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SAFETY_INTERVENTION/MapServer";
@@ -159,12 +135,7 @@ function CategoryNav(id) {
         _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/OUTREACH/MapServer";
         _layerID = "outreachLayer";
         outreachLayer = AddDynamicLayer(_layerURL, _layerID, true);
-        /*
-              outreachLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/OUTREACH/MapServer", {
-                     id : "outreachLayer",opacity : .8
 
-              });
-              AddLayer(outreachLayer, true);*/
 
         outreach = true;
         outreachLayerIDs = [];
@@ -196,6 +167,7 @@ function CategoryNav(id) {
             $("#jqxslider").css("display", "none");
 
         }
+       // toggleCrashLayers();
     }
 
 }
@@ -207,22 +179,22 @@ function removeLayer() {
     var layer5 = map.getLayer("summaryFatalityLayer");
     if (layer1){
         map.removeLayer(layer1);
-       // $('#map_layers img[src*=OUTREACH]').parent().remove();
+
        }
     if (layer2){
         map.removeLayer(layer2);
-     //   $('#map_layers img[src*=INTERVENTION]').parent().remove();
+
      }
     if (layer3){
         map.removeLayer(layer3);
       }
     if (layer4){
         map.removeLayer(layer4);
-      //   $('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
+
         }
     if (layer5){
         map.removeLayer(layer5);
-      //  $('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+
 	}
 }
 
@@ -233,10 +205,6 @@ function allLayersOff() {
     yearly = false;
     interventions = false;
     outreach = false;
-    //summaryFatalities = false;
-    // summaryInjuries = false;
-    //injurySum = false;
-    //fatalitySum = false;
 
 }
 
@@ -259,7 +227,7 @@ function enableCatButtons() {
 function GhostLayerCleanup() {
 
 	if (activeCategory == "interventionCat") {
-		//$('#map_layers img[src*=INTERVENTION]').parent().remove();
+	
 		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
 		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
 		$('#map_layers img[src*=OUTREACH]').parent().remove();
@@ -269,13 +237,11 @@ function GhostLayerCleanup() {
 		$('#map_layers img[src*=INTERVENTION]').parent().remove();
 		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
 		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
-		//$('#map_layers img[src*=OUTREACH]').parent().remove();
+
 	}
 	if (activeCategory == "summaryCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().remove();
-		//$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
-		//$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
 		$('#map_layers img[src*=OUTREACH]').parent().remove();
 	}
 	if (activeCategory == "injuryCat") {

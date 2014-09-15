@@ -53,7 +53,7 @@
 function sliderSetup () {
 
 	var visibleFatalityLayerIds = [], visibleInjuryLayerIds = [];
-	var curFatalityValue, curInjuryValue;
+//	var curFatalityValue, curInjuryValue;
 	
 
 			

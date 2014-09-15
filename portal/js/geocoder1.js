@@ -6,7 +6,7 @@ function zoomTo(lat, lon) {
      function zoomTo(lat, lon) {
 
        require(["esri/geometry/Point", "esri/geometry/webMercatorUtils", "esri/graphic"], function(Point, webMercatorUtils, Graphic) {
-              //     map.infoWindow.hide();
+           
 
               map.graphics.clear();
               var point = new Point(lon, lat, map.spatialReference);
@@ -19,12 +19,7 @@ function zoomTo(lat, lon) {
               var ymax = point.y + 3000;
 
               var pointExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax, map.spatialReference);
-              //     map.setExtent(pointExtent);
-
-              //var featureExtent = point.getExtent().expand(5.0);
-              //map.setExtent(featureExtent);
-
-              //var locationGraphic = new Graphic(point, symbol);
+  
               var locationGraphic = new Graphic(point, symbol, gslocation, infoTemplate);
               map.graphics.add(locationGraphic);
 
@@ -50,12 +45,12 @@ function zoomTo(lat, lon) {
 function LocationSearch1() {
 
        $("#btnsearch1").on("touchstart click", function() {
-              // alert("Handler for .click() called.");
+        
               var adminBoundary = $("#searchBorough1").text().trim();
               var search = $("#address1").val();
 
               GeoParser(search, adminBoundary);
-              //event.preventDefault();
+        
 
        });
 
@@ -79,12 +74,7 @@ function LocationSearch1() {
               var ymax = point.y + 3000;
 
               var pointExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax, map.spatialReference);
-              //     map.setExtent(pointExtent);
 
-              //var featureExtent = point.getExtent().expand(5.0);
-              //map.setExtent(featureExtent);
-
-              //var locationGraphic = new Graphic(point, symbol);
               var locationGraphic = new Graphic(point, symbol, gslocation, infoTemplate);
               map.graphics.add(locationGraphic);
 
@@ -110,12 +100,11 @@ function LocationSearch1() {
 function LocationSearch1() {
 
        $("#btnsearch1").on(evt, function() {
-              // alert("Handler for .click() called.");
+        
               var adminBoundary = $("#searchBorough1").text().trim();
               var search = $("#address1").val();
 
               GeoParser(search, adminBoundary);
-              //event.preventDefault();
 
        });
 
@@ -130,9 +119,7 @@ function LocationSearch1() {
 }
 
 
-
 			function GeoParser(searchValue, adminBoundary) {
-				//alert(adminBoundary);
 
 				if (adminBoundary == "Boro") {
 					alert("Please select Administrative Boundary on Right");
@@ -155,13 +142,6 @@ function LocationSearch1() {
 
 			}
 
-			/***Project App ID:d72f9ac0
-			 Project App Key: d1d9ba774e1bc021c256c3e53752adc4
-
-			 curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/intersection.json?app_id=d72f9ac0&app_key=d1d9ba774e1bc021c256c3e53752adc4&crossStreetOne=wall+st&crossStreetTwo=water+st&borough=Manhattan&boroughCrossStreetTwo=Manhattan"
-
-			 https://api.cityofnewyork.us/geoclient/v1/search.json?input=314 west 100 st manhattan&app_id=d72f9ac0&app_key=d1d9ba774e1bc021c256c3e53752adc4
-			 ***/
 
 			function GetGeoSupportJSON(searchTerm, adminBoundary) {
 				var freeText = toTitleCase(searchTerm + " " + adminBoundary);
@@ -177,11 +157,9 @@ function LocationSearch1() {
 
 			function processGSResult(d) {
 				$.each(d.results, function(i, item) {
-					//console.log(item);
-					console.log(item.response.xCoordinate, item.response.yCoordinate);
+
 					gslocation.lon = parseFloat(item.response.xCoordinate);
 					gslocation.lat = parseFloat(item.response.yCoordinate);
-					console.log(gslocation);
 					zoomTo(gslocation.lat, gslocation.lon);
 				});
 			}
@@ -198,9 +176,7 @@ function LocationSearch1() {
 
 				query = new esri.tasks.Query();
 				query.returnGeometry = true;
-				/*query.outSpatialReference = new esri.SpatialReference({
-					wkid : map.spatialReference
-				});*/
+
 				query.outFields = ["BoroCD"];
 
 				map.infoWindow.hide();
@@ -222,9 +198,6 @@ function LocationSearch1() {
 			function GetZip(zip) {
 				query = new esri.tasks.Query();
 				query.returnGeometry = true;
-				/*query.outSpatialReference = new esri.SpatialReference({
-					wkid : 4326
-				});*/
 				query.outFields = ["BoroCD"];
 
 				map.infoWindow.hide();
@@ -247,9 +220,6 @@ function LocationSearch1() {
 				//http://www.nycdot.info:6080/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOTBasemapAdminBoundaries/MapServer/4
 				query = new esri.tasks.Query();
 				query.returnGeometry = true;
-				/*query.outSpatialReference = new esri.SpatialReference({
-					wkid : 4326
-				});*/
 				query.outFields = ["Precinct"];
 
 				map.infoWindow.hide();
@@ -270,9 +240,6 @@ function LocationSearch1() {
 
 				query = new esri.tasks.Query();
 				query.returnGeometry = true;
-				/*query.outSpatialReference = new esri.SpatialReference({
-					wkid : 4326
-				});*/
 				query.outFields = ["CounDist"];
 
 				map.infoWindow.hide();
@@ -291,7 +258,6 @@ function LocationSearch1() {
 			function showFeature(feature) {
 				map.graphics.clear();
 				feature.setSymbol(fillSymbol1);
-				//feature.setInfoTemplate(infoTemplate);
 				map.graphics.add(feature);
 
 				var featureExtent = feature.geometry.getExtent().expand(5.0);

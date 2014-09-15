@@ -4,16 +4,7 @@ function zoomTo(lat, lon) {
 		map.graphics.clear();
         var point = new Point(lon, lat);
 
-        /*var point = new Point(lon, lat, {
-            wkid : "4326"
-        });*/
-        console.log(point);
-
         var wmpoint = webMercatorUtils.geographicToWebMercator(point);
-        //map.centerAt(point);
-
-        //var locationGraphic = new Graphic(wmpoint, symbol);
-
 
         var xmin = point.x - 3000;
         var ymin = point.y - 3000;
@@ -23,10 +14,6 @@ function zoomTo(lat, lon) {
         var pointExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax, map.spatialReference);
         map.setExtent(pointExtent);
 
-        //var featureExtent = point.getExtent().expand(5.0);
-        //map.setExtent(featureExtent);
-
-        //var locationGraphic = new Graphic(point, symbol);
         var locationGraphic = new Graphic(point, symbol, gslocation, infoTemplate);
         map.graphics.add(locationGraphic);
 
@@ -44,7 +31,7 @@ function zoomTo(lat, lon) {
 function LocationSearch() {
 
     $("#btnsearch").on(evt, function () {
-        // alert("Handler for .click() called.");
+
         var adminBoundary = $("#searchBorough").text().trim();
         var search = $("#address").val();
 
@@ -83,13 +70,6 @@ function GeoParser(searchValue, adminBoundary) {
 
 }
 
-/***Project App ID:d72f9ac0
- Project App Key: d1d9ba774e1bc021c256c3e53752adc4
-
- curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/intersection.json?app_id=d72f9ac0&app_key=d1d9ba774e1bc021c256c3e53752adc4&crossStreetOne=wall+st&crossStreetTwo=water+st&borough=Manhattan&boroughCrossStreetTwo=Manhattan"
-
- https://api.cityofnewyork.us/geoclient/v1/search.json?input=314 west 100 st manhattan&app_id=d72f9ac0&app_key=d1d9ba774e1bc021c256c3e53752adc4
- ***/
 
 function GetGeoSupportJSON(searchTerm, adminBoundary) {
     var freeText = toTitleCase(searchTerm + " " + adminBoundary);
@@ -110,19 +90,18 @@ function GetGeoSupportJSON(searchTerm, adminBoundary) {
 
 function processGSResult(d) {
     $.each(d.results, function (i, item) {
-        //console.log(item);
+
 
         if (item.status == "EXACT_MATCH") {
-            console.log(item.response.xCoordinate, item.response.yCoordinate);
+
             gslocation.lon = parseFloat(item.response.xCoordinate);
             gslocation.lat = parseFloat(item.response.yCoordinate);
-            console.log(gslocation);
             zoomTo(gslocation.lat, gslocation.lon);
             return false;
         }
 
         if (item.status == "POSSIBLE_MATCH") {
-            console.log(item.request);
+
             alert("Location not found. Did you mean: \n" + SimplifyResponse(item.request));
             return false;
         }
@@ -135,10 +114,8 @@ function SimplifyResponse(txt) {
     var init = txt.indexOf('[');
     var fin = txt.indexOf(']');
     var str = txt.substr(init + 1, fin - init - 1);
-    //console.log(str);
 
     var partsOfStr = str.split(',');
-    //console.log(partsOfStr);
     var item, result;
     result = "";
     for (var i = 0; i < partsOfStr.length; i++) {
@@ -148,14 +125,12 @@ function SimplifyResponse(txt) {
             result += item[1] + " ";
         }
     }
-    //console.log(result);
+
     return result;
 }
 function processGSReject(d) {
     $.each(d.results, function (i, item) {
-        //console.log(item);
-        console.log(item.response.message);
-        console.log(item.response.message2);
+
         alert(item.response.message);
         return false;
     });
@@ -173,9 +148,7 @@ function GetCD(cd) {
 
     query = new esri.tasks.Query();
     query.returnGeometry = true;
-    /*query.outSpatialReference = new esri.SpatialReference({
-        wkid : map.spatialReference
-    });*/
+
     query.outFields = ["BoroCD"];
 
     map.infoWindow.hide();
@@ -197,9 +170,7 @@ function GetCD(cd) {
 function GetZip(zip) {
     query = new esri.tasks.Query();
     query.returnGeometry = true;
-    /*query.outSpatialReference = new esri.SpatialReference({
-        wkid : 4326
-    });*/
+
     query.outFields = ["BoroCD"];
 
     map.infoWindow.hide();
@@ -219,12 +190,9 @@ function GetPrecinct(precinct) {
 
     queryTask = new esri.tasks.QueryTask("http://www.nycdot.info:6080/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOTBasemapAdminBoundaries/MapServer/4");
 
-    //http://www.nycdot.info:6080/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOTBasemapAdminBoundaries/MapServer/4
     query = new esri.tasks.Query();
     query.returnGeometry = true;
-    /*query.outSpatialReference = new esri.SpatialReference({
-        wkid : 4326
-    });*/
+
     query.outFields = ["Precinct"];
 
     map.infoWindow.hide();
@@ -245,9 +213,7 @@ function GetCityCouncil(council) {
 
     query = new esri.tasks.Query();
     query.returnGeometry = true;
-    /*query.outSpatialReference = new esri.SpatialReference({
-        wkid : 4326
-    });*/
+
     query.outFields = ["CounDist"];
 
     map.infoWindow.hide();
@@ -266,7 +232,6 @@ function GetCityCouncil(council) {
 function showFeature(feature) {
     map.graphics.clear();
     feature.setSymbol(fillSymbol);
-    //feature.setInfoTemplate(infoTemplate);
     map.graphics.add(feature);
 
     var featureExtent = feature.geometry.getExtent().expand(5.0);
@@ -304,7 +269,6 @@ $(document).ready(function () {
 
 //converts Wkt string to an ESRI Geometry object
 function wktToEsriGeometry(wkt_string) {
-    //require(["esri/geometry/Point", "esri/geometry/Polygon", "esri/geometry/Polyline"], function (Point, Polygon, Polyline) {
     if (wkt_string.substring(0, 7) == 'POLYGON') {
         var polygonJsonString = "{\"rings\":[[";
         var wkt_prep = wkt_string.split(",");

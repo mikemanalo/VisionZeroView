@@ -2,8 +2,7 @@ function resizeMap() {
 	curWidth = $(window).width();
 	curDocWidth = $(document).width();
 
-	//sidebarWidth = $('#SideBar').outerWidth(true);
-	console.log("map resize");
+
 	var titileDIV = $('#navbarDIV').outerHeight(true);
 	var blackBar = $('#blackBar').outerHeight(true);
 	var footer = $('#footer').outerHeight(true);
@@ -11,7 +10,6 @@ function resizeMap() {
 	var offsetHeight = titileDIV + blackBar + footer;
 	//hack for weird IE DOM load issue
 
-	// console.log("Map Height " + mapHeight);
 	$('#map').height(mapHeight);
 
 	if ((curWidth < 767) || (curDocWidth < 767)) {
@@ -22,8 +20,7 @@ function resizeMap() {
 	$('#map').height(mapHeight);
 	if (map && window.location.hash == "") {
 		var mapHeight = window.innerHeight - offsetHeight - 15;
-		console.log("sidebar " + sidebar);
-		console.log("Map Height " + mapHeight);
+
 		if (sidebar < mapHeight)
 			$('#map').height(mapHeight);
 		else
