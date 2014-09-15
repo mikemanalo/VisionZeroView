@@ -60,22 +60,36 @@ $("#smallScreenLegend").on(evt, function() {
                  }
                  else if (locScale < 64001) {
                  	
-                 	legendModal = "Number of Pedestrian Injuries and Fatalities: Yearly<br>";
+                 	legendModal = "Number of Injuries and Fatalities: Yearly<br>";
+                 	legendModal += "<h6>Injuries</h6>";
                  	legendModal += "<img src='img/legend/Injury_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 0.3em;'><br>";
+                 	legendModal += "<h6>Fatalities</h6>";
                  	legendModal += "<img src='img/legend/Fatal_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 1.7em;'>";
 				}
 			}
 			else if (monthly){
 
-                 	legendModal = "Number of Pedestrian Injuries and Fatalities: Monthly";
+                 	legendModal = "Number of Injuries and Fatalities: Monthly";
+                 	legendModal += "<h6>Injuries</h6>";
                  	legendModal += "<img src='img/legend/Injury_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 0.3em;'><br>";
+                 	legendModal += "<h6>Fatalities</h6>";
                  	legendModal += "<img src='img/legend/Fatal_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 1.7em;'>";
+
       		}
 		}
 	 	else if (fatality){
+	 		if (yearly){
 
-	   legendModal = "Number of Pedestrian Fatalities: Monthly";
-	   legendModal += "<img src='img/legend/Fatal_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 1.7em;'>";
+				   legendModal = "Number of Fatalities: Yearly";
+				   legendModal += "<h6>Fatalities</h6>";
+				   legendModal += "<img src='img/legend/Fatal_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 1.7em;'>";
+				  }
+			else if (monthly) {
+
+				   legendModal = "Number of Fatalities: Monthly";
+				   legendModal += "<h6>Fatalities</h6>";
+				   legendModal += "<img src='img/legend/Fatal_Leg.svg' class='img-responsive text-center' alt='Responsive image' style='width: auto; margin-top: 1.7em;'>";
+				  }
 		}
 
 else if(outreach){

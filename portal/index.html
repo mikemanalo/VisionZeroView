@@ -15,6 +15,11 @@
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="mobile-web-app-capable" content="yes">
+		
+		
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
 
 		<title>Vision Zero</title>
 
@@ -284,6 +289,18 @@
 
 						<div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
 							<div id="map" class="container-fluid">
+								
+							<!--[if lte IE 8]>
+								<script type="text/javascript">
+								window.location = "index_lte_IE8.html";
+								</script>
+								<![endif]-->
+
+								<!--[if lt IE 10]>
+								<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+								<![endif]-->
+								
+								
 
 								<img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif" />
 								<div id="labelDiv">
@@ -425,10 +442,12 @@
 																<h4 style="margin-left:1.2em; margin-right:10px;"><span id="layerLabel" class="crashLabel1 hidden-xs"></span></h4>
 
 																<div id="injuryLegend" class="col-xs-12 col-sm-12 graphTitle hidden-xs" style="margin-bottom: 0.2em;">
+																	<h6>Injuries</h6>
 																	<img src="img/legend/Injury_Leg.svg" class="img-responsive text-center " alt="Responsive image" style="width: auto; margin-top: 0.3em;">
 																</div>
 
 																<div id="fatalityLegend" class="col-xs-12 col-sm-12 graphTitle hidden-xs" style="margin-bottom: 0.5em;">
+																	<h6>Fatalities</h6>
 																	<img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1.7em;">
 																</div>
 
