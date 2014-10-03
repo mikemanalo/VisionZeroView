@@ -1,0 +1,53 @@
+@media(max-width:767px){
+	.vzLogo {
+    /*width: 15em;
+	margin-top: 1em !important;
+	margin-left: auto;
+	margin-right: auto;*/
+    width: 19em;
+    margin-top: 1em !important;
+    margin-left: auto;
+    margin-right: auto;    
+	}
+	
+	#layerNav{
+	margin-left:0.7em !important;
+	border: 0px;
+	}
+	
+	#searchNav1{
+	margin-right: -1.4em !important;
+	}
+	
+	#map{
+    height:50%;
+    width:100%;
+	}
+	
+	#map_zoom_slider{
+		display: none !important;
+		visibility: hidden !important;
+	}
+	.topLine{
+	margin-top:1.3em;
+	}
+	
+	/*#jqxslider {
+    width: 25em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em !important;
+}
+
+	#jqxslider2 {
+    width: 25em !important;
+    margin-left:auto; margin-right: auto;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em !important;
+}*/
+#share-modal .modal-body {
+    text-align: center;
+}
+
+}
+

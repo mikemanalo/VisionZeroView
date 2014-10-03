@@ -1,0 +1,67 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?d21qi4');
+	src:url('fonts/icomoon.eot?#iefixd21qi4') format('embedded-opentype'),
+		url('fonts/icomoon.woff?d21qi4') format('woff'),
+		url('fonts/icomoon.ttf?d21qi4') format('truetype'),
+		url('fonts/icomoon.svg?d21qi4#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_36895:before {
+	content: "\33";
+}
+.icon-icon_22494:before {
+	content: "\34";
+}
+.icon-uni21:before {
+	content: "\21";
+}
+.icon-uni24:before {
+	content: "\24";
+}
+.icon-uni25:before {
+	content: "\25";
+}
+.icon-uni30:before {
+	content: "\30";
+}
+.icon-uni31:before {
+	content: "\31";
+}
+.icon-uni32:before {
+	content: "\32";
+}
+.icon-uni35:before {
+	content: "\35";
+}
+.icon-uni37:before {
+	content: "\37";
+}
+.icon-uni38:before {
+	content: "\38";
+}
+.icon-uni39:before {
+	content: "\39";
+}
+.icon-uni40:before {
+	content: "\40";
+}
+.icon-uni5E:before {
+	content: "\5e";
+}

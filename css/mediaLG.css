@@ -1,0 +1,39 @@
+/*Desktop*/
+@media(min-width:992px){
+	#share-modal .modal-body {
+    text-align: center;
+}
+
+	/*.vzLogo {
+    width: 20em;
+	margin-top: 1.8em !important;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+	
+	h3, .h3 {
+	font-size: 24px !important;
+	}
+	
+	h4, .h4{
+		font-size:18px !important;
+	}
+
+	
+	.btnWho{
+	font-family: 'icomoon'; 
+	font-size: 1.8em !important; 
+}
+
+}*/
+	
+	
+/*Large Screen*/
+/*@media(min-width:1200px){
+	#collapseOne{
+	display:block !important;
+	visibility: hidden !important;
+	height:0px !important;
+	}*/
+}

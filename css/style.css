@@ -1,0 +1,580 @@
+/**********************************************
+ALL01 - Global Elements
+***********************************************/
+#navbarDIV {
+  border-radius: 0;
+}
+
+.modal-title {
+  position: relative;
+}
+.modal-title .map-icon {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .modal-footer {
+    margin-top: 0;
+  }
+
+  #searchNav1 .glyphicon-search {
+    color: #20396f;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #20396f;
+  }
+  .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #fff;
+  }
+
+  .navbar {
+    border-width: 0 0 1px 0;
+    margin-bottom: 0;
+    min-height: 55px;
+  }
+
+  .container > .navbar-header {
+    margin: 0;
+    padding: 0;
+  }
+
+  #searchNav1.navbar-toggle {
+    font-size: 1.6em;
+    padding: 0;
+    margin: 0 !important;
+    top: 13px;
+    right: 10px;
+    position: absolute;
+  }
+
+  #blackBar {
+    display: none;
+  }
+
+  #mainContent {
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+  }
+}
+@media (max-width: 370px) {
+  .vzLogo {
+   /* margin-top: 1.2em !important;
+    width: 13em;*/
+    margin-top: 1.4em !important;
+    width: 13em;
+    margin-left: 69px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #searchNav.navbar-toggle {
+    margin: 35px 0 0 !important;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+  #sidebar {
+    padding: 0;
+  }
+
+  #jqxslider > div, #jqxslider2 > div {
+    display: none;
+  }
+  #jqxslider .jqx-rc-all, #jqxslider2 .jqx-rc-all {
+    display: block;
+  }
+
+  #date3Label {
+    display: none;
+  }
+
+  #sliderDiv {
+    height: auto !important;
+  }
+  #sliderDiv #date2Label {
+    position: absolute;
+    left: 85px;
+    top: 9px;
+  }
+  #sliderDiv #jqxslider, #sliderDiv #jqxslider2 {
+    width: auto !important;
+    margin: 0 !important;
+    float: left;
+    clear: none;
+  }
+}
+@media (min-width: 1024px) {
+  #date2Label {
+    display: none;
+  }
+
+  #date3Label {
+    display: block;
+  }
+}
+/**********************************************
+FT01 - Off Canvas Navigation
+***********************************************/
+@media (max-width: 767px) {
+  #site-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  #site-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1041;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform: translateZ(0) translateX(0);
+    -ms-transform: translateZ(0) translateX(0);
+    -o-transform: translateZ(0) translateX(0);
+    -webkit-transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -moz-transition: 200ms ease all;
+    -ms-transition: 200ms ease all;
+    -o-transition: 200ms ease all;
+    -webkit-transition: 200ms ease all;
+    transition: 200ms ease all;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  #site-wrapper.show-nav #site-canvas {
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+  }
+
+  .show-nav #site-canvas {
+    -moz-transform: translateX(260px);
+    -ms-transform: translateX(260px);
+    -o-transform: translateX(260px);
+    -webkit-transform: translateX(260px);
+    transform: translateX(260px);
+    -moz-transform: translateZ(0) translateX(260px);
+    -ms-transform: translateZ(0) translateX(260px);
+    -o-transform: translateZ(0) translateX(260px);
+    -webkit-transform: translateZ(0) translateX(260px);
+    transform: translateZ(0) translateX(260px);
+    -moz-transform: translate3d(260px, 0, 0);
+    -ms-transform: translate3d(260px, 0, 0);
+    -o-transform: translate3d(260px, 0, 0);
+    -webkit-transform: translate3d(260px, 0, 0);
+    transform: translate3d(260px, 0, 0);
+  }
+
+  #sidebar {
+    width: 260px;
+    height: 100%;
+    padding-bottom: 10px;
+    position: absolute;
+    left: -260px;
+    top: 0;
+  }
+  #sidebar .nav {
+    display: block;
+    margin-top: 0;
+  }
+
+  #site-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1070;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .categoriesFontIcon {
+    font-size: 14px;
+    margin: 0 3px 0 0;
+  }
+
+  .nav-tabs > li {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active a:hover,
+  .nav-tabs > li.active a:focus {
+    color: #fff !important;
+    background-color: #3276B1 !important;
+    border-color: #3276B1;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  .nav-tabs > li > a {
+    border-radius: 0;
+  }
+  .nav-tabs > li > a:hover {
+    border-color: #eee;
+  }
+
+  .navbar-nav > li > a {
+    font-size: 16px;
+    margin-right: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  #sidebar .nav {
+    display: none;
+  }
+}
+/**********************************************
+FT02 - Mobile Map
+***********************************************/
+@media (max-width: 767px) {
+  #layerNav-mobile {
+    display: none;
+  }
+
+  #mainRow {
+    margin: 0;
+  }
+
+  .mobile-map {
+    margin-bottom: 0 !important;
+    padding: 0;
+  }
+
+  #map_root {
+    margin: 0;
+    width: 100% !important;
+  }
+
+  #labelDiv {
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    height: auto;
+    top: auto;
+    left: 10px;
+    bottom: 65px;
+    padding: 6px 10px 10px 10px;
+    width: auto;
+    z-index: 8;
+  }
+  #labelDiv select {
+    width: 70px;
+  }
+
+  #labelTable {
+    padding: 0;
+  }
+  #labelTable .labelRow {
+    padding: 0;
+  }
+
+  #layerNav {
+    display: none;
+  }
+
+  #layerNav-mobile {
+    border-color: #20396F;
+    display: block;
+    left: 11px;
+    top: 11px;
+    margin: 0;
+    position: absolute;
+  }
+  #layerNav-mobile:hover, #layerNav-mobile:focus {
+    background-color: #20396F;
+  }
+
+  .map-icon {
+    background-color: #20396F;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    bottom: 10px;
+    z-index: 1040;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .mobile-icons .map-icon {
+    position: absolute;
+    top: auto;
+    font-size: 30px;
+  }
+  .mobile-icons .glyphicon-info-sign {
+    right: 10px;
+  }
+  .mobile-icons .icon-icon_22494 {
+    right: 55px;
+    /*bottom: 55px;*/ /*Bring back for phase 2*/
+	}
+  .mobile-icons .glyphicon-share {
+    right: 55px;
+  }
+  .mobile-icons .glyphicon-question-sign {
+    bottom: 55px;
+    right: 10px;
+  }
+}
+.esriSimpleSliderTR {
+  top: 10px;
+  right: 10px;
+}
+
+/**********************************************
+FT03 - Filters
+***********************************************/
+@media (max-width: 767px) {
+  #custom_carousel .mainTitle {
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding-top: 10px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 8px;
+  }
+  #custom_carousel .mainTitle > span {
+    display: none;
+  }
+  #custom_carousel .subTitleTop,
+  #custom_carousel .subTitle {
+    display: none;
+  }
+  #custom_carousel .form-group .col-sm-12 {
+    margin-bottom: 10px;
+    padding: 0 !important;
+    text-align: center;
+  }
+  #custom_carousel .center-block {
+    display: inline-block;
+    width: 100%;
+  }
+  #custom_carousel .center-block .btn-sm {
+    padding: 11px 0;
+  }
+  #custom_carousel .btnWho {
+    font-size: 2em;
+  }
+  #custom_carousel .btn {
+    padding-top: 10px;
+  }
+  #custom_carousel .btn.active {
+    border-color: #285E8E;
+  }
+  #custom_carousel .btn-group-vertical {
+    margin: 0 !important;
+  }
+  #custom_carousel .btn-group-vertical i {
+    margin-top: 3px;
+  }
+  #custom_carousel .btn-group-vertical .btn.active {
+    border-color: #ADADAD;
+  }
+  #custom_carousel .interventionBtns,
+  #custom_carousel .outreachBtns {
+    padding: 13px 10px;
+  }
+  #custom_carousel .districtBtnGroup label {
+    padding: 13px 10px;
+  }
+
+  .carousel-inner .container-fluid {
+    background: none !important;
+    border: none !important;
+    padding: 0;
+  }
+}
+/**********************************************
+FT04 - Data Points
+***********************************************/
+.esriPopup {
+  z-index: 1060;
+}
+.esriPopup .titlePane {
+  background-color: #285E8E;
+  border: none;
+  padding: 5px 10px;
+}
+.esriPopup .titleButton.close {
+  right: 10px;
+  top: 7px;
+}
+.esriPopup .titleButton.next, .esriPopup .titleButton.prev {
+  top: 7px;
+}
+.esriPopup .contentPane {
+  background-color: white;
+}
+.esriPopup .contentPane h4 {
+  margin: 15px 0 2px;
+}
+.esriPopup .contentPane tr td {
+  padding-bottom: 1px;
+}
+.esriPopup .actionsPane {
+  padding: 3px 10px;
+  background-color: #f8f8f8;
+  position: relative;
+  border-top: 1px solid #dddddd;
+  text-align: right;
+}
+.esriPopup .actionsPane::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #f8f8f8;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -15px;
+  z-index: 50;
+}
+.esriPopup .actionsPane a {
+  text-decoration: none;
+  margin-right: 0;
+  margin-left: 5px;
+  color: #666;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#loadingImg {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 7px;
+  top: 50%;
+  left: 50%;
+  margin: -26px 0 0 -26px;
+}
+@media (max-width: 767px) {
+  #loadingImg {
+    margin-top: -78px;
+  }
+}
+
+/**********************************************
+FT05 - Search
+***********************************************/
+#modal-search .input-group {
+  position: static;
+}
+
+@media (max-width: 767px) {
+  #modal-search .form-group {
+    margin: 0;
+  }
+  #modal-search .input-group {
+    padding: 0 !important;
+  }
+}
+/**********************************************
+FT06 - Date Slider
+***********************************************/
+#sliderDiv .jqx-slider-right,
+#sliderDiv .jqx-slider-left {
+  margin-top: 0 !important;
+  background: none !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 28px !important;
+  padding: 0 !important;
+}
+#sliderDiv .jqx-icon-arrow-right,
+#sliderDiv .jqx-icon-arrow-left {
+  background: none;
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+#sliderDiv .jqx-icon-arrow-right:hover,
+#sliderDiv .jqx-icon-arrow-left:hover {
+  color: #F26522;
+}
+#sliderDiv .jqx-icon-arrow-right {
+  content: "\e092";
+}
+#sliderDiv .jqx-icon-arrow-right:before {
+  content: "\e092";
+  position: absolute;
+  display: block;
+  top: -12px;
+}
+#sliderDiv .jqx-icon-arrow-left {
+  content: "\e091";
+}
+@media (min-width: 1023px) {
+  #sliderDiv .jqx-icon-arrow-left {
+    left: -20px;
+  }
+}
+#sliderDiv .jqx-icon-arrow-left:before {
+  content: "\e091";
+  position: absolute;
+  display: block;
+  top: -12px;
+}
+
+/**********************************************
+FT07 - Share
+***********************************************/
+@media (max-width: 767px) {
+  #share-modal .modal-body {
+    text-align: center;
+  }
+
+  .share-url {
+    font-weight: bold;
+    margin: 10px 0;
+  }
+}
+/**********************************************
+FT08 - Legend
+***********************************************/
+#smallScreenModalLegend img {
+  margin-top: 10px !important;
+}

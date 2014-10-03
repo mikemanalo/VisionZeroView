@@ -1,0 +1,55 @@
+#sliderDiv {
+  .jqx-slider-right,
+  .jqx-slider-left {
+    // there's about to be some insane overrides here because of inline js style injection
+    margin-top: 0 !important;
+    background: none !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 28px !important;
+    padding: 0 !important;
+  }
+
+  .jqx-icon-arrow-right,
+  .jqx-icon-arrow-left {
+    background: none;
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    &:hover {
+      color: #F26522;
+    }
+  }
+
+  .jqx-icon-arrow-right {
+    content: "\e092";
+
+    &:before {
+      content: "\e092";
+      position:absolute;
+      display: block;
+      top:-12px;
+    }
+  }
+
+  .jqx-icon-arrow-left {
+    content: "\e091";
+
+    @media (min-width: 1023px) {
+      left: -20px;
+    }
+    &:before {
+      content: "\e091";
+      position:absolute;
+      display: block;
+      top:-12px;
+    }
+  }
+}
