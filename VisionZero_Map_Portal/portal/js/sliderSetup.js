@@ -5,7 +5,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 66,  // ticks until May 2014, will need updating
+                    max: 67,  // ticks until Aug 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -98,45 +98,7 @@ function sliderSetup () {
 		tooltip.text(toolTipVal);
 	}
 	
-	//////////////////////// yearly slider ////////////////////////////////////////////////////////
 
-
-	/*var thumb = $($('#jqxslider2').find('.jqx-slider-slider')[1]), tooltip = createTooltip(), tooltipActive = true;
-
-	thumb.bind('mousedown', function(event) {
-		tooltip.css('visibility', 'visible');
-		refreshTooltip($('#jqxslider2').jqxSlider('value'));
-		tooltipActive = true;
-	});
-
-	$(document).bind('mousemove', function(event) {
-		if (tooltipActive) {
-			refreshTooltip($('#jqxslider2').jqxSlider('value'));
-		}
-	});
-
-	$(document).bind('mouseup', function() {
-		tooltip.css('visibility', 'hidden');
-		tooltipActive = false;
-	});
-
-	function createTooltip() {
-		var tooltip = $('<div />');
-		$(document.body).append(tooltip);
-		tooltip.css('visibility', 'visible');
-		tooltip.fadeTo(0, 2.0);
-		tooltip.addClass('jqx-rc-all');
-		tooltip.addClass('tooltip');
-		return tooltip;
-	}
-
-	function refreshTooltip(value) {
-		var thumb = $($('#jqxslider2').find('.jqx-slider-slider')[1]), thumbX = thumb.offset().left, thumbY = thumb.offset().top;
-		tooltip.css('left', thumbX - (tooltip.outerWidth(true) - thumb.outerWidth(true)) / 2);
-		tooltip.css('top', thumbY - tooltip.outerHeight(true) - 25);
-		var toolTipVal = sliderLookup(value);
-		tooltip.text(toolTipVal);
-	}*/
 	
 }
 

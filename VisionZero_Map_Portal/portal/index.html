@@ -15,8 +15,14 @@
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="mobile-web-app-capable" content="yes">
+		
+		
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-		<title>Vision Zero</title>
+
+		<title>Vision Zero View</title>
+			
 
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
@@ -32,6 +38,10 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" href="lib/add2home/style/addtohomescreen.css">
 		<script type="text/javascript" src="lib/add2home/src/addtohomescreen.js"></script>
+		<script type='application/javascript' src='lib/fastclick/lib/fastclick.js'></script>
+		
+
+		
 
 		<!--<link rel="stylesheet" type="text/css" href="css/site.min.css"> -->
 
@@ -48,6 +58,19 @@
 				icon : false
 			});
 		</script>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55102612-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+
+
 
 	</head>
 
@@ -96,7 +119,7 @@
 								<span class="glyphicon glyphicon-search"></span>
 							</button>
 
-							<a href="#"> <img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
+							<a href="#"> <img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/vzv.svg" class="vzLogo img-responsive "></a>
 
 						</div>
 
@@ -284,6 +307,13 @@
 
 						<div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
 							<div id="map" class="container-fluid">
+								
+							<!--[if lte IE 8]>
+								<script type="text/javascript">
+								window.location = "index_lte_IE8.html";
+								</script>
+								<![endif]-->
+								
 
 								<img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif" />
 								<div id="labelDiv">
@@ -299,6 +329,7 @@
 											<td class="labelRow"><span id="stat2Mobile" class="stats"></span></td>
 										</tr>
 									</table>
+								
 
 									<div class="crash-dates visible-xs">
 										<span class="crash-dates-label">Date:</span>
@@ -425,10 +456,12 @@
 																<h4 style="margin-left:1.2em; margin-right:10px;"><span id="layerLabel" class="crashLabel1 hidden-xs"></span></h4>
 
 																<div id="injuryLegend" class="col-xs-12 col-sm-12 graphTitle hidden-xs" style="margin-bottom: 0.2em;">
+																	<h6>Injuries</h6>
 																	<img src="img/legend/Injury_Leg.svg" class="img-responsive text-center " alt="Responsive image" style="width: auto; margin-top: 0.3em;">
 																</div>
 
 																<div id="fatalityLegend" class="col-xs-12 col-sm-12 graphTitle hidden-xs" style="margin-bottom: 0.5em;">
+																	<h6>Fatalities</h6>
 																	<img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1.7em;">
 																</div>
 
@@ -450,8 +483,9 @@
 																					<h4 class="modal-title" id="myModalLabel">Traffic Crashes </h4>
 																				</div>
 																				<div class="modal-body">
-																					Crash data is obtained from the Traffic Accident Management System (TAMS), which is maintained by the New York City Police Department (NYPD).  All midblock crashes are mapped to the nearest intersection. Injuries and fatalities are grouped by intersection and summarized by month and year. This data is queried and aggregated on a monthly basis and is current as of the query date.  Current year data is January to the end of the latest full month.  All crash data is mapped to a simplified NYC street model.  Crashes occurring at complex intersections with multiple roadways are mapped onto a single point.  Injury and fatality crashes occurring on highways are excluded from this data.  Please note that this data is preliminary and may contain errors, accordingly, the data on this site is for informational purposes only.  Although all attempts to provide the most accurate information are made, errors may be present and any person who relies upon this data does so at their own risk.
-
+																					Crash data is obtained from the Traffic Accident Management System (TAMS), which is maintained by the New York City Police Department (NYPD). Only crashes with valid geographic information are mapped.  All midblock crashes are mapped to the nearest intersection. Injuries and fatalities are grouped by intersection and summarized by month and year. This data is queried and aggregated on a monthly basis and is current as of the query date. Current year data is January to the end of the latest full month. All mappable crash data is represented on the simplified NYC street model. Crashes occurring at complex intersections with multiple roadways are mapped onto a single point. Injury and fatality crashes occurring on highways are excluded from this data. 
+																				<br><br>
+																				<b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
 																				</div>
 																				<div class="modal-footer">
 																					<button type="button" class="btn btn-default" data-dismiss="modal">
@@ -560,6 +594,7 @@
 																			<i>Neighborhood Slow Zones</i>
 																			<br>
 																			The Neighborhood Slow Zone program is an application based program which takes a neighborhood area and reduces the speed limit to 20 mph. Areas are chosen based on crashes, presence of schools and other neighborhood amenities, and community support. The treatments include a mixture of markings, signage, and speed humps.
+																		<br><br><b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
 																		</div>
 
 																		<div class="modal-footer">
@@ -599,33 +634,33 @@
 																		<span>Schools</span>
 																	</button>
 
-																	<button id="SeniorBtn" class="btn btn-default outreachBtns">
+																	<button id="SeniorBtn" class="btn btn-default outreachBtns active">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #377eb8; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item1" id="SeniorCenters" value="4" style="opacity: .6">
-																		<span style="opacity: .6">Senior Centers</span>
+																		<span>Senior Centers</span>
 																	</button>
 
-																	<button id="TLCBtn" class="btn btn-default outreachBtns">
+																	<button id="TLCBtn" class="btn btn-default outreachBtns active">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #B77753; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item1" id="TLC" value="3" style="opacity: .6">
-																		<span style="opacity: .6">Taxi & Car Service Trainings</span>
+																		<span>Taxi & Car Service Trainings</span>
 																	</button>
 
-																	<button id="TownHallBtn" class="btn btn-default outreachBtns">
+																	<button id="TownHallBtn" class="btn btn-default outreachBtns active">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #984ea3; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item1" id="TownHallMeeting" value="3" style="opacity: .6">
-																		<span style="opacity: .6">Town Hall Meetings</span>
+																		<span>Town Hall Meetings</span>
 																	</button>
 
-																	<button id="WorkshopBtn" class="btn btn-default outreachBtns">
+																	<button id="WorkshopBtn" class="btn btn-default outreachBtns active">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #ff7f00; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
-																		<span style="opacity:0.6; color">Workshops</span>
+																		<span>Workshops</span>
 
-																		<button id="StreetTeamBtn" class="btn btn-default outreachBtns">
+																		<button id="StreetTeamBtn" class="btn btn-default outreachBtns active">
 																			<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #FF73DF; opacity: .6;">%</i>
 																			<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
-																			<span style="opacity:0.6; color">Street Teams</span>
+																			<span>Street Teams</span>
 																		</button>
 
 																</div>
@@ -670,7 +705,8 @@
 																			<i>Street Teams</i>
 																			<br>
 																			Street Team members trained the general public with Vision Zero hands-on safety exercises including safe walking and biking, car safety tips and an opportunity to get inside of large delivery trucks to experience their blind spots.  Vision Zero promotional materials were handed out along with educational handouts.
-																			<br>
+																			<br><br>
+																			<b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
 																			<br>
 																		</div>
 
@@ -756,7 +792,7 @@
 																<div class="modal-dialog">
 																	<div class="modal-content">
 																		<div class="modal-header">
-																			<h4 class="modal-title" id="myModalLabel">Administrative District Summary Information</h4>s
+																			<h4 class="modal-title" id="myModalLabel">Administrative District Summary Information</h4>
 																		</div>
 																		<div class="modal-body">
 																			<i>Police Precinct</i>
@@ -777,10 +813,11 @@
 
 																			<br>
 																			<br>
-																			<i>Density of Injuries by (Police Precinct, Community District, City Council District)</i>
+																			<i>Density of Injuries and Fatalities by (Police Precinct, Community District, City Council District)</i>
 																			<br>
 																			Number of traffic injuries and fatalities occurring in a given area, normalized by the population of that area.
-
+																			<br><br>
+																			<b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
 																		</div>
 
 																		<div class="modal-footer">
@@ -877,14 +914,14 @@
 							$(window).resize(function() {
 								if ($('#yearSelect').is(':visible')) {
 									$("#jqxslider").jqxSlider({
-										value : 66
+										value : 67
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 5
 									});
 								}
 								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-									$("#monthSelect").val("6");
+									$("#monthSelect").val("7");
 									$("#yearSelect").val("5");
 								}
 								checkStats();
@@ -971,11 +1008,11 @@
 									$('body').css('visibility', 'visible');
 									//     $('map').css('visibility', 'visible');
 									//addCrashLocations();
-									$("#monthSelect").val("6");
+									$("#monthSelect").val("7");
 									$("#yearSelect").val("5");
 
 									$("#jqxslider").jqxSlider({
-										value : 66
+										value : 67
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 5
@@ -987,13 +1024,20 @@
 									sliderSetup();
 									checkCrashCatState();
 									toggleCrashLayers();
+									
+									$(function() {
+    									FastClick.attach(document.body);
+									});
+
+
+
 								}
 							});
 
 							dojo.connect(map, "onLoad", function() {
 								hideLoading();
 								$("#jqxslider").jqxSlider({
-									value : 66
+									value : 67
 								});
 								$("#jqxslider2").jqxSlider({
 									value : 5
@@ -1011,11 +1055,18 @@
 
 								showSlider();
 								checkStats();
+								
 							});
 
 							dojo.connect(map, "onExtentChange", checkCrashLegend);
+					
 
 						});
+						
+
+
+		
+						
 
 					</script>
 
@@ -1046,6 +1097,7 @@
 					<script type="text/javascript" src="js/offCanvas.js"></script>
 					<script type="text/javascript" src="js/map_config.js"></script>
 					<script type="text/javascript" src="js/smallScreenButtonFuncs.js"></script>
+						
 
 					<!--<script type="text/javascript" src="js/applib.js"></script>-->
 

@@ -1,19 +1,19 @@
 function addCrashLayers() {
 	
 /************************************************************** FATALITY MONTHLY ***********************************************************************/
-	var _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/allFatalities_monthly/MapServer";
+	var _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/allFatalities_monthly/MapServer";
 	var _layerID = "fatality_monthly_all_Layer";
 	fatality_monthly_all_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/pedFatalities_monthly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_monthly/MapServer";
 	_layerID = "fatality_monthly_ped_Layer";
 	fatality_monthly_ped_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/bikeFatalities_monthly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_monthly/MapServer";
 	_layerID = "fatality_monthly_bike_Layer";
 	fatality_monthly_bike_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/motorFatalities_monthly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_monthly/MapServer";
 	_layerID =  "fatality_monthly_motor_Layer";
 	fatality_monthly_motor_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
@@ -22,19 +22,19 @@ function addCrashLayers() {
 	
 
 	
-	_layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/allFatalities_yearly/MapServer";
+	_layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/allFatalities_yearly/MapServer";
 	 _layerID = "fatality_yearly_all_Layer";
 	fatality_yearly_all_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/pedFatalities_yearly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_yearly/MapServer";
 	 _layerID = "fatality_yearly_ped_Layer";
 	fatality_yearly_ped_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-	_layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/bikeFatalities_yearly/MapServer";
+	_layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_yearly/MapServer";
 	 _layerID = fatality_yearly_bike_Layer;
 	fatality_yearly_bike_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/motorFatalities_yearly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_yearly/MapServer";
 	 _layerID = fatality_yearly_motor_Layer
 	fatality_yearly_motor_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
@@ -43,19 +43,19 @@ function addCrashLayers() {
 	/********************************************* INJURY MONTHLY ***********************************************************************************/
 	
 	
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/all_monthly_Injuries_and_fatalities/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/all_monthly_Injuries_and_fatalities/MapServer";
 	_layerID ="injury_monthly_all_Layer";
 	injury_monthly_all_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-    _layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/pedFatalities_and_Injuries_monthly/MapServer";
+    _layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_and_Injuries_monthly/MapServer";
     _layerID ="injury_monthly_ped_Layer";
 	injury_monthly_ped_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 	
-    _layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/bikeFatalities_and_Injuries_monthly/MapServer";
+    _layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_and_Injuries_monthly/MapServer";
     _layerID ="injury_monthly_bike_Layer";
 	injury_monthly_bike_Layer = AddDynamicLayer(_layerURL, _layerID,false);
     
-    _layerURL =	"http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/motorFatalities_and_Injuries_monthly/MapServer";
+    _layerURL =	"http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_and_Injuries_monthly/MapServer";
     _layerID ="injury_monthly_motor_Layer";
 	injury_monthly_motor_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 
@@ -63,19 +63,19 @@ function addCrashLayers() {
 	/***************************************************** INJURY YEARLY ***************************************************************************************/
 	
 	
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/allInjury_yearly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/allInjury_yearly/MapServer";
 	_layerID = injury_yearly_all_Layer;
 	injury_yearly_all_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/pedInjury_yearly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedInjury_yearly/MapServer";
 	_layerID = injury_yearly_ped_Layer;
 	injury_yearly_ped_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 		
-	_layerURL =	"http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/bikeInjury_yearly/MapServer";
+	_layerURL =	"http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeInjury_yearly/MapServer";
 	_layerID = injury_yearly_bike_Layer;
 	injury_yearly_bike_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 
-	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/motorInjury_yearly/MapServer";
+	_layerURL ="http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorInjury_yearly/MapServer";
 	_layerID = injury_yearly_motor_Layer;
 	injury_yearly_motor_Layer = AddDynamicLayer(_layerURL, _layerID,false);
 
@@ -117,11 +117,13 @@ function AddDynamicLayer(layerURL, layerID, visible) {
    	DynamicLayer.on("load", function() { DynamicLayer.minScale = 0; DynamicLayer.maxScale = 0; });
 
     DynamicLayer.on("update-start", function () {
+	map.infoWindow.hide();
         showLoading();
     });
 
 
     DynamicLayer.on("update-end", function () {
+		
         hideLoading();
         LayerVisibility();
     });

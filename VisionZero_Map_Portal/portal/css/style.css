@@ -70,8 +70,11 @@ ALL01 - Global Elements
 }
 @media (max-width: 370px) {
   .vzLogo {
-    margin-top: 1.2em !important;
+   /* margin-top: 1.2em !important;
+    width: 13em;*/
+    margin-top: 1.4em !important;
     width: 13em;
+    margin-left: 69px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

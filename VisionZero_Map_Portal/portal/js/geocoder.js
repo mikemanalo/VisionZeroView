@@ -357,7 +357,7 @@ function addGeolocationMarker(location) {
     nycPolygon = wktToEsriGeometry(nycWkt);
     pt = new esri.geometry.Point(location.coords.longitude, location.coords.latitude, new esri.SpatialReference({ wkid: 4326 }));
     var nysp = new esri.SpatialReference({ wkid: 2263 });
-    var gsvc = new esri.tasks.GeometryService("http://" + arcgisserver + "/ArcGIS/rest/services/Geometry/GeometryServer");
+    var gsvc = new esri.tasks.GeometryService("http://" + arcgisserver + "/ArcGIS/rest/services/Utilities/Geometry/GeometryServer");
     gsvc.project([pt], nysp, function (projectedPoint) {
         if (nycPolygon.contains(projectedPoint[0])) {
             if (!geoGraphic) {

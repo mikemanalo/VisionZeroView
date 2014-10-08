@@ -86,11 +86,11 @@ function CategoryNav(id) {
 
     if (id == "summaryCat") {
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_INJURIES/MapServer";
+        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer";
         _layerID = "summaryInjuryLayer";
         summaryInjuryLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SUMMARY_2014_FATALITIES/MapServer";
+        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer";
         _layerID = "summaryFatalityLayer";
         summaryFatalityLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
@@ -114,7 +114,7 @@ function CategoryNav(id) {
 
 
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/SAFETY_INTERVENTION/MapServer";
+        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTION/MapServer";
         _layerID = "interventionLayer";
         interventionLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
@@ -132,7 +132,7 @@ function CategoryNav(id) {
 
     } else if (id == "outreachCat") {
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/VISION_ZERO/OUTREACH/MapServer";
+        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer";
         _layerID = "outreachLayer";
         outreachLayer = AddDynamicLayer(_layerURL, _layerID, true);
 

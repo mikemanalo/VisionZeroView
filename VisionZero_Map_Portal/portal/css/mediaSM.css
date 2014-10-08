@@ -1,9 +1,13 @@
 @media(max-width:767px){
 	.vzLogo {
-    width: 15em;
+    /*width: 15em;
 	margin-top: 1em !important;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto;*/
+    width: 19em;
+    margin-top: 1em !important;
+    margin-left: auto;
+    margin-right: auto;    
 	}
 	
 	#layerNav{

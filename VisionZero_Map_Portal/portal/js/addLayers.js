@@ -1,7 +1,7 @@
 ///////////////////// SAFETY INTERVENTIONS //////////////////////////////////////////////////////////////
 
 
-$(".interventionBtns").on(" touchstart  click", function() {
+$(".interventionBtns").on("touchstart  click", function() {
 map.infoWindow.hide();
 	interventionLayerIDs = [];
 	var test = this;
@@ -117,7 +117,7 @@ function checkOutreachBtns(outreachLayerIDs) {
 	if (hasClass('SchoolBtn', 'active')) {
 		var locID = 0;
 		outreachLayerIDs.push(locID);
-		$("#Schools").prop('checked', 'checked');
+		//$("#Schools").prop('checked', 'checked');
 
 	}
 	

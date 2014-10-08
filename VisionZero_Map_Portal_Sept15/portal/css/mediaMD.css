@@ -1,0 +1,42 @@
+@media(min-width:768px){
+	.vzLogo {
+    width: 20em;
+	margin-top: 1.8em !important;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+	#outreachBtns{
+	text-align: left; 
+	white-space: normal;
+	font-size:0.8em;
+	}
+	
+	#map_zoom_slider{
+		display: block !important;
+		visibility: visible !important;
+	}
+	
+	.btnWho {
+		font-family: 'icomoon';
+		font-size: 1.6em !important;
+	}
+	
+	h3, .h3 {
+	font-size: 20px !important;
+	}
+	
+	h4, .h4{
+		font-size:18px !important;
+		font-weight:700;
+	}
+	
+	.summarySwitchBtns{
+	font-size:12 px !important;
+	}
+	
+	#share-modal .modal-body {
+    text-align: center;
+}
+
+}

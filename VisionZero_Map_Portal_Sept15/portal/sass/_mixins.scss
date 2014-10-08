@@ -1,0 +1,24 @@
+@import "variables";
+@import "compass/css3";
+
+// Media query mixins
+@mixin breakpoint($point) {
+  @if $point == XS {
+    @media (max-width: $XS) { @content; }
+  }
+  @else if $point == SM {
+    @media (max-width: $SM) { @content; }
+  }
+  @else if $point == MD {
+    @media (max-width: $MD)  { @content; }
+  }
+  @else if $point == LG {
+    @media (max-width: $LG)  { @content; }
+  }
+  @else if $point == iPad {
+    @media (min-width: $MD) and (max-width: $LG)  { @content; }
+  }
+  @else if $point == XL {
+    @media (min-width: $XL)  { @content; }
+  }
+}
