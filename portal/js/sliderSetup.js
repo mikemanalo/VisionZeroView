@@ -5,7 +5,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 64,  // ticks until May 2014, will need updating
+                    max: 66,  // ticks until May 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -53,7 +53,7 @@
 function sliderSetup () {
 
 	var visibleFatalityLayerIds = [], visibleInjuryLayerIds = [];
-	var curFatalityValue, curInjuryValue;
+//	var curFatalityValue, curInjuryValue;
 	
 
 			

@@ -1,8 +1,9 @@
 function IdentifyTaskInit() {
        $(document).ready(function() {
+       
 
               allIdentifyParams = new esri.tasks.IdentifyParameters();
-              allIdentifyParams.tolerance = 4;
+              allIdentifyParams.tolerance = 7;
               allIdentifyParams.returnGeometry = true;
               allIdentifyParams.layerOption = esri.tasks.IdentifyParameters.LAYER_OPTION_TOP;
               allIdentifyParams.width = map.width;
@@ -61,8 +62,7 @@ function executeIdentifyTask(evt) {
 
                            if($('#yearSelect').is(':visible')) {locSliderVal = smallScreenCrashLayer();}
                            else { locSliderVal = $('#jqxslider2').jqxSlider('getValue');}
-                           //     var toolTipVal = slider2Lookup(value);
-                           //     $("#dateLabel").text(toolTipVal);
+
                            locVal = (locSliderVal * 7);
                            
                            allIdentifyParams.geometry = evt.mapPoint;
@@ -167,7 +167,6 @@ function executeIdentifyTask(evt) {
               map.infoWindow.hide();
 
               if (yearly) {
-                     //console.log("get to fat year");
                      var deferred;
 
                      if($('#yearSelect').is(':visible')) {locSliderVal = smallScreenCrashLayer();}
@@ -178,7 +177,6 @@ function executeIdentifyTask(evt) {
                      allIdentifyParams.geometry = evt.mapPoint;
                      allIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
                      allIdentifyParams.mapExtent = map.extent;
-                     //console.log(allIdentifyParams.layerIds);
 
                      if (all)
                            deferred = fatality_yearly_all_IdentifyTask.execute(allIdentifyParams);
@@ -189,7 +187,6 @@ function executeIdentifyTask(evt) {
                      else if (bike)
                            deferred = fatality_yearly_bike_IdentifyTask.execute(allIdentifyParams);
               } else if (monthly) {
-                     //console.log("get to fat month");
                      var deferred;
 
                      if($('#monthSelect').is(':visible')) {locSliderVal = smallScreenCrashLayer();}
@@ -199,8 +196,7 @@ function executeIdentifyTask(evt) {
 
                      allIdentifyParams.geometry = evt.mapPoint;
                      allIdentifyParams.layerIds = [locVal, locVal + 1, locVal + 2, locVal + 3];
-                     allIdentifyParams.mapExtent = map.extent;
-                     console.log("month " + allIdentifyParams.layerIds);                  
+                     allIdentifyParams.mapExtent = map.extent;                
 
                      if (all)
                            deferred = fatality_monthly_all_IdentifyTask.execute(allIdentifyParams);
@@ -251,8 +247,7 @@ function executeIdentifyTask(evt) {
 
        }
        else if(interventions){
-              
-                     //console.log("get to intervent ident");
+
                      var deferred;
 
                      allIdentifyParams.geometry = evt.mapPoint;
@@ -274,7 +269,6 @@ function executeIdentifyTask(evt) {
                      return dojo.map(response, function(result) {
                            var feature = result.feature;
                            var locName = result.layerName;
-                           console.log("layername" + locName);
 
                            var locText;
                            var template = new esri.InfoTemplate();
@@ -340,8 +334,7 @@ function executeIdentifyTask(evt) {
        }
        
        else if(outreach){
-              
-                     //console.log("get to outreach ident");
+
                      var deferred;
 
                      allIdentifyParams.geometry = evt.mapPoint;                    
@@ -362,7 +355,6 @@ function executeIdentifyTask(evt) {
                      return dojo.map(response, function(result) {
                            var feature = result.feature;
                            var locName = result.layerName;
-                     //     console.log("layername" + locName);
 
                            var locText;
                            var template = new esri.InfoTemplate();
@@ -374,7 +366,6 @@ function executeIdentifyTask(evt) {
                                   template.setTitle("School Outreach Events");
                                   break;
                                   
-                                  /// fill in when map layers are ready ///////////////////////
                                   case  "TownHallLocations":                             
                                   locTxt = "<table><tr><td><b>Location: </b>" + "&nbsp;" + "${Sheet1__NA}</td></tr>";
                                   locTxt += "<tr><td><b>Address:</b>" + "&nbsp;" + " ${Sheet1__AD}</td></tr></table>";
@@ -401,6 +392,11 @@ function executeIdentifyTask(evt) {
 								  template.setTitle("TLC");
                                   break;        
 
+                                  case  "Street_teams_flyers":                             
+                                  locTxt = "<table><tr><td><b>Date:" + "&nbsp;" + "</b>${Date}</td></tr>";
+                                  locTxt += "<tr><td><b>Total flyers:" + "&nbsp;" + "</b>${Total_Flye}</td></tr></table>";
+								  template.setTitle("Street Teams");
+                                  break; 
 
                                                                      
                                    default:
@@ -427,22 +423,17 @@ function executeIdentifyTask(evt) {
        
        else if(injurySum || fatalitySum){
               
-                     //console.log("get to summary ident");
                      var deferred;
-
 
                      allIdentifyParams.geometry = evt.mapPoint;
                      
                      allIdentifyParams.layerIds = [summaryLayerIDs];
-                     //console.log("ids: " + summaryLayerIDs);
                      allIdentifyParams.mapExtent = map.extent;
 
                      if (injurySum) deferred = summaryInjIdentifyTask.execute(allIdentifyParams);
                      if (fatalitySum) deferred = summaryFatalIdentifyTask.execute(allIdentifyParams);
 
               deferred.addCallback(function(response) {
-
- //console.log("get to callback");
 
                      if (response.length > 0) {
                            map.infoWindow.show(evt.mapPoint);
@@ -453,80 +444,27 @@ function executeIdentifyTask(evt) {
                      return dojo.map(response, function(result) {
                            var feature = result.feature;
                            var locName = result.layerName;
-                           //console.log("layername" + locName);
+
 
                            var locText;
                            var template = new esri.InfoTemplate();
 						          switch (locName){
                                   case  "Summary_2014_PP_ALL_FATALITIES":  case  "Summary_2014_PP_ALL_INJURIES":                 
-                                //  locTxt = "<table><tr><td><b>POLICE PRECINCT " + "&nbsp;" + "${Precinct} </b></td></tr></table>";
                                   template.setTitle("Police Precinct ${Precinct} Summary");
                                   break;
                                   
                                   case  "Summary_2014_CD_ALL_FATALITIES":  case  "Summary_2014_CD_ALL_INJURIES":                 
-                                //  locTxt = "<table><tr><td><b>COMMUNITY DISTRICT " + "&nbsp;" + "${BoroCD}</b></td></tr></table>";
                                   template.setTitle("Community District ${BoroCD} Summary");
                                   break;
                                   
                                   case  "Summary_2014_CC_ALL_FATALITIES":  case  "Summary_2014_CC_ALL_INJURIES":                 
-                               //   locTxt = "<table><tr><td><b>CITY COUNCIL DISTRICT " + "&nbsp;" + "${CounDist}</b></td></tr></table>";
                                   template.setTitle("City Council ${CounDist} Summary");
                                   break;
                                   
                            }
-                                  // new August 12 ///
+
                                   
                            locTxt = "<table style='width:100%'><tr style='border-bottom: 1px solid black;'><td><b><h4>CRASH DATA</h4></b>" + "</td><td></td></tr>";                                                             
-                           locTxt += "<tr><td><b>Total fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_Fatalities}</td></tr>";
-                           locTxt += "<tr><td><b>Total Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_Injuries}</td></tr>";
-                           locTxt += "<tr><td><b>Pedestrian Fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_PedFatalities}</td></tr>";
-                          locTxt += "<tr><td><b>Pedestrian Injuries:</b>" + "&nbsp; " + " </td><td>${SUM_PedInjuries}</td></tr>";
-                           locTxt += "<tr><td><b>Bicycle Fatalites:</b>" + "&nbsp;" + " </td><td> ${SUM_BikeFatalities}</td></tr>";
-                           locTxt += "<tr><td><b>Bicycle Injuries:</b>" + "&nbsp;" + " </td><td> ${SUM_BikeInjuries}</td></tr>";
-                           locTxt += "<tr><td><b>Motorist Fatalites:</b>" + " &nbsp;" + " </td><td>${SUM_MVOFatalities}</td></tr>";
-                           locTxt += "<tr><td><b>Motorist Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_MVOInjuries}</td></tr>";
-                           locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_NonInjuryCrashes}</td></tr><tr></tr>";
-                           
-                           locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>DEMOGRAPHIC DATA</h4></b>" + "</td><td></td></tr>";                                                       
-                           locTxt += "<tr><td><b>Total Population:</b>" + "&nbsp;" + " </td><td>${Total_Pop}</td></tr>";
-                           locTxt += "<tr><td><b>Age Under 5:</b>" + "&nbsp;" + " </td><td>${Ages_Under}</td></tr>";
-                           locTxt += "<tr><td><b>Age 5-9:</b>" + "&nbsp;" + " </td><td>${Ages_5_to_}</td></tr>";
-                           locTxt += "<tr><td><b>Age 10-14:</b>" + "&nbsp; " + " </td><td>${Ages_10_to }</td></tr>";
-                           locTxt += "<tr><td><b>Age 15-19:</b>" + "&nbsp;" + " </td><td> ${Ages_15_to}</td></tr>";
-                           locTxt += "<tr><td><b>Age 20-24:</b>" + "&nbsp;" + " </td><td> ${Ages_20_to}</td></tr>";
-                           locTxt += "<tr><td><b>Age 25-44:</b>" + " &nbsp;" + " </td><td>${Ages_25_to}</td></tr>";
-                           locTxt += "<tr><td><b>Age 45-64:</b>" + "&nbsp;" + " </td><td>${Ages_45_to}</td></tr>";
-                           locTxt += "<tr><td><b>Age 65 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_65_an}</td></tr>";
-                         
-                           locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>INTERVENTION DATA</h4></b>" + "</td><td></td></tr>";                                                       
-                           locTxt += "<tr><td><b>LPIs Installed:</b>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr>";
-                           locTxt += "<tr><td><b>Num. of Safety Projects (Intersections):</b>" + "&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr>";
-                           locTxt += "<tr><td><b>Miles of Safety Projects  (Corridors):</b>" + "&nbsp;" + " </td><td>${SUM_SIPCorridors_Miles}</td></tr>";
-                           locTxt += "<tr><td><b>Speed Humps Installed:</b>" + "&nbsp; " + " </td><td>${SUM_SpeedHumps}</td></tr>";
-                           locTxt += "<tr><td><b>Miles of Arterial Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_ASZ_Miles}</td></tr>";
-                           locTxt += "<tr><td><b>Miles of Neighborhood Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_NeighSlowZones_Miles}</td></tr></table>";
-
-
-                           /*switch (locName){
-                                  case  "Summary_2014_PP_ALL_FATALITIES":  case  "Summary_2014_PP_ALL_INJURIES":                 
-                                  locTxt = "<table><tr><td><b>PRECINCT: </b>" + "&nbsp;" + "</td><td>${Precinct}</td></tr>";
-                                  template.setTitle("Police Precinct Summary: 2014 YTD");
-                                  break;
-                                  
-                                  case  "Summary_2014_CD_ALL_FATALITIES":  case  "Summary_2014_CD_ALL_INJURIES":                 
-                                  locTxt = "<table><tr><td><b>COMMUNITY DISTRICT: </b>" + "&nbsp;" + "</td><td>${BoroCD}</td></tr>";
-                                  template.setTitle("Community District Summary: 2014 YTD");
-                                  break;
-                                  
-                                  case  "Summary_2014_CC_ALL_FATALITIES":  case  "Summary_2014_CC_ALL_INJURIES":                 
-                                  locTxt = "<table><tr><td><b>COUNCIL DISTRICT: </b>" + "&nbsp;" + "</td><td>${CounDist}</td></tr>";
-                                  template.setTitle("City Council Summary: 2014 YTD");
-                                  break;
-                                  
-                           }
-                                  // new August 12 ///
-                                  
-                          locTxt += "<tr><td><b><h4>CRASH DATA</h4></b>" + "</td></tr>";                                                             
                            locTxt += "<tr><td><b>Total fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_Fatalities}</td></tr>";
                            locTxt += "<tr><td><b>Total Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_Injuries}</td></tr>";
                            locTxt += "<tr><td><b>Pedestrian Fatalites:</b>" + "&nbsp;" + " </td><td>${SUM_PedFatalities}</td></tr>";
@@ -535,27 +473,41 @@ function executeIdentifyTask(evt) {
                            locTxt += "<tr><td><b>Bicycle Injuries:</b>" + "&nbsp;" + " </td><td> ${SUM_BikeInjuries}</td></tr>";
                            locTxt += "<tr><td><b>Motorist Fatalites:</b>" + " &nbsp;" + " </td><td>${SUM_MVOFatalities}</td></tr>";
                            locTxt += "<tr><td><b>Motorist Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_MVOInjuries}</td></tr>";
-                           locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_nonInj_Crashes}</td></tr>";
+                           locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_NonInjuryCrashes}</td></tr><tr></tr>";
                            
-                           locTxt += "<tr><td><b><h4>DEMOGRAPHIC DATA</h4></b>" + "</td></tr>";                                                       
-                           locTxt += "<tr><td><b>Total Population:</b>" + "&nbsp;" + " </td><td>${TotalPop}</td></tr>";
-                           locTxt += "<tr><td><b>Age Under 5:</b>" + "&nbsp;" + " </td><td>${Ages_Under5}</td></tr>";
-                           locTxt += "<tr><td><b>Age 5-9:</b>" + "&nbsp;" + " </td><td>${Ages_5to9}</td></tr>";
-                           locTxt += "<tr><td><b>Age 10-14:</b>" + "&nbsp; " + " </td><td>${Ages_10to14}</td></tr>";
-                           locTxt += "<tr><td><b>Age 15-19:</b>" + "&nbsp;" + " </td><td> ${Ages_15to19}</td></tr>";
-                           locTxt += "<tr><td><b>Age 20-24:</b>" + "&nbsp;" + " </td><td> ${Ages_20to24}</td></tr>";
-                           locTxt += "<tr><td><b>Age 25-44:</b>" + " &nbsp;" + " </td><td>${Ages_25to44}</td></tr>";
-                           locTxt += "<tr><td><b>Age 45-64:</b>" + "&nbsp;" + " </td><td>${Ages_45to64}</td></tr>";
-                           locTxt += "<tr><td><b>Age 65 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_65andOver}</td></tr>";
-                           locTxt += "<tr><td><b>Age 18 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_18andOver}</td></tr>";
-                           
-                           locTxt += "<tr><td><b><h4>INTERVENTION DATA</h4></b>" + "</td></tr>";                                                       
-                           locTxt += "<tr><td><b>Leading Pedestrian Intervals:</b>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr><br>";
-                           locTxt += "<tr><td><b>Safety Projects - Intersections:</b>" + "&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr><br>";
-                           locTxt += "<tr><td><b>Safety Projects - Corridors</b>" + "&nbsp;" + " </td><td>${SUM_SIPCorridors}</td></tr><br>";
-                           locTxt += "<tr><td><b>Speed Humps:</b>" + "&nbsp; " + " </td><td>${SUM_SpeedHumps}</td></tr><br>";
-                           locTxt += "<tr><td><b>Arterial Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_ASZ}</td></tr><br>";
-                           locTxt += "<tr><td><b>Neighborhood Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_NeighSlowZones}</td></tr></table>";*/
+                           if ((locName == "Summary_2014_PP_ALL_FATALITIES") || (locName == "Summary_2014_PP_ALL_INJURIES") ) { 
+	                           locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>DEMOGRAPHIC DATA</h4></b>" + "</td><td></td></tr>";                                                       
+	                           locTxt += "<tr><td><b>Total Population:</b>" + "&nbsp;" + " </td><td>${Total_Pop}</td></tr>";
+	                           locTxt += "<tr><td><b>Age Under 5:</b>" + "&nbsp;" + " </td><td>${Ages_Under}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 5-9:</b>" + "&nbsp;" + " </td><td>${Ages_5_to_}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 10-14:</b>" + "&nbsp; " + " </td><td>${Ages_10_to}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 15-19:</b>" + "&nbsp;" + " </td><td> ${Ages_15_to}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 20-24:</b>" + "&nbsp;" + " </td><td> ${Ages_20_to}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 25-44:</b>" + " &nbsp;" + " </td><td>${Ages_25_to}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 45-64:</b>" + "&nbsp;" + " </td><td>${Ages_45_to}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 65 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_65_an}</td></tr>";
+	                       }
+	                       else {
+	                       	   locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>DEMOGRAPHIC DATA</h4></b>" + "</td><td></td></tr>";                                                       
+	                           locTxt += "<tr><td><b>Total Population:</b>" + "&nbsp;" + " </td><td>${TotalPop}</td></tr>";
+	                           locTxt += "<tr><td><b>Age Under 5:</b>" + "&nbsp;" + " </td><td>${Ages_Under}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 5-9:</b>" + "&nbsp;" + " </td><td>${Ages_5to9}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 10-14:</b>" + "&nbsp; " + " </td><td>${Ages_10to1}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 15-19:</b>" + "&nbsp;" + " </td><td> ${Ages_15to1}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 20-24:</b>" + "&nbsp;" + " </td><td> ${Ages_20to2}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 25-44:</b>" + " &nbsp;" + " </td><td>${Ages_25to4}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 45-64:</b>" + "&nbsp;" + " </td><td>${Ages_45to6}</td></tr>";
+	                           locTxt += "<tr><td><b>Age 65 And Over:</b>" + "&nbsp;" + " </td><td>${Ages_65and}</td></tr>";
+
+	                       }
+                         
+                           locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>INTERVENTION DATA</h4></b>" + "</td><td></td></tr>";                                                       
+                           locTxt += "<tr><td><b>LPIs Installed:</b>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr>";
+                           locTxt += "<tr><td><b>Num. of Safety Projects (Intersections):</b>" + "&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr>";
+                           locTxt += "<tr><td><b>Miles of Safety Projects  (Corridors):</b>" + "&nbsp;" + " </td><td>${SUM_SIPCorridors_Miles}</td></tr>";
+                           locTxt += "<tr><td><b>Speed Humps Installed:</b>" + "&nbsp; " + " </td><td>${SUM_SpeedHumps}</td></tr>";
+                           locTxt += "<tr><td><b>Miles of Arterial Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_ASZ_Miles}</td></tr>";
+                           locTxt += "<tr><td><b>Miles of Neighborhood Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_NeighSlowZones_Miles}</td></tr></table>";
 
 
                                                               
@@ -571,7 +523,6 @@ function executeIdentifyTask(evt) {
 
                            
        }
-       // new August 12 /// 
 
 map.infoWindow.resize (270,180);
 }); // wait callback

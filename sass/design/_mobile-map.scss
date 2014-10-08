@@ -1,0 +1,106 @@
+@include breakpoint(SM) {
+
+  #layerNav-mobile {
+    display: none;
+  }
+
+  #mainRow {
+    margin: 0;
+  }
+
+  .mobile-map {
+    margin-bottom: 0 !important; // shameful but had to be done
+    padding: 0;
+  }
+
+  #map_root {
+    margin: 0;
+    width: 100% !important; // shameful but had to be done
+  }
+
+  #labelDiv {
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    height: auto;
+    top: auto;
+    left: 10px;
+    bottom: 65px;
+    padding: 6px 10px 10px 10px;
+    width: auto;
+    z-index: 8;
+
+    select{
+      width: 70px;
+    }
+  }
+
+  #labelTable {
+    padding: 0;
+    .labelRow {
+      padding: 0;
+    }
+  }
+
+  #layerNav {
+    display: none;
+  }
+
+  #layerNav-mobile {
+    border-color: #20396F;
+    display: block;
+    left: 11px;
+    top: 11px;
+    margin: 0;
+    position: absolute;
+    &:hover,
+    &:focus {
+      background-color: #20396F;
+    }
+  }
+
+  .map-icon {
+    background-color: #20396F;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    bottom: 10px;
+    z-index: 1040;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .mobile-icons {
+
+    .map-icon {
+       position: absolute;
+       top: auto;
+       font-size: 30px;
+    }
+
+    .glyphicon-info-sign {
+      right: 10px;
+    }
+
+    .icon-icon_22494 {
+      right: 55px;
+      bottom: 55px;
+    }
+
+    .glyphicon-share {
+      right: 55px;
+    }
+
+    .glyphicon-question-sign {
+      bottom: 55px;
+      right: 10px;
+    }
+  }
+
+}
+
+.esriSimpleSliderTR {
+  top: 10px;
+  right: 10px;
+}

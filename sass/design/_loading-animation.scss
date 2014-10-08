@@ -1,0 +1,11 @@
+#loadingImg {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 7px;
+  top: 50%;
+  left: 50%;
+  margin: -26px 0 0 -26px;
+  @include breakpoint(SM) {
+    margin-top: -78px;
+  }
+}

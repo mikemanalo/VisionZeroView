@@ -14,7 +14,12 @@
 		<meta name="description" content=""/ >
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		
+		
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
 
 		<title>Vision Zero</title>
 
@@ -30,26 +35,25 @@
 		<link rel="stylesheet" type="text/css" href="css/mediaOTHER.css">
 		<link rel="stylesheet" type="text/css" href="css/sidemenu.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" href="lib/add2home/style/addtohomescreen.css">
-        <script type="text/javascript" src="lib/add2home/src/addtohomescreen.js"></script>
-  
+		<link rel="stylesheet" href="lib/add2home/style/addtohomescreen.css">
+		<script type="text/javascript" src="lib/add2home/src/addtohomescreen.js"></script>
+
 		<!--<link rel="stylesheet" type="text/css" href="css/site.min.css"> -->
 
 		<link rel="apple-touch-icon" sizes="57x57" href="img/logo/touch-icon-iphone.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="img/logo/touch-icon-ipad.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="img/logo/touch-icon-iphone4.png">
 		<link rel="apple-touch-icon" sizes="144x144" href="img/logo/touch-icon-ipad2.png">
-        
-        
-        <script>
-            addToHomescreen({
-                skipFirstVisit:true,
-                startDelay:2,
-                lifespan:8,
-                icon:false
-            });
-        </script>
-        
+
+		<script>
+			addToHomescreen({
+				skipFirstVisit : true,
+				startDelay : 2,
+				lifespan : 8,
+				icon : false
+			});
+		</script>
+
 	</head>
 
 	<body style="visibility:hidden">
@@ -97,7 +101,7 @@
 								<span class="glyphicon glyphicon-search"></span>
 							</button>
 
-							<a href="#"> <img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/VisionZero.svg" class="vzLogo img-responsive "></a>
+							<a href="#"> <img id="logo-main" alt="Vision Zero" title="Vision Zero" src="img/logo/vzv.svg" class="vzLogo img-responsive "></a>
 
 						</div>
 
@@ -285,13 +289,19 @@
 
 						<div class="mobile-map col-xs-12 col-sm-9 col-md-9 vol-lg-9 col-sm-push-3" style="margin-bottom: 15px;">
 							<div id="map" class="container-fluid">
-								<!--[if lte IE 8]>
+								
+							<!--[if lte IE 8]>
 								<script type="text/javascript">
 								window.location = "index_lte_IE8.html";
 								</script>
 								<![endif]-->
 
+								<!--[if lt IE 10]>
+								<p style="text-align:center"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+								<![endif]-->
 								
+								
+
 								<img id="loadingImg" alt="Loading..." src="img/other/loading-32-inverse.gif" />
 								<div id="labelDiv">
 									<table id="labelTable">
@@ -306,11 +316,7 @@
 											<td class="labelRow"><span id="stat2Mobile" class="stats"></span></td>
 										</tr>
 									</table>
-                                    
-                                    <!--[if lt IE 10]>
-                                    <p style="text-align:center position:absolute; float:right;"class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-                                    <![endif]-->
-                                    
+
 									<div class="crash-dates visible-xs">
 										<span class="crash-dates-label">Date:</span>
 										<select id="monthSelect" class="crash-date-month">
@@ -414,8 +420,8 @@
 																			<label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="injuriesBtn" style="width: 50%; font-size: 16px;"> Injury </label>
 
 																			<label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn" style="width: 50%; font-size: 16px; color: #777;"> Fatality </label>
-																		</div>	
-																		
+																		</div>
+
 																	</div>
 																</div>
 
@@ -436,10 +442,12 @@
 																<h4 style="margin-left:1.2em; margin-right:10px;"><span id="layerLabel" class="crashLabel1 hidden-xs"></span></h4>
 
 																<div id="injuryLegend" class="col-xs-12 col-sm-12 graphTitle hidden-xs" style="margin-bottom: 0.2em;">
+																	<h6>Injuries</h6>
 																	<img src="img/legend/Injury_Leg.svg" class="img-responsive text-center " alt="Responsive image" style="width: auto; margin-top: 0.3em;">
 																</div>
 
 																<div id="fatalityLegend" class="col-xs-12 col-sm-12 graphTitle hidden-xs" style="margin-bottom: 0.5em;">
+																	<h6>Fatalities</h6>
 																	<img src="img/legend/Fatal_Leg.svg" class="img-responsive text-center" alt="Responsive image" style="width: auto; margin-top: 1.7em;">
 																</div>
 
@@ -529,7 +537,6 @@
 																</div>
 															</div>
 
-
 															<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
 																	<div class="modal-content">
@@ -593,7 +600,7 @@
 															<!--<h3 class="mainTitle">Public Outreach</h3>-->
 															<div class="container-fluid">
 
-																<h3 class="mainTitle hidden-xs">Outreach Education <span style="font-size: 16px; vertical-align: middle;" class="hidden-xs"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span></h3>
+																<h3 class="mainTitle hidden-xs">Outreach & Education <span style="font-size: 16px; vertical-align: middle;" class="hidden-xs"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span></h3>
 
 																<h3 class="mainTitle visible-xs">Filters <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span></h3>
 															</div>
@@ -620,7 +627,7 @@
 																	<button id="TLCBtn" class="btn btn-default outreachBtns">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #B77753; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item1" id="TLC" value="3" style="opacity: .6">
-																		<span style="opacity: .6">TLC</span>
+																		<span style="opacity: .6">Taxi & Car Service Trainings</span>
 																	</button>
 
 																	<button id="TownHallBtn" class="btn btn-default outreachBtns">
@@ -634,7 +641,11 @@
 																		<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
 																		<span style="opacity:0.6; color">Workshops</span>
 
-																	</button>
+																		<button id="StreetTeamBtn" class="btn btn-default outreachBtns">
+																			<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #FF73DF; opacity: .6;">%</i>
+																			<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
+																			<span style="opacity:0.6; color">Street Teams</span>
+																		</button>
 
 																</div>
 
@@ -659,10 +670,9 @@
 
 																			<br>
 																			<br>
-																			<i>TLC</i>
+																			<i>Taxi & Car Service Trainings</i>
 																			<br>
-																			As a partner agency in the Vision Zero Initiative, the Taxi and Limousine Commission has committed to implement a number of safety reforms designed to increase driver awareness, step up enforcement, and improve technology.
-
+																			Taxi fleets, for-hire vehicle bases, and industry associations have been welcoming TLC into their establishments to discuss Vision Zero and traffic safety.  TLC staff use a presentation to guide this discussion, and at the end of the session drivers sign the TLC Safe Driver Pledge.
 																			<br>
 																			<br>
 																			<i>Town Hall Meetings</i>
@@ -674,6 +684,13 @@
 																			<i>Workshops</i>
 																			<br>
 																			In Spring 2014, DOT hosted nine pedestrian safety workshops across the five boroughs aimed at gathering community feedback on areas in need of safety improvements. This feedback will be used to shape the Borough Pedestrian Safety Action Plans, to be released later in 2014.
+																			<br>
+																			<br>
+																			<i>Street Teams</i>
+																			<br>
+																			Street Team members trained the general public with Vision Zero hands-on safety exercises including safe walking and biking, car safety tips and an opportunity to get inside of large delivery trucks to experience their blind spots.  Vision Zero promotional materials were handed out along with educational handouts.
+																			<br>
+																			<br>
 																		</div>
 
 																		<div class="modal-footer">
@@ -748,12 +765,11 @@
 																</div>
 
 																<p class="footNote" style="margin-top:35px;">
-																	Normalized by Area (sq. miles).<br>
+																	Normalized by Area (sq. miles).
+																	<br>
 																	Data covers 2014 to present.
 																</p>
 															</div>
-
-															
 
 															<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
@@ -815,191 +831,210 @@
 					</div>
 
 					<!--=====================================================================================================================================================-->
-			<!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
-			<script src="http://js.arcgis.com/3.10/"></script>
-			<script>
-				var map;
-				//var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/
-				//var arcgisserver = "a841-dotqaweb01.nyc.gov";
-				var symbol, fillSymbol;
+					<!--<script src="http://js.arcgis.com/3.9compact/"></script>!-->
+					<script src="http://js.arcgis.com/3.10/"></script>
+					<script>
+						var map;
 
-				var geoGraphic, nycPolygon;
-				var allIdentifyParams;
-				// for all Identify task parameters
-				var interventionIdentifyTask;
-				var outreachIdentifyTask;
-				var summaryFatalIdentifyTask;
-				var infoWindowPopup;
+						var symbol, fillSymbol;
 
-				var referenceLayer, interventionLayer, outreachLayer, summaryInjuryLayer, summaryFatalityLayer;
-				var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
-				var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
-				var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
-				var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer;
+						var geoGraphic, nycPolygon;
+						var allIdentifyParams;
+						// for all Identify task parameters
+						var interventionIdentifyTask;
+						var outreachIdentifyTask;
+						var summaryFatalIdentifyTask;
+						var infoWindowPopup;
 
-				var fatality, injury, monthly, yearly, all, ped, bike, motor;
-				var interventions, outreach;
+						var referenceLayer, interventionLayer, outreachLayer, summaryInjuryLayer, summaryFatalityLayer;
+						var fatality_monthly_all_Layer, fatality_monthly_ped_Layer, fatality_monthly_bike_Layer, fatality_monthly_motor_Layer;
+						var fatality_yearly_all_Layer, fatality_yearly_ped_Layer, fatality_yearly_bike_Layer, fatality_yearly_motor_Layer;
+						var injury_monthly_all_Layer, injury_monthly_ped_Layer, injury_monthly_bike_Layer, injury_monthly_motor_Layer;
+						var injury_yearly_all_Layer, injury_yearly_ped_Layer, injury_yearly_bike_Layer, injury_yearly_motor_Layer;
 
-				var police, community, council;
-				var injurySum, fatalitySum;
+						var fatality, injury, monthly, yearly, all, ped, bike, motor;
+						var interventions, outreach;
 
-				var interventionLayerIDs, outreachLayerIDs;
-				var summaryLayerIDs = [];
-				var infoTemplate;
-				var queryTask, query;
-				var gslocation = {
-					location : "",
-					lat : "",
-					lon : ""
-				};
+						var police, community, council;
+						var injurySum, fatalitySum;
 
-				var spatialRef;
+						var interventionLayerIDs, outreachLayerIDs;
+						var summaryLayerIDs = [];
+						var infoTemplate;
+						var queryTask, query;
+						var gslocation = {
+							location : "",
+							lat : "",
+							lon : ""
+						};
 
-				var sliderVal;
-				var evt = 'ontouchend' in document ? 'touchend' : 'click';
+						var spatialRef;
+						var curFatalityValue, curInjuryValue;
+						// new Sept11
 
-				// Get a reference to the ArcGIS Map class
-				var curWidth;
-				var curDocWidth;
+						var sliderVal;
+						var evt = 'ontouchend' in document ? 'touchend' : 'click';
 
-				require(["esri/map", "esri/layers/ArcGISTiledMapServiceLayer", "esri/dijit/LocateButton", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/layers/ImageParameters", "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color", "dojo/dom", "dojo/on", "dojo/query", "dojo/domReady!"], function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
-					//alert(evt);
-					if (isIE()) {
-						//alert("IE!");
+						// Get a reference to the ArcGIS Map class
+						var curWidth;
+						var curDocWidth;
 
-						esri.config.defaults.io.proxyUrl = "http://" + arcgisserver + "/gisproxy/proxy.ashx";
-						esri.config.defaults.io.alwaysUseProxy = false;
-						esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
-					}
-					
-			
+						require(["esri/map", "esri/layers/ArcGISTiledMapServiceLayer", "esri/dijit/LocateButton", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/tasks/IdentifyTask", "esri/tasks/IdentifyParameters", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/layers/ImageParameters", "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color", "dojo/dom", "dojo/on", "dojo/query", "dojo/domReady!"], function(Map, Tiled, LocateButton, ArcGISDynamicMapServiceLayer, IdentifyTask, IdentifyParameters, Popup, FeatureLayer, InfoTemplate, ImageParameters, SimpleMarkerSymbol, SimpleLineSymbol, Color, dom, on, query) {
+							//alert(evt);
+							if (isIE()) {
+								//alert("IE!");
 
+								esri.config.defaults.io.proxyUrl = "http://" + arcgisserver + "/gisproxy/proxy.ashx";
+								esri.config.defaults.io.alwaysUseProxy = false;
+								esri.config.defaults.io.corsEnabledServers.push(arcgisserver);
+							}
 
-					$(window).unload(function() {
-						$('select option').remove();
-					});
-
-					$(window).resize(function() {
-						if ($('#yearSelect').is(':visible')) {
-							$("#jqxslider").jqxSlider({
-								value : 64
+							$(window).unload(function() {
+								$('select option').remove();
 							});
-							$("#jqxslider2").jqxSlider({
-								value : 5
+
+							$(window).resize(function() {
+								if ($('#yearSelect').is(':visible')) {
+									$("#jqxslider").jqxSlider({
+										value : 66
+									});
+									$("#jqxslider2").jqxSlider({
+										value : 5
+									});
+								}
+								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
+									$("#monthSelect").val("6");
+									$("#yearSelect").val("5");
+								}
+								checkStats();
+
 							});
-						}
-						if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-							$("#monthSelect").val("4");
-							$("#yearSelect").val("5");
-						}
-						checkStats();
 
-					});
+							showLoading();
+							hideSlider();
+							spatialRef = new esri.SpatialReference({
+								"wkid" : 102718
+							});
+							//XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
 
-					showLoading();
-					hideSlider();
-					spatialRef = new esri.SpatialReference({
-						"wkid" : 102718
-					});
-					//XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
+							var initialExtent = new esri.geometry.Extent({
+								"xmin" : 842170.34,
+								"ymin" : 128499.74,
+								"xmax" : 1141736.31,
+								"ymax" : 315617.79,
+								"spatialReference" : {
+									"wkid" : 102718
+								}
+							});
+							var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
+							infoTemplate = new InfoTemplate("Location", "${location}");
+							infoTemplate1 = new InfoTemplate("Location", "${location}");
+							symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
+							fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
+							symbol1 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
+							fillSymbol1 = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
+							//infoWindowPopup = new esri.dijit.Popup({anchor:top}, dojo.create("div"));
 
-					var initialExtent = new esri.geometry.Extent({
-						"xmin" : 842170.34,
-						"ymin" : 128499.74,
-						"xmax" : 1141736.31,
-						"ymax" : 315617.79,
-						"spatialReference" : {
-							"wkid" : 102718
-						}
-					});
-					var customExtentAndSR = new esri.geometry.Extent(-20037506, -9823074, 20037506, 10214431, spatialRef);
-					infoTemplate = new InfoTemplate("Location", "${location}");
-					infoTemplate1 = new InfoTemplate("Location", "${location}");
-					symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
-					fillSymbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
-					symbol1 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 15, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 255, 0.5]), 8), new Color([0, 0, 255]));
-					fillSymbol1 = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.5]));
-					//infoWindowPopup = new esri.dijit.Popup({anchor:top}, dojo.create("div"));
+							infoWindowPopup = new Popup({
+								anchor : "top"
+							}, dojo.create("div"));
 
-					infoWindowPopup = new Popup({
-						anchor : "top"
-					}, dojo.create("div"));
+							/// new August 12 ////////
 
-					/// new August 12 ////////
+							$(document).ready(function() {
+								var curWidth = $(window).width();
+								var curDocWidth = $(document).width();
+								if ((curWidth < 767) || (curDocWidth < 767)) {
+									map = new Map("map", {
+										logo : false,
+										//center: [999099, 164979],
+										zoom : 3,
+										sliderPosition : "top-right",
+										sliderStyle : "small",
+										extent : initialExtent,
+										infoWindow : infoWindowPopup,
+										minScale : 64000
+									});
 
-	$(document).ready(function() {
-		var curWidth = $(window).width();
-		var curDocWidth = $(document).width();
-		if ((curWidth < 767) || (curDocWidth < 767)) {
-			map = new Map("map", {
-				logo : false,
-				//center: [999099, 164979],
-				zoom : 3,
-				sliderPosition : "top-right",
-				sliderStyle : "small",
-				extent : initialExtent,
-				infoWindow : infoWindowPopup,
-				minScale : 64000
-			});
+									spatialRef = map.spatialReference;
+									var tiled = new Tiled(basemapURL, {
+										minScale : 64000
+									});
+									map.addLayer(tiled);
 
-			 spatialRef = map.spatialReference;
-			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer", {minScale : 64000 });
-			 map.addLayer(tiled);
-			 
-		} else {
-			map = new Map("map", {
-				logo : false,
-				//center: [999099, 164979],
-				zoom : 3,
-				sliderPosition : "top-right",
-				sliderStyle : "small",
-				extent : initialExtent,
-				infoWindow : infoWindowPopup
-			});
+								} else {
+									map = new Map("map", {
+										logo : false,
+										//center: [999099, 164979],
+										zoom : 3,
+										sliderPosition : "top-right",
+										sliderStyle : "small",
+										extent : initialExtent,
+										infoWindow : infoWindowPopup
+									});
 
-			 spatialRef = map.spatialReference;
-			 var tiled = new Tiled("http://a841-dotweb01.nyc.gov/arcgis/rest/services/GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer");
-			 map.addLayer(tiled);
+									spatialRef = map.spatialReference;
+									var tiled = new Tiled(basemapURL);
+									map.addLayer(tiled);
 
-			}
-			
-					resizeMap();
-					mapWinEvent();
-		});
+								}
 
-	$(document).ready(function() {
-		var isIE8 = isIE();
-		if ((isIE8 === 8) || (isIE8 === 7)) {
-		} else {
-			 $('body').css('visibility', 'visible');
-			 //     $('map').css('visibility', 'visible');
-			 //addCrashLocations();
-			 addCrashLayers();
-			 IdentifyTaskInit();
-			 sliderSetup();
-			 checkCrashCatState();
-			 toggleCrashLayers();
-		}
-   });
+								resizeMap();
+								mapWinEvent();
+							});
 
+							$(document).ready(function() {
+								var isIE8 = isIE();
+								if ((isIE8 === 8) || (isIE8 === 7)) {
+								} else {
+									$('body').css('visibility', 'visible');
+									//     $('map').css('visibility', 'visible');
+									//addCrashLocations();
+									$("#monthSelect").val("6");
+									$("#yearSelect").val("5");
 
-	dojo.connect(map, "onLoad", function () {
-		hideLoading();
-		$("#jqxslider").jqxSlider({value: 64});
-		$("#jqxslider2").jqxSlider({value: 5});
-		$("#monthSelect").val("4");
-		$("#yearSelect").val("5");
-		var monthVal = $("#monthSelect").val();
-		var yearVal = $("#yearSelect").val();
-		selectMonthVal = parseInt(monthVal);
-		selectYearVal = parseInt(yearVal);
-		showSlider();
-		checkStats();
-	});
+									$("#jqxslider").jqxSlider({
+										value : 66
+									});
+									$("#jqxslider2").jqxSlider({
+										value : 5
+									});
+									curInjuryValue = $('#jqxslider').jqxSlider('getValue');
 
-	dojo.connect(map, "onExtentChange", checkCrashLegend);
+									addCrashLayers();
+									IdentifyTaskInit();
+									sliderSetup();
+									checkCrashCatState();
+									toggleCrashLayers();
+								}
+							});
 
-});
+							dojo.connect(map, "onLoad", function() {
+								hideLoading();
+								$("#jqxslider").jqxSlider({
+									value : 66
+								});
+								$("#jqxslider2").jqxSlider({
+									value : 5
+								});
+								var monthVal = $("#monthSelect").val();
+								var yearVal = $("#yearSelect").val();
+								selectMonthVal = parseInt(monthVal);
+								selectYearVal = parseInt(yearVal);
+								var toolTipVal = sliderLookup(curInjuryValue);
+
+								$("#dateLabel").text(toolTipVal);
+								;
+								$("#date2Label").text(toolTipVal);
+								$("#date3Label").text(toolTipVal);
+
+								showSlider();
+								checkStats();
+							});
+
+							dojo.connect(map, "onExtentChange", checkCrashLegend);
+
+						});
 
 					</script>
 

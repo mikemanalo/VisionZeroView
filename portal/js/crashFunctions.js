@@ -3,7 +3,6 @@
 
 function checkCrashLegend(){
        var locScale = map.getScale();
-//     console.log("year: " + yearly + " month: " + monthly + "  injury: " + injury + " fatality: " + fatality );
        
        if (injury){
               if (yearly){
@@ -45,32 +44,24 @@ function checkCrashLegend(){
 }
 
 
-
-
 /*********************** listeners ***************************/
 
 
 $(document).ready(function() {
        $(".crashTypeSwitchBtns").on("touchstart click", function(e) {
-              //console.log("get click");
               map.infoWindow.hide();
 
               setTimeout(function() {
-                     //if ($("#injuriesBtn").hasClass('active')) {
-					 if (hasClass('injuriesBtn' , 'active')) {
-                           //console.log("Injuries");
-                           injury = true;
-                           fatality = false;
 
-              
+					 if (hasClass('injuriesBtn' , 'active')) {
+                           injury = true;
+                           fatality = false;              
               
                            $("#fatalitiesBtn").css("color", "#777");
                            $("#injuriesBtn").css("color", "#FFF");
-                     
-                     
+                                          
 
                      } else if ($("#fatalitiesBtn").hasClass('active')) {
-                           //console.log("Fatalities");
                            injury = false;
                            fatality = true;
 
@@ -88,13 +79,11 @@ $(document).ready(function() {
 
 $(document).ready(function() {
        $(".crashTimeSwitchBtns").on("touchstart click", function(e) {
-              //console.log("get click");
        
               map.infoWindow.hide();
 
               setTimeout(function() {
                      if ($("#monthlyBtn").hasClass('active')) {
-                           //console.log("monthly");
                            monthly = true;
                            yearly = false;
 
@@ -102,7 +91,6 @@ $(document).ready(function() {
                            $("#monthlyBtn").css("color", "rgb(255,255,255)");
 
                      } else if ($("#yearlyBtn").hasClass('active')) {
-                           //console.log("yearly");
                            monthly = false;
                            yearly = true;
 
@@ -131,7 +119,6 @@ $(document).ready(function() {
 
 
               var mode = ($(this).find('input').attr('id'));
-              //console.log(mode);
               switch (mode) {
                      case 'ped':
                            ped = true;
@@ -160,18 +147,59 @@ $(document).ready(function() {
                      default:
                            all = true;
               }
-              //console.log(ped + " " + bike + " " + motor + " " + all);
               toggleCrashLayers();
        });
 
 });
 
+ /// new sept 11 -- bind outside of toggle scope ///
+ 
+
+$("#monthSelect , #yearSelect").on('change', function() {
+	if (map) map.infoWindow.hide();
+	curInjuryValue = smallScreenCrashLayer();
+	if (injury && monthly)
+		injuryMonthlySet(curInjuryValue);
+	else if (injury && yearly)
+		injuryYearlySet(curInjuryValue);
+	else if (fatality && monthly)
+		fatalityMonthlySet(curInjuryValue);
+	else if (fatality && yearly)
+		fatalityMonthlySet(curInjuryValue);
+});
+
+$('#jqxslider').bind('change', function(event) {
+	if (map) map.infoWindow.hide();
+	curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+	checkStats();
+	if (injury && monthly)
+		injuryMonthlySet(curInjuryValue);
+	else if (injury && yearly)
+		injuryYearlySet(curInjuryValue);
+	else if (fatality && monthly)
+		fatalityMonthlySet(curInjuryValue);
+	else if (fatality && yearly)
+		fatalityMonthlySet(curInjuryValue);
+});
+// new scope
+
+$('#jqxslider2').bind('change', function(event) {
+	if (map) map.infoWindow.hide();
+	curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+	checkStats();
+	if (injury && monthly)
+		injuryMonthlySet(curInjuryValue);
+	else if (injury && yearly)
+		injuryYearlySet(curInjuryValue);
+	else if (fatality && monthly)
+		fatalityMonthlySet(curInjuryValue);
+	else if (fatality && yearly)
+		fatalityMonthlySet(curInjuryValue);
+});
+// new scope
+
+
 /*************************** layer toggle functions *****************************************************/
-/*
-*
-var fatality, injury;
-var monthly, yearly;
-var all, ped, bike, motor;*/
 
 
 function injuryMonthlySet(curInjuryValue){
@@ -184,17 +212,13 @@ function injuryMonthlySet(curInjuryValue){
                                   
        curInjuryValue = (curInjuryValue * 8);
 
-
        visibleInjuryLayerIds.length = 0;
-
        visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6, curInjuryValue + 7);
-
 
        if (all) injury_monthly_all_Layer.setVisibleLayers(visibleInjuryLayerIds);
        else if(ped) injury_monthly_ped_Layer.setVisibleLayers(visibleInjuryLayerIds);
        else if (bike) injury_monthly_bike_Layer.setVisibleLayers(visibleInjuryLayerIds);
        else if (motor) injury_monthly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
-
               
 }
 
@@ -209,9 +233,7 @@ function injuryYearlySet(curInjuryValue){
                                   
        curInjuryValue = (curInjuryValue * 7);
 
-
        visibleInjuryLayerIds.length = 0;
-
        visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3, curInjuryValue + 4, curInjuryValue + 5, curInjuryValue + 6);
 
        if (all)  injury_yearly_all_Layer.setVisibleLayers(visibleInjuryLayerIds);
@@ -224,7 +246,7 @@ function injuryYearlySet(curInjuryValue){
 
 function fatalityMonthlySet(curInjuryValue){
        var visibleInjuryLayerIds = [];
-       var    toolTipVal = sliderLookup(curInjuryValue);
+       var toolTipVal = sliderLookup(curInjuryValue);
        $("#dateLabel").text(toolTipVal);;
        $("#date2Label").text(toolTipVal);
        $("#date3Label").text(toolTipVal);
@@ -232,7 +254,6 @@ function fatalityMonthlySet(curInjuryValue){
        curInjuryValue = (curInjuryValue * 4);
 
        visibleInjuryLayerIds.length = 0;
-
        visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
 
 
@@ -247,7 +268,7 @@ function fatalityMonthlySet(curInjuryValue){
                            
 function fatalityYearlySet(curInjuryValue){
        var visibleInjuryLayerIds = [];
-       var    toolTipVal = slider2Lookup(curInjuryValue);
+       var toolTipVal = slider2Lookup(curInjuryValue);
        $("#dateLabel").text(toolTipVal);;
        $("#date2Label").text(toolTipVal);
        $("#date3Label").text(toolTipVal);
@@ -255,7 +276,6 @@ function fatalityYearlySet(curInjuryValue){
        curInjuryValue = (curInjuryValue * 4);
 
        visibleInjuryLayerIds.length = 0;
-
        visibleInjuryLayerIds.push(curInjuryValue, curInjuryValue + 1, curInjuryValue + 2, curInjuryValue + 3);
 
 
@@ -265,6 +285,8 @@ function fatalityYearlySet(curInjuryValue){
        else if (motor) fatality_yearly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
 
 }
+
+                          
 
 function toggleCrashLayers() {
 
@@ -318,20 +340,7 @@ function toggleCrashLayers() {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   injuryMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryMonthlySet(curInjuryValue);
-                           });
-                     
 
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  injuryMonthlySet(curInjuryValue);
-                           }); // new scope
-              
 
                      } else if (ped) {
                            allCrashLayersOff();
@@ -350,19 +359,7 @@ function toggleCrashLayers() {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   injuryMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryMonthlySet(curInjuryValue);
-                           });
-                     
 
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  injuryMonthlySet(curInjuryValue);
-                           }); // new scope
 
                      } else if (bike) {
                            allCrashLayersOff();
@@ -381,20 +378,7 @@ function toggleCrashLayers() {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   injuryMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryMonthlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  injuryMonthlySet(curInjuryValue);
-                           }); // new scope
-                           
+ 
 
                      } else if (motor) {
                            allCrashLayersOff();
@@ -413,19 +397,6 @@ function toggleCrashLayers() {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   injuryMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryMonthlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  injuryMonthlySet(curInjuryValue);
-                           }); // new scope
 
                      }
               }// end monthly
@@ -454,19 +425,7 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
                                   injuryYearlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  injuryYearlySet(curInjuryValue);
-                           }); // new scope
+ 
                            
                      } else if (ped) {
                            allCrashLayersOff();
@@ -485,19 +444,7 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
                                   injuryYearlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  injuryYearlySet(curInjuryValue);
-                           }); // new scope
+  
        
                      } else if (bike) {
                            allCrashLayersOff();
@@ -517,18 +464,6 @@ else if (yearly) {
                                   injuryYearlySet(curInjuryValue);
                            }
                            
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  injuryYearlySet(curInjuryValue);
-                           }); // new scope
        
                      } else if (motor) {
                            allCrashLayersOff();
@@ -546,20 +481,7 @@ else if (yearly) {
                                   map.infoWindow.hide();
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
                                   injuryYearlySet(curInjuryValue);
-                           }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  injuryYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  injuryYearlySet(curInjuryValue);
-                           }); // new scope
+                           }                          
 
                      }
 
@@ -590,19 +512,6 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   fatalityMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityMonthlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  fatalityMonthlySet(curInjuryValue);
-                           }); // new scope
 
                      } else if (ped) {
                            allCrashLayersOff();
@@ -621,20 +530,7 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   fatalityMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityMonthlySet(curInjuryValue);
-                           });
-                     
 
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  fatalityMonthlySet(curInjuryValue);
-                           }); // new scope
-                           
 
                      } else if (bike) {
                            allCrashLayersOff();
@@ -653,19 +549,7 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   fatalityMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityMonthlySet(curInjuryValue);
-                           });
-                     
 
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  fatalityMonthlySet(curInjuryValue);
-                           }); // new scope
        
                      } else if (motor) {
                            allCrashLayersOff();
@@ -684,19 +568,6 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider').jqxSlider('getValue');
                                   fatalityMonthlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityMonthlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider').jqxSlider('getValue');
-                                  fatalityMonthlySet(curInjuryValue);
-                           }); // new scope
 
                      }
               }// end monthly
@@ -720,20 +591,6 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
                                   fatalityYearlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  fatalityYearlySet(curInjuryValue);
-                           }); // new scope
-                           
 
                      } else if (ped) {
                            allCrashLayersOff();
@@ -752,19 +609,6 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
                                   fatalityYearlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  fatalityYearlySet(curInjuryValue);
-                           }); // new scope
                            
        
                      } else if (bike) {
@@ -785,18 +629,6 @@ else if (yearly) {
                                   fatalityYearlySet(curInjuryValue);
                            }
                            
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityYearlySet(curInjuryValue);
-                           });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  fatalityYearlySet(curInjuryValue);
-                           }); // new scope
 
                      } else if (motor) {
                            allCrashLayersOff();
@@ -815,19 +647,6 @@ else if (yearly) {
                                   curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
                                   fatalityYearlySet(curInjuryValue);
                            }
-                           
-                           $("#monthSelect , #yearSelect").on('change', function() {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = smallScreenCrashLayer();
-                                  fatalityYearlySet(curInjuryValue);
-                            });
-                     
-
-                           $('#jqxslider2').bind('change', function(event) {
-                                  map.infoWindow.hide();
-                                  curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
-                                  fatalityYearlySet(curInjuryValue);
-                           }); // new scope
                            
        
                      }
@@ -871,14 +690,14 @@ function checkCrashCatState() {
 
               setTimeout(function() {
                      if ($("#injuriesBtn").hasClass('active')) {
-                           //console.log("Injuries");
+
                            injury = true;
                            fatality = false;
                            $("#fatalitiesBtn").css("color", "#777");
                            $("#injuriesBtn").css("color", "rgb(255,255,255)");
 
                      } else if ($("#fatalitiesBtn").hasClass('active')) {
-                           //console.log("Fatalities");
+
                            injury = false;
                            fatality = true;
                            $("#injuriesBtn").css("color", "#777");
@@ -886,20 +705,18 @@ function checkCrashCatState() {
                      }
                      toggleCrashLayers();
               }, 20);
-       //     toggleCrashLayers();
 
-       //map.infoWindow.hide();
 
               setTimeout(function() {
                      if ($("#monthlyBtn").hasClass('active')) {
-                           //console.log("monthly");
+
                            monthly = true;
                            yearly = false;
                            $("#yearlyBtn").css("color", "#777");
                            $("#monthlyBtn").css("color", "rgb(255,255,255)");
 
                      } else if ($("#yearlyBtn").hasClass('active')) {
-                           //console.log("yearly");
+
                            monthly = false;
                            yearly = true;
                            $("#monthlyBtn").css("color", "#777");
@@ -908,9 +725,5 @@ function checkCrashCatState() {
                      toggleCrashLayers();
               }, 20);
 
-       //map.infoWindow.hide();
-
-       //console.log(ped + " " + bike + " " + motor + " " + all);
-//     toggleCrashLayers();
 
 }

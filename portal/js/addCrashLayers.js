@@ -120,9 +120,12 @@ function AddDynamicLayer(layerURL, layerID, visible) {
         showLoading();
     });
 
+
     DynamicLayer.on("update-end", function () {
         hideLoading();
+        LayerVisibility();
     });
+    
     
     return DynamicLayer;
 }
